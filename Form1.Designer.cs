@@ -39,8 +39,6 @@
             this.EmailText = new System.Windows.Forms.Label();
             this.PasswordInput = new System.Windows.Forms.TextBox();
             this.PasswordText = new System.Windows.Forms.Label();
-            this.RoleDropDown = new System.Windows.Forms.ComboBox();
-            this.RoleText = new System.Windows.Forms.Label();
             this.RegisterLink = new System.Windows.Forms.LinkLabel();
             this.QuitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,9 +53,9 @@
             this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginButton.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.LoginButton.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.LoginButton.Location = new System.Drawing.Point(775, 475);
+            this.LoginButton.Location = new System.Drawing.Point(743, 438);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(245, 59);
+            this.LoginButton.Size = new System.Drawing.Size(310, 59);
             this.LoginButton.TabIndex = 0;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = false;
@@ -84,11 +82,10 @@
             this.EmailInput.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.EmailInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmailInput.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.EmailInput.Location = new System.Drawing.Point(775, 327);
+            this.EmailInput.Location = new System.Drawing.Point(743, 286);
             this.EmailInput.MaxLength = 30;
-            this.EmailInput.Multiline = true;
             this.EmailInput.Name = "EmailInput";
-            this.EmailInput.Size = new System.Drawing.Size(245, 31);
+            this.EmailInput.Size = new System.Drawing.Size(310, 25);
             this.EmailInput.TabIndex = 3;
             this.EmailInput.TextChanged += new System.EventHandler(this.UsernameInput_TextChanged);
             // 
@@ -131,7 +128,7 @@
             this.EmailText.AutoSize = true;
             this.EmailText.BackColor = System.Drawing.Color.Transparent;
             this.EmailText.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.EmailText.Location = new System.Drawing.Point(771, 301);
+            this.EmailText.Location = new System.Drawing.Point(738, 256);
             this.EmailText.Name = "EmailText";
             this.EmailText.Size = new System.Drawing.Size(72, 27);
             this.EmailText.TabIndex = 6;
@@ -142,49 +139,24 @@
             this.PasswordInput.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.PasswordInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PasswordInput.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.PasswordInput.Location = new System.Drawing.Point(775, 408);
+            this.PasswordInput.Location = new System.Drawing.Point(743, 367);
             this.PasswordInput.MaxLength = 15;
-            this.PasswordInput.Multiline = true;
             this.PasswordInput.Name = "PasswordInput";
-            this.PasswordInput.Size = new System.Drawing.Size(245, 31);
+            this.PasswordInput.Size = new System.Drawing.Size(310, 25);
             this.PasswordInput.TabIndex = 3;
             this.PasswordInput.TextChanged += new System.EventHandler(this.UsernameInput_TextChanged);
+            this.PasswordInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswordInput_KeyDown);
             // 
             // PasswordText
             // 
             this.PasswordText.AutoSize = true;
             this.PasswordText.BackColor = System.Drawing.Color.Transparent;
             this.PasswordText.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.PasswordText.Location = new System.Drawing.Point(771, 382);
+            this.PasswordText.Location = new System.Drawing.Point(738, 337);
             this.PasswordText.Name = "PasswordText";
             this.PasswordText.Size = new System.Drawing.Size(115, 27);
             this.PasswordText.TabIndex = 6;
             this.PasswordText.Text = "Password:";
-            // 
-            // RoleDropDown
-            // 
-            this.RoleDropDown.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.RoleDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.RoleDropDown.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.RoleDropDown.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.RoleDropDown.FormattingEnabled = true;
-            this.RoleDropDown.Location = new System.Drawing.Point(775, 250);
-            this.RoleDropDown.Name = "RoleDropDown";
-            this.RoleDropDown.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RoleDropDown.Size = new System.Drawing.Size(245, 31);
-            this.RoleDropDown.TabIndex = 7;
-            this.RoleDropDown.SelectedIndexChanged += new System.EventHandler(this.RoleDropDown_SelectedIndexChanged);
-            // 
-            // RoleText
-            // 
-            this.RoleText.AutoSize = true;
-            this.RoleText.BackColor = System.Drawing.Color.Transparent;
-            this.RoleText.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.RoleText.Location = new System.Drawing.Point(771, 224);
-            this.RoleText.Name = "RoleText";
-            this.RoleText.Size = new System.Drawing.Size(60, 27);
-            this.RoleText.TabIndex = 6;
-            this.RoleText.Text = "Role:";
             // 
             // RegisterLink
             // 
@@ -192,7 +164,7 @@
             this.RegisterLink.BackColor = System.Drawing.Color.Transparent;
             this.RegisterLink.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.RegisterLink.LinkColor = System.Drawing.SystemColors.HotTrack;
-            this.RegisterLink.Location = new System.Drawing.Point(789, 546);
+            this.RegisterLink.Location = new System.Drawing.Point(791, 509);
             this.RegisterLink.Name = "RegisterLink";
             this.RegisterLink.Size = new System.Drawing.Size(221, 18);
             this.RegisterLink.TabIndex = 8;
@@ -225,9 +197,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1154, 664);
             this.Controls.Add(this.RegisterLink);
-            this.Controls.Add(this.RoleDropDown);
             this.Controls.Add(this.PasswordText);
-            this.Controls.Add(this.RoleText);
             this.Controls.Add(this.EmailText);
             this.Controls.Add(this.LoginText);
             this.Controls.Add(this.AppName);
@@ -263,8 +233,6 @@
         private System.Windows.Forms.Label EmailText;
         private System.Windows.Forms.TextBox PasswordInput;
         private System.Windows.Forms.Label PasswordText;
-        private System.Windows.Forms.ComboBox RoleDropDown;
-        private System.Windows.Forms.Label RoleText;
         private System.Windows.Forms.LinkLabel RegisterLink;
         private System.Windows.Forms.Button QuitButton;
     }
