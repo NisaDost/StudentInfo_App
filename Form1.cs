@@ -15,6 +15,8 @@ namespace StudentInfo_App
 {
     public partial class Form1 : Form
     {
+        Dashboard dashboard = new Dashboard();
+
         public Form1()
         {
             InitializeComponent();
@@ -74,8 +76,10 @@ namespace StudentInfo_App
 
                         if (result > 0)
                         {
-                            MessageBox.Show("Başarılı giriş", "Giriş Başarılı", MessageBoxButtons.OK);
-                            // Giriş başarılı ise ana sayfaya yönlendirme veya başka bir işlem yap
+                            //MessageBox.Show("Başarılı giriş", "Giriş Başarılı", MessageBoxButtons.OK);
+                            // Giriş başarılı ise ana sayfaya yönlendirme
+                            this.Hide();
+                            dashboard.Show();
                         }
                         else
                         {

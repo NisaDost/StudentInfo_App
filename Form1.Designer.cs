@@ -142,6 +142,7 @@
             this.PasswordInput.Location = new System.Drawing.Point(743, 367);
             this.PasswordInput.MaxLength = 15;
             this.PasswordInput.Name = "PasswordInput";
+            this.PasswordInput.PasswordChar = '*';
             this.PasswordInput.Size = new System.Drawing.Size(310, 25);
             this.PasswordInput.TabIndex = 3;
             this.PasswordInput.TextChanged += new System.EventHandler(this.UsernameInput_TextChanged);
