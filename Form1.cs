@@ -15,7 +15,6 @@ namespace StudentInfo_App
 {
     public partial class Form1 : Form
     {
-        Dashboard dashboard = new Dashboard();
 
         public Form1()
         {
@@ -29,31 +28,6 @@ namespace StudentInfo_App
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbConnection"].ToString());
-            //con.Open();
-
-            //SqlCommand cmd = new SqlCommand("SELECT * FROM User WHERE Email = @Email AND Password = @Password", con);
-
-            //SqlParameter Email = new SqlParameter("@Email", EmailInput.Text);
-            //SqlParameter Password = new SqlParameter("@Password", PasswordInput.Text);
-
-            //try
-            //{
-            //    if (EmailInput.Text == "" && PasswordInput.Text == "")
-            //    {
-            //        MessageBox.Show("Alanlar boş bırakılamaz", "Başarısız giriş", MessageBoxButtons.OK);
-            //    }
-            //    else
-            //    {
-            //        //LOGIN VALIDATION LAZIM!!!
-            //        //MessageBox.Show("Başarılı giriş");
-            //    }
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Hata: " + ex.Message);
-            //}
 
             if (EmailInput.Text == "" || PasswordInput.Text == "")
             {
@@ -76,9 +50,8 @@ namespace StudentInfo_App
 
                         if (result > 0)
                         {
-                            //MessageBox.Show("Başarılı giriş", "Giriş Başarılı", MessageBoxButtons.OK);
-                            // Giriş başarılı ise ana sayfaya yönlendirme
                             this.Hide();
+                            Dashboard dashboard = new Dashboard();
                             dashboard.Show();
                         }
                         else
@@ -110,24 +83,7 @@ namespace StudentInfo_App
 
         private void UsernameInput_TextChanged(object sender, EventArgs e)
         {
-            //HENÜZ İŞLEVSEL DEĞİL
-            //bool IsValidEmail(string eMail)
-            //{
-            //    bool Result = false;
 
-            //    try
-            //    {
-            //        var eMailValidator = new System.Net.Mail.MailAddress(eMail);
-
-            //        Result = (eMail.LastIndexOf(".") > eMail.LastIndexOf("@"));
-            //    }
-            //    catch
-            //    {
-            //        Result = false;
-            //    };
-
-            //    return Result;
-            //}
         }
 
         private void RegisterLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

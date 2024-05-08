@@ -41,7 +41,11 @@
             this.DashboardText2 = new System.Windows.Forms.Label();
             this.DasboardText3 = new System.Windows.Forms.Label();
             this.DashboardText4 = new System.Windows.Forms.Label();
+            this.HomePanel = new System.Windows.Forms.Panel();
             this.StudentPanel = new System.Windows.Forms.Panel();
+            this.CanteenPanel = new System.Windows.Forms.Panel();
+            this.AbscencePanel = new System.Windows.Forms.Panel();
+            this.QuitButton = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +89,7 @@
             this.AbscenceButton.TabIndex = 1;
             this.AbscenceButton.Text = "Abscence";
             this.AbscenceButton.UseVisualStyleBackColor = false;
+            this.AbscenceButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // LogoutButton
             // 
@@ -97,6 +102,7 @@
             this.LogoutButton.TabIndex = 1;
             this.LogoutButton.Text = "Log Out";
             this.LogoutButton.UseVisualStyleBackColor = false;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // CanteenButton
             // 
@@ -109,6 +115,7 @@
             this.CanteenButton.TabIndex = 1;
             this.CanteenButton.Text = "Canteen";
             this.CanteenButton.UseVisualStyleBackColor = false;
+            this.CanteenButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // HomeButton
             // 
@@ -121,6 +128,7 @@
             this.HomeButton.TabIndex = 1;
             this.HomeButton.Text = "Home";
             this.HomeButton.UseVisualStyleBackColor = false;
+            this.HomeButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // Logo
             // 
@@ -187,20 +195,61 @@
             this.DashboardText4.TabIndex = 1;
             this.DashboardText4.Text = "Add students";
             // 
+            // HomePanel
+            // 
+            this.HomePanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.HomePanel.Location = new System.Drawing.Point(293, 41);
+            this.HomePanel.Name = "HomePanel";
+            this.HomePanel.Size = new System.Drawing.Size(200, 100);
+            this.HomePanel.TabIndex = 2;
+            // 
             // StudentPanel
             // 
-            this.StudentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StudentPanel.Location = new System.Drawing.Point(229, 0);
+            this.StudentPanel.BackColor = System.Drawing.Color.Brown;
+            this.StudentPanel.Location = new System.Drawing.Point(293, 147);
             this.StudentPanel.Name = "StudentPanel";
-            this.StudentPanel.Size = new System.Drawing.Size(987, 596);
+            this.StudentPanel.Size = new System.Drawing.Size(200, 100);
             this.StudentPanel.TabIndex = 2;
+            // 
+            // CanteenPanel
+            // 
+            this.CanteenPanel.BackColor = System.Drawing.Color.Maroon;
+            this.CanteenPanel.Location = new System.Drawing.Point(293, 253);
+            this.CanteenPanel.Name = "CanteenPanel";
+            this.CanteenPanel.Size = new System.Drawing.Size(200, 100);
+            this.CanteenPanel.TabIndex = 2;
+            // 
+            // AbscencePanel
+            // 
+            this.AbscencePanel.BackColor = System.Drawing.Color.LightGreen;
+            this.AbscencePanel.Location = new System.Drawing.Point(293, 359);
+            this.AbscencePanel.Name = "AbscencePanel";
+            this.AbscencePanel.Size = new System.Drawing.Size(200, 100);
+            this.AbscencePanel.TabIndex = 2;
+            // 
+            // QuitButton
+            // 
+            this.QuitButton.BackColor = System.Drawing.Color.IndianRed;
+            this.QuitButton.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.QuitButton.ForeColor = System.Drawing.Color.Transparent;
+            this.QuitButton.Location = new System.Drawing.Point(1131, 12);
+            this.QuitButton.Name = "QuitButton";
+            this.QuitButton.Size = new System.Drawing.Size(73, 41);
+            this.QuitButton.TabIndex = 1;
+            this.QuitButton.Text = "X";
+            this.QuitButton.UseVisualStyleBackColor = false;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1216, 596);
+            this.Controls.Add(this.AbscencePanel);
+            this.Controls.Add(this.CanteenPanel);
+            this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.StudentPanel);
+            this.Controls.Add(this.HomePanel);
             this.Controls.Add(this.DashboardText4);
             this.Controls.Add(this.DasboardText3);
             this.Controls.Add(this.DashboardText2);
@@ -233,6 +282,10 @@
         private System.Windows.Forms.Label DashboardText2;
         private System.Windows.Forms.Label DasboardText3;
         private System.Windows.Forms.Label DashboardText4;
+        private System.Windows.Forms.Panel HomePanel;
         private System.Windows.Forms.Panel StudentPanel;
+        private System.Windows.Forms.Panel CanteenPanel;
+        private System.Windows.Forms.Panel AbscencePanel;
+        private System.Windows.Forms.Button QuitButton;
     }
 }
