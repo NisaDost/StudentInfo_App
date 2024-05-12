@@ -13,7 +13,21 @@ namespace StudentInfo_App
 {
     public partial class Dashboard : Form
     {
+        #region move form borderless
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x84:
+                    base.WndProc(ref m);
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    return;
+            }
 
+            base.WndProc(ref m);
+        }
+        #endregion
         private readonly Dictionary<string, Panel> buttonPanelMap = new Dictionary<string, Panel>();
         public Dashboard()
         {
@@ -23,9 +37,8 @@ namespace StudentInfo_App
             buttonPanelMap.Add("StudentsButton", StudentPanel);
             buttonPanelMap.Add("CanteenButton", CanteenPanel);
             buttonPanelMap.Add("AbscenceButton", AbscencePanel);
-
-
         }
+
         private void Dashboard_Load(object sender, EventArgs e)
         {
 

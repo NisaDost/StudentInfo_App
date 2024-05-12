@@ -48,6 +48,7 @@
             this.QuitButton = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
+            this.HomePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBar
@@ -68,6 +69,7 @@
             // StudentsButton
             // 
             this.StudentsButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.StudentsButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.StudentsButton.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentsButton.ForeColor = System.Drawing.SystemColors.Window;
             this.StudentsButton.Location = new System.Drawing.Point(12, 206);
@@ -81,6 +83,7 @@
             // AbscenceButton
             // 
             this.AbscenceButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.AbscenceButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.AbscenceButton.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AbscenceButton.ForeColor = System.Drawing.SystemColors.Window;
             this.AbscenceButton.Location = new System.Drawing.Point(12, 300);
@@ -94,6 +97,7 @@
             // LogoutButton
             // 
             this.LogoutButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.LogoutButton.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.LogoutButton.ForeColor = System.Drawing.SystemColors.Window;
             this.LogoutButton.Location = new System.Drawing.Point(12, 543);
@@ -107,6 +111,7 @@
             // CanteenButton
             // 
             this.CanteenButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.CanteenButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.CanteenButton.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.CanteenButton.ForeColor = System.Drawing.SystemColors.Window;
             this.CanteenButton.Location = new System.Drawing.Point(12, 253);
@@ -120,6 +125,7 @@
             // HomeButton
             // 
             this.HomeButton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.HomeButton.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.HomeButton.ForeColor = System.Drawing.SystemColors.Window;
             this.HomeButton.Location = new System.Drawing.Point(12, 159);
@@ -145,18 +151,18 @@
             this.WelcomeText.AutoSize = true;
             this.WelcomeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.WelcomeText.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.WelcomeText.Location = new System.Drawing.Point(388, 97);
+            this.WelcomeText.Location = new System.Drawing.Point(25, 32);
             this.WelcomeText.Name = "WelcomeText";
-            this.WelcomeText.Size = new System.Drawing.Size(634, 38);
+            this.WelcomeText.Size = new System.Drawing.Size(470, 38);
             this.WelcomeText.TabIndex = 1;
-            this.WelcomeText.Text = "Welcome to your dashboard, Emre Olca";
+            this.WelcomeText.Text = "Welcome to your dashboard, ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(390, 159);
+            this.label1.Location = new System.Drawing.Point(43, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(219, 27);
             this.label1.TabIndex = 1;
@@ -167,7 +173,7 @@
             this.DashboardText2.AutoSize = true;
             this.DashboardText2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DashboardText2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DashboardText2.Location = new System.Drawing.Point(430, 209);
+            this.DashboardText2.Location = new System.Drawing.Point(67, 167);
             this.DashboardText2.Name = "DashboardText2";
             this.DashboardText2.Size = new System.Drawing.Size(195, 27);
             this.DashboardText2.TabIndex = 1;
@@ -178,7 +184,7 @@
             this.DasboardText3.AutoSize = true;
             this.DasboardText3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DasboardText3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DasboardText3.Location = new System.Drawing.Point(430, 300);
+            this.DasboardText3.Location = new System.Drawing.Point(67, 230);
             this.DasboardText3.Name = "DasboardText3";
             this.DasboardText3.Size = new System.Drawing.Size(134, 27);
             this.DasboardText3.TabIndex = 1;
@@ -189,7 +195,7 @@
             this.DashboardText4.AutoSize = true;
             this.DashboardText4.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DashboardText4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DashboardText4.Location = new System.Drawing.Point(430, 406);
+            this.DashboardText4.Location = new System.Drawing.Point(67, 291);
             this.DashboardText4.Name = "DashboardText4";
             this.DashboardText4.Size = new System.Drawing.Size(148, 27);
             this.DashboardText4.TabIndex = 1;
@@ -198,33 +204,38 @@
             // HomePanel
             // 
             this.HomePanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.HomePanel.Location = new System.Drawing.Point(293, 41);
+            this.HomePanel.Controls.Add(this.WelcomeText);
+            this.HomePanel.Controls.Add(this.label1);
+            this.HomePanel.Controls.Add(this.DashboardText2);
+            this.HomePanel.Controls.Add(this.DasboardText3);
+            this.HomePanel.Controls.Add(this.DashboardText4);
+            this.HomePanel.Location = new System.Drawing.Point(250, 56);
             this.HomePanel.Name = "HomePanel";
-            this.HomePanel.Size = new System.Drawing.Size(200, 100);
+            this.HomePanel.Size = new System.Drawing.Size(901, 517);
             this.HomePanel.TabIndex = 2;
             // 
             // StudentPanel
             // 
             this.StudentPanel.BackColor = System.Drawing.Color.Brown;
-            this.StudentPanel.Location = new System.Drawing.Point(293, 147);
+            this.StudentPanel.Location = new System.Drawing.Point(250, 56);
             this.StudentPanel.Name = "StudentPanel";
-            this.StudentPanel.Size = new System.Drawing.Size(200, 100);
+            this.StudentPanel.Size = new System.Drawing.Size(918, 517);
             this.StudentPanel.TabIndex = 2;
             // 
             // CanteenPanel
             // 
             this.CanteenPanel.BackColor = System.Drawing.Color.Maroon;
-            this.CanteenPanel.Location = new System.Drawing.Point(293, 253);
+            this.CanteenPanel.Location = new System.Drawing.Point(250, 56);
             this.CanteenPanel.Name = "CanteenPanel";
-            this.CanteenPanel.Size = new System.Drawing.Size(200, 100);
+            this.CanteenPanel.Size = new System.Drawing.Size(936, 517);
             this.CanteenPanel.TabIndex = 2;
             // 
             // AbscencePanel
             // 
             this.AbscencePanel.BackColor = System.Drawing.Color.LightGreen;
-            this.AbscencePanel.Location = new System.Drawing.Point(293, 359);
+            this.AbscencePanel.Location = new System.Drawing.Point(250, 56);
             this.AbscencePanel.Name = "AbscencePanel";
-            this.AbscencePanel.Size = new System.Drawing.Size(200, 100);
+            this.AbscencePanel.Size = new System.Drawing.Size(954, 517);
             this.AbscencePanel.TabIndex = 2;
             // 
             // QuitButton
@@ -232,7 +243,7 @@
             this.QuitButton.BackColor = System.Drawing.Color.IndianRed;
             this.QuitButton.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.QuitButton.ForeColor = System.Drawing.Color.Transparent;
-            this.QuitButton.Location = new System.Drawing.Point(1131, 12);
+            this.QuitButton.Location = new System.Drawing.Point(1131, 9);
             this.QuitButton.Name = "QuitButton";
             this.QuitButton.Size = new System.Drawing.Size(73, 41);
             this.QuitButton.TabIndex = 1;
@@ -245,17 +256,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1216, 596);
-            this.Controls.Add(this.AbscencePanel);
-            this.Controls.Add(this.CanteenPanel);
-            this.Controls.Add(this.QuitButton);
-            this.Controls.Add(this.StudentPanel);
             this.Controls.Add(this.HomePanel);
-            this.Controls.Add(this.DashboardText4);
-            this.Controls.Add(this.DasboardText3);
-            this.Controls.Add(this.DashboardText2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.WelcomeText);
+            this.Controls.Add(this.StudentPanel);
+            this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.MenuBar);
+            this.Controls.Add(this.CanteenPanel);
+            this.Controls.Add(this.AbscencePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -263,8 +269,9 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.MenuBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
+            this.HomePanel.ResumeLayout(false);
+            this.HomePanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
