@@ -46,6 +46,8 @@
             this.CanteenPanel = new System.Windows.Forms.Panel();
             this.AbscencePanel = new System.Windows.Forms.Panel();
             this.QuitButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DateAndTime = new System.Windows.Forms.Label();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -149,11 +151,11 @@
             // WelcomeText
             // 
             this.WelcomeText.AutoSize = true;
-            this.WelcomeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.WelcomeText.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.WelcomeText.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.WelcomeText.Location = new System.Drawing.Point(25, 32);
             this.WelcomeText.Name = "WelcomeText";
-            this.WelcomeText.Size = new System.Drawing.Size(470, 38);
+            this.WelcomeText.Size = new System.Drawing.Size(530, 46);
             this.WelcomeText.TabIndex = 1;
             this.WelcomeText.Text = "Welcome to your dashboard, ";
             // 
@@ -209,33 +211,33 @@
             this.HomePanel.Controls.Add(this.DashboardText2);
             this.HomePanel.Controls.Add(this.DasboardText3);
             this.HomePanel.Controls.Add(this.DashboardText4);
-            this.HomePanel.Location = new System.Drawing.Point(250, 56);
+            this.HomePanel.Location = new System.Drawing.Point(250, 68);
             this.HomePanel.Name = "HomePanel";
-            this.HomePanel.Size = new System.Drawing.Size(901, 517);
+            this.HomePanel.Size = new System.Drawing.Size(901, 505);
             this.HomePanel.TabIndex = 2;
             // 
             // StudentPanel
             // 
             this.StudentPanel.BackColor = System.Drawing.Color.Brown;
-            this.StudentPanel.Location = new System.Drawing.Point(250, 56);
+            this.StudentPanel.Location = new System.Drawing.Point(250, 68);
             this.StudentPanel.Name = "StudentPanel";
-            this.StudentPanel.Size = new System.Drawing.Size(918, 517);
+            this.StudentPanel.Size = new System.Drawing.Size(918, 505);
             this.StudentPanel.TabIndex = 2;
             // 
             // CanteenPanel
             // 
             this.CanteenPanel.BackColor = System.Drawing.Color.Maroon;
-            this.CanteenPanel.Location = new System.Drawing.Point(250, 56);
+            this.CanteenPanel.Location = new System.Drawing.Point(250, 68);
             this.CanteenPanel.Name = "CanteenPanel";
-            this.CanteenPanel.Size = new System.Drawing.Size(936, 517);
+            this.CanteenPanel.Size = new System.Drawing.Size(936, 505);
             this.CanteenPanel.TabIndex = 2;
             // 
             // AbscencePanel
             // 
             this.AbscencePanel.BackColor = System.Drawing.Color.LightGreen;
-            this.AbscencePanel.Location = new System.Drawing.Point(250, 56);
+            this.AbscencePanel.Location = new System.Drawing.Point(250, 68);
             this.AbscencePanel.Name = "AbscencePanel";
-            this.AbscencePanel.Size = new System.Drawing.Size(954, 517);
+            this.AbscencePanel.Size = new System.Drawing.Size(954, 505);
             this.AbscencePanel.TabIndex = 2;
             // 
             // QuitButton
@@ -251,11 +253,35 @@
             this.QuitButton.UseVisualStyleBackColor = false;
             this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Montserrat ExtraBold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(242, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(236, 46);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "TrackSchool";
+            // 
+            // DateAndTime
+            // 
+            this.DateAndTime.AutoSize = true;
+            this.DateAndTime.Font = new System.Drawing.Font("Montserrat Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DateAndTime.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.DateAndTime.Location = new System.Drawing.Point(832, 11);
+            this.DateAndTime.Name = "DateAndTime";
+            this.DateAndTime.Size = new System.Drawing.Size(284, 39);
+            this.DateAndTime.TabIndex = 1;
+            this.DateAndTime.Text = "00.00.2002 - 00.00";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1216, 596);
+            this.Controls.Add(this.DateAndTime);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.HomePanel);
             this.Controls.Add(this.StudentPanel);
             this.Controls.Add(this.QuitButton);
@@ -272,6 +298,7 @@
             this.HomePanel.ResumeLayout(false);
             this.HomePanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -294,5 +321,7 @@
         private System.Windows.Forms.Panel CanteenPanel;
         private System.Windows.Forms.Panel AbscencePanel;
         private System.Windows.Forms.Button QuitButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label DateAndTime;
     }
 }
