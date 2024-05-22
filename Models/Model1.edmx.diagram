@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="373e07e7814c473f9fb8a1605f860a67" Name="Diagram1">
+      <Diagram DiagramId="373e07e7814c473f9fb8a1605f860a67" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="SchoolDBModel.ACCESS_LOG" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.ADMIN" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.ATTENDANCE" Width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
@@ -13,12 +13,12 @@
         <EntityTypeShape EntityType="SchoolDBModel.CLASS" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.DISTRICT" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.NOTIFICATION" Width="1.5" PointX="9.75" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDBModel.PARENT" Width="1.5" PointX="7.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.PARENT" Width="1.5" PointX="7.5" PointY="10.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.PRODUCT" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.STUDENT" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.sysdiagram" Width="1.5" PointX="10.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SchoolDBModel.TEACHER" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SchoolDBModel.View_StudentCourse" Width="1.5" PointX="2.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.View_StudentCourse" Width="1.5" PointX="2.75" PointY="9.625" IsExpanded="true" />
         <AssociationConnector Association="SchoolDBModel.FK_ACCESS_LOG_STUDENT" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDBModel.FK_NOTIFICATION_ACCESS_LOG" ManuallyRouted="false" />
         <AssociationConnector Association="SchoolDBModel.FK_ATTENDANCE_STUDENT" ManuallyRouted="false" />
