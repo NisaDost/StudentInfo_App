@@ -65,19 +65,19 @@ namespace StudentInfo_App
                 // Get selected city name
                 var selectedCityName = StudentCityCB.SelectedItem.ToString();
 
-                // Get districts for the selected city
                 var selectedCity = DB.CITies.FirstOrDefault(c => c.CITYNAME == selectedCityName);
                 if (selectedCity != null)
                 {
-                    var districtNames = DB.DISTRICTs
-                                         .Where(d => d.CITY_ID == selectedCity.Id)
-                                         .Select(d => d.DISTRICTNAME)
-                                         .ToList();
-                    StudentDistrictCB.DataSource = districtNames;
+                    var districts = DB.DISTRICTs
+                                      .Where(d => d.CITY_ID == selectedCity.Id)
+                                      .ToList();
+                    StudentDistrictCB.DataSource = districts;
+                    StudentDistrictCB.DisplayMember = "DISTRICTNAME";  // Görüntülemede district ismini kullan
+                    StudentDistrictCB.ValueMember = "Id";  // Değer olarak district_id'yi kullan
                 }
                 else
                 {
-                    StudentDistrictCB.DataSource = new List<string>(); // Empty list if no city is selected
+                    StudentDistrictCB.DataSource = new List<DISTRICT>(); // Empty list if no city is selected
                 }
             }
 
@@ -85,11 +85,12 @@ namespace StudentInfo_App
             if (Cities.Any())
             {
                 var firstCity = Cities.First();
-                var initialDistrictNames = DB.DISTRICTs
-                                            .Where(d => d.CITY_ID == firstCity.Id)
-                                            .Select(d => d.DISTRICTNAME)
-                                            .ToList();
-                StudentDistrictCB.DataSource = initialDistrictNames;
+                var initialDistricts = DB.DISTRICTs
+                                         .Where(d => d.CITY_ID == firstCity.Id)
+                                         .ToList();
+                StudentDistrictCB.DataSource = initialDistricts;
+                StudentDistrictCB.DisplayMember = "DISTRICTNAME";  // Görüntülemede district ismini kullan
+                StudentDistrictCB.ValueMember = "Id";  // Değer olarak district_id'yi kullan
             }
 
             StudentGenderCB.Items.Clear();
@@ -259,6 +260,8 @@ namespace StudentInfo_App
                 return;
             }
 
+            var selectedDistrict = (DISTRICT)StudentDistrictCB.SelectedItem;
+
             // Yeni student nesnesini oluştur
             var student = new STUDENT
             {
@@ -267,7 +270,7 @@ namespace StudentInfo_App
                 student_adress = StudentAdressTB.Text,
                 student_birthdate = StudentBirthdayDTP.Value,
                 student_gender = StudentGenderCB.Text,
-                district_id = (StudentDistrictCB.SelectedIndex + 1),
+                district_id = selectedDistrict.Id,
                 student_schoolNo = schoolNumber,
                 parent_id = savedParent.parent_id, // Parent ID'sini foreign key olarak ekle
                 class_id = (StudentClassCB.SelectedIndex + 1)
