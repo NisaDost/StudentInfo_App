@@ -106,6 +106,7 @@
           <Property Name="district_id" Type="int" />
           <Property Name="parent_id" Type="int" />
           <Property Name="class_id" Type="int" />
+          <Property Name="student_schoolNo" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -282,18 +283,6 @@ warning 6002: The table/view 'SchoolDB.dbo.View_StudentCourse' does not have a p
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TEACHER_CLASS">
-          <End Role="CLASS" Type="Self.CLASS" Multiplicity="0..1" />
-          <End Role="TEACHER" Type="Self.TEACHER" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CLASS">
-              <PropertyRef Name="class_id" />
-            </Principal>
-            <Dependent Role="TEACHER">
-              <PropertyRef Name="class_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -414,10 +403,6 @@ warning 6002: The table/view 'SchoolDB.dbo.View_StudentCourse' does not have a p
           <AssociationSet Name="FK_STUDENT_PARENT" Association="Self.FK_STUDENT_PARENT">
             <End Role="PARENT" EntitySet="PARENT" />
             <End Role="STUDENT" EntitySet="STUDENT" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TEACHER_CLASS" Association="Self.FK_TEACHER_CLASS">
-            <End Role="CLASS" EntitySet="CLASS" />
-            <End Role="TEACHER" EntitySet="TEACHER" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -549,6 +534,7 @@ warning 6002: The table/view 'SchoolDB.dbo.View_StudentCourse' does not have a p
           <NavigationProperty Name="DISTRICT" Relationship="Self.FK_Student_DISTRICT" FromRole="STUDENT" ToRole="DISTRICT" />
           <NavigationProperty Name="PARENTs" Relationship="Self.FK_PARENT_STUDENT" FromRole="STUDENT" ToRole="PARENT" />
           <NavigationProperty Name="PARENT" Relationship="Self.FK_STUDENT_PARENT" FromRole="STUDENT" ToRole="PARENT" />
+          <Property Name="student_schoolNo" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -960,6 +946,7 @@ warning 6002: The table/view 'SchoolDB.dbo.View_StudentCourse' does not have a p
           <EntitySetMapping Name="STUDENTs">
             <EntityTypeMapping TypeName="SchoolDBModel.STUDENT">
               <MappingFragment StoreEntitySet="STUDENT">
+                <ScalarProperty Name="student_schoolNo" ColumnName="student_schoolNo" />
                 <ScalarProperty Name="student_id" ColumnName="student_id" />
                 <ScalarProperty Name="student_firstname" ColumnName="student_firstname" />
                 <ScalarProperty Name="student_lastname" ColumnName="student_lastname" />

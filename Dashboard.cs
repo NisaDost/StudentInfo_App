@@ -33,11 +33,16 @@ namespace StudentInfo_App
         public Dashboard()
         {
             InitializeComponent();
+            
 
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
             buttonPanelMap.Add("CanteenButton", CanteenPanel);
             buttonPanelMap.Add("AbscenceButton", AbscencePanel);
+            buttonPanelMap.Add("StudentRegistrationBtn", StudentPanelRegistrationPanel);
+            buttonPanelMap.Add("StudentListBtn", StudentListPanel);
+
+            ShowPanel(HomePanel);
 
             //şimdiki zamanı labele atar
             timer1.Interval = 1000; // 1 saniye
@@ -45,8 +50,8 @@ namespace StudentInfo_App
             timer1.Start();
             DateAndTime.Text = DateTime.Now.ToString("F");
 
-            //Cityi seçince district ona göre geliyor
-            #region
+
+            #region Cityi seçince district ona göre geliyor
             var DB = new SchoolDBEntities1();
             var Cities = DB.CITies.ToList();
             var cityNames = Cities.Select(c => c.CITYNAME).ToList();
@@ -94,7 +99,11 @@ namespace StudentInfo_App
 
             #endregion
 
-
+            #region ComboBox class values
+            var classes = DB.CLASSes.ToList();
+            var className = classes.Select(c => c.class_name).ToList();
+            StudentClassCB.DataSource = className;
+            #endregion
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -111,8 +120,6 @@ namespace StudentInfo_App
                 ShowPanel(buttonPanelMap[buttonName]);
             }
         }
-
-
         private void ShowPanel(Panel panelToShow)
         {
             foreach (Panel panel in buttonPanelMap.Values)
@@ -146,7 +153,7 @@ namespace StudentInfo_App
 
         private void SaveStudentBtn_Click(object sender, EventArgs e)
         {
-            #region
+            #region Student Kaydetme
             var DB = new SchoolDBEntities1();
             // Yeni parent nesnesini oluştur
             var parent = new PARENT
@@ -163,6 +170,24 @@ namespace StudentInfo_App
             // Kaydedilen parent nesnesini tekrar çek
             var savedParent = DB.PARENTs.FirstOrDefault(p => p.parent_email == parent.parent_email);
 
+            // Okul numarasını kontrol et
+            int schoolNumber;
+            if (!int.TryParse(StudentSchoolNumberTB.Text, out schoolNumber))
+            {
+                //Sadece integer türünde nesne alır
+                MessageBox.Show("Geçersiz okul numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var existingStudent = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == schoolNumber);
+
+            if (existingStudent != null)
+            {
+                // Aynı okul numarasına sahip bir öğrenci mevcut, hata mesajı göster
+                MessageBox.Show("Bu okul numarasına sahip bir öğrenci zaten kayıtlı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Yeni student nesnesini oluştur
             var student = new STUDENT
             {
@@ -172,7 +197,9 @@ namespace StudentInfo_App
                 student_birthdate = StudentBirthdayDTP.Value,
                 student_gender = StudentGenderCB.Text,
                 district_id = (StudentDistrictCB.SelectedIndex + 1 ),
-                parent_id = savedParent.parent_id // Parent ID'sini foreign key olarak ekle
+                student_schoolNo = schoolNumber,
+                parent_id = savedParent.parent_id, // Parent ID'sini foreign key olarak ekle
+                class_id = (StudentClassCB.SelectedIndex +1)
             };
 
             // Student nesnesini veritabanına ekle ve kaydet
@@ -198,6 +225,8 @@ namespace StudentInfo_App
             StudentFirstNameTB.Clear();
             StudentLastNameTB.Clear();
             StudentAdressTB.Clear();
+            StudentSchoolNumberTB.Clear();
+            StudentClassCB.SelectedIndex = 0;
             StudentBirthdayDTP.Value = DateTime.Now;
             StudentGenderCB.SelectedIndex = 0;
             StudentCityCB.SelectedIndex = 0;
@@ -205,7 +234,11 @@ namespace StudentInfo_App
             {
                 StudentDistrictCB.SelectedIndex = 0;
             }
-            #endregion
+            #endregion 
         }
+
+        
+
+        
     }
 }

@@ -37,7 +37,9 @@ namespace StudentInfo_App
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            EmailInput.Height = 30;
+            PasswordInput.Height = 30;
+
         }
 
         private void LoginButton_Click(object sender, EventArgs e)

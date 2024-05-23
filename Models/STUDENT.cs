@@ -34,6 +34,7 @@ namespace StudentInfo_App.Models
         public Nullable<int> district_id { get; set; }
         public Nullable<int> parent_id { get; set; }
         public Nullable<int> class_id { get; set; }
+        public int student_schoolNo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ACCESS_LOG> ACCESS_LOG { get; set; }
