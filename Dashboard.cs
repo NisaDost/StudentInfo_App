@@ -33,7 +33,7 @@ namespace StudentInfo_App
         public Dashboard()
         {
             InitializeComponent();
-            
+
 
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
@@ -104,7 +104,78 @@ namespace StudentInfo_App
             var className = classes.Select(c => c.class_name).ToList();
             StudentClassCB.DataSource = className;
             #endregion
+
+            #region ComboBox class values for Student List Filtering
+            var classListNames = classes.Select(c => c.class_name).ToList();
+            StudentListClassCB.DataSource = classListNames;
+
+            // Event handler for class selection change
+            StudentListClassCB.SelectedIndexChanged += new EventHandler(StudentListClassCB_SelectedIndexChanged);
+            #endregion
+
         }
+        # region Student Listesini alır ve DataGridView e bağlar
+        private void StudentListClassCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (StudentListClassCB.SelectedValue != null)
+            {
+                // Seçilen sınıf adını alıyoruz
+                var selectedClassName = StudentListClassCB.SelectedItem.ToString();
+
+                using (var DB = new SchoolDBEntities1())
+                {
+                    // Seçilen sınıfın ID'sini alıyoruz
+                    var selectedClass = DB.CLASSes.FirstOrDefault(c => c.class_name == selectedClassName);
+
+                    if (selectedClass != null)
+                    {
+                        // Seçilen sınıf ID'sine göre öğrencileri yüklüyoruz
+                        var students = (from s in DB.STUDENTs
+                                        join d in DB.DISTRICTs on s.district_id equals d.Id
+                                        join c in DB.CITies on d.CITY_ID equals c.Id
+                                        join cl in DB.CLASSes on s.class_id equals cl.class_id
+                                        join p in DB.PARENTs on s.parent_id equals p.parent_id
+                                        where s.class_id == selectedClass.class_id
+                                        select new
+                                        {
+                                            s.student_firstname,
+                                            s.student_lastname,
+                                            s.student_birthdate,
+                                            s.student_gender,
+                                            s.student_adress,
+                                            s.student_balance,
+                                            CityName = c.CITYNAME,
+                                            DistrictName = d.DISTRICTNAME,
+                                            ClassName = cl.class_name,
+                                            ParentName = p.parent_fullname,
+                                            ParentEmail = p.parent_email,
+                                            s.student_schoolNo
+                                        }).ToList();
+                        StudentDataGridView.DataSource = students;
+                    
+                        if (StudentDataGridView.Columns.Count > 0)
+                        {
+                            //Başlıkların isimlerini değiştiriyorum
+                            StudentDataGridView.Columns["student_firstname"].HeaderText = "Ad";
+                            StudentDataGridView.Columns["student_lastname"].HeaderText = "Soyad";
+                            StudentDataGridView.Columns["student_schoolNo"].HeaderText = "Okul Numarası";
+                            StudentDataGridView.Columns["student_birthdate"].HeaderText = "Doğum Tarihi";
+                            StudentDataGridView.Columns["student_gender"].HeaderText = "Cinsiyet";
+                            StudentDataGridView.Columns["student_adress"].HeaderText = "Adres";
+                            StudentDataGridView.Columns["student_balance"].HeaderText = "Bakiye";
+                            StudentDataGridView.Columns["CityName"].HeaderText = "Şehir";
+                            StudentDataGridView.Columns["DistrictName"].HeaderText = "İlçe";
+                            StudentDataGridView.Columns["ClassName"].HeaderText = "Sınıf";
+                            StudentDataGridView.Columns["ParentName"].HeaderText = "Ebeveyn Adı";
+                            StudentDataGridView.Columns["ParentEmail"].HeaderText = "Ebeveyn Emaili";
+                        }
+                            // Öğrenci listesini DataGridView'a bağlıyoruz
+                            StudentDataGridView.DataSource = students;
+                    }
+                }
+            }
+        }
+        #endregion
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
@@ -196,10 +267,10 @@ namespace StudentInfo_App
                 student_adress = StudentAdressTB.Text,
                 student_birthdate = StudentBirthdayDTP.Value,
                 student_gender = StudentGenderCB.Text,
-                district_id = (StudentDistrictCB.SelectedIndex + 1 ),
+                district_id = (StudentDistrictCB.SelectedIndex + 1),
                 student_schoolNo = schoolNumber,
                 parent_id = savedParent.parent_id, // Parent ID'sini foreign key olarak ekle
-                class_id = (StudentClassCB.SelectedIndex +1)
+                class_id = (StudentClassCB.SelectedIndex + 1)
             };
 
             // Student nesnesini veritabanına ekle ve kaydet
@@ -234,11 +305,8 @@ namespace StudentInfo_App
             {
                 StudentDistrictCB.SelectedIndex = 0;
             }
-            #endregion 
+            #endregion
         }
 
-        
-
-        
     }
 }

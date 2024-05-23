@@ -77,14 +77,20 @@
             this.DateAndTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.StudentListPanel = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.StudentListClassCB = new System.Windows.Forms.ComboBox();
+            this.StudentListTitleLbl = new System.Windows.Forms.Label();
             this.StudentPanel = new System.Windows.Forms.Panel();
             this.StudentListBtn = new System.Windows.Forms.Button();
             this.StudentRegistrationBtn = new System.Windows.Forms.Button();
+            this.StudentDataGridView = new System.Windows.Forms.DataGridView();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
             this.StudentPanelRegistrationPanel.SuspendLayout();
+            this.StudentListPanel.SuspendLayout();
             this.StudentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuBar
@@ -587,10 +593,42 @@
             // StudentListPanel
             // 
             this.StudentListPanel.BackColor = System.Drawing.Color.DodgerBlue;
-            this.StudentListPanel.Location = new System.Drawing.Point(177, 45);
+            this.StudentListPanel.Controls.Add(this.StudentDataGridView);
+            this.StudentListPanel.Controls.Add(this.label5);
+            this.StudentListPanel.Controls.Add(this.StudentListClassCB);
+            this.StudentListPanel.Controls.Add(this.StudentListTitleLbl);
+            this.StudentListPanel.Location = new System.Drawing.Point(180, 47);
             this.StudentListPanel.Name = "StudentListPanel";
             this.StudentListPanel.Size = new System.Drawing.Size(696, 409);
             this.StudentListPanel.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(59, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 15);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Select Class : ";
+            // 
+            // StudentListClassCB
+            // 
+            this.StudentListClassCB.FormattingEnabled = true;
+            this.StudentListClassCB.Location = new System.Drawing.Point(148, 49);
+            this.StudentListClassCB.Name = "StudentListClassCB";
+            this.StudentListClassCB.Size = new System.Drawing.Size(121, 21);
+            this.StudentListClassCB.TabIndex = 1;
+            // 
+            // StudentListTitleLbl
+            // 
+            this.StudentListTitleLbl.AutoSize = true;
+            this.StudentListTitleLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentListTitleLbl.Location = new System.Drawing.Point(29, 12);
+            this.StudentListTitleLbl.Name = "StudentListTitleLbl";
+            this.StudentListTitleLbl.Size = new System.Drawing.Size(99, 26);
+            this.StudentListTitleLbl.TabIndex = 0;
+            this.StudentListTitleLbl.Text = "Students";
             // 
             // StudentPanel
             // 
@@ -622,18 +660,26 @@
             this.StudentRegistrationBtn.UseVisualStyleBackColor = true;
             this.StudentRegistrationBtn.Click += new System.EventHandler(this.MenuButton_Click);
             // 
+            // StudentDataGridView
+            // 
+            this.StudentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StudentDataGridView.Location = new System.Drawing.Point(0, 69);
+            this.StudentDataGridView.Name = "StudentDataGridView";
+            this.StudentDataGridView.Size = new System.Drawing.Size(696, 337);
+            this.StudentDataGridView.TabIndex = 3;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 484);
+            this.Controls.Add(this.StudentPanelRegistrationPanel);
             this.Controls.Add(this.StudentListPanel);
             this.Controls.Add(this.DateAndTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.StudentPanel);
-            this.Controls.Add(this.StudentPanelRegistrationPanel);
             this.Controls.Add(this.CanteenPanel);
             this.Controls.Add(this.AbscencePanel);
             this.Controls.Add(this.HomePanel);
@@ -648,7 +694,10 @@
             this.HomePanel.PerformLayout();
             this.StudentPanelRegistrationPanel.ResumeLayout(false);
             this.StudentPanelRegistrationPanel.PerformLayout();
+            this.StudentListPanel.ResumeLayout(false);
+            this.StudentListPanel.PerformLayout();
             this.StudentPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.StudentDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -706,5 +755,9 @@
         private System.Windows.Forms.Panel StudentPanel;
         private System.Windows.Forms.Button StudentListBtn;
         private System.Windows.Forms.Button StudentRegistrationBtn;
+        private System.Windows.Forms.Label StudentListTitleLbl;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox StudentListClassCB;
+        private System.Windows.Forms.DataGridView StudentDataGridView;
     }
 }
