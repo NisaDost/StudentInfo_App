@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OfficeOpenXml;
+using System.IO;
+using System.Linq;
 
 namespace StudentInfo_App
 {
@@ -33,7 +36,6 @@ namespace StudentInfo_App
         public Dashboard()
         {
             InitializeComponent();
-
 
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
@@ -389,6 +391,169 @@ namespace StudentInfo_App
                 MessageBox.Show("Öğrenci silinemedi. Lütfen önce arama yapınız.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             #endregion
+        }
+
+        private void FetchStudentButton_Click(object sender, EventArgs e)
+        {
+            #region öğrenci arama
+            int studentNumber;
+            if (int.TryParse(StudentNumber2TextBox.Text, out studentNumber))
+            {
+                using (var DB = new SchoolDBEntities1())
+                {
+                    var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == studentNumber);
+
+                    if (student != null)
+                    {
+                        StudentInfo2Label.Text = $"Adı: {student.student_firstname} {student.student_lastname}\n" +
+                                                $"Doğum Tarihi: {student.student_birthdate?.ToShortDateString() ?? "Bilinmiyor"}\n" +
+                                                $"Sınıf: {DB.CLASSes.FirstOrDefault(cl => cl.class_id == student.class_id)?.class_name}";
+
+                        var attendances = DB.ATTENDANCEs.Where(a => a.student_id == student.student_id)
+                                                        .Select(a => new { a.date })
+                                                        .ToList();
+                        AttendanceDataGridView.DataSource = attendances;
+                        //10 un üzerinde ise attandance si message box ile bildiri veriyor.
+                        int absenceLimit = 10;
+                        if (attendances.Count >= absenceLimit)
+                        {
+                            MessageBox.Show($"Öğrenci {absenceLimit} gün devamsızlık yapmıştır.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+
+                        var accessLogs = DB.ACCESS_LOG.Where(al => al.student_id == student.student_id)
+                                                      .Select(al => new { al.entry_time, al.exit_time })
+                                                      .ToList();
+                        AccessLogDataGridView.DataSource = accessLogs;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Öğrenci bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        StudentInfo2Label.Text = "";
+                        AttendanceDataGridView.DataSource = null;
+                        AccessLogDataGridView.DataSource = null;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Geçersiz öğrenci numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            #endregion 
+        }
+
+        private void FilterButton_Click(object sender, EventArgs e)
+        {
+            #region Tarih Filtreleme
+            int studentNumber;
+            if (int.TryParse(StudentNumber2TextBox.Text, out studentNumber))
+            {
+                using (var DB = new SchoolDBEntities1())
+                {
+                    var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == studentNumber);
+
+                    if (student != null)
+                    {
+                        DateTime startDate = StartDatePicker.Value;
+                        DateTime endDate = EndDatePicker.Value;
+
+                        // Devamsızlık kayıtlarını al
+                        var attendances = DB.ATTENDANCEs
+                            .Where(a => a.student_id == student.student_id && a.date >= startDate && a.date <= endDate)
+                            .Select(a => new { Tarih = a.date, Durum = "Yok" }) // Devamsızlık varsa "Yok" yaz
+                            .ToList();
+                        AttendanceDataGridView.DataSource = attendances;
+
+                        // Access Log kayıtlarını al
+                        var accessLogs = DB.ACCESS_LOG
+                            .Where(al => al.student_id == student.student_id && al.entry_time >= startDate && al.entry_time <= endDate)
+                            .Select(al => new { Giriş = al.entry_time, Çıkış = al.exit_time })
+                            .ToList();
+                        AccessLogDataGridView.DataSource = accessLogs;
+
+                        // Öğrenci bilgisini göster
+                        StudentInfoLabel.Text = $"Öğrenci Adı: {student.student_firstname} {student.student_lastname}\n" +
+                                                $"Okul Numarası: {student.student_schoolNo}";
+
+                        // Veri tablolarının başlıklarını güncelle
+                        AttendanceDataGridView.Columns[0].HeaderText = "Date";
+                        AttendanceDataGridView.Columns[1].HeaderText = "Status";
+                        AccessLogDataGridView.Columns[0].HeaderText = "Entry";
+                        AccessLogDataGridView.Columns[1].HeaderText = "Exit";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Öğrenci bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        StudentInfoLabel.Text = "";
+                        AttendanceDataGridView.DataSource = null;
+                        AccessLogDataGridView.DataSource = null;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Geçersiz öğrenci numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            #endregion
+        }
+
+        private void ExportButton_Click(object sender, EventArgs e)
+        {
+            #region Excel dosyasına döküyor
+            var attendanceData = AttendanceDataGridView.DataSource as List<dynamic>;
+            var accessLogData = AccessLogDataGridView.DataSource as List<dynamic>;
+
+            if (attendanceData != null && accessLogData != null)
+            {
+                if (attendanceData.Count > 0 && accessLogData.Count > 0)
+                {
+                    using (var package = new ExcelPackage())
+                    {
+                        // Create Attendance sheet
+                        var attendanceSheet = package.Workbook.Worksheets.Add("Attendance");
+                        attendanceSheet.Cells[1, 1].Value = "Date";
+
+                        for (int i = 0; i < attendanceData.Count; i++)
+                        {
+                            attendanceSheet.Cells[i + 2, 1].Value = attendanceData[i].date;
+                        }
+
+                        // Create Access Log sheet
+                        var accessLogSheet = package.Workbook.Worksheets.Add("Access Log");
+                        accessLogSheet.Cells[1, 1].Value = "Entry Time";
+                        accessLogSheet.Cells[1, 2].Value = "Exit Time";
+
+                        for (int i = 0; i < accessLogData.Count; i++)
+                        {
+                            accessLogSheet.Cells[i + 2, 1].Value = accessLogData[i].entry_time;
+                            accessLogSheet.Cells[i + 2, 2].Value = accessLogData[i].exit_time;
+                        }
+
+                        // Save the file
+                        var saveFileDialog = new SaveFileDialog
+                        {
+                            Filter = "Excel files (*.xlsx)|*.xlsx",
+                            FileName = "Export.xlsx"
+                        };
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            FileInfo fileInfo = new FileInfo(saveFileDialog.FileName);
+                            package.SaveAs(fileInfo);
+                            MessageBox.Show("Data has been successfully exported to Excel.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No data to export.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No data to export.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            #endregion
+
         }
     }
 }

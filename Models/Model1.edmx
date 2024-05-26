@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="log_id" />
           </Key>
-          <Property Name="log_id" Type="int" Nullable="false" />
+          <Property Name="log_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="student_id" Type="int" />
           <Property Name="entry_time" Type="datetime" />
           <Property Name="exit_time" Type="datetime" />
@@ -27,7 +27,7 @@
           <Key>
             <PropertyRef Name="attendence_id" />
           </Key>
-          <Property Name="attendence_id" Type="int" Nullable="false" />
+          <Property Name="attendence_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="student_id" Type="int" />
           <Property Name="date" Type="date" />
         </EntityType>
