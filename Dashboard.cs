@@ -348,7 +348,7 @@ namespace StudentInfo_App
         private void DeleteStudentButton_Click(object sender, EventArgs e)
         {
             #region Öğrenci silme
-            //biz parent ı student a student ı parent  relation kurduğumuz için önce parent ı silmemiz gerekiyor.
+            // biz parent ı student a student ı parent relation kurduğumuz için önce parent ı silmemiz gerekiyor.
             if (currentStudent != null)
             {
                 using (var DB = new SchoolDBEntities1())
@@ -358,6 +358,28 @@ namespace StudentInfo_App
 
                     if (studentToDelete != null)
                     {
+                        // Önce ilgili ATTENDANCE kayıtlarını sil veya güncelle
+                        var attendanceRecordsToUpdate = DB.ATTENDANCEs.Where(a => a.student_id == studentToDelete.student_id).ToList();
+                        foreach (var record in attendanceRecordsToUpdate)
+                        {
+                            // Ya silme
+                            // DB.ATTENDANCEs.Remove(record);
+
+                            // Ya da null yapma
+                            record.student_id = null;
+                        }
+
+                        // Önce ilgili ACCESS_LOG kayıtlarını sil veya güncelle
+                        var accessLogRecordsToUpdate = DB.ACCESS_LOG.Where(a => a.student_id == studentToDelete.student_id).ToList();
+                        foreach (var record in accessLogRecordsToUpdate)
+                        {
+                            // Ya silme
+                            // DB.ACCESS_LOGs.Remove(record);
+
+                            // Ya da null yapma
+                            record.student_id = null;
+                        }
+
                         // Önce ilgili parent kayıtlarının student_id alanını null yap
                         var parentsToUpdate = DB.PARENTs.Where(p => p.student_id == studentToDelete.student_id).ToList();
                         foreach (var parent in parentsToUpdate)
