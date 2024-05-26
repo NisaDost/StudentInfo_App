@@ -41,6 +41,7 @@ namespace StudentInfo_App
             buttonPanelMap.Add("AbscenceButton", AbscencePanel);
             buttonPanelMap.Add("StudentRegistrationBtn", StudentPanelRegistrationPanel);
             buttonPanelMap.Add("StudentListBtn", StudentListPanel);
+            buttonPanelMap.Add("StudentDeleteBtn", StudentDeletePanel);
 
             ShowPanel(HomePanel);
 
@@ -153,7 +154,7 @@ namespace StudentInfo_App
                                             s.student_schoolNo
                                         }).ToList();
                         StudentDataGridView.DataSource = students;
-                    
+
                         if (StudentDataGridView.Columns.Count > 0)
                         {
                             //Başlıkların isimlerini değiştiriyorum
@@ -170,8 +171,8 @@ namespace StudentInfo_App
                             StudentDataGridView.Columns["ParentName"].HeaderText = "Ebeveyn Adı";
                             StudentDataGridView.Columns["ParentEmail"].HeaderText = "Ebeveyn Emaili";
                         }
-                            // Öğrenci listesini DataGridView'a bağlıyoruz
-                            StudentDataGridView.DataSource = students;
+                        // Öğrenci listesini DataGridView'a bağlıyoruz
+                        StudentDataGridView.DataSource = students;
                     }
                 }
             }
@@ -311,5 +312,83 @@ namespace StudentInfo_App
             #endregion
         }
 
+        private STUDENT currentStudent;
+        private void SearchStudentButton_Click(object sender, EventArgs e)
+        {
+            #region Öğrenci arama 
+            var DB = new SchoolDBEntities1();
+            int studentNumber;
+            if (int.TryParse(StudentNumberTextBox.Text, out studentNumber))
+            {
+                currentStudent = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == studentNumber);
+                if (currentStudent != null)
+                {
+                    string birthdate = currentStudent.student_birthdate.HasValue ? currentStudent.student_birthdate.Value.ToShortDateString() : "Bilinmiyor";
+                    StudentInfoLabel2.Text = $"Adı Soyadı: {currentStudent.student_firstname} {currentStudent.student_lastname}\n" +
+                                            $"Doğum Tarihi: {birthdate}\n" +
+                                            $"Sınıf: {DB.CLASSes.FirstOrDefault(cl => cl.class_id == currentStudent.class_id)?.class_name}";
+                    DeleteStudentButton.Enabled = true; // Silme butonunu etkinleştir
+                }
+                else
+                {
+                    StudentInfoLabel2.Text = "Öğrenci bulunamadı.";
+                    DeleteStudentButton.Enabled = false; // Silme butonunu devre dışı bırak
+                }
+            }
+            else
+            {
+                MessageBox.Show("Geçerli bir öğrenci numarası giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            #endregion
+
+        }
+
+        private void DeleteStudentButton_Click(object sender, EventArgs e)
+        {
+            #region Öğrenci silme
+            //biz parent ı student a student ı parent  relation kurduğumuz için önce parent ı silmemiz gerekiyor.
+            if (currentStudent != null)
+            {
+                using (var DB = new SchoolDBEntities1())
+                {
+                    // Öğrenci kaydını bul
+                    var studentToDelete = DB.STUDENTs.FirstOrDefault(s => s.student_id == currentStudent.student_id);
+
+                    if (studentToDelete != null)
+                    {
+                        // Önce ilgili parent kayıtlarının student_id alanını null yap
+                        var parentsToUpdate = DB.PARENTs.Where(p => p.student_id == studentToDelete.student_id).ToList();
+                        foreach (var parent in parentsToUpdate)
+                        {
+                            parent.student_id = null;
+                        }
+
+                        // Değişiklikleri kaydet
+                        DB.SaveChanges();
+
+                        // Şimdi öğrenci kaydını sil
+                        DB.STUDENTs.Remove(studentToDelete);
+                        DB.SaveChanges();
+
+                        MessageBox.Show("Öğrenci ve ilgili parent kayıtları başarıyla silindi.", "Silme Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // UI elemanlarını sıfırla
+                        StudentNumberTextBox.Clear();
+                        StudentInfoLabel2.Text = "";
+                        DeleteStudentButton.Enabled = false;
+                        currentStudent = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Öğrenci bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Öğrenci silinemedi. Lütfen önce arama yapınız.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            #endregion
+        }
     }
 }

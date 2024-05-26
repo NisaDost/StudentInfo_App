@@ -77,20 +77,33 @@
             this.DateAndTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.StudentListPanel = new System.Windows.Forms.Panel();
+            this.StudentDataGridView = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.StudentListClassCB = new System.Windows.Forms.ComboBox();
             this.StudentListTitleLbl = new System.Windows.Forms.Label();
             this.StudentPanel = new System.Windows.Forms.Panel();
+            this.StudentDeleteBtn = new System.Windows.Forms.Button();
             this.StudentListBtn = new System.Windows.Forms.Button();
             this.StudentRegistrationBtn = new System.Windows.Forms.Button();
-            this.StudentDataGridView = new System.Windows.Forms.DataGridView();
+            this.StudentDeletePanel = new System.Windows.Forms.Panel();
+            this.InformationLbl2 = new System.Windows.Forms.Label();
+            this.informationLbl = new System.Windows.Forms.Label();
+            this.StudentInfoLabel2 = new System.Windows.Forms.Label();
+            this.DeleteStudentButton = new System.Windows.Forms.Button();
+            this.StudentInfoHeaderLbl = new System.Windows.Forms.Label();
+            this.SearchStudentButton = new System.Windows.Forms.Button();
+            this.EnterSchoolNumberLbl = new System.Windows.Forms.Label();
+            this.StudentDeleteHeaderLbl = new System.Windows.Forms.Label();
+            this.StudentNumberTextBox = new System.Windows.Forms.TextBox();
+            this.StudentInfoLabel = new System.Windows.Forms.Label();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
             this.StudentPanelRegistrationPanel.SuspendLayout();
             this.StudentListPanel.SuspendLayout();
-            this.StudentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StudentDataGridView)).BeginInit();
+            this.StudentPanel.SuspendLayout();
+            this.StudentDeletePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBar
@@ -602,6 +615,14 @@
             this.StudentListPanel.Size = new System.Drawing.Size(696, 409);
             this.StudentListPanel.TabIndex = 1;
             // 
+            // StudentDataGridView
+            // 
+            this.StudentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StudentDataGridView.Location = new System.Drawing.Point(0, 69);
+            this.StudentDataGridView.Name = "StudentDataGridView";
+            this.StudentDataGridView.Size = new System.Drawing.Size(696, 337);
+            this.StudentDataGridView.TabIndex = 3;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -633,6 +654,7 @@
             // StudentPanel
             // 
             this.StudentPanel.BackColor = System.Drawing.Color.OliveDrab;
+            this.StudentPanel.Controls.Add(this.StudentDeleteBtn);
             this.StudentPanel.Controls.Add(this.StudentListBtn);
             this.StudentPanel.Controls.Add(this.StudentRegistrationBtn);
             this.StudentPanel.Location = new System.Drawing.Point(224, 47);
@@ -640,9 +662,19 @@
             this.StudentPanel.Size = new System.Drawing.Size(591, 318);
             this.StudentPanel.TabIndex = 17;
             // 
+            // StudentDeleteBtn
+            // 
+            this.StudentDeleteBtn.Location = new System.Drawing.Point(195, 162);
+            this.StudentDeleteBtn.Name = "StudentDeleteBtn";
+            this.StudentDeleteBtn.Size = new System.Drawing.Size(198, 38);
+            this.StudentDeleteBtn.TabIndex = 0;
+            this.StudentDeleteBtn.Text = "Delete Student";
+            this.StudentDeleteBtn.UseVisualStyleBackColor = true;
+            this.StudentDeleteBtn.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
             // StudentListBtn
             // 
-            this.StudentListBtn.Location = new System.Drawing.Point(195, 145);
+            this.StudentListBtn.Location = new System.Drawing.Point(195, 111);
             this.StudentListBtn.Name = "StudentListBtn";
             this.StudentListBtn.Size = new System.Drawing.Size(198, 38);
             this.StudentListBtn.TabIndex = 0;
@@ -652,7 +684,7 @@
             // 
             // StudentRegistrationBtn
             // 
-            this.StudentRegistrationBtn.Location = new System.Drawing.Point(195, 92);
+            this.StudentRegistrationBtn.Location = new System.Drawing.Point(195, 64);
             this.StudentRegistrationBtn.Name = "StudentRegistrationBtn";
             this.StudentRegistrationBtn.Size = new System.Drawing.Size(198, 38);
             this.StudentRegistrationBtn.TabIndex = 0;
@@ -660,29 +692,137 @@
             this.StudentRegistrationBtn.UseVisualStyleBackColor = true;
             this.StudentRegistrationBtn.Click += new System.EventHandler(this.MenuButton_Click);
             // 
-            // StudentDataGridView
+            // StudentDeletePanel
             // 
-            this.StudentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.StudentDataGridView.Location = new System.Drawing.Point(0, 69);
-            this.StudentDataGridView.Name = "StudentDataGridView";
-            this.StudentDataGridView.Size = new System.Drawing.Size(696, 337);
-            this.StudentDataGridView.TabIndex = 3;
+            this.StudentDeletePanel.BackColor = System.Drawing.Color.Magenta;
+            this.StudentDeletePanel.Controls.Add(this.InformationLbl2);
+            this.StudentDeletePanel.Controls.Add(this.informationLbl);
+            this.StudentDeletePanel.Controls.Add(this.StudentInfoLabel2);
+            this.StudentDeletePanel.Controls.Add(this.DeleteStudentButton);
+            this.StudentDeletePanel.Controls.Add(this.StudentInfoHeaderLbl);
+            this.StudentDeletePanel.Controls.Add(this.SearchStudentButton);
+            this.StudentDeletePanel.Controls.Add(this.EnterSchoolNumberLbl);
+            this.StudentDeletePanel.Controls.Add(this.StudentDeleteHeaderLbl);
+            this.StudentDeletePanel.Controls.Add(this.StudentNumberTextBox);
+            this.StudentDeletePanel.Location = new System.Drawing.Point(192, 12);
+            this.StudentDeletePanel.Name = "StudentDeletePanel";
+            this.StudentDeletePanel.Size = new System.Drawing.Size(651, 395);
+            this.StudentDeletePanel.TabIndex = 18;
+            // 
+            // InformationLbl2
+            // 
+            this.InformationLbl2.AutoSize = true;
+            this.InformationLbl2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.InformationLbl2.Location = new System.Drawing.Point(78, 356);
+            this.InformationLbl2.Name = "InformationLbl2";
+            this.InformationLbl2.Size = new System.Drawing.Size(89, 16);
+            this.InformationLbl2.TabIndex = 9;
+            this.InformationLbl2.Text = "Information : ";
+            // 
+            // informationLbl
+            // 
+            this.informationLbl.AutoSize = true;
+            this.informationLbl.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.informationLbl.Location = new System.Drawing.Point(168, 358);
+            this.informationLbl.Name = "informationLbl";
+            this.informationLbl.Size = new System.Drawing.Size(373, 15);
+            this.informationLbl.TabIndex = 8;
+            this.informationLbl.Text = "Associated parent records are also deleted when deleting a student.";
+            // 
+            // StudentInfoLabel2
+            // 
+            this.StudentInfoLabel2.AutoSize = true;
+            this.StudentInfoLabel2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentInfoLabel2.Location = new System.Drawing.Point(241, 140);
+            this.StudentInfoLabel2.Name = "StudentInfoLabel2";
+            this.StudentInfoLabel2.Size = new System.Drawing.Size(16, 16);
+            this.StudentInfoLabel2.TabIndex = 7;
+            this.StudentInfoLabel2.Text = "A";
+            // 
+            // DeleteStudentButton
+            // 
+            this.DeleteStudentButton.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteStudentButton.Location = new System.Drawing.Point(347, 205);
+            this.DeleteStudentButton.Name = "DeleteStudentButton";
+            this.DeleteStudentButton.Size = new System.Drawing.Size(107, 23);
+            this.DeleteStudentButton.TabIndex = 6;
+            this.DeleteStudentButton.Text = "Delete Student";
+            this.DeleteStudentButton.UseVisualStyleBackColor = true;
+            this.DeleteStudentButton.Click += new System.EventHandler(this.DeleteStudentButton_Click);
+            // 
+            // StudentInfoHeaderLbl
+            // 
+            this.StudentInfoHeaderLbl.AutoSize = true;
+            this.StudentInfoHeaderLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentInfoHeaderLbl.Location = new System.Drawing.Point(91, 140);
+            this.StudentInfoHeaderLbl.Name = "StudentInfoHeaderLbl";
+            this.StudentInfoHeaderLbl.Size = new System.Drawing.Size(140, 16);
+            this.StudentInfoHeaderLbl.TabIndex = 4;
+            this.StudentInfoHeaderLbl.Text = "Student Information : ";
+            // 
+            // SearchStudentButton
+            // 
+            this.SearchStudentButton.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.SearchStudentButton.Location = new System.Drawing.Point(348, 104);
+            this.SearchStudentButton.Name = "SearchStudentButton";
+            this.SearchStudentButton.Size = new System.Drawing.Size(75, 23);
+            this.SearchStudentButton.TabIndex = 3;
+            this.SearchStudentButton.Text = "Search";
+            this.SearchStudentButton.UseVisualStyleBackColor = true;
+            this.SearchStudentButton.Click += new System.EventHandler(this.SearchStudentButton_Click);
+            // 
+            // EnterSchoolNumberLbl
+            // 
+            this.EnterSchoolNumberLbl.AutoSize = true;
+            this.EnterSchoolNumberLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.EnterSchoolNumberLbl.Location = new System.Drawing.Point(92, 107);
+            this.EnterSchoolNumberLbl.Name = "EnterSchoolNumberLbl";
+            this.EnterSchoolNumberLbl.Size = new System.Drawing.Size(144, 16);
+            this.EnterSchoolNumberLbl.TabIndex = 2;
+            this.EnterSchoolNumberLbl.Text = "Enter School Number :";
+            // 
+            // StudentDeleteHeaderLbl
+            // 
+            this.StudentDeleteHeaderLbl.AutoSize = true;
+            this.StudentDeleteHeaderLbl.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentDeleteHeaderLbl.Location = new System.Drawing.Point(53, 32);
+            this.StudentDeleteHeaderLbl.Name = "StudentDeleteHeaderLbl";
+            this.StudentDeleteHeaderLbl.Size = new System.Drawing.Size(178, 29);
+            this.StudentDeleteHeaderLbl.TabIndex = 1;
+            this.StudentDeleteHeaderLbl.Text = "Delete Student";
+            // 
+            // StudentNumberTextBox
+            // 
+            this.StudentNumberTextBox.Location = new System.Drawing.Point(242, 106);
+            this.StudentNumberTextBox.Name = "StudentNumberTextBox";
+            this.StudentNumberTextBox.Size = new System.Drawing.Size(100, 20);
+            this.StudentNumberTextBox.TabIndex = 0;
+            // 
+            // StudentInfoLabel
+            // 
+            this.StudentInfoLabel.AutoSize = true;
+            this.StudentInfoLabel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentInfoLabel.Location = new System.Drawing.Point(239, 143);
+            this.StudentInfoLabel.Name = "StudentInfoLabel";
+            this.StudentInfoLabel.Size = new System.Drawing.Size(0, 16);
+            this.StudentInfoLabel.TabIndex = 5;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 484);
-            this.Controls.Add(this.StudentPanelRegistrationPanel);
-            this.Controls.Add(this.StudentListPanel);
+            this.Controls.Add(this.StudentDeletePanel);
+            this.Controls.Add(this.StudentPanel);
             this.Controls.Add(this.DateAndTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.MenuBar);
-            this.Controls.Add(this.StudentPanel);
             this.Controls.Add(this.CanteenPanel);
             this.Controls.Add(this.AbscencePanel);
             this.Controls.Add(this.HomePanel);
+            this.Controls.Add(this.StudentPanelRegistrationPanel);
+            this.Controls.Add(this.StudentListPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
@@ -696,8 +836,10 @@
             this.StudentPanelRegistrationPanel.PerformLayout();
             this.StudentListPanel.ResumeLayout(false);
             this.StudentListPanel.PerformLayout();
-            this.StudentPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.StudentDataGridView)).EndInit();
+            this.StudentPanel.ResumeLayout(false);
+            this.StudentDeletePanel.ResumeLayout(false);
+            this.StudentDeletePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -759,5 +901,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox StudentListClassCB;
         private System.Windows.Forms.DataGridView StudentDataGridView;
+        private System.Windows.Forms.Button StudentDeleteBtn;
+        private System.Windows.Forms.Panel StudentDeletePanel;
+        private System.Windows.Forms.Button SearchStudentButton;
+        private System.Windows.Forms.Label EnterSchoolNumberLbl;
+        private System.Windows.Forms.Label StudentDeleteHeaderLbl;
+        private System.Windows.Forms.TextBox StudentNumberTextBox;
+        private System.Windows.Forms.Button DeleteStudentButton;
+        private System.Windows.Forms.Label StudentInfoLabel;
+        private System.Windows.Forms.Label StudentInfoHeaderLbl;
+        private System.Windows.Forms.Label StudentInfoLabel2;
+        private System.Windows.Forms.Label InformationLbl2;
+        private System.Windows.Forms.Label informationLbl;
     }
 }
