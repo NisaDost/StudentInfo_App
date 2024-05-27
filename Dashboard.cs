@@ -44,6 +44,8 @@ namespace StudentInfo_App
             buttonPanelMap.Add("StudentRegistrationBtn", StudentPanelRegistrationPanel);
             buttonPanelMap.Add("StudentListBtn", StudentListPanel);
             buttonPanelMap.Add("StudentDeleteBtn", StudentDeletePanel);
+            buttonPanelMap.Add("StudentAbsenceAttandanceBtn",AbscenceInfoPanel);
+            buttonPanelMap.Add("StudentEntryAttandanceBtn", StudentAttandanceEntryPanel);
 
             ShowPanel(HomePanel);
 
@@ -118,9 +120,10 @@ namespace StudentInfo_App
             #endregion
 
         }
-        # region Student Listesini alır ve DataGridView e bağlar
+        
         private void StudentListClassCB_SelectedIndexChanged(object sender, EventArgs e)
         {
+            # region Student Listesini alır ve DataGridView e bağlar
             if (StudentListClassCB.SelectedValue != null)
             {
                 // Seçilen sınıf adını alıyoruz
@@ -178,8 +181,8 @@ namespace StudentInfo_App
                     }
                 }
             }
+            #endregion
         }
-        #endregion
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
