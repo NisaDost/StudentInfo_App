@@ -112,11 +112,17 @@
             this.StudentNumberTextBox = new System.Windows.Forms.TextBox();
             this.StudentInfoLabel = new System.Windows.Forms.Label();
             this.AbscencePanel = new System.Windows.Forms.Panel();
-            this.StudentAbsenceAttandanceBtn = new System.Windows.Forms.Button();
             this.StudentEntryAttandanceBtn = new System.Windows.Forms.Button();
+            this.StudentAbsenceAttandanceBtn = new System.Windows.Forms.Button();
             this.StudentAttandanceEntryPanel = new System.Windows.Forms.Panel();
-            this.StudentAbsenceEntryHeaderLbl = new System.Windows.Forms.Label();
             this.StudentNumberAbscenceLbl = new System.Windows.Forms.Label();
+            this.StudentAbsenceEntryHeaderLbl = new System.Windows.Forms.Label();
+            this.StudentNumber3TB = new System.Windows.Forms.TextBox();
+            this.StudentSearchBtn = new System.Windows.Forms.Button();
+            this.StudentInfo3Label = new System.Windows.Forms.Label();
+            this.StudentSelectDateLbl = new System.Windows.Forms.Label();
+            this.AttendanceDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.AddAttendanceButton = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -997,16 +1003,6 @@
             this.AbscencePanel.Size = new System.Drawing.Size(664, 377);
             this.AbscencePanel.TabIndex = 19;
             // 
-            // StudentAbsenceAttandanceBtn
-            // 
-            this.StudentAbsenceAttandanceBtn.Location = new System.Drawing.Point(219, 141);
-            this.StudentAbsenceAttandanceBtn.Name = "StudentAbsenceAttandanceBtn";
-            this.StudentAbsenceAttandanceBtn.Size = new System.Drawing.Size(198, 38);
-            this.StudentAbsenceAttandanceBtn.TabIndex = 1;
-            this.StudentAbsenceAttandanceBtn.Text = "Student Abscence and Attandance ";
-            this.StudentAbsenceAttandanceBtn.UseVisualStyleBackColor = true;
-            this.StudentAbsenceAttandanceBtn.Click += new System.EventHandler(this.MenuButton_Click);
-            // 
             // StudentEntryAttandanceBtn
             // 
             this.StudentEntryAttandanceBtn.Location = new System.Drawing.Point(219, 207);
@@ -1017,15 +1013,41 @@
             this.StudentEntryAttandanceBtn.UseVisualStyleBackColor = true;
             this.StudentEntryAttandanceBtn.Click += new System.EventHandler(this.MenuButton_Click);
             // 
+            // StudentAbsenceAttandanceBtn
+            // 
+            this.StudentAbsenceAttandanceBtn.Location = new System.Drawing.Point(219, 141);
+            this.StudentAbsenceAttandanceBtn.Name = "StudentAbsenceAttandanceBtn";
+            this.StudentAbsenceAttandanceBtn.Size = new System.Drawing.Size(198, 38);
+            this.StudentAbsenceAttandanceBtn.TabIndex = 1;
+            this.StudentAbsenceAttandanceBtn.Text = "Student Abscence and Attandance ";
+            this.StudentAbsenceAttandanceBtn.UseVisualStyleBackColor = true;
+            this.StudentAbsenceAttandanceBtn.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
             // StudentAttandanceEntryPanel
             // 
             this.StudentAttandanceEntryPanel.BackColor = System.Drawing.Color.Lime;
+            this.StudentAttandanceEntryPanel.Controls.Add(this.AddAttendanceButton);
+            this.StudentAttandanceEntryPanel.Controls.Add(this.AttendanceDatePicker);
+            this.StudentAttandanceEntryPanel.Controls.Add(this.StudentSelectDateLbl);
+            this.StudentAttandanceEntryPanel.Controls.Add(this.StudentInfo3Label);
+            this.StudentAttandanceEntryPanel.Controls.Add(this.StudentSearchBtn);
+            this.StudentAttandanceEntryPanel.Controls.Add(this.StudentNumber3TB);
             this.StudentAttandanceEntryPanel.Controls.Add(this.StudentNumberAbscenceLbl);
             this.StudentAttandanceEntryPanel.Controls.Add(this.StudentAbsenceEntryHeaderLbl);
             this.StudentAttandanceEntryPanel.Location = new System.Drawing.Point(177, 34);
             this.StudentAttandanceEntryPanel.Name = "StudentAttandanceEntryPanel";
             this.StudentAttandanceEntryPanel.Size = new System.Drawing.Size(713, 428);
             this.StudentAttandanceEntryPanel.TabIndex = 20;
+            // 
+            // StudentNumberAbscenceLbl
+            // 
+            this.StudentNumberAbscenceLbl.AutoSize = true;
+            this.StudentNumberAbscenceLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentNumberAbscenceLbl.Location = new System.Drawing.Point(44, 77);
+            this.StudentNumberAbscenceLbl.Name = "StudentNumberAbscenceLbl";
+            this.StudentNumberAbscenceLbl.Size = new System.Drawing.Size(118, 16);
+            this.StudentNumberAbscenceLbl.TabIndex = 0;
+            this.StudentNumberAbscenceLbl.Text = "Student Number : ";
             // 
             // StudentAbsenceEntryHeaderLbl
             // 
@@ -1037,15 +1059,61 @@
             this.StudentAbsenceEntryHeaderLbl.TabIndex = 0;
             this.StudentAbsenceEntryHeaderLbl.Text = "Student Attandance";
             // 
-            // StudentNumberAbscenceLbl
+            // StudentNumber3TB
             // 
-            this.StudentNumberAbscenceLbl.AutoSize = true;
-            this.StudentNumberAbscenceLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentNumberAbscenceLbl.Location = new System.Drawing.Point(44, 77);
-            this.StudentNumberAbscenceLbl.Name = "StudentNumberAbscenceLbl";
-            this.StudentNumberAbscenceLbl.Size = new System.Drawing.Size(118, 16);
-            this.StudentNumberAbscenceLbl.TabIndex = 0;
-            this.StudentNumberAbscenceLbl.Text = "Student Number : ";
+            this.StudentNumber3TB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentNumber3TB.Location = new System.Drawing.Point(165, 74);
+            this.StudentNumber3TB.Name = "StudentNumber3TB";
+            this.StudentNumber3TB.Size = new System.Drawing.Size(100, 22);
+            this.StudentNumber3TB.TabIndex = 1;
+            // 
+            // StudentSearchBtn
+            // 
+            this.StudentSearchBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentSearchBtn.Location = new System.Drawing.Point(291, 73);
+            this.StudentSearchBtn.Name = "StudentSearchBtn";
+            this.StudentSearchBtn.Size = new System.Drawing.Size(75, 23);
+            this.StudentSearchBtn.TabIndex = 2;
+            this.StudentSearchBtn.Text = "Search";
+            this.StudentSearchBtn.UseVisualStyleBackColor = true;
+            this.StudentSearchBtn.Click += new System.EventHandler(this.StudentSearchBtn_Click);
+            // 
+            // StudentInfo3Label
+            // 
+            this.StudentInfo3Label.AutoSize = true;
+            this.StudentInfo3Label.Location = new System.Drawing.Point(403, 78);
+            this.StudentInfo3Label.Name = "StudentInfo3Label";
+            this.StudentInfo3Label.Size = new System.Drawing.Size(14, 13);
+            this.StudentInfo3Label.TabIndex = 3;
+            this.StudentInfo3Label.Text = "A";
+            // 
+            // StudentSelectDateLbl
+            // 
+            this.StudentSelectDateLbl.AutoSize = true;
+            this.StudentSelectDateLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentSelectDateLbl.Location = new System.Drawing.Point(44, 128);
+            this.StudentSelectDateLbl.Name = "StudentSelectDateLbl";
+            this.StudentSelectDateLbl.Size = new System.Drawing.Size(81, 16);
+            this.StudentSelectDateLbl.TabIndex = 4;
+            this.StudentSelectDateLbl.Text = "Selcet Date :";
+            // 
+            // AttendanceDatePicker
+            // 
+            this.AttendanceDatePicker.Location = new System.Drawing.Point(165, 125);
+            this.AttendanceDatePicker.Name = "AttendanceDatePicker";
+            this.AttendanceDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.AttendanceDatePicker.TabIndex = 5;
+            // 
+            // AddAttendanceButton
+            // 
+            this.AddAttendanceButton.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AddAttendanceButton.Location = new System.Drawing.Point(406, 124);
+            this.AddAttendanceButton.Name = "AddAttendanceButton";
+            this.AddAttendanceButton.Size = new System.Drawing.Size(121, 23);
+            this.AddAttendanceButton.TabIndex = 6;
+            this.AddAttendanceButton.Text = "Add Attandance";
+            this.AddAttendanceButton.UseVisualStyleBackColor = true;
+            this.AddAttendanceButton.Click += new System.EventHandler(this.AddAttendanceButton_Click);
             // 
             // Dashboard
             // 
@@ -1183,5 +1251,11 @@
         private System.Windows.Forms.Panel StudentAttandanceEntryPanel;
         private System.Windows.Forms.Label StudentNumberAbscenceLbl;
         private System.Windows.Forms.Label StudentAbsenceEntryHeaderLbl;
+        private System.Windows.Forms.TextBox StudentNumber3TB;
+        private System.Windows.Forms.Button StudentSearchBtn;
+        private System.Windows.Forms.Label StudentInfo3Label;
+        private System.Windows.Forms.DateTimePicker AttendanceDatePicker;
+        private System.Windows.Forms.Label StudentSelectDateLbl;
+        private System.Windows.Forms.Button AddAttendanceButton;
     }
 }

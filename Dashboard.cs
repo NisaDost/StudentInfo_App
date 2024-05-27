@@ -347,7 +347,6 @@ namespace StudentInfo_App
             #endregion
 
         }
-
         private void DeleteStudentButton_Click(object sender, EventArgs e)
         {
             #region Öğrenci silme
@@ -418,6 +417,7 @@ namespace StudentInfo_App
             #endregion
         }
 
+        #region Öğrenci Absence ve Attandance Gösterilme paneli
         private void FetchStudentButton_Click(object sender, EventArgs e)
         {
             #region öğrenci arama
@@ -439,10 +439,10 @@ namespace StudentInfo_App
                                                         .ToList();
                         AttendanceDataGridView.DataSource = attendances;
                         //10 un üzerinde ise attandance si message box ile bildiri veriyor.
-                        int absenceLimit = 10;
-                        if (attendances.Count >= absenceLimit)
+                        int attandancelimit = 10;
+                        if (attendances.Count >= attandancelimit)
                         {
-                            MessageBox.Show($"Öğrenci {absenceLimit} gün devamsızlık yapmıştır.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show($"Öğrenci {attandancelimit} gün devamsızlık yapmıştır.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
 
                         var accessLogs = DB.ACCESS_LOG.Where(al => al.student_id == student.student_id)
@@ -580,5 +580,108 @@ namespace StudentInfo_App
             #endregion
 
         }
+        #endregion
+
+        #region Devamsızlık ekleme paneli
+        private void StudentSearchBtn_Click(object sender, EventArgs e)
+        {
+            #region Öğrenci arama
+            int studentNumber;
+            if (int.TryParse(StudentNumber3TB.Text, out studentNumber))
+            {
+                using (var DB = new SchoolDBEntities1())
+                {
+                    var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == studentNumber);
+
+                    if (student != null)
+                    {
+                        StudentInfo3Label.Text = $"Adı: {student.student_firstname} {student.student_lastname}\n" +
+                                                $"Doğum Tarihi: {student.student_birthdate?.ToShortDateString() ?? "Bilinmiyor"}\n" +
+                                                $"Sınıf: {DB.CLASSes.FirstOrDefault(cl => cl.class_id == student.class_id)?.class_name}";
+
+                        var attendances = DB.ATTENDANCEs.Where(a => a.student_id == student.student_id)
+                                                        .Select(a => new { a.date })
+                                                        .ToList();
+                        AttendanceDataGridView.DataSource = attendances;
+                        //10 un üzerinde ise attandance si message box ile bildiri veriyor.
+                        int attandancelimit = 10;
+                        if (attendances.Count >= attandancelimit)
+                        {
+                            MessageBox.Show($"Öğrenci {attandancelimit} gün devamsızlık yapmıştır.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+
+                        var accessLogs = DB.ACCESS_LOG.Where(al => al.student_id == student.student_id)
+                                                      .Select(al => new { al.entry_time, al.exit_time })
+                                                      .ToList();
+                        AccessLogDataGridView.DataSource = accessLogs;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Öğrenci bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        StudentInfo3Label.Text = "";
+                        AttendanceDataGridView.DataSource = null;
+                        AccessLogDataGridView.DataSource = null;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Geçersiz öğrenci numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            #endregion
+        }
+
+        private void AddAttendanceButton_Click(object sender, EventArgs e)
+        {
+            #region Öğrenci Devamsızlık ekleme
+            int studentNumber;
+            if (int.TryParse(StudentNumber3TB.Text, out studentNumber))
+            {
+                using (var DB = new SchoolDBEntities1())
+                {
+                    var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == studentNumber);
+
+                    if (student != null)
+                    {
+                        DateTime selectedDate = AttendanceDatePicker.Value.Date;
+
+                        // Daha önce aynı tarihte kayıt olup olmadığını kontrol et
+                        var existingAttendance = DB.ATTENDANCEs
+                                                   .FirstOrDefault(a => a.student_id == student.student_id && a.date == selectedDate);
+
+                        if (existingAttendance == null)
+                        {
+                            // Yeni devamsızlık kaydı ekle
+                            var newAttendance = new ATTENDANCE
+                            {
+                                student_id = student.student_id,
+                                date = selectedDate
+                            };
+
+                            DB.ATTENDANCEs.Add(newAttendance);
+                            DB.SaveChanges();
+
+                            MessageBox.Show("Devamsızlık kaydı başarıyla eklendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Bu tarihte zaten devamsızlık kaydı var.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Öğrenci bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Geçersiz öğrenci numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            #endregion
+        }
+       #endregion
+
+
     }
 }
