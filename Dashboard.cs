@@ -36,6 +36,7 @@ namespace StudentInfo_App
         public Dashboard()
         {
             InitializeComponent();
+            LoadClasses();
 
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
@@ -46,6 +47,9 @@ namespace StudentInfo_App
             buttonPanelMap.Add("StudentDeleteBtn", StudentDeletePanel);
             buttonPanelMap.Add("StudentAbsenceAttandanceBtn",AbscenceInfoPanel);
             buttonPanelMap.Add("StudentEntryAttandanceBtn", StudentAttandanceEntryPanel);
+            buttonPanelMap.Add("TeacherButoon", TeacherPanel);
+            buttonPanelMap.Add("TeacherAddBtn" ,TeacheAddPnl);
+            //buttonPanelMap.Add("TeacherDeleteBtn", TeacherDeletePnl);
 
             ShowPanel(HomePanel);
 
@@ -207,8 +211,6 @@ namespace StudentInfo_App
             panelToShow.Visible = true;
 
         }
-
-
         private void LogoutButton_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Çıkış yapmak istediğinize emin misiniz?", "Çıkış", MessageBoxButtons.YesNo);
@@ -680,8 +682,54 @@ namespace StudentInfo_App
             }
             #endregion
         }
-       #endregion
+        #endregion
+
+        #region Öğretmen ekleme paneli
+        private void LoadClasses()
+        {
+            using (var DB = new SchoolDBEntities1())
+            {
+                var classes = DB.CLASSes.Select(c => new { c.class_id, c.class_name }).ToList();
+                TeacherAddClassCB.DisplayMember = "class_name";
+                TeacherAddClassCB.ValueMember = "class_id";
+                TeacherAddClassCB.DataSource = classes;
+            }
+        }
+        //add Teacher
+        private void TeacherAdd2Btn_Click(object sender, EventArgs e)
+        {
+            string teacherName = TeacherAddNameTB.Text;
+            string branch = TeacherAddBranchTB.Text;
+            int classId = (int)TeacherAddClassCB.SelectedValue;
+
+            using (var DB = new SchoolDBEntities1())
+            {
+                // Aynı sınıfta aynı branşa sahip öğretmen olup olmadığını kontrol et
+                bool isDuplicate = DB.TEACHERs.Any(t => t.class_id == classId && t.teacher_branch == branch);
+
+                if (isDuplicate)
+                {
+                    MessageBox.Show("Bu sınıfta bu branşta zaten bir öğretmen var.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    // Yeni öğretmen kaydı
+                    var newTeacher = new TEACHER
+                    {
+                        teacher_fullname = teacherName,
+                        teacher_branch = branch,
+                        class_id = classId
+                    };
+
+                    DB.TEACHERs.Add(newTeacher);
+                    DB.SaveChanges();
+
+                    MessageBox.Show("Öğretmen başarıyla eklendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
 
 
+        #endregion
     }
 }
