@@ -12,20 +12,18 @@ namespace StudentInfo_App.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PRODUCT
+    public partial class BRANCH
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PRODUCT()
+        public BRANCH()
         {
-            this.CANTEENs = new HashSet<CANTEEN>();
+            this.TEACHERs = new HashSet<TEACHER>();
         }
     
-        public int product_id { get; set; }
-        public string product_name { get; set; }
-        public Nullable<bool> is_available { get; set; }
-        public Nullable<decimal> product_price { get; set; }
+        public int branch_id { get; set; }
+        public string branch_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CANTEEN> CANTEENs { get; set; }
+        public virtual ICollection<TEACHER> TEACHERs { get; set; }
     }
 }

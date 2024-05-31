@@ -11,7 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OfficeOpenXml;
 using System.IO;
-using System.Linq;
+//using System.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
+using System.Data.Entity.Validation;
 
 namespace StudentInfo_App
 {
@@ -36,7 +38,7 @@ namespace StudentInfo_App
         public Dashboard()
         {
             InitializeComponent();
-            LoadClasses();
+            LoadClassesAndBranches();
 
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
@@ -45,10 +47,10 @@ namespace StudentInfo_App
             buttonPanelMap.Add("StudentRegistrationBtn", StudentPanelRegistrationPanel);
             buttonPanelMap.Add("StudentListBtn", StudentListPanel);
             buttonPanelMap.Add("StudentDeleteBtn", StudentDeletePanel);
-            buttonPanelMap.Add("StudentAbsenceAttandanceBtn",AbscenceInfoPanel);
+            buttonPanelMap.Add("StudentAbsenceAttandanceBtn", AbscenceInfoPanel);
             buttonPanelMap.Add("StudentEntryAttandanceBtn", StudentAttandanceEntryPanel);
             buttonPanelMap.Add("TeacherButoon", TeacherPanel);
-            buttonPanelMap.Add("TeacherAddBtn" ,TeacheAddPnl);
+            buttonPanelMap.Add("TeacherAddBtn", TeacheAddPnl);
             //buttonPanelMap.Add("TeacherDeleteBtn", TeacherDeletePnl);
 
             ShowPanel(HomePanel);
@@ -61,7 +63,7 @@ namespace StudentInfo_App
 
 
             #region Cityi seçince district ona göre geliyor
-            var DB = new SchoolDBEntities1();
+            var DB = new NewSchoolDBEntities();
             var Cities = DB.CITies.ToList();
             var cityNames = Cities.Select(c => c.CITYNAME).ToList();
             StudentCityCB.DataSource = cityNames;
@@ -124,7 +126,7 @@ namespace StudentInfo_App
             #endregion
 
         }
-        
+
         private void StudentListClassCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             # region Student Listesini alır ve DataGridView e bağlar
@@ -133,7 +135,7 @@ namespace StudentInfo_App
                 // Seçilen sınıf adını alıyoruz
                 var selectedClassName = StudentListClassCB.SelectedItem.ToString();
 
-                using (var DB = new SchoolDBEntities1())
+                using (var DB = new NewSchoolDBEntities())
                 {
                     // Seçilen sınıfın ID'sini alıyoruz
                     var selectedClass = DB.CLASSes.FirstOrDefault(c => c.class_name == selectedClassName);
@@ -234,96 +236,115 @@ namespace StudentInfo_App
         private void SaveStudentBtn_Click(object sender, EventArgs e)
         {
             #region Student Kaydetme
-            var DB = new SchoolDBEntities1();
-            // Yeni parent nesnesini oluştur
-            var parent = new PARENT
+            try
             {
-                parent_fullname = ParentNameTB.Text,
-                parent_phone = ParentPhoneTB.Text,
-                parent_email = ParentEmailTB.Text
-            };
+                var DB = new NewSchoolDBEntities();
 
-            // Parent nesnesini veritabanına ekle ve kaydet
-            DB.PARENTs.Add(parent);
-            DB.SaveChanges();
+                // Yeni parent nesnesini oluştur
+                var parent = new PARENT
+                {
+                    parent_fullname = ParentNameTB.Text,
+                    parent_phone = ParentPhoneTB.Text,
+                    parent_email = ParentEmailTB.Text
+                };
 
-            // Kaydedilen parent nesnesini tekrar çek
-            var savedParent = DB.PARENTs.FirstOrDefault(p => p.parent_email == parent.parent_email);
-
-            // Okul numarasını kontrol et
-            int schoolNumber;
-            if (!int.TryParse(StudentSchoolNumberTB.Text, out schoolNumber))
-            {
-                //Sadece integer türünde nesne alır
-                MessageBox.Show("Geçersiz okul numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            var existingStudent = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == schoolNumber);
-
-            if (existingStudent != null)
-            {
-                // Aynı okul numarasına sahip bir öğrenci mevcut, hata mesajı göster
-                MessageBox.Show("Bu okul numarasına sahip bir öğrenci zaten kayıtlı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            var selectedDistrict = (DISTRICT)StudentDistrictCB.SelectedItem;
-
-            // Yeni student nesnesini oluştur
-            var student = new STUDENT
-            {
-                student_firstname = StudentFirstNameTB.Text,
-                student_lastname = StudentLastNameTB.Text,
-                student_adress = StudentAdressTB.Text,
-                student_birthdate = StudentBirthdayDTP.Value,
-                student_gender = StudentGenderCB.Text,
-                district_id = selectedDistrict.Id,
-                student_schoolNo = schoolNumber,
-                parent_id = savedParent.parent_id, // Parent ID'sini foreign key olarak ekle
-                class_id = (StudentClassCB.SelectedIndex + 1)
-            };
-
-            // Student nesnesini veritabanına ekle ve kaydet
-            DB.STUDENTs.Add(student);
-            DB.SaveChanges();
-
-            // Kaydedilen student nesnesini tekrar çek
-            var savedStudent = DB.STUDENTs.FirstOrDefault(s => s.student_firstname == student.student_firstname && s.student_lastname == student.student_lastname);
-
-            // Parent nesnesini güncelle ve student ID'sini foreign key olarak ekle
-            if (savedStudent != null)
-            {
-                savedParent.student_id = savedStudent.student_id; // Eğer PARENT tablosunda student_id foreign key olarak tanımlandıysa
+                // Parent nesnesini veritabanına ekle ve kaydet
+                DB.PARENTs.Add(parent);
                 DB.SaveChanges();
+
+                // Kaydedilen parent nesnesini tekrar çek
+                var savedParent = DB.PARENTs.FirstOrDefault(p => p.parent_email == parent.parent_email);
+
+                // Okul numarasını kontrol et
+                int schoolNumber;
+                if (!int.TryParse(StudentSchoolNumberTB.Text, out schoolNumber))
+                {
+                    // Sadece integer türünde nesne alır
+                    MessageBox.Show("Geçersiz okul numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var existingStudent = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == schoolNumber);
+
+                if (existingStudent != null)
+                {
+                    // Aynı okul numarasına sahip bir öğrenci mevcut, hata mesajı göster
+                    MessageBox.Show("Bu okul numarasına sahip bir öğrenci zaten kayıtlı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var selectedDistrict = (DISTRICT)StudentDistrictCB.SelectedItem;
+
+                // Yeni student nesnesini oluştur
+                var student = new STUDENT
+                {
+                    student_firstname = StudentFirstNameTB.Text,
+                    student_lastname = StudentLastNameTB.Text,
+                    student_adress = StudentAdressTB.Text,
+                    student_birthdate = StudentBirthdayDTP.Value,
+                    student_gender = StudentGenderCB.Text,
+                    district_id = selectedDistrict.Id,
+                    student_schoolNo = schoolNumber,
+                    parent_id = savedParent.parent_id, // Parent ID'sini foreign key olarak ekle
+                    class_id = (StudentClassCB.SelectedIndex + 1)
+                };
+
+                // Student nesnesini veritabanına ekle ve kaydet
+                DB.STUDENTs.Add(student);
+                DB.SaveChanges();
+
+                // Kaydedilen student nesnesini tekrar çek
+                var savedStudent = DB.STUDENTs.FirstOrDefault(s => s.student_firstname == student.student_firstname && s.student_lastname == student.student_lastname);
+
+                // Parent nesnesini güncelle ve student ID'sini foreign key olarak ekle
+                if (savedStudent != null)
+                {
+                    savedParent.student_id = savedStudent.student_id; // Eğer PARENT tablosunda student_id foreign key olarak tanımlandıysa
+                    DB.SaveChanges();
+                }
+
+                MessageBox.Show("Öğrenci başarıyla kaydedildi.", "Kayıt Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ParentNameTB.Clear();
+                ParentPhoneTB.Clear();
+                ParentEmailTB.Clear();
+                StudentFirstNameTB.Clear();
+                StudentLastNameTB.Clear();
+                StudentAdressTB.Clear();
+                StudentSchoolNumberTB.Clear();
+                StudentClassCB.SelectedIndex = 0;
+                StudentBirthdayDTP.Value = DateTime.Now;
+                StudentGenderCB.SelectedIndex = 0;
+                StudentCityCB.SelectedIndex = 0;
+                if (StudentDistrictCB.Items.Count > 0)
+                {
+                    StudentDistrictCB.SelectedIndex = 0;
+                }
             }
-
-
-            MessageBox.Show("Öğrenci başarıyla kaydedildi.", "Kayıt Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            ParentNameTB.Clear();
-            ParentPhoneTB.Clear();
-            ParentEmailTB.Clear();
-            StudentFirstNameTB.Clear();
-            StudentLastNameTB.Clear();
-            StudentAdressTB.Clear();
-            StudentSchoolNumberTB.Clear();
-            StudentClassCB.SelectedIndex = 0;
-            StudentBirthdayDTP.Value = DateTime.Now;
-            StudentGenderCB.SelectedIndex = 0;
-            StudentCityCB.SelectedIndex = 0;
-            if (StudentDistrictCB.Items.Count > 0)
+            catch (DbEntityValidationException ex)
             {
-                StudentDistrictCB.SelectedIndex = 0;
+                foreach (var validationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Console.WriteLine("Entity: {0} Property: {1} Error: {2}",
+                            validationErrors.Entry.Entity.GetType().Name,
+                            validationError.PropertyName,
+                            validationError.ErrorMessage);
+                    }
+                }
+                MessageBox.Show("Veri doğrulama hatası oluştu. Lütfen girdiğiniz bilgileri kontrol edin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             #endregion
+
+
         }
 
         private STUDENT currentStudent;
         private void SearchStudentButton_Click(object sender, EventArgs e)
         {
             #region Öğrenci arama 
-            var DB = new SchoolDBEntities1();
+            var DB = new NewSchoolDBEntities();
             int studentNumber;
             if (int.TryParse(StudentNumberTextBox.Text, out studentNumber))
             {
@@ -355,7 +376,7 @@ namespace StudentInfo_App
             // biz parent ı student a student ı parent relation kurduğumuz için önce parent ı silmemiz gerekiyor.
             if (currentStudent != null)
             {
-                using (var DB = new SchoolDBEntities1())
+                using (var DB = new NewSchoolDBEntities())
                 {
                     // Öğrenci kaydını bul
                     var studentToDelete = DB.STUDENTs.FirstOrDefault(s => s.student_id == currentStudent.student_id);
@@ -426,7 +447,7 @@ namespace StudentInfo_App
             int studentNumber;
             if (int.TryParse(StudentNumber2TextBox.Text, out studentNumber))
             {
-                using (var DB = new SchoolDBEntities1())
+                using (var DB = new NewSchoolDBEntities())
                 {
                     var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == studentNumber);
 
@@ -474,7 +495,7 @@ namespace StudentInfo_App
             int studentNumber;
             if (int.TryParse(StudentNumber2TextBox.Text, out studentNumber))
             {
-                using (var DB = new SchoolDBEntities1())
+                using (var DB = new NewSchoolDBEntities())
                 {
                     var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == studentNumber);
 
@@ -591,7 +612,7 @@ namespace StudentInfo_App
             int studentNumber;
             if (int.TryParse(StudentNumber3TB.Text, out studentNumber))
             {
-                using (var DB = new SchoolDBEntities1())
+                using (var DB = new NewSchoolDBEntities())
                 {
                     var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == studentNumber);
 
@@ -639,7 +660,7 @@ namespace StudentInfo_App
             int studentNumber;
             if (int.TryParse(StudentNumber3TB.Text, out studentNumber))
             {
-                using (var DB = new SchoolDBEntities1())
+                using (var DB = new NewSchoolDBEntities())
                 {
                     var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == studentNumber);
 
@@ -685,51 +706,54 @@ namespace StudentInfo_App
         #endregion
 
         #region Öğretmen ekleme paneli
-        private void LoadClasses()
+        private void LoadClassesAndBranches()
         {
-            using (var DB = new SchoolDBEntities1())
+            using (var DB = new NewSchoolDBEntities())
             {
                 var classes = DB.CLASSes.Select(c => new { c.class_id, c.class_name }).ToList();
                 TeacherAddClassCB.DisplayMember = "class_name";
                 TeacherAddClassCB.ValueMember = "class_id";
                 TeacherAddClassCB.DataSource = classes;
+
+                var branches = DB.BRANCHes.Select(b => new { b.branch_id, b.branch_name }).ToList();
+                TeacherAddBranchCB.DisplayMember = "branch_name";
+                TeacherAddBranchCB.ValueMember = "branch_id";
+                TeacherAddBranchCB.DataSource = branches;
+
             }
         }
+
         //add Teacher
-        private void TeacherAdd2Btn_Click(object sender, EventArgs e)
-        {
-            string teacherName = TeacherAddNameTB.Text;
-            string branch = TeacherAddBranchTB.Text;
-            int classId = (int)TeacherAddClassCB.SelectedValue;
+        //private void TeacherAdd2Btn_Click(object sender, EventArgs e)
+        //{
+        //    string teacherName = TeacherAddNameTB.Text;
+        //    //null olup olmadığını kontrol ettik eğer nulsa empty yolladık değilse string e çevirdik.
+        //    int branchId = (int)TeacherAddBranchCB.SelectedValue;
+        //    int classId = (int)TeacherAddClassCB.SelectedValue;
 
-            using (var DB = new SchoolDBEntities1())
-            {
-                // Aynı sınıfta aynı branşa sahip öğretmen olup olmadığını kontrol et
-                bool isDuplicate = DB.TEACHERs.Any(t => t.class_id == classId && t.teacher_branch == branch);
+        //    using (var DB = new NewSchoolDBEntities())
+        //    {
+        //        //aynı sınıfta aynı branşta öğretmen var mı ? 
+        //        bool isDuplicate = DB.TEACHERs.Any(t => t.CLASSes.Any(c => c.class_id == classId) && t.branch_id == branchId);
+        //        if (isDuplicate)
+        //        {
+        //            MessageBox.Show("Bu sınıfta bu branşta zaten bir öğretmen var.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //        else
+        //        {
+        //            var newTeacher = new TEACHER
 
-                if (isDuplicate)
-                {
-                    MessageBox.Show("Bu sınıfta bu branşta zaten bir öğretmen var.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    // Yeni öğretmen kaydı
-                    var newTeacher = new TEACHER
-                    {
-                        teacher_fullname = teacherName,
-                        teacher_branch = branch,
-                        class_id = classId
-                    };
-
-                    DB.TEACHERs.Add(newTeacher);
-                    DB.SaveChanges();
-
-                    MessageBox.Show("Öğretmen başarıyla eklendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-        }
+        //            {
+        //                teacher_fullname = teacherName,
+        //                branch_id = branchId
+        //                //Classes = new List<Class> { DB.CLASSes.Find(classId) }
+        //            }
+        //        }
+        //    }
 
 
-        #endregion
+
+            #endregion
+        //}
     }
 }

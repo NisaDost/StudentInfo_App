@@ -22,7 +22,7 @@ namespace StudentInfo_App.Models
     
         public int Id { get; set; }
         public string DISTRICTNAME { get; set; }
-        public int CITY_ID { get; set; }
+        public Nullable<int> CITY_ID { get; set; }
     
         public virtual CITY CITY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

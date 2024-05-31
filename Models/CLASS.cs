@@ -18,17 +18,15 @@ namespace StudentInfo_App.Models
         public CLASS()
         {
             this.STUDENTs = new HashSet<STUDENT>();
-            this.TEACHERs = new HashSet<TEACHER>();
+            this.TEACHER_CLASS = new HashSet<TEACHER_CLASS>();
         }
     
         public int class_id { get; set; }
         public string class_name { get; set; }
-        public Nullable<int> teacher_id { get; set; }
     
-        public virtual TEACHER TEACHER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<STUDENT> STUDENTs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TEACHER> TEACHERs { get; set; }
+        public virtual ICollection<TEACHER_CLASS> TEACHER_CLASS { get; set; }
     }
 }

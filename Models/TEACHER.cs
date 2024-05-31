@@ -17,16 +17,15 @@ namespace StudentInfo_App.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TEACHER()
         {
-            this.CLASSes = new HashSet<CLASS>();
+            this.TEACHER_CLASS = new HashSet<TEACHER_CLASS>();
         }
     
         public int teacher_id { get; set; }
         public string teacher_fullname { get; set; }
-        public string teacher_branch { get; set; }
-        public Nullable<int> class_id { get; set; }
+        public Nullable<int> branch_id { get; set; }
     
+        public virtual BRANCH BRANCH { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CLASS> CLASSes { get; set; }
-        public virtual CLASS CLASS { get; set; }
+        public virtual ICollection<TEACHER_CLASS> TEACHER_CLASS { get; set; }
     }
 }

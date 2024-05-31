@@ -15,10 +15,10 @@ namespace StudentInfo_App.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class SchoolDBEntities1 : DbContext
+    public partial class NewSchoolDBEntities : DbContext
     {
-        public SchoolDBEntities1()
-            : base("name=SchoolDBEntities1")
+        public NewSchoolDBEntities()
+            : base("name=NewSchoolDBEntities")
         {
         }
     
@@ -30,6 +30,7 @@ namespace StudentInfo_App.Models
         public virtual DbSet<ACCESS_LOG> ACCESS_LOG { get; set; }
         public virtual DbSet<ADMIN> ADMINs { get; set; }
         public virtual DbSet<ATTENDANCE> ATTENDANCEs { get; set; }
+        public virtual DbSet<BRANCH> BRANCHes { get; set; }
         public virtual DbSet<CANTEEN> CANTEENs { get; set; }
         public virtual DbSet<CITY> CITies { get; set; }
         public virtual DbSet<CLASS> CLASSes { get; set; }
@@ -40,7 +41,7 @@ namespace StudentInfo_App.Models
         public virtual DbSet<STUDENT> STUDENTs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TEACHER> TEACHERs { get; set; }
-        public virtual DbSet<View_StudentCourse> View_StudentCourse { get; set; }
+        public virtual DbSet<TEACHER_CLASS> TEACHER_CLASS { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -84,15 +85,6 @@ namespace StudentInfo_App.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
         }
     
-        public virtual int sp_DeleteStudent(Nullable<int> studentId)
-        {
-            var studentIdParameter = studentId.HasValue ?
-                new ObjectParameter("StudentId", studentId) :
-                new ObjectParameter("StudentId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_DeleteStudent", studentIdParameter);
-        }
-    
         public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
@@ -106,7 +98,7 @@ namespace StudentInfo_App.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual int sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -116,10 +108,10 @@ namespace StudentInfo_App.Models
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual int sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -129,36 +121,7 @@ namespace StudentInfo_App.Models
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual int sp_InsertStudentInfo(Nullable<int> standardId, string studentName, string studentUsername, string studentPassword, string studentEmail, string studentImage)
-        {
-            var standardIdParameter = standardId.HasValue ?
-                new ObjectParameter("StandardId", standardId) :
-                new ObjectParameter("StandardId", typeof(int));
-    
-            var studentNameParameter = studentName != null ?
-                new ObjectParameter("StudentName", studentName) :
-                new ObjectParameter("StudentName", typeof(string));
-    
-            var studentUsernameParameter = studentUsername != null ?
-                new ObjectParameter("StudentUsername", studentUsername) :
-                new ObjectParameter("StudentUsername", typeof(string));
-    
-            var studentPasswordParameter = studentPassword != null ?
-                new ObjectParameter("StudentPassword", studentPassword) :
-                new ObjectParameter("StudentPassword", typeof(string));
-    
-            var studentEmailParameter = studentEmail != null ?
-                new ObjectParameter("StudentEmail", studentEmail) :
-                new ObjectParameter("StudentEmail", typeof(string));
-    
-            var studentImageParameter = studentImage != null ?
-                new ObjectParameter("StudentImage", studentImage) :
-                new ObjectParameter("StudentImage", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertStudentInfo", standardIdParameter, studentNameParameter, studentUsernameParameter, studentPasswordParameter, studentEmailParameter, studentImageParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
     
         public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
@@ -176,39 +139,6 @@ namespace StudentInfo_App.Models
                 new ObjectParameter("new_diagramname", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
-        }
-    
-        public virtual int sp_UpdateStudent(Nullable<int> studentId, Nullable<int> standardId, string studentName, string studentUsername, string studentPassword, string studentEmail, string studentImage)
-        {
-            var studentIdParameter = studentId.HasValue ?
-                new ObjectParameter("StudentId", studentId) :
-                new ObjectParameter("StudentId", typeof(int));
-    
-            var standardIdParameter = standardId.HasValue ?
-                new ObjectParameter("StandardId", standardId) :
-                new ObjectParameter("StandardId", typeof(int));
-    
-            var studentNameParameter = studentName != null ?
-                new ObjectParameter("StudentName", studentName) :
-                new ObjectParameter("StudentName", typeof(string));
-    
-            var studentUsernameParameter = studentUsername != null ?
-                new ObjectParameter("StudentUsername", studentUsername) :
-                new ObjectParameter("StudentUsername", typeof(string));
-    
-            var studentPasswordParameter = studentPassword != null ?
-                new ObjectParameter("StudentPassword", studentPassword) :
-                new ObjectParameter("StudentPassword", typeof(string));
-    
-            var studentEmailParameter = studentEmail != null ?
-                new ObjectParameter("StudentEmail", studentEmail) :
-                new ObjectParameter("StudentEmail", typeof(string));
-    
-            var studentImageParameter = studentImage != null ?
-                new ObjectParameter("StudentImage", studentImage) :
-                new ObjectParameter("StudentImage", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_UpdateStudent", studentIdParameter, standardIdParameter, studentNameParameter, studentUsernameParameter, studentPasswordParameter, studentEmailParameter, studentImageParameter);
         }
     
         public virtual int sp_upgraddiagrams()

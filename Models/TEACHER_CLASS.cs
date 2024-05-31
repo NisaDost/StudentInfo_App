@@ -12,11 +12,13 @@ namespace StudentInfo_App.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class View_StudentCourse
+    public partial class TEACHER_CLASS
     {
-        public int StudentID { get; set; }
-        public string StudentName { get; set; }
-        public int CourseId { get; set; }
-        public string CourseName { get; set; }
+        public int teacher_class_id { get; set; }
+        public int teacher_id { get; set; }
+        public int class_id { get; set; }
+    
+        public virtual CLASS CLASS { get; set; }
+        public virtual TEACHER TEACHER { get; set; }
     }
 }

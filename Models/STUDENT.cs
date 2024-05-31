@@ -28,9 +28,9 @@ namespace StudentInfo_App.Models
         public string student_lastname { get; set; }
         public Nullable<System.DateTime> student_birthdate { get; set; }
         public string student_gender { get; set; }
-        public string student_image { get; set; }
+        public byte[] student_image { get; set; }
         public string student_adress { get; set; }
-        public Nullable<double> student_balance { get; set; }
+        public Nullable<decimal> student_balance { get; set; }
         public Nullable<int> district_id { get; set; }
         public Nullable<int> parent_id { get; set; }
         public Nullable<int> class_id { get; set; }
