@@ -39,7 +39,6 @@ namespace StudentInfo_App
         public Dashboard()
         {
             InitializeComponent();
-            LoadClassesAndBranches();
             //update için
             LoadCities();
             // Şehir ComboBox'ında seçim değiştiğinde ilçeleri yükle
@@ -47,6 +46,8 @@ namespace StudentInfo_App
             LoadClassNames();
             LoadUpdateClassNames();
             LoadDeleteClassNames();
+            TeacherAddLoadBranches();
+            TeacherAddLoadClasses();
 
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
@@ -791,59 +792,6 @@ namespace StudentInfo_App
         }
         #endregion
 
-        #region Öğretmen ekleme paneli
-        private void LoadClassesAndBranches()
-        {
-            using (var DB = new NewSchoolDBEntities())
-            {
-                var classes = DB.CLASSes.Select(c => new { c.class_id, c.class_name }).ToList();
-                TeacherAddClassCB.DisplayMember = "class_name";
-                TeacherAddClassCB.ValueMember = "class_id";
-                TeacherAddClassCB.DataSource = classes;
-
-                var branches = DB.BRANCHes.Select(b => new { b.branch_id, b.branch_name }).ToList();
-                TeacherAddBranchCB.DisplayMember = "branch_name";
-                TeacherAddBranchCB.ValueMember = "branch_id";
-                TeacherAddBranchCB.DataSource = branches;
-
-            }
-        }
-
-
-
-
-        //add Teacher
-        //private void TeacherAdd2Btn_Click(object sender, EventArgs e)
-        //{
-        //    string teacherName = TeacherAddNameTB.Text;
-        //    //null olup olmadığını kontrol ettik eğer nulsa empty yolladık değilse string e çevirdik.
-        //    int branchId = (int)TeacherAddBranchCB.SelectedValue;
-        //    int classId = (int)TeacherAddClassCB.SelectedValue;
-
-        //    using (var DB = new NewSchoolDBEntities())
-        //    {
-        //        //aynı sınıfta aynı branşta öğretmen var mı ? 
-        //        bool isDuplicate = DB.TEACHERs.Any(t => t.CLASSes.Any(c => c.class_id == classId) && t.branch_id == branchId);
-        //        if (isDuplicate)
-        //        {
-        //            MessageBox.Show("Bu sınıfta bu branşta zaten bir öğretmen var.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //        else
-        //        {
-        //            var newTeacher = new TEACHER
-
-        //            {
-        //                teacher_fullname = teacherName,
-        //                branch_id = branchId
-        //                //Classes = new List<Class> { DB.CLASSes.Find(classId) }
-        //            }
-        //        }
-        //    }
-
-
-
-        #endregion
-
         #region Öğrenci update
         // City (şehir) verilerini yükleme
         private void LoadCities()
@@ -1273,6 +1221,90 @@ namespace StudentInfo_App
             DeleteClassCB.DataSource = classNames;
         }
 
+        #endregion
+
+        #region Öğretmen ekleme
+        private void TeacherAddLoadClasses()
+        {
+            var DB = new NewSchoolDBEntities();
+            var classes = DB.CLASSes.ToList();
+
+            TeacherAddClassCB.DataSource = classes;
+            TeacherAddClassCB.DisplayMember = "class_name";
+            TeacherAddClassCB.ValueMember = "class_id";
+        }
+
+        private void TeacherAddLoadBranches()
+        {
+            var DB = new NewSchoolDBEntities();
+            var branches = DB.BRANCHes.ToList();
+
+            TeacherAddBranchCB.DataSource = branches;
+            TeacherAddBranchCB.DisplayMember = "branch_name";
+            TeacherAddBranchCB.ValueMember = "branch_id";
+        }
+        private void TeacherAdd2Btn_Click(object sender, EventArgs e)
+        {
+            var DB = new NewSchoolDBEntities();
+
+            // Öğretmen bilgilerini al
+            string teacherName = TeacherAddNameTB.Text;
+            int selectedBranchId = (int)TeacherAddBranchCB.SelectedValue;
+            int selectedClassId = (int)TeacherAddClassCB.SelectedValue;
+
+            // Girdi kontrolleri
+            if (string.IsNullOrEmpty(teacherName))
+            {
+                MessageBox.Show("Lütfen öğretmenin adını girin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if(TeacherAddNameTB.Text.Length > 20)
+            {
+                MessageBox.Show("Öğretmenin ismi en fazla 20 karakter olabilir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Aynı sınıfta aynı branştan bir öğretmen var mı kontrol et
+            var existingTeacherInClass = DB.TEACHER_CLASS
+                .Join(DB.TEACHERs, tc => tc.teacher_id, t => t.teacher_id, (tc, t) => new { tc, t })
+                .FirstOrDefault(x => x.tc.class_id == selectedClassId && x.t.branch_id == selectedBranchId);
+
+            if (existingTeacherInClass != null)
+            {
+                MessageBox.Show("Bu sınıfta bu branştan bir öğretmen zaten mevcut.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Öğretmen ekle
+            var newTeacher = new TEACHER
+            {
+                teacher_fullname = teacherName,
+                branch_id = selectedBranchId
+            };
+            DB.TEACHERs.Add(newTeacher);
+            DB.SaveChanges();
+
+            // Öğretmen id'sini al
+            int newTeacherId = newTeacher.teacher_id;
+
+            // teacher_class tablosuna kayıt ekle
+            var newTeacherClass = new TEACHER_CLASS
+            {
+                teacher_id = newTeacherId,
+                class_id = selectedClassId
+            };
+            DB.TEACHER_CLASS.Add(newTeacherClass);
+
+            try
+            {
+                // Değişiklikleri kaydet
+                DB.SaveChanges();
+                MessageBox.Show("Öğretmen başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Öğretmen ekleme işlemi sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         #endregion
     }
 }

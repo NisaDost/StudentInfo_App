@@ -174,31 +174,31 @@
             this.UpdateClassBtn = new System.Windows.Forms.Button();
             this.AddClassBtn = new System.Windows.Forms.Button();
             this.AddClassPnl = new System.Windows.Forms.Panel();
-            this.AddClassHeader = new System.Windows.Forms.Label();
-            this.ClassNameLbl = new System.Windows.Forms.Label();
+            this.AddClassBtn2 = new System.Windows.Forms.Button();
             this.AddClassTB = new System.Windows.Forms.TextBox();
             this.ClassNameLbl2 = new System.Windows.Forms.Label();
-            this.AddClassBtn2 = new System.Windows.Forms.Button();
+            this.ClassNameLbl = new System.Windows.Forms.Label();
+            this.AddClassHeader = new System.Windows.Forms.Label();
             this.UpdateClassPnl = new System.Windows.Forms.Panel();
-            this.UpdateClassLbl = new System.Windows.Forms.Label();
-            this.classComboBox = new System.Windows.Forms.ComboBox();
-            this.classLbl = new System.Windows.Forms.Label();
-            this.newClassNameLbl = new System.Windows.Forms.Label();
+            this.updateClassButton = new System.Windows.Forms.Button();
             this.newClassNameTextBox = new System.Windows.Forms.TextBox();
             this.UpdateClassInformationLbl = new System.Windows.Forms.Label();
-            this.updateClassButton = new System.Windows.Forms.Button();
+            this.newClassNameLbl = new System.Windows.Forms.Label();
+            this.classLbl = new System.Windows.Forms.Label();
+            this.classComboBox = new System.Windows.Forms.ComboBox();
+            this.UpdateClassLbl = new System.Windows.Forms.Label();
             this.ListClassPnl = new System.Windows.Forms.Panel();
-            this.ListClassHeaderLbl = new System.Windows.Forms.Label();
-            this.StuıdentListLbl = new System.Windows.Forms.Label();
-            this.ListClassCB = new System.Windows.Forms.ComboBox();
-            this.HowManyStudentLbl = new System.Windows.Forms.Label();
             this.ListStudentButton = new System.Windows.Forms.Button();
+            this.HowManyStudentLbl = new System.Windows.Forms.Label();
+            this.ListClassCB = new System.Windows.Forms.ComboBox();
+            this.StuıdentListLbl = new System.Windows.Forms.Label();
+            this.ListClassHeaderLbl = new System.Windows.Forms.Label();
             this.DeleteClassPnl = new System.Windows.Forms.Panel();
-            this.ClassDeleteHeader = new System.Windows.Forms.Label();
-            this.DeleteClassLbl = new System.Windows.Forms.Label();
-            this.DeleteClassCB = new System.Windows.Forms.ComboBox();
             this.DeleteClassButton = new System.Windows.Forms.Button();
+            this.DeleteClassCB = new System.Windows.Forms.ComboBox();
             this.DeleteClassImportantLbl = new System.Windows.Forms.Label();
+            this.DeleteClassLbl = new System.Windows.Forms.Label();
+            this.ClassDeleteHeader = new System.Windows.Forms.Label();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -1307,6 +1307,7 @@
             this.TeacherAdd2Btn.TabIndex = 4;
             this.TeacherAdd2Btn.Text = "Add Teacher";
             this.TeacherAdd2Btn.UseVisualStyleBackColor = true;
+            this.TeacherAdd2Btn.Click += new System.EventHandler(this.TeacherAdd2Btn_Click);
             // 
             // TeacherAddClassCB
             // 
@@ -1736,25 +1737,16 @@
             this.AddClassPnl.Size = new System.Drawing.Size(650, 400);
             this.AddClassPnl.TabIndex = 25;
             // 
-            // AddClassHeader
+            // AddClassBtn2
             // 
-            this.AddClassHeader.AutoSize = true;
-            this.AddClassHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AddClassHeader.Location = new System.Drawing.Point(40, 22);
-            this.AddClassHeader.Name = "AddClassHeader";
-            this.AddClassHeader.Size = new System.Drawing.Size(88, 22);
-            this.AddClassHeader.TabIndex = 0;
-            this.AddClassHeader.Text = "Add Class";
-            // 
-            // ClassNameLbl
-            // 
-            this.ClassNameLbl.AutoSize = true;
-            this.ClassNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ClassNameLbl.Location = new System.Drawing.Point(100, 73);
-            this.ClassNameLbl.Name = "ClassNameLbl";
-            this.ClassNameLbl.Size = new System.Drawing.Size(84, 16);
-            this.ClassNameLbl.TabIndex = 0;
-            this.ClassNameLbl.Text = "Class Name :";
+            this.AddClassBtn2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AddClassBtn2.Location = new System.Drawing.Point(432, 133);
+            this.AddClassBtn2.Name = "AddClassBtn2";
+            this.AddClassBtn2.Size = new System.Drawing.Size(89, 23);
+            this.AddClassBtn2.TabIndex = 2;
+            this.AddClassBtn2.Text = "Add Class";
+            this.AddClassBtn2.UseVisualStyleBackColor = true;
+            this.AddClassBtn2.Click += new System.EventHandler(this.AddClassBtn2_Click);
             // 
             // AddClassTB
             // 
@@ -1773,16 +1765,25 @@
             this.ClassNameLbl2.TabIndex = 0;
             this.ClassNameLbl2.Text = "*When writing, please put a \'-\' sign between the branch and the class.";
             // 
-            // AddClassBtn2
+            // ClassNameLbl
             // 
-            this.AddClassBtn2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AddClassBtn2.Location = new System.Drawing.Point(432, 133);
-            this.AddClassBtn2.Name = "AddClassBtn2";
-            this.AddClassBtn2.Size = new System.Drawing.Size(89, 23);
-            this.AddClassBtn2.TabIndex = 2;
-            this.AddClassBtn2.Text = "Add Class";
-            this.AddClassBtn2.UseVisualStyleBackColor = true;
-            this.AddClassBtn2.Click += new System.EventHandler(this.AddClassBtn2_Click);
+            this.ClassNameLbl.AutoSize = true;
+            this.ClassNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ClassNameLbl.Location = new System.Drawing.Point(100, 73);
+            this.ClassNameLbl.Name = "ClassNameLbl";
+            this.ClassNameLbl.Size = new System.Drawing.Size(84, 16);
+            this.ClassNameLbl.TabIndex = 0;
+            this.ClassNameLbl.Text = "Class Name :";
+            // 
+            // AddClassHeader
+            // 
+            this.AddClassHeader.AutoSize = true;
+            this.AddClassHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AddClassHeader.Location = new System.Drawing.Point(40, 22);
+            this.AddClassHeader.Name = "AddClassHeader";
+            this.AddClassHeader.Size = new System.Drawing.Size(88, 22);
+            this.AddClassHeader.TabIndex = 0;
+            this.AddClassHeader.Text = "Add Class";
             // 
             // UpdateClassPnl
             // 
@@ -1799,43 +1800,16 @@
             this.UpdateClassPnl.Size = new System.Drawing.Size(650, 400);
             this.UpdateClassPnl.TabIndex = 26;
             // 
-            // UpdateClassLbl
+            // updateClassButton
             // 
-            this.UpdateClassLbl.AutoSize = true;
-            this.UpdateClassLbl.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateClassLbl.Location = new System.Drawing.Point(27, 17);
-            this.UpdateClassLbl.Name = "UpdateClassLbl";
-            this.UpdateClassLbl.Size = new System.Drawing.Size(115, 22);
-            this.UpdateClassLbl.TabIndex = 0;
-            this.UpdateClassLbl.Text = "Update Class";
-            // 
-            // classComboBox
-            // 
-            this.classComboBox.FormattingEnabled = true;
-            this.classComboBox.Location = new System.Drawing.Point(183, 57);
-            this.classComboBox.Name = "classComboBox";
-            this.classComboBox.Size = new System.Drawing.Size(121, 21);
-            this.classComboBox.TabIndex = 1;
-            // 
-            // classLbl
-            // 
-            this.classLbl.AutoSize = true;
-            this.classLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.classLbl.Location = new System.Drawing.Point(98, 58);
-            this.classLbl.Name = "classLbl";
-            this.classLbl.Size = new System.Drawing.Size(83, 16);
-            this.classLbl.TabIndex = 2;
-            this.classLbl.Text = "Select Class :";
-            // 
-            // newClassNameLbl
-            // 
-            this.newClassNameLbl.AutoSize = true;
-            this.newClassNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.newClassNameLbl.Location = new System.Drawing.Point(98, 85);
-            this.newClassNameLbl.Name = "newClassNameLbl";
-            this.newClassNameLbl.Size = new System.Drawing.Size(87, 16);
-            this.newClassNameLbl.TabIndex = 2;
-            this.newClassNameLbl.Text = "Class Name : ";
+            this.updateClassButton.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.updateClassButton.Location = new System.Drawing.Point(458, 148);
+            this.updateClassButton.Name = "updateClassButton";
+            this.updateClassButton.Size = new System.Drawing.Size(106, 23);
+            this.updateClassButton.TabIndex = 4;
+            this.updateClassButton.Text = "Update Class";
+            this.updateClassButton.UseVisualStyleBackColor = true;
+            this.updateClassButton.Click += new System.EventHandler(this.updateClassButton_Click);
             // 
             // newClassNameTextBox
             // 
@@ -1855,16 +1829,43 @@
             this.UpdateClassInformationLbl.TabIndex = 2;
             this.UpdateClassInformationLbl.Text = "*When writing, please put a \'-\' sign between the branch and the class.";
             // 
-            // updateClassButton
+            // newClassNameLbl
             // 
-            this.updateClassButton.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.updateClassButton.Location = new System.Drawing.Point(458, 148);
-            this.updateClassButton.Name = "updateClassButton";
-            this.updateClassButton.Size = new System.Drawing.Size(106, 23);
-            this.updateClassButton.TabIndex = 4;
-            this.updateClassButton.Text = "Update Class";
-            this.updateClassButton.UseVisualStyleBackColor = true;
-            this.updateClassButton.Click += new System.EventHandler(this.updateClassButton_Click);
+            this.newClassNameLbl.AutoSize = true;
+            this.newClassNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.newClassNameLbl.Location = new System.Drawing.Point(98, 85);
+            this.newClassNameLbl.Name = "newClassNameLbl";
+            this.newClassNameLbl.Size = new System.Drawing.Size(87, 16);
+            this.newClassNameLbl.TabIndex = 2;
+            this.newClassNameLbl.Text = "Class Name : ";
+            // 
+            // classLbl
+            // 
+            this.classLbl.AutoSize = true;
+            this.classLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.classLbl.Location = new System.Drawing.Point(98, 58);
+            this.classLbl.Name = "classLbl";
+            this.classLbl.Size = new System.Drawing.Size(83, 16);
+            this.classLbl.TabIndex = 2;
+            this.classLbl.Text = "Select Class :";
+            // 
+            // classComboBox
+            // 
+            this.classComboBox.FormattingEnabled = true;
+            this.classComboBox.Location = new System.Drawing.Point(183, 57);
+            this.classComboBox.Name = "classComboBox";
+            this.classComboBox.Size = new System.Drawing.Size(121, 21);
+            this.classComboBox.TabIndex = 1;
+            // 
+            // UpdateClassLbl
+            // 
+            this.UpdateClassLbl.AutoSize = true;
+            this.UpdateClassLbl.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateClassLbl.Location = new System.Drawing.Point(27, 17);
+            this.UpdateClassLbl.Name = "UpdateClassLbl";
+            this.UpdateClassLbl.Size = new System.Drawing.Size(115, 22);
+            this.UpdateClassLbl.TabIndex = 0;
+            this.UpdateClassLbl.Text = "Update Class";
             // 
             // ListClassPnl
             // 
@@ -1880,32 +1881,15 @@
             this.ListClassPnl.Size = new System.Drawing.Size(650, 400);
             this.ListClassPnl.TabIndex = 27;
             // 
-            // ListClassHeaderLbl
+            // ListStudentButton
             // 
-            this.ListClassHeaderLbl.AutoSize = true;
-            this.ListClassHeaderLbl.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListClassHeaderLbl.Location = new System.Drawing.Point(39, 22);
-            this.ListClassHeaderLbl.Name = "ListClassHeaderLbl";
-            this.ListClassHeaderLbl.Size = new System.Drawing.Size(82, 22);
-            this.ListClassHeaderLbl.TabIndex = 0;
-            this.ListClassHeaderLbl.Text = "List Class";
-            // 
-            // StuıdentListLbl
-            // 
-            this.StuıdentListLbl.AutoSize = true;
-            this.StuıdentListLbl.Location = new System.Drawing.Point(104, 67);
-            this.StuıdentListLbl.Name = "StuıdentListLbl";
-            this.StuıdentListLbl.Size = new System.Drawing.Size(83, 16);
-            this.StuıdentListLbl.TabIndex = 1;
-            this.StuıdentListLbl.Text = "Select Class :";
-            // 
-            // ListClassCB
-            // 
-            this.ListClassCB.FormattingEnabled = true;
-            this.ListClassCB.Location = new System.Drawing.Point(197, 64);
-            this.ListClassCB.Name = "ListClassCB";
-            this.ListClassCB.Size = new System.Drawing.Size(121, 24);
-            this.ListClassCB.TabIndex = 2;
+            this.ListStudentButton.Location = new System.Drawing.Point(360, 64);
+            this.ListStudentButton.Name = "ListStudentButton";
+            this.ListStudentButton.Size = new System.Drawing.Size(109, 23);
+            this.ListStudentButton.TabIndex = 4;
+            this.ListStudentButton.Text = "List Student";
+            this.ListStudentButton.UseVisualStyleBackColor = true;
+            this.ListStudentButton.Click += new System.EventHandler(this.ListStudentButton_Click);
             // 
             // HowManyStudentLbl
             // 
@@ -1916,15 +1900,32 @@
             this.HowManyStudentLbl.TabIndex = 3;
             this.HowManyStudentLbl.Text = "label7";
             // 
-            // ListStudentButton
+            // ListClassCB
             // 
-            this.ListStudentButton.Location = new System.Drawing.Point(360, 64);
-            this.ListStudentButton.Name = "ListStudentButton";
-            this.ListStudentButton.Size = new System.Drawing.Size(109, 23);
-            this.ListStudentButton.TabIndex = 4;
-            this.ListStudentButton.Text = "List Student";
-            this.ListStudentButton.UseVisualStyleBackColor = true;
-            this.ListStudentButton.Click += new System.EventHandler(this.ListStudentButton_Click);
+            this.ListClassCB.FormattingEnabled = true;
+            this.ListClassCB.Location = new System.Drawing.Point(197, 64);
+            this.ListClassCB.Name = "ListClassCB";
+            this.ListClassCB.Size = new System.Drawing.Size(121, 24);
+            this.ListClassCB.TabIndex = 2;
+            // 
+            // StuıdentListLbl
+            // 
+            this.StuıdentListLbl.AutoSize = true;
+            this.StuıdentListLbl.Location = new System.Drawing.Point(104, 67);
+            this.StuıdentListLbl.Name = "StuıdentListLbl";
+            this.StuıdentListLbl.Size = new System.Drawing.Size(83, 16);
+            this.StuıdentListLbl.TabIndex = 1;
+            this.StuıdentListLbl.Text = "Select Class :";
+            // 
+            // ListClassHeaderLbl
+            // 
+            this.ListClassHeaderLbl.AutoSize = true;
+            this.ListClassHeaderLbl.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ListClassHeaderLbl.Location = new System.Drawing.Point(39, 22);
+            this.ListClassHeaderLbl.Name = "ListClassHeaderLbl";
+            this.ListClassHeaderLbl.Size = new System.Drawing.Size(82, 22);
+            this.ListClassHeaderLbl.TabIndex = 0;
+            this.ListClassHeaderLbl.Text = "List Class";
             // 
             // DeleteClassPnl
             // 
@@ -1940,33 +1941,6 @@
             this.DeleteClassPnl.Size = new System.Drawing.Size(650, 400);
             this.DeleteClassPnl.TabIndex = 28;
             // 
-            // ClassDeleteHeader
-            // 
-            this.ClassDeleteHeader.AutoSize = true;
-            this.ClassDeleteHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ClassDeleteHeader.Location = new System.Drawing.Point(28, 12);
-            this.ClassDeleteHeader.Name = "ClassDeleteHeader";
-            this.ClassDeleteHeader.Size = new System.Drawing.Size(108, 22);
-            this.ClassDeleteHeader.TabIndex = 0;
-            this.ClassDeleteHeader.Text = "Delete Class";
-            // 
-            // DeleteClassLbl
-            // 
-            this.DeleteClassLbl.AutoSize = true;
-            this.DeleteClassLbl.Location = new System.Drawing.Point(118, 68);
-            this.DeleteClassLbl.Name = "DeleteClassLbl";
-            this.DeleteClassLbl.Size = new System.Drawing.Size(86, 16);
-            this.DeleteClassLbl.TabIndex = 1;
-            this.DeleteClassLbl.Text = "Select Class : ";
-            // 
-            // DeleteClassCB
-            // 
-            this.DeleteClassCB.FormattingEnabled = true;
-            this.DeleteClassCB.Location = new System.Drawing.Point(213, 64);
-            this.DeleteClassCB.Name = "DeleteClassCB";
-            this.DeleteClassCB.Size = new System.Drawing.Size(121, 24);
-            this.DeleteClassCB.TabIndex = 2;
-            // 
             // DeleteClassButton
             // 
             this.DeleteClassButton.Location = new System.Drawing.Point(371, 64);
@@ -1976,6 +1950,14 @@
             this.DeleteClassButton.Text = "Delete Class";
             this.DeleteClassButton.UseVisualStyleBackColor = true;
             this.DeleteClassButton.Click += new System.EventHandler(this.DeleteClassButton_Click);
+            // 
+            // DeleteClassCB
+            // 
+            this.DeleteClassCB.FormattingEnabled = true;
+            this.DeleteClassCB.Location = new System.Drawing.Point(213, 64);
+            this.DeleteClassCB.Name = "DeleteClassCB";
+            this.DeleteClassCB.Size = new System.Drawing.Size(121, 24);
+            this.DeleteClassCB.TabIndex = 2;
             // 
             // DeleteClassImportantLbl
             // 
@@ -1987,32 +1969,51 @@
             this.DeleteClassImportantLbl.TabIndex = 1;
             this.DeleteClassImportantLbl.Text = "*Before deleting a class, make sure there are no students in it.";
             // 
+            // DeleteClassLbl
+            // 
+            this.DeleteClassLbl.AutoSize = true;
+            this.DeleteClassLbl.Location = new System.Drawing.Point(118, 68);
+            this.DeleteClassLbl.Name = "DeleteClassLbl";
+            this.DeleteClassLbl.Size = new System.Drawing.Size(86, 16);
+            this.DeleteClassLbl.TabIndex = 1;
+            this.DeleteClassLbl.Text = "Select Class : ";
+            // 
+            // ClassDeleteHeader
+            // 
+            this.ClassDeleteHeader.AutoSize = true;
+            this.ClassDeleteHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ClassDeleteHeader.Location = new System.Drawing.Point(28, 12);
+            this.ClassDeleteHeader.Name = "ClassDeleteHeader";
+            this.ClassDeleteHeader.Size = new System.Drawing.Size(108, 22);
+            this.ClassDeleteHeader.TabIndex = 0;
+            this.ClassDeleteHeader.Text = "Delete Class";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 484);
+            this.Controls.Add(this.DateAndTime);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.QuitButton);
+            this.Controls.Add(this.MenuBar);
+            this.Controls.Add(this.TeacheAddPnl);
+            this.Controls.Add(this.AddClassPnl);
             this.Controls.Add(this.DeleteClassPnl);
             this.Controls.Add(this.ClassPanel);
             this.Controls.Add(this.ListClassPnl);
             this.Controls.Add(this.UpdateClassPnl);
             this.Controls.Add(this.StudentUpdatePanel);
-            this.Controls.Add(this.DateAndTime);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.QuitButton);
-            this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.StudentPanel);
-            this.Controls.Add(this.TeacherPanel);
             this.Controls.Add(this.StudentAttandanceEntryPanel);
-            this.Controls.Add(this.AbscencePanel);
             this.Controls.Add(this.AbscenceInfoPanel);
             this.Controls.Add(this.HomePanel);
             this.Controls.Add(this.StudentPanelRegistrationPanel);
             this.Controls.Add(this.CanteenPanel);
             this.Controls.Add(this.StudentDeletePanel);
+            this.Controls.Add(this.TeacherPanel);
+            this.Controls.Add(this.AbscencePanel);
             this.Controls.Add(this.StudentListPanel);
-            this.Controls.Add(this.TeacheAddPnl);
-            this.Controls.Add(this.AddClassPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
