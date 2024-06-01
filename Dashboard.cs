@@ -45,6 +45,7 @@ namespace StudentInfo_App
             LoadCities();
             // Şehir ComboBox'ında seçim değiştiğinde ilçeleri yükle
             UpdateStudentCityCB.SelectedIndexChanged += new EventHandler(UpdateStudentCityCB_SelectedIndexChanged);
+            LoadClassNames();
 
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
@@ -60,6 +61,7 @@ namespace StudentInfo_App
             buttonPanelMap.Add("StudentUpdatebtn", StudentUpdatePanel);
             buttonPanelMap.Add("ClassButon", ClassPanel);
             buttonPanelMap.Add("AddClassBtn", AddClassPnl);
+            buttonPanelMap.Add("UpdateClassBtn", UpdateClassPnl);
             //buttonPanelMap.Add("TeacherDeleteBtn", TeacherDeletePnl);
 
             ShowPanel(HomePanel);
@@ -129,6 +131,7 @@ namespace StudentInfo_App
             var classes = DB.CLASSes.ToList();
             var className = classes.Select(c => c.class_name).ToList();
             StudentClassCB.DataSource = className;
+
             #endregion
 
             #region ComboBox class values for Student List Filtering
@@ -1100,6 +1103,71 @@ namespace StudentInfo_App
                 MessageBox.Show("Sınıf başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        #endregion
+
+        #region Sınıf updateleme
+
+        private void LoadClassNames()
+        {
+            var DB = new NewSchoolDBEntities();
+            // Veritabanından sınıf isimlerini al
+            var classNames = DB.CLASSes.Select(c => c.class_name).ToList();
+
+            // ComboBox'ı sınıf isimleriyle doldur
+            classComboBox.DataSource = classNames;
+        }
+        private void updateClassButton_Click(object sender, EventArgs e)
+        {
+            var DB = new NewSchoolDBEntities();
+            // Seçilen sınıfın adını al
+            string selectedClassName = classComboBox.SelectedItem.ToString();
+
+            // Yeni sınıf adını al
+            string newClassName = newClassNameTextBox.Text;
+
+            // Eğer herhangi bir sınıf seçilmediyse veya yeni sınıf adı boşsa işlemi durdur
+            if (string.IsNullOrEmpty(selectedClassName) || string.IsNullOrEmpty(newClassName))
+            {
+                MessageBox.Show("Lütfen bir sınıf seçin ve yeni sınıf adı girin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Seçilen sınıf adıyla veritabanında sınıfı bul
+            var selectedClass = DB.CLASSes.FirstOrDefault(c => c.class_name == selectedClassName);
+
+            // Eğer seçilen sınıf bulunamadıysa işlemi durdur
+            if (selectedClass == null)
+            {
+                MessageBox.Show("Seçilen sınıf bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Yeni sınıf adıyla veritabanında başka bir sınıf var mı kontrol et
+            var existingClass = DB.CLASSes.FirstOrDefault(c => c.class_name == newClassName);
+
+            // Eğer yeni sınıf adıyla bir sınıf bulunduysa işlemi durdur
+            if (existingClass != null)
+            {
+                MessageBox.Show("Bu isimde bir sınıf zaten mevcut. Lütfen farklı bir isim girin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Seçilen sınıfın adını güncelle
+            selectedClass.class_name = newClassName;
+
+            try
+            {
+                // Değişiklikleri kaydet
+                DB.SaveChanges();
+                MessageBox.Show("Sınıf başarıyla güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sınıf güncelleme işlemi sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         #endregion
     }
 }
