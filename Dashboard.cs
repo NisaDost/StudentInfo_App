@@ -58,6 +58,8 @@ namespace StudentInfo_App
             buttonPanelMap.Add("TeacherButoon", TeacherPanel);
             buttonPanelMap.Add("TeacherAddBtn", TeacheAddPnl);
             buttonPanelMap.Add("StudentUpdatebtn", StudentUpdatePanel);
+            buttonPanelMap.Add("ClassButon", ClassPanel);
+            buttonPanelMap.Add("AddClassBtn", AddClassPnl);
             //buttonPanelMap.Add("TeacherDeleteBtn", TeacherDeletePnl);
 
             ShowPanel(HomePanel);
@@ -1057,7 +1059,47 @@ namespace StudentInfo_App
 
             return true;
         }
+
         #endregion
 
+        #region Sınıf ekleme
+        private void AddClassBtn2_Click(object sender, EventArgs e)
+        {
+            string className = AddClassTB.Text.Trim(); // Girilen sınıf adını alırken baştaki ve sondaki boşlukları kaldır
+
+            // Girilen sınıf adı boş ise uyarı ver ve işlemi sonlandır
+            if (string.IsNullOrWhiteSpace(className))
+            {
+                MessageBox.Show("Lütfen bir sınıf adı girin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            using (var DB = new NewSchoolDBEntities())
+            {
+                // Girilen sınıf adının veritabanında olup olmadığını kontrol et
+                bool classExists = DB.CLASSes.Any(c => c.class_name == className);
+
+                // Eğer sınıf zaten veritabanında varsa, kullanıcıya uyarı ver ve işlemi sonlandır
+                if (classExists)
+                {
+                    MessageBox.Show("Bu sınıf zaten mevcut.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Yeni bir sınıf nesnesi oluştur ve veritabanına ekle
+                CLASS newClass = new CLASS
+                {
+                    class_name = className
+                };
+                DB.CLASSes.Add(newClass);
+
+                // Değişiklikleri kaydet
+                DB.SaveChanges();
+
+                // Kullanıcıya başarılı bir mesaj göster
+                MessageBox.Show("Sınıf başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        #endregion
     }
 }

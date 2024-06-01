@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.MenuBar = new System.Windows.Forms.Panel();
             this.StudentsButton = new System.Windows.Forms.Button();
+            this.ClassButon = new System.Windows.Forms.Button();
             this.TeacherButoon = new System.Windows.Forms.Button();
             this.AbscenceButton = new System.Windows.Forms.Button();
             this.LogoutButton = new System.Windows.Forms.Button();
@@ -143,10 +144,13 @@
             this.UpdateStudentCityCB = new System.Windows.Forms.ComboBox();
             this.UpdateStudentGenderCB = new System.Windows.Forms.ComboBox();
             this.UpdateStudentBirthdayDTP = new System.Windows.Forms.DateTimePicker();
+            this.UpdateStudentBtn = new System.Windows.Forms.Button();
             this.GetStudentInfoBtn = new System.Windows.Forms.Button();
             this.UpdateStudentDistrictLbl = new System.Windows.Forms.Label();
+            this.UpdateParentPhoneLbl = new System.Windows.Forms.Label();
             this.UpdateParentEmailLbl = new System.Windows.Forms.Label();
             this.UpdateParentNameLbl = new System.Windows.Forms.Label();
+            this.UpdateStudentNumberLbl = new System.Windows.Forms.Label();
             this.UpdateStudentClassLbl = new System.Windows.Forms.Label();
             this.UpdateStudentAddressLbl = new System.Windows.Forms.Label();
             this.UpdateStudentCityLbl = new System.Windows.Forms.Label();
@@ -157,16 +161,24 @@
             this.StudentSchoolNumberSearchlBL = new System.Windows.Forms.Label();
             this.UpdateStudentHeaderLbl = new System.Windows.Forms.Label();
             this.UpdateStudentAddressTB = new System.Windows.Forms.TextBox();
+            this.UpdateParentPhoneTB = new System.Windows.Forms.TextBox();
+            this.UpdateParentEmailTB = new System.Windows.Forms.TextBox();
             this.UpdateParentNameTB = new System.Windows.Forms.TextBox();
+            this.UpdateStudentNumberTB = new System.Windows.Forms.TextBox();
             this.UpdateStudentLastNameTB = new System.Windows.Forms.TextBox();
             this.UpdateStudentFirstNameTB = new System.Windows.Forms.TextBox();
             this.UpdateStudentSchoolNumberTB = new System.Windows.Forms.TextBox();
-            this.UpdateParentEmailTB = new System.Windows.Forms.TextBox();
-            this.UpdateParentPhoneLbl = new System.Windows.Forms.Label();
-            this.UpdateParentPhoneTB = new System.Windows.Forms.TextBox();
-            this.UpdateStudentBtn = new System.Windows.Forms.Button();
-            this.UpdateStudentNumberLbl = new System.Windows.Forms.Label();
-            this.UpdateStudentNumberTB = new System.Windows.Forms.TextBox();
+            this.ClassPanel = new System.Windows.Forms.Panel();
+            this.DeleteClassBtn = new System.Windows.Forms.Button();
+            this.ListClassBtn = new System.Windows.Forms.Button();
+            this.UpdateClassBtn = new System.Windows.Forms.Button();
+            this.AddClassBtn = new System.Windows.Forms.Button();
+            this.AddClassPnl = new System.Windows.Forms.Panel();
+            this.AddClassHeader = new System.Windows.Forms.Label();
+            this.ClassNameLbl = new System.Windows.Forms.Label();
+            this.AddClassTB = new System.Windows.Forms.TextBox();
+            this.ClassNameLbl2 = new System.Windows.Forms.Label();
+            this.AddClassBtn2 = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -183,12 +195,15 @@
             this.TeacherPanel.SuspendLayout();
             this.TeacheAddPnl.SuspendLayout();
             this.StudentUpdatePanel.SuspendLayout();
+            this.ClassPanel.SuspendLayout();
+            this.AddClassPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBar
             // 
             this.MenuBar.BackColor = System.Drawing.Color.MidnightBlue;
             this.MenuBar.Controls.Add(this.StudentsButton);
+            this.MenuBar.Controls.Add(this.ClassButon);
             this.MenuBar.Controls.Add(this.TeacherButoon);
             this.MenuBar.Controls.Add(this.AbscenceButton);
             this.MenuBar.Controls.Add(this.LogoutButton);
@@ -216,6 +231,21 @@
             this.StudentsButton.Text = "Students";
             this.StudentsButton.UseVisualStyleBackColor = false;
             this.StudentsButton.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // ClassButon
+            // 
+            this.ClassButon.BackColor = System.Drawing.Color.MidnightBlue;
+            this.ClassButon.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.ClassButon.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ClassButon.ForeColor = System.Drawing.SystemColors.Window;
+            this.ClassButon.Location = new System.Drawing.Point(9, 321);
+            this.ClassButon.Margin = new System.Windows.Forms.Padding(2);
+            this.ClassButon.Name = "ClassButon";
+            this.ClassButon.Size = new System.Drawing.Size(148, 33);
+            this.ClassButon.TabIndex = 1;
+            this.ClassButon.Text = "Class";
+            this.ClassButon.UseVisualStyleBackColor = false;
+            this.ClassButon.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // TeacherButoon
             // 
@@ -1388,6 +1418,17 @@
             this.UpdateStudentBirthdayDTP.Size = new System.Drawing.Size(200, 20);
             this.UpdateStudentBirthdayDTP.TabIndex = 4;
             // 
+            // UpdateStudentBtn
+            // 
+            this.UpdateStudentBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentBtn.Location = new System.Drawing.Point(475, 346);
+            this.UpdateStudentBtn.Name = "UpdateStudentBtn";
+            this.UpdateStudentBtn.Size = new System.Drawing.Size(139, 23);
+            this.UpdateStudentBtn.TabIndex = 3;
+            this.UpdateStudentBtn.Text = "Update Student";
+            this.UpdateStudentBtn.UseVisualStyleBackColor = true;
+            this.UpdateStudentBtn.Click += new System.EventHandler(this.UpdateStudentBtn_Click);
+            // 
             // GetStudentInfoBtn
             // 
             this.GetStudentInfoBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -1409,6 +1450,16 @@
             this.UpdateStudentDistrictLbl.TabIndex = 2;
             this.UpdateStudentDistrictLbl.Text = "District :";
             // 
+            // UpdateParentPhoneLbl
+            // 
+            this.UpdateParentPhoneLbl.AutoSize = true;
+            this.UpdateParentPhoneLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateParentPhoneLbl.Location = new System.Drawing.Point(76, 299);
+            this.UpdateParentPhoneLbl.Name = "UpdateParentPhoneLbl";
+            this.UpdateParentPhoneLbl.Size = new System.Drawing.Size(97, 16);
+            this.UpdateParentPhoneLbl.TabIndex = 2;
+            this.UpdateParentPhoneLbl.Text = "Parent Phone :";
+            // 
             // UpdateParentEmailLbl
             // 
             this.UpdateParentEmailLbl.AutoSize = true;
@@ -1428,6 +1479,16 @@
             this.UpdateParentNameLbl.Size = new System.Drawing.Size(94, 16);
             this.UpdateParentNameLbl.TabIndex = 2;
             this.UpdateParentNameLbl.Text = "Parent Name :";
+            // 
+            // UpdateStudentNumberLbl
+            // 
+            this.UpdateStudentNumberLbl.AutoSize = true;
+            this.UpdateStudentNumberLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentNumberLbl.Location = new System.Drawing.Point(290, 224);
+            this.UpdateStudentNumberLbl.Name = "UpdateStudentNumberLbl";
+            this.UpdateStudentNumberLbl.Size = new System.Drawing.Size(44, 16);
+            this.UpdateStudentNumberLbl.TabIndex = 2;
+            this.UpdateStudentNumberLbl.Text = "Class :";
             // 
             // UpdateStudentClassLbl
             // 
@@ -1527,6 +1588,22 @@
             this.UpdateStudentAddressTB.Size = new System.Drawing.Size(319, 22);
             this.UpdateStudentAddressTB.TabIndex = 0;
             // 
+            // UpdateParentPhoneTB
+            // 
+            this.UpdateParentPhoneTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateParentPhoneTB.Location = new System.Drawing.Point(176, 299);
+            this.UpdateParentPhoneTB.Name = "UpdateParentPhoneTB";
+            this.UpdateParentPhoneTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateParentPhoneTB.TabIndex = 0;
+            // 
+            // UpdateParentEmailTB
+            // 
+            this.UpdateParentEmailTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateParentEmailTB.Location = new System.Drawing.Point(176, 274);
+            this.UpdateParentEmailTB.Name = "UpdateParentEmailTB";
+            this.UpdateParentEmailTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateParentEmailTB.TabIndex = 0;
+            // 
             // UpdateParentNameTB
             // 
             this.UpdateParentNameTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -1534,6 +1611,14 @@
             this.UpdateParentNameTB.Name = "UpdateParentNameTB";
             this.UpdateParentNameTB.Size = new System.Drawing.Size(100, 22);
             this.UpdateParentNameTB.TabIndex = 0;
+            // 
+            // UpdateStudentNumberTB
+            // 
+            this.UpdateStudentNumberTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentNumberTB.Location = new System.Drawing.Point(339, 221);
+            this.UpdateStudentNumberTB.Name = "UpdateStudentNumberTB";
+            this.UpdateStudentNumberTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateStudentNumberTB.TabIndex = 0;
             // 
             // UpdateStudentLastNameTB
             // 
@@ -1559,66 +1644,130 @@
             this.UpdateStudentSchoolNumberTB.Size = new System.Drawing.Size(100, 22);
             this.UpdateStudentSchoolNumberTB.TabIndex = 0;
             // 
-            // UpdateParentEmailTB
+            // ClassPanel
             // 
-            this.UpdateParentEmailTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateParentEmailTB.Location = new System.Drawing.Point(176, 274);
-            this.UpdateParentEmailTB.Name = "UpdateParentEmailTB";
-            this.UpdateParentEmailTB.Size = new System.Drawing.Size(100, 22);
-            this.UpdateParentEmailTB.TabIndex = 0;
+            this.ClassPanel.BackColor = System.Drawing.Color.Indigo;
+            this.ClassPanel.Controls.Add(this.DeleteClassBtn);
+            this.ClassPanel.Controls.Add(this.ListClassBtn);
+            this.ClassPanel.Controls.Add(this.UpdateClassBtn);
+            this.ClassPanel.Controls.Add(this.AddClassBtn);
+            this.ClassPanel.Location = new System.Drawing.Point(200, 60);
+            this.ClassPanel.Name = "ClassPanel";
+            this.ClassPanel.Size = new System.Drawing.Size(650, 400);
+            this.ClassPanel.TabIndex = 24;
             // 
-            // UpdateParentPhoneLbl
+            // DeleteClassBtn
             // 
-            this.UpdateParentPhoneLbl.AutoSize = true;
-            this.UpdateParentPhoneLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateParentPhoneLbl.Location = new System.Drawing.Point(76, 299);
-            this.UpdateParentPhoneLbl.Name = "UpdateParentPhoneLbl";
-            this.UpdateParentPhoneLbl.Size = new System.Drawing.Size(97, 16);
-            this.UpdateParentPhoneLbl.TabIndex = 2;
-            this.UpdateParentPhoneLbl.Text = "Parent Phone :";
+            this.DeleteClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteClassBtn.Location = new System.Drawing.Point(219, 189);
+            this.DeleteClassBtn.Name = "DeleteClassBtn";
+            this.DeleteClassBtn.Size = new System.Drawing.Size(179, 37);
+            this.DeleteClassBtn.TabIndex = 0;
+            this.DeleteClassBtn.Text = "Delete Class";
+            this.DeleteClassBtn.UseVisualStyleBackColor = true;
+            this.DeleteClassBtn.Click += new System.EventHandler(this.MenuButton_Click);
             // 
-            // UpdateParentPhoneTB
+            // ListClassBtn
             // 
-            this.UpdateParentPhoneTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateParentPhoneTB.Location = new System.Drawing.Point(176, 299);
-            this.UpdateParentPhoneTB.Name = "UpdateParentPhoneTB";
-            this.UpdateParentPhoneTB.Size = new System.Drawing.Size(100, 22);
-            this.UpdateParentPhoneTB.TabIndex = 0;
+            this.ListClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ListClassBtn.Location = new System.Drawing.Point(219, 146);
+            this.ListClassBtn.Name = "ListClassBtn";
+            this.ListClassBtn.Size = new System.Drawing.Size(179, 37);
+            this.ListClassBtn.TabIndex = 0;
+            this.ListClassBtn.Text = "List Class";
+            this.ListClassBtn.UseVisualStyleBackColor = true;
+            this.ListClassBtn.Click += new System.EventHandler(this.MenuButton_Click);
             // 
-            // UpdateStudentBtn
+            // UpdateClassBtn
             // 
-            this.UpdateStudentBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentBtn.Location = new System.Drawing.Point(475, 346);
-            this.UpdateStudentBtn.Name = "UpdateStudentBtn";
-            this.UpdateStudentBtn.Size = new System.Drawing.Size(139, 23);
-            this.UpdateStudentBtn.TabIndex = 3;
-            this.UpdateStudentBtn.Text = "Update Student";
-            this.UpdateStudentBtn.UseVisualStyleBackColor = true;
-            this.UpdateStudentBtn.Click += new System.EventHandler(this.UpdateStudentBtn_Click);
+            this.UpdateClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateClassBtn.Location = new System.Drawing.Point(219, 103);
+            this.UpdateClassBtn.Name = "UpdateClassBtn";
+            this.UpdateClassBtn.Size = new System.Drawing.Size(179, 37);
+            this.UpdateClassBtn.TabIndex = 0;
+            this.UpdateClassBtn.Text = "Update Class";
+            this.UpdateClassBtn.UseVisualStyleBackColor = true;
+            this.UpdateClassBtn.Click += new System.EventHandler(this.MenuButton_Click);
             // 
-            // UpdateStudentNumberLbl
+            // AddClassBtn
             // 
-            this.UpdateStudentNumberLbl.AutoSize = true;
-            this.UpdateStudentNumberLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentNumberLbl.Location = new System.Drawing.Point(290, 224);
-            this.UpdateStudentNumberLbl.Name = "UpdateStudentNumberLbl";
-            this.UpdateStudentNumberLbl.Size = new System.Drawing.Size(44, 16);
-            this.UpdateStudentNumberLbl.TabIndex = 2;
-            this.UpdateStudentNumberLbl.Text = "Class :";
+            this.AddClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AddClassBtn.Location = new System.Drawing.Point(219, 60);
+            this.AddClassBtn.Name = "AddClassBtn";
+            this.AddClassBtn.Size = new System.Drawing.Size(179, 37);
+            this.AddClassBtn.TabIndex = 0;
+            this.AddClassBtn.Text = "Add Class";
+            this.AddClassBtn.UseVisualStyleBackColor = true;
+            this.AddClassBtn.Click += new System.EventHandler(this.MenuButton_Click);
             // 
-            // UpdateStudentNumberTB
+            // AddClassPnl
             // 
-            this.UpdateStudentNumberTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentNumberTB.Location = new System.Drawing.Point(339, 221);
-            this.UpdateStudentNumberTB.Name = "UpdateStudentNumberTB";
-            this.UpdateStudentNumberTB.Size = new System.Drawing.Size(100, 22);
-            this.UpdateStudentNumberTB.TabIndex = 0;
+            this.AddClassPnl.BackColor = System.Drawing.Color.LightPink;
+            this.AddClassPnl.Controls.Add(this.AddClassBtn2);
+            this.AddClassPnl.Controls.Add(this.AddClassTB);
+            this.AddClassPnl.Controls.Add(this.ClassNameLbl2);
+            this.AddClassPnl.Controls.Add(this.ClassNameLbl);
+            this.AddClassPnl.Controls.Add(this.AddClassHeader);
+            this.AddClassPnl.Location = new System.Drawing.Point(200, 51);
+            this.AddClassPnl.Name = "AddClassPnl";
+            this.AddClassPnl.Size = new System.Drawing.Size(650, 400);
+            this.AddClassPnl.TabIndex = 25;
+            // 
+            // AddClassHeader
+            // 
+            this.AddClassHeader.AutoSize = true;
+            this.AddClassHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AddClassHeader.Location = new System.Drawing.Point(40, 22);
+            this.AddClassHeader.Name = "AddClassHeader";
+            this.AddClassHeader.Size = new System.Drawing.Size(88, 22);
+            this.AddClassHeader.TabIndex = 0;
+            this.AddClassHeader.Text = "Add Class";
+            // 
+            // ClassNameLbl
+            // 
+            this.ClassNameLbl.AutoSize = true;
+            this.ClassNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ClassNameLbl.Location = new System.Drawing.Point(100, 73);
+            this.ClassNameLbl.Name = "ClassNameLbl";
+            this.ClassNameLbl.Size = new System.Drawing.Size(84, 16);
+            this.ClassNameLbl.TabIndex = 0;
+            this.ClassNameLbl.Text = "Class Name :";
+            // 
+            // AddClassTB
+            // 
+            this.AddClassTB.Location = new System.Drawing.Point(190, 72);
+            this.AddClassTB.Name = "AddClassTB";
+            this.AddClassTB.Size = new System.Drawing.Size(100, 20);
+            this.AddClassTB.TabIndex = 1;
+            // 
+            // ClassNameLbl2
+            // 
+            this.ClassNameLbl2.AutoSize = true;
+            this.ClassNameLbl2.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ClassNameLbl2.Location = new System.Drawing.Point(100, 100);
+            this.ClassNameLbl2.Name = "ClassNameLbl2";
+            this.ClassNameLbl2.Size = new System.Drawing.Size(379, 15);
+            this.ClassNameLbl2.TabIndex = 0;
+            this.ClassNameLbl2.Text = "*When writing, please put a \'-\' sign between the branch and the class.";
+            // 
+            // AddClassBtn2
+            // 
+            this.AddClassBtn2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AddClassBtn2.Location = new System.Drawing.Point(432, 133);
+            this.AddClassBtn2.Name = "AddClassBtn2";
+            this.AddClassBtn2.Size = new System.Drawing.Size(89, 23);
+            this.AddClassBtn2.TabIndex = 2;
+            this.AddClassBtn2.Text = "Add Class";
+            this.AddClassBtn2.UseVisualStyleBackColor = true;
+            this.AddClassBtn2.Click += new System.EventHandler(this.AddClassBtn2_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 484);
+            this.Controls.Add(this.AddClassPnl);
+            this.Controls.Add(this.ClassPanel);
             this.Controls.Add(this.StudentUpdatePanel);
             this.Controls.Add(this.DateAndTime);
             this.Controls.Add(this.label2);
@@ -1664,6 +1813,9 @@
             this.TeacheAddPnl.PerformLayout();
             this.StudentUpdatePanel.ResumeLayout(false);
             this.StudentUpdatePanel.PerformLayout();
+            this.ClassPanel.ResumeLayout(false);
+            this.AddClassPnl.ResumeLayout(false);
+            this.AddClassPnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1808,5 +1960,17 @@
         private System.Windows.Forms.TextBox UpdateParentPhoneTB;
         private System.Windows.Forms.Label UpdateStudentNumberLbl;
         private System.Windows.Forms.TextBox UpdateStudentNumberTB;
+        private System.Windows.Forms.Button ClassButon;
+        private System.Windows.Forms.Panel ClassPanel;
+        private System.Windows.Forms.Button AddClassBtn;
+        private System.Windows.Forms.Button DeleteClassBtn;
+        private System.Windows.Forms.Button ListClassBtn;
+        private System.Windows.Forms.Button UpdateClassBtn;
+        private System.Windows.Forms.Panel AddClassPnl;
+        private System.Windows.Forms.Label AddClassHeader;
+        private System.Windows.Forms.TextBox AddClassTB;
+        private System.Windows.Forms.Label ClassNameLbl2;
+        private System.Windows.Forms.Label ClassNameLbl;
+        private System.Windows.Forms.Button AddClassBtn2;
     }
 }
