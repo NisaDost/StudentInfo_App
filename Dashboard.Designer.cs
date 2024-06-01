@@ -98,6 +98,7 @@
             this.StudentListClassCB = new System.Windows.Forms.ComboBox();
             this.StudentListTitleLbl = new System.Windows.Forms.Label();
             this.StudentPanel = new System.Windows.Forms.Panel();
+            this.StudentUpdatebtn = new System.Windows.Forms.Button();
             this.StudentDeleteBtn = new System.Windows.Forms.Button();
             this.StudentListBtn = new System.Windows.Forms.Button();
             this.StudentRegistrationBtn = new System.Windows.Forms.Button();
@@ -128,6 +129,7 @@
             this.TeacherDeleteBtn = new System.Windows.Forms.Button();
             this.TeacherAddBtn = new System.Windows.Forms.Button();
             this.TeacheAddPnl = new System.Windows.Forms.Panel();
+            this.TeacherAddBranchCB = new System.Windows.Forms.ComboBox();
             this.TeacherAdd2Btn = new System.Windows.Forms.Button();
             this.TeacherAddClassCB = new System.Windows.Forms.ComboBox();
             this.TeacherAddNameTB = new System.Windows.Forms.TextBox();
@@ -135,7 +137,36 @@
             this.TeacherAddClassLbl = new System.Windows.Forms.Label();
             this.TeacherAddNameLbl = new System.Windows.Forms.Label();
             this.TeacherAddHeadher = new System.Windows.Forms.Label();
-            this.TeacherAddBranchCB = new System.Windows.Forms.ComboBox();
+            this.StudentUpdatePanel = new System.Windows.Forms.Panel();
+            this.UpdateStudentDistrictCB = new System.Windows.Forms.ComboBox();
+            this.UpdateStudentClassCB = new System.Windows.Forms.ComboBox();
+            this.UpdateStudentCityCB = new System.Windows.Forms.ComboBox();
+            this.UpdateStudentGenderCB = new System.Windows.Forms.ComboBox();
+            this.UpdateStudentBirthdayDTP = new System.Windows.Forms.DateTimePicker();
+            this.GetStudentInfoBtn = new System.Windows.Forms.Button();
+            this.UpdateStudentDistrictLbl = new System.Windows.Forms.Label();
+            this.UpdateParentEmailLbl = new System.Windows.Forms.Label();
+            this.UpdateParentNameLbl = new System.Windows.Forms.Label();
+            this.UpdateStudentClassLbl = new System.Windows.Forms.Label();
+            this.UpdateStudentAddressLbl = new System.Windows.Forms.Label();
+            this.UpdateStudentCityLbl = new System.Windows.Forms.Label();
+            this.UpdateStudentGenderLbl = new System.Windows.Forms.Label();
+            this.UpdateStudentBirthdayLbl = new System.Windows.Forms.Label();
+            this.UpdateStudentLastNameLbl = new System.Windows.Forms.Label();
+            this.UpdateStudentFirstNameLbl = new System.Windows.Forms.Label();
+            this.StudentSchoolNumberSearchlBL = new System.Windows.Forms.Label();
+            this.UpdateStudentHeaderLbl = new System.Windows.Forms.Label();
+            this.UpdateStudentAddressTB = new System.Windows.Forms.TextBox();
+            this.UpdateParentNameTB = new System.Windows.Forms.TextBox();
+            this.UpdateStudentLastNameTB = new System.Windows.Forms.TextBox();
+            this.UpdateStudentFirstNameTB = new System.Windows.Forms.TextBox();
+            this.UpdateStudentSchoolNumberTB = new System.Windows.Forms.TextBox();
+            this.UpdateParentEmailTB = new System.Windows.Forms.TextBox();
+            this.UpdateParentPhoneLbl = new System.Windows.Forms.Label();
+            this.UpdateParentPhoneTB = new System.Windows.Forms.TextBox();
+            this.UpdateStudentBtn = new System.Windows.Forms.Button();
+            this.UpdateStudentNumberLbl = new System.Windows.Forms.Label();
+            this.UpdateStudentNumberTB = new System.Windows.Forms.TextBox();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -151,6 +182,7 @@
             this.StudentAttandanceEntryPanel.SuspendLayout();
             this.TeacherPanel.SuspendLayout();
             this.TeacheAddPnl.SuspendLayout();
+            this.StudentUpdatePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBar
@@ -871,6 +903,7 @@
             // StudentPanel
             // 
             this.StudentPanel.BackColor = System.Drawing.Color.OliveDrab;
+            this.StudentPanel.Controls.Add(this.StudentUpdatebtn);
             this.StudentPanel.Controls.Add(this.StudentDeleteBtn);
             this.StudentPanel.Controls.Add(this.StudentListBtn);
             this.StudentPanel.Controls.Add(this.StudentRegistrationBtn);
@@ -879,9 +912,19 @@
             this.StudentPanel.Size = new System.Drawing.Size(591, 318);
             this.StudentPanel.TabIndex = 17;
             // 
+            // StudentUpdatebtn
+            // 
+            this.StudentUpdatebtn.Location = new System.Drawing.Point(195, 174);
+            this.StudentUpdatebtn.Name = "StudentUpdatebtn";
+            this.StudentUpdatebtn.Size = new System.Drawing.Size(198, 38);
+            this.StudentUpdatebtn.TabIndex = 0;
+            this.StudentUpdatebtn.Text = "Update Student";
+            this.StudentUpdatebtn.UseVisualStyleBackColor = true;
+            this.StudentUpdatebtn.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
             // StudentDeleteBtn
             // 
-            this.StudentDeleteBtn.Location = new System.Drawing.Point(195, 162);
+            this.StudentDeleteBtn.Location = new System.Drawing.Point(195, 130);
             this.StudentDeleteBtn.Name = "StudentDeleteBtn";
             this.StudentDeleteBtn.Size = new System.Drawing.Size(198, 38);
             this.StudentDeleteBtn.TabIndex = 0;
@@ -891,7 +934,7 @@
             // 
             // StudentListBtn
             // 
-            this.StudentListBtn.Location = new System.Drawing.Point(195, 111);
+            this.StudentListBtn.Location = new System.Drawing.Point(195, 86);
             this.StudentListBtn.Name = "StudentListBtn";
             this.StudentListBtn.Size = new System.Drawing.Size(198, 38);
             this.StudentListBtn.TabIndex = 0;
@@ -901,7 +944,7 @@
             // 
             // StudentRegistrationBtn
             // 
-            this.StudentRegistrationBtn.Location = new System.Drawing.Point(195, 64);
+            this.StudentRegistrationBtn.Location = new System.Drawing.Point(195, 42);
             this.StudentRegistrationBtn.Name = "StudentRegistrationBtn";
             this.StudentRegistrationBtn.Size = new System.Drawing.Size(198, 38);
             this.StudentRegistrationBtn.TabIndex = 0;
@@ -1195,6 +1238,14 @@
             this.TeacheAddPnl.Size = new System.Drawing.Size(662, 388);
             this.TeacheAddPnl.TabIndex = 22;
             // 
+            // TeacherAddBranchCB
+            // 
+            this.TeacherAddBranchCB.FormattingEnabled = true;
+            this.TeacherAddBranchCB.Location = new System.Drawing.Point(183, 137);
+            this.TeacherAddBranchCB.Name = "TeacherAddBranchCB";
+            this.TeacherAddBranchCB.Size = new System.Drawing.Size(121, 24);
+            this.TeacherAddBranchCB.TabIndex = 5;
+            // 
             // TeacherAdd2Btn
             // 
             this.TeacherAdd2Btn.Location = new System.Drawing.Point(432, 185);
@@ -1259,34 +1310,331 @@
             this.TeacherAddHeadher.TabIndex = 0;
             this.TeacherAddHeadher.Text = "Add Teacher";
             // 
-            // TeacherAddBranchCB
+            // StudentUpdatePanel
             // 
-            this.TeacherAddBranchCB.FormattingEnabled = true;
-            this.TeacherAddBranchCB.Location = new System.Drawing.Point(183, 137);
-            this.TeacherAddBranchCB.Name = "TeacherAddBranchCB";
-            this.TeacherAddBranchCB.Size = new System.Drawing.Size(121, 24);
-            this.TeacherAddBranchCB.TabIndex = 5;
+            this.StudentUpdatePanel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentDistrictCB);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentClassCB);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentCityCB);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentGenderCB);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentBirthdayDTP);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentBtn);
+            this.StudentUpdatePanel.Controls.Add(this.GetStudentInfoBtn);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentDistrictLbl);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateParentPhoneLbl);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateParentEmailLbl);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateParentNameLbl);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentNumberLbl);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentClassLbl);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentAddressLbl);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentCityLbl);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentGenderLbl);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentBirthdayLbl);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentLastNameLbl);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentFirstNameLbl);
+            this.StudentUpdatePanel.Controls.Add(this.StudentSchoolNumberSearchlBL);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentHeaderLbl);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentAddressTB);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateParentPhoneTB);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateParentEmailTB);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateParentNameTB);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentNumberTB);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentLastNameTB);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentFirstNameTB);
+            this.StudentUpdatePanel.Controls.Add(this.UpdateStudentSchoolNumberTB);
+            this.StudentUpdatePanel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.StudentUpdatePanel.Location = new System.Drawing.Point(200, 51);
+            this.StudentUpdatePanel.Name = "StudentUpdatePanel";
+            this.StudentUpdatePanel.Size = new System.Drawing.Size(650, 400);
+            this.StudentUpdatePanel.TabIndex = 23;
+            // 
+            // UpdateStudentDistrictCB
+            // 
+            this.UpdateStudentDistrictCB.FormattingEnabled = true;
+            this.UpdateStudentDistrictCB.Location = new System.Drawing.Point(360, 175);
+            this.UpdateStudentDistrictCB.Name = "UpdateStudentDistrictCB";
+            this.UpdateStudentDistrictCB.Size = new System.Drawing.Size(121, 21);
+            this.UpdateStudentDistrictCB.TabIndex = 5;
+            // 
+            // UpdateStudentClassCB
+            // 
+            this.UpdateStudentClassCB.FormattingEnabled = true;
+            this.UpdateStudentClassCB.Location = new System.Drawing.Point(161, 223);
+            this.UpdateStudentClassCB.Name = "UpdateStudentClassCB";
+            this.UpdateStudentClassCB.Size = new System.Drawing.Size(121, 21);
+            this.UpdateStudentClassCB.TabIndex = 5;
+            // 
+            // UpdateStudentCityCB
+            // 
+            this.UpdateStudentCityCB.FormattingEnabled = true;
+            this.UpdateStudentCityCB.Location = new System.Drawing.Point(162, 174);
+            this.UpdateStudentCityCB.Name = "UpdateStudentCityCB";
+            this.UpdateStudentCityCB.Size = new System.Drawing.Size(121, 21);
+            this.UpdateStudentCityCB.TabIndex = 5;
+            // 
+            // UpdateStudentGenderCB
+            // 
+            this.UpdateStudentGenderCB.FormattingEnabled = true;
+            this.UpdateStudentGenderCB.Location = new System.Drawing.Point(162, 151);
+            this.UpdateStudentGenderCB.Name = "UpdateStudentGenderCB";
+            this.UpdateStudentGenderCB.Size = new System.Drawing.Size(121, 21);
+            this.UpdateStudentGenderCB.TabIndex = 5;
+            // 
+            // UpdateStudentBirthdayDTP
+            // 
+            this.UpdateStudentBirthdayDTP.CalendarFont = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentBirthdayDTP.Location = new System.Drawing.Point(162, 127);
+            this.UpdateStudentBirthdayDTP.Name = "UpdateStudentBirthdayDTP";
+            this.UpdateStudentBirthdayDTP.Size = new System.Drawing.Size(200, 20);
+            this.UpdateStudentBirthdayDTP.TabIndex = 4;
+            // 
+            // GetStudentInfoBtn
+            // 
+            this.GetStudentInfoBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.GetStudentInfoBtn.Location = new System.Drawing.Point(348, 42);
+            this.GetStudentInfoBtn.Name = "GetStudentInfoBtn";
+            this.GetStudentInfoBtn.Size = new System.Drawing.Size(139, 23);
+            this.GetStudentInfoBtn.TabIndex = 3;
+            this.GetStudentInfoBtn.Text = "Get Student Info";
+            this.GetStudentInfoBtn.UseVisualStyleBackColor = true;
+            this.GetStudentInfoBtn.Click += new System.EventHandler(this.GetStudentInfoBtn_Click);
+            // 
+            // UpdateStudentDistrictLbl
+            // 
+            this.UpdateStudentDistrictLbl.AutoSize = true;
+            this.UpdateStudentDistrictLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentDistrictLbl.Location = new System.Drawing.Point(297, 176);
+            this.UpdateStudentDistrictLbl.Name = "UpdateStudentDistrictLbl";
+            this.UpdateStudentDistrictLbl.Size = new System.Drawing.Size(57, 16);
+            this.UpdateStudentDistrictLbl.TabIndex = 2;
+            this.UpdateStudentDistrictLbl.Text = "District :";
+            // 
+            // UpdateParentEmailLbl
+            // 
+            this.UpdateParentEmailLbl.AutoSize = true;
+            this.UpdateParentEmailLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateParentEmailLbl.Location = new System.Drawing.Point(77, 274);
+            this.UpdateParentEmailLbl.Name = "UpdateParentEmailLbl";
+            this.UpdateParentEmailLbl.Size = new System.Drawing.Size(91, 16);
+            this.UpdateParentEmailLbl.TabIndex = 2;
+            this.UpdateParentEmailLbl.Text = "Parent Email :";
+            // 
+            // UpdateParentNameLbl
+            // 
+            this.UpdateParentNameLbl.AutoSize = true;
+            this.UpdateParentNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateParentNameLbl.Location = new System.Drawing.Point(77, 253);
+            this.UpdateParentNameLbl.Name = "UpdateParentNameLbl";
+            this.UpdateParentNameLbl.Size = new System.Drawing.Size(94, 16);
+            this.UpdateParentNameLbl.TabIndex = 2;
+            this.UpdateParentNameLbl.Text = "Parent Name :";
+            // 
+            // UpdateStudentClassLbl
+            // 
+            this.UpdateStudentClassLbl.AutoSize = true;
+            this.UpdateStudentClassLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentClassLbl.Location = new System.Drawing.Point(77, 224);
+            this.UpdateStudentClassLbl.Name = "UpdateStudentClassLbl";
+            this.UpdateStudentClassLbl.Size = new System.Drawing.Size(44, 16);
+            this.UpdateStudentClassLbl.TabIndex = 2;
+            this.UpdateStudentClassLbl.Text = "Class :";
+            // 
+            // UpdateStudentAddressLbl
+            // 
+            this.UpdateStudentAddressLbl.AutoSize = true;
+            this.UpdateStudentAddressLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentAddressLbl.Location = new System.Drawing.Point(77, 201);
+            this.UpdateStudentAddressLbl.Name = "UpdateStudentAddressLbl";
+            this.UpdateStudentAddressLbl.Size = new System.Drawing.Size(54, 16);
+            this.UpdateStudentAddressLbl.TabIndex = 2;
+            this.UpdateStudentAddressLbl.Text = "Adress :";
+            // 
+            // UpdateStudentCityLbl
+            // 
+            this.UpdateStudentCityLbl.AutoSize = true;
+            this.UpdateStudentCityLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentCityLbl.Location = new System.Drawing.Point(76, 176);
+            this.UpdateStudentCityLbl.Name = "UpdateStudentCityLbl";
+            this.UpdateStudentCityLbl.Size = new System.Drawing.Size(37, 16);
+            this.UpdateStudentCityLbl.TabIndex = 2;
+            this.UpdateStudentCityLbl.Text = "City :";
+            // 
+            // UpdateStudentGenderLbl
+            // 
+            this.UpdateStudentGenderLbl.AutoSize = true;
+            this.UpdateStudentGenderLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentGenderLbl.Location = new System.Drawing.Point(76, 154);
+            this.UpdateStudentGenderLbl.Name = "UpdateStudentGenderLbl";
+            this.UpdateStudentGenderLbl.Size = new System.Drawing.Size(57, 16);
+            this.UpdateStudentGenderLbl.TabIndex = 2;
+            this.UpdateStudentGenderLbl.Text = "Gender :";
+            // 
+            // UpdateStudentBirthdayLbl
+            // 
+            this.UpdateStudentBirthdayLbl.AutoSize = true;
+            this.UpdateStudentBirthdayLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentBirthdayLbl.Location = new System.Drawing.Point(76, 131);
+            this.UpdateStudentBirthdayLbl.Name = "UpdateStudentBirthdayLbl";
+            this.UpdateStudentBirthdayLbl.Size = new System.Drawing.Size(65, 16);
+            this.UpdateStudentBirthdayLbl.TabIndex = 2;
+            this.UpdateStudentBirthdayLbl.Text = "Birthday :";
+            // 
+            // UpdateStudentLastNameLbl
+            // 
+            this.UpdateStudentLastNameLbl.AutoSize = true;
+            this.UpdateStudentLastNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentLastNameLbl.Location = new System.Drawing.Point(76, 102);
+            this.UpdateStudentLastNameLbl.Name = "UpdateStudentLastNameLbl";
+            this.UpdateStudentLastNameLbl.Size = new System.Drawing.Size(78, 16);
+            this.UpdateStudentLastNameLbl.TabIndex = 2;
+            this.UpdateStudentLastNameLbl.Text = "Last Name :";
+            // 
+            // UpdateStudentFirstNameLbl
+            // 
+            this.UpdateStudentFirstNameLbl.AutoSize = true;
+            this.UpdateStudentFirstNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentFirstNameLbl.Location = new System.Drawing.Point(76, 78);
+            this.UpdateStudentFirstNameLbl.Name = "UpdateStudentFirstNameLbl";
+            this.UpdateStudentFirstNameLbl.Size = new System.Drawing.Size(80, 16);
+            this.UpdateStudentFirstNameLbl.TabIndex = 2;
+            this.UpdateStudentFirstNameLbl.Text = "First Name :";
+            // 
+            // StudentSchoolNumberSearchlBL
+            // 
+            this.StudentSchoolNumberSearchlBL.AutoSize = true;
+            this.StudentSchoolNumberSearchlBL.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentSchoolNumberSearchlBL.Location = new System.Drawing.Point(77, 45);
+            this.StudentSchoolNumberSearchlBL.Name = "StudentSchoolNumberSearchlBL";
+            this.StudentSchoolNumberSearchlBL.Size = new System.Drawing.Size(144, 16);
+            this.StudentSchoolNumberSearchlBL.TabIndex = 2;
+            this.StudentSchoolNumberSearchlBL.Text = "Enter School Number :";
+            // 
+            // UpdateStudentHeaderLbl
+            // 
+            this.UpdateStudentHeaderLbl.AutoSize = true;
+            this.UpdateStudentHeaderLbl.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentHeaderLbl.Location = new System.Drawing.Point(27, 13);
+            this.UpdateStudentHeaderLbl.Name = "UpdateStudentHeaderLbl";
+            this.UpdateStudentHeaderLbl.Size = new System.Drawing.Size(130, 21);
+            this.UpdateStudentHeaderLbl.TabIndex = 1;
+            this.UpdateStudentHeaderLbl.Text = "Update Student";
+            // 
+            // UpdateStudentAddressTB
+            // 
+            this.UpdateStudentAddressTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentAddressTB.Location = new System.Drawing.Point(162, 198);
+            this.UpdateStudentAddressTB.Name = "UpdateStudentAddressTB";
+            this.UpdateStudentAddressTB.Size = new System.Drawing.Size(319, 22);
+            this.UpdateStudentAddressTB.TabIndex = 0;
+            // 
+            // UpdateParentNameTB
+            // 
+            this.UpdateParentNameTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateParentNameTB.Location = new System.Drawing.Point(176, 250);
+            this.UpdateParentNameTB.Name = "UpdateParentNameTB";
+            this.UpdateParentNameTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateParentNameTB.TabIndex = 0;
+            // 
+            // UpdateStudentLastNameTB
+            // 
+            this.UpdateStudentLastNameTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentLastNameTB.Location = new System.Drawing.Point(162, 99);
+            this.UpdateStudentLastNameTB.Name = "UpdateStudentLastNameTB";
+            this.UpdateStudentLastNameTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateStudentLastNameTB.TabIndex = 0;
+            // 
+            // UpdateStudentFirstNameTB
+            // 
+            this.UpdateStudentFirstNameTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentFirstNameTB.Location = new System.Drawing.Point(162, 75);
+            this.UpdateStudentFirstNameTB.Name = "UpdateStudentFirstNameTB";
+            this.UpdateStudentFirstNameTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateStudentFirstNameTB.TabIndex = 0;
+            // 
+            // UpdateStudentSchoolNumberTB
+            // 
+            this.UpdateStudentSchoolNumberTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentSchoolNumberTB.Location = new System.Drawing.Point(230, 44);
+            this.UpdateStudentSchoolNumberTB.Name = "UpdateStudentSchoolNumberTB";
+            this.UpdateStudentSchoolNumberTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateStudentSchoolNumberTB.TabIndex = 0;
+            // 
+            // UpdateParentEmailTB
+            // 
+            this.UpdateParentEmailTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateParentEmailTB.Location = new System.Drawing.Point(176, 274);
+            this.UpdateParentEmailTB.Name = "UpdateParentEmailTB";
+            this.UpdateParentEmailTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateParentEmailTB.TabIndex = 0;
+            // 
+            // UpdateParentPhoneLbl
+            // 
+            this.UpdateParentPhoneLbl.AutoSize = true;
+            this.UpdateParentPhoneLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateParentPhoneLbl.Location = new System.Drawing.Point(76, 299);
+            this.UpdateParentPhoneLbl.Name = "UpdateParentPhoneLbl";
+            this.UpdateParentPhoneLbl.Size = new System.Drawing.Size(97, 16);
+            this.UpdateParentPhoneLbl.TabIndex = 2;
+            this.UpdateParentPhoneLbl.Text = "Parent Phone :";
+            // 
+            // UpdateParentPhoneTB
+            // 
+            this.UpdateParentPhoneTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateParentPhoneTB.Location = new System.Drawing.Point(176, 299);
+            this.UpdateParentPhoneTB.Name = "UpdateParentPhoneTB";
+            this.UpdateParentPhoneTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateParentPhoneTB.TabIndex = 0;
+            // 
+            // UpdateStudentBtn
+            // 
+            this.UpdateStudentBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentBtn.Location = new System.Drawing.Point(475, 346);
+            this.UpdateStudentBtn.Name = "UpdateStudentBtn";
+            this.UpdateStudentBtn.Size = new System.Drawing.Size(139, 23);
+            this.UpdateStudentBtn.TabIndex = 3;
+            this.UpdateStudentBtn.Text = "Update Student";
+            this.UpdateStudentBtn.UseVisualStyleBackColor = true;
+            this.UpdateStudentBtn.Click += new System.EventHandler(this.UpdateStudentBtn_Click);
+            // 
+            // UpdateStudentNumberLbl
+            // 
+            this.UpdateStudentNumberLbl.AutoSize = true;
+            this.UpdateStudentNumberLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentNumberLbl.Location = new System.Drawing.Point(290, 224);
+            this.UpdateStudentNumberLbl.Name = "UpdateStudentNumberLbl";
+            this.UpdateStudentNumberLbl.Size = new System.Drawing.Size(44, 16);
+            this.UpdateStudentNumberLbl.TabIndex = 2;
+            this.UpdateStudentNumberLbl.Text = "Class :";
+            // 
+            // UpdateStudentNumberTB
+            // 
+            this.UpdateStudentNumberTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentNumberTB.Location = new System.Drawing.Point(339, 221);
+            this.UpdateStudentNumberTB.Name = "UpdateStudentNumberTB";
+            this.UpdateStudentNumberTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateStudentNumberTB.TabIndex = 0;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 484);
-            this.Controls.Add(this.TeacheAddPnl);
-            this.Controls.Add(this.StudentAttandanceEntryPanel);
-            this.Controls.Add(this.AbscencePanel);
+            this.Controls.Add(this.StudentUpdatePanel);
             this.Controls.Add(this.DateAndTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.MenuBar);
+            this.Controls.Add(this.StudentPanel);
+            this.Controls.Add(this.TeacherPanel);
+            this.Controls.Add(this.StudentAttandanceEntryPanel);
+            this.Controls.Add(this.AbscencePanel);
             this.Controls.Add(this.AbscenceInfoPanel);
             this.Controls.Add(this.HomePanel);
             this.Controls.Add(this.StudentPanelRegistrationPanel);
             this.Controls.Add(this.CanteenPanel);
             this.Controls.Add(this.StudentDeletePanel);
             this.Controls.Add(this.StudentListPanel);
-            this.Controls.Add(this.StudentPanel);
-            this.Controls.Add(this.TeacherPanel);
+            this.Controls.Add(this.TeacheAddPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
@@ -1314,6 +1662,8 @@
             this.TeacherPanel.ResumeLayout(false);
             this.TeacheAddPnl.ResumeLayout(false);
             this.TeacheAddPnl.PerformLayout();
+            this.StudentUpdatePanel.ResumeLayout(false);
+            this.StudentUpdatePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1427,5 +1777,36 @@
         private System.Windows.Forms.Label TeacherAddBranchLbl;
         private System.Windows.Forms.Label TeacherAddClassLbl;
         private System.Windows.Forms.ComboBox TeacherAddBranchCB;
+        private System.Windows.Forms.Button StudentUpdatebtn;
+        private System.Windows.Forms.Panel StudentUpdatePanel;
+        private System.Windows.Forms.Label StudentSchoolNumberSearchlBL;
+        private System.Windows.Forms.Label UpdateStudentHeaderLbl;
+        private System.Windows.Forms.TextBox UpdateStudentSchoolNumberTB;
+        private System.Windows.Forms.Button GetStudentInfoBtn;
+        private System.Windows.Forms.Label UpdateStudentLastNameLbl;
+        private System.Windows.Forms.Label UpdateStudentFirstNameLbl;
+        private System.Windows.Forms.TextBox UpdateStudentLastNameTB;
+        private System.Windows.Forms.TextBox UpdateStudentFirstNameTB;
+        private System.Windows.Forms.DateTimePicker UpdateStudentBirthdayDTP;
+        private System.Windows.Forms.Label UpdateStudentBirthdayLbl;
+        private System.Windows.Forms.ComboBox UpdateStudentDistrictCB;
+        private System.Windows.Forms.ComboBox UpdateStudentCityCB;
+        private System.Windows.Forms.ComboBox UpdateStudentGenderCB;
+        private System.Windows.Forms.Label UpdateStudentDistrictLbl;
+        private System.Windows.Forms.Label UpdateStudentAddressLbl;
+        private System.Windows.Forms.Label UpdateStudentCityLbl;
+        private System.Windows.Forms.Label UpdateStudentGenderLbl;
+        private System.Windows.Forms.TextBox UpdateStudentAddressTB;
+        private System.Windows.Forms.ComboBox UpdateStudentClassCB;
+        private System.Windows.Forms.Label UpdateParentNameLbl;
+        private System.Windows.Forms.Label UpdateStudentClassLbl;
+        private System.Windows.Forms.TextBox UpdateParentNameTB;
+        private System.Windows.Forms.Label UpdateParentEmailLbl;
+        private System.Windows.Forms.TextBox UpdateParentEmailTB;
+        private System.Windows.Forms.Button UpdateStudentBtn;
+        private System.Windows.Forms.Label UpdateParentPhoneLbl;
+        private System.Windows.Forms.TextBox UpdateParentPhoneTB;
+        private System.Windows.Forms.Label UpdateStudentNumberLbl;
+        private System.Windows.Forms.TextBox UpdateStudentNumberTB;
     }
 }

@@ -39,7 +39,12 @@ namespace StudentInfo_App
         public Dashboard()
         {
             InitializeComponent();
+
             LoadClassesAndBranches();
+            //update için
+            LoadCities();
+            // Şehir ComboBox'ında seçim değiştiğinde ilçeleri yükle
+            UpdateStudentCityCB.SelectedIndexChanged += new EventHandler(UpdateStudentCityCB_SelectedIndexChanged);
 
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
@@ -52,6 +57,7 @@ namespace StudentInfo_App
             buttonPanelMap.Add("StudentEntryAttandanceBtn", StudentAttandanceEntryPanel);
             buttonPanelMap.Add("TeacherButoon", TeacherPanel);
             buttonPanelMap.Add("TeacherAddBtn", TeacheAddPnl);
+            buttonPanelMap.Add("StudentUpdatebtn", StudentUpdatePanel);
             //buttonPanelMap.Add("TeacherDeleteBtn", TeacherDeletePnl);
 
             ShowPanel(HomePanel);
@@ -86,10 +92,12 @@ namespace StudentInfo_App
                     StudentDistrictCB.DataSource = districts;
                     StudentDistrictCB.DisplayMember = "DISTRICTNAME";  // Görüntülemede district ismini kullan
                     StudentDistrictCB.ValueMember = "Id";  // Değer olarak district_id'yi kullan
+
                 }
                 else
                 {
                     StudentDistrictCB.DataSource = new List<DISTRICT>(); // Empty list if no city is selected
+
                 }
             }
 
@@ -109,6 +117,9 @@ namespace StudentInfo_App
             StudentGenderCB.Items.Add("Male");
             StudentGenderCB.Items.Add("Female");
             StudentGenderCB.SelectedIndex = 0;
+            UpdateStudentGenderCB.Items.Add("Male");
+            UpdateStudentGenderCB.Items.Add("Female");
+
 
             #endregion
 
@@ -240,9 +251,9 @@ namespace StudentInfo_App
             try
             {
                 // Girdi kontrolleri
-                if (string.IsNullOrWhiteSpace(ParentNameTB.Text) || ParentNameTB.Text.Length > 50)
+                if (string.IsNullOrWhiteSpace(ParentNameTB.Text) || ParentNameTB.Text.Length > 30)
                 {
-                    MessageBox.Show("Parent ismi zorunludur ve en fazla 50 karakter olabilir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Parent ismi zorunludur ve en fazla 30 karakter olabilir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -258,15 +269,15 @@ namespace StudentInfo_App
                     return;
                 }
 
-                if (string.IsNullOrWhiteSpace(StudentFirstNameTB.Text) || StudentFirstNameTB.Text.Length > 50)
+                if (string.IsNullOrWhiteSpace(StudentFirstNameTB.Text) || StudentFirstNameTB.Text.Length > 30)
                 {
-                    MessageBox.Show("Öğrenci ismi zorunludur ve en fazla 50 karakter olabilir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Öğrenci ismi zorunludur ve en fazla 30 karakter olabilir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (string.IsNullOrWhiteSpace(StudentLastNameTB.Text) || StudentLastNameTB.Text.Length > 50)
+                if (string.IsNullOrWhiteSpace(StudentLastNameTB.Text) || StudentLastNameTB.Text.Length > 30)
                 {
-                    MessageBox.Show("Öğrenci soyismi zorunludur ve en fazla 50 karakter olabilir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Öğrenci soyismi zorunludur ve en fazla 30 karakter olabilir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -789,6 +800,9 @@ namespace StudentInfo_App
             }
         }
 
+
+
+
         //add Teacher
         //private void TeacherAdd2Btn_Click(object sender, EventArgs e)
         //{
@@ -819,7 +833,231 @@ namespace StudentInfo_App
 
 
 
-            #endregion
-        //}
+        #endregion
+
+        #region Öğrenci update
+        // City (şehir) verilerini yükleme
+        private void LoadCities()
+        {
+            var DB = new NewSchoolDBEntities();
+            var cities = DB.CITies.ToList();
+
+            // ComboBox'a şehirleri yükleme
+            UpdateStudentCityCB.DataSource = cities;
+            UpdateStudentCityCB.DisplayMember = "CITYNAME";
+            UpdateStudentCityCB.ValueMember = "Id"; // Her bir şehrin Id'sini değer olarak kullan
+        }
+
+        // Seçilen şehre göre ilçeleri yükleme
+        private void LoadDistrictsByCity(int selectedCityId)
+        {
+            var DB = new NewSchoolDBEntities();
+            var districts = DB.DISTRICTs.Where(d => d.CITY_ID == selectedCityId).ToList();
+
+            // ComboBox'a ilçeleri yükleme
+            UpdateStudentDistrictCB.DataSource = districts;
+            UpdateStudentDistrictCB.DisplayMember = "DISTRICTNAME";
+            UpdateStudentDistrictCB.ValueMember = "Id"; // Her bir ilçenin Id'sini değer olarak kullan
+        }
+
+        // Şehir seçimi değiştiğinde ilçeleri yükleme
+        private void UpdateStudentCityCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Seçilen şehrin Id'sini al
+            if (UpdateStudentCityCB.SelectedValue is int selectedCityId)
+            {
+                LoadDistrictsByCity(selectedCityId);
+            }
+        }
+
+
+        private void GetStudentInfoBtn_Click(object sender, EventArgs e)
+        {
+            LoadStudentData();
+        }
+
+        private void LoadStudentData()
+        {
+            var DB = new NewSchoolDBEntities();
+
+            if (!int.TryParse(UpdateStudentSchoolNumberTB.Text, out int schoolNumber))
+            {
+                MessageBox.Show("Geçersiz okul numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == schoolNumber);
+            if (student != null)
+            {
+                UpdateStudentFirstNameTB.Text = student.student_firstname;
+                UpdateStudentLastNameTB.Text = student.student_lastname;
+                UpdateStudentAddressTB.Text = student.student_adress;
+                UpdateStudentNumberTB.Text = student.student_schoolNo.ToString();
+                UpdateStudentBirthdayDTP.Value = student.student_birthdate ?? DateTime.Now;
+                UpdateStudentGenderCB.Text = student.student_gender;
+
+                var parent = DB.PARENTs.FirstOrDefault(p => p.parent_id == student.parent_id);
+                if (parent != null)
+                {
+                    UpdateParentNameTB.Text = parent.parent_fullname;
+                    UpdateParentPhoneTB.Text = parent.parent_phone;
+                    UpdateParentEmailTB.Text = parent.parent_email;
+                }
+
+                // İl ve ilçe bilgilerini combobox'lara doldur
+                var district = DB.DISTRICTs.FirstOrDefault(d => d.Id == student.district_id);
+                if (district != null)
+                {
+                    var city = DB.CITies.FirstOrDefault(c => c.Id == district.CITY_ID);
+                    if (city != null)
+                    {
+                        // Şehir bilgisini güncelle
+                        UpdateStudentCityCB.DataSource = DB.CITies.ToList();
+                        UpdateStudentCityCB.DisplayMember = "CITYNAME";
+                        UpdateStudentCityCB.ValueMember = "Id";
+                        UpdateStudentCityCB.SelectedValue = city.Id;
+
+                        // İlçe bilgilerini güncelle
+                        var districts = DB.DISTRICTs.Where(d => d.CITY_ID == city.Id).ToList();
+                        UpdateStudentDistrictCB.DataSource = districts;
+                        UpdateStudentDistrictCB.DisplayMember = "DISTRICTNAME";
+                        UpdateStudentDistrictCB.ValueMember = "Id";
+                        UpdateStudentDistrictCB.SelectedValue = district.Id;
+                    }
+                }
+
+                // Sınıf bilgilerini combobox'a doldur
+                var classes = DB.CLASSes.ToList();
+                UpdateStudentClassCB.DataSource = classes;
+                UpdateStudentClassCB.DisplayMember = "class_name";
+                UpdateStudentClassCB.ValueMember = "class_id";
+                UpdateStudentClassCB.SelectedValue = student.class_id;
+            }
+            else
+            {
+                MessageBox.Show("Öğrenci bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void UpdateStudentBtn_Click(object sender, EventArgs e)
+        {
+            var DB = new NewSchoolDBEntities();
+            // Girdi kontrolleri
+            if (!ValidateInputs())
+            {
+                // Eğer girdi kontrollerinden herhangi biri başarısız olursa işlemi durdur
+                return;
+            }
+
+            if (!int.TryParse(UpdateStudentSchoolNumberTB.Text, out int schoolNumber))
+            {
+                MessageBox.Show("Geçersiz okul numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == schoolNumber);
+            if (student != null)
+            {
+                // Öğrenci bilgilerini güncelle
+                student.student_firstname = UpdateStudentFirstNameTB.Text;
+                student.student_lastname = UpdateStudentLastNameTB.Text;
+                student.student_adress = UpdateStudentAddressTB.Text;
+                student.student_birthdate = UpdateStudentBirthdayDTP.Value;
+                student.student_gender = UpdateStudentGenderCB.Text;
+                student.student_schoolNo = int.Parse(UpdateStudentNumberTB.Text); // Öğrenci numarasını güncelle
+
+                // Ebeveyn bilgilerini güncelle
+                var parent = DB.PARENTs.FirstOrDefault(p => p.parent_id == student.parent_id);
+                if (parent != null)
+                {
+                    parent.parent_fullname = UpdateParentNameTB.Text;
+                    parent.parent_phone = UpdateParentPhoneTB.Text;
+                    parent.parent_email = UpdateParentEmailTB.Text;
+                }
+
+                // Şehir ve ilçe bilgilerini güncelle
+                if (UpdateStudentDistrictCB.SelectedValue != null)
+                {
+                    student.district_id = (int)UpdateStudentDistrictCB.SelectedValue;
+                }
+
+                // Sınıf bilgisini güncelle
+                if (UpdateStudentClassCB.SelectedValue != null)
+                {
+                    student.class_id = (int)UpdateStudentClassCB.SelectedValue;
+                }
+
+                // Değişiklikleri veritabanına kaydet
+                DB.SaveChanges();
+                MessageBox.Show("Öğrenci bilgileri başarıyla güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Öğrenci bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private bool ValidateInputs()
+        {
+            // Parent ismi kontrolü
+            if (string.IsNullOrWhiteSpace(UpdateParentNameTB.Text) || UpdateParentNameTB.Text.Length > 30)
+            {
+                MessageBox.Show("Parent ismi zorunludur ve en fazla 30 karakter olabilir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Parent telefon numarası kontrolü
+            if (string.IsNullOrWhiteSpace(UpdateParentPhoneTB.Text) || !UpdateParentPhoneTB.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Geçersiz telefon numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Parent email kontrolü
+            if (string.IsNullOrWhiteSpace(UpdateParentEmailTB.Text) || !IsValidEmail(UpdateParentEmailTB.Text))
+            {
+                MessageBox.Show("Geçersiz email adresi.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Öğrenci ismi kontrolü
+            if (string.IsNullOrWhiteSpace(UpdateStudentFirstNameTB.Text) || UpdateStudentFirstNameTB.Text.Length > 30)
+            {
+                MessageBox.Show("Öğrenci ismi zorunludur ve en fazla 30 karakter olabilir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Öğrenci soyismi kontrolü
+            if (string.IsNullOrWhiteSpace(UpdateStudentLastNameTB.Text) || UpdateStudentLastNameTB.Text.Length > 30)
+            {
+                MessageBox.Show("Öğrenci soyismi zorunludur ve en fazla 30 karakter olabilir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Adres kontrolü
+            if (string.IsNullOrWhiteSpace(UpdateStudentAddressTB.Text))
+            {
+                MessageBox.Show("Adres zorunludur.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Şehir seçimi kontrolü
+            if (UpdateStudentCityCB.SelectedIndex == -1)
+            {
+                MessageBox.Show("Şehir seçimi zorunludur.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // İlçe seçimi kontrolü
+            if (UpdateStudentDistrictCB.SelectedIndex == -1)
+            {
+                MessageBox.Show("İlçe seçimi zorunludur.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+        #endregion
+
     }
 }
