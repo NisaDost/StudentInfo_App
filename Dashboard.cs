@@ -14,6 +14,7 @@ using System.IO;
 //using System.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 using System.Data.Entity.Validation;
+using System.Net.Mail;
 
 namespace StudentInfo_App
 {
@@ -238,6 +239,68 @@ namespace StudentInfo_App
             #region Student Kaydetme
             try
             {
+                // Girdi kontrolleri
+                if (string.IsNullOrWhiteSpace(ParentNameTB.Text) || ParentNameTB.Text.Length > 50)
+                {
+                    MessageBox.Show("Parent ismi zorunludur ve en fazla 50 karakter olabilir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(ParentPhoneTB.Text) || !ParentPhoneTB.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("Geçersiz telefon numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(ParentEmailTB.Text) || !IsValidEmail(ParentEmailTB.Text))
+                {
+                    MessageBox.Show("Geçersiz email adresi.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(StudentFirstNameTB.Text) || StudentFirstNameTB.Text.Length > 50)
+                {
+                    MessageBox.Show("Öğrenci ismi zorunludur ve en fazla 50 karakter olabilir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(StudentLastNameTB.Text) || StudentLastNameTB.Text.Length > 50)
+                {
+                    MessageBox.Show("Öğrenci soyismi zorunludur ve en fazla 50 karakter olabilir.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(StudentAdressTB.Text))
+                {
+                    MessageBox.Show("Adres zorunludur.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (StudentGenderCB.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Cinsiyet seçimi zorunludur.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (StudentCityCB.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Şehir seçimi zorunludur.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (StudentDistrictCB.SelectedIndex == -1)
+                {
+                    MessageBox.Show("İlçe seçimi zorunludur.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Okul numarasını kontrol et
+                if (!int.TryParse(StudentSchoolNumberTB.Text, out int schoolNumber))
+                {
+                    MessageBox.Show("Geçersiz okul numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 var DB = new NewSchoolDBEntities();
 
                 // Yeni parent nesnesini oluştur
@@ -254,15 +317,6 @@ namespace StudentInfo_App
 
                 // Kaydedilen parent nesnesini tekrar çek
                 var savedParent = DB.PARENTs.FirstOrDefault(p => p.parent_email == parent.parent_email);
-
-                // Okul numarasını kontrol et
-                int schoolNumber;
-                if (!int.TryParse(StudentSchoolNumberTB.Text, out schoolNumber))
-                {
-                    // Sadece integer türünde nesne alır
-                    MessageBox.Show("Geçersiz okul numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
 
                 var existingStudent = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == schoolNumber);
 
@@ -285,7 +339,7 @@ namespace StudentInfo_App
                     student_gender = StudentGenderCB.Text,
                     district_id = selectedDistrict.Id,
                     student_schoolNo = schoolNumber,
-                    parent_id = savedParent.parent_id, // Parent ID'sini foreign key olarak ekle
+                    parent_id = savedParent.parent_id,
                     class_id = (StudentClassCB.SelectedIndex + 1)
                 };
 
@@ -336,8 +390,20 @@ namespace StudentInfo_App
                 MessageBox.Show("Veri doğrulama hatası oluştu. Lütfen girdiğiniz bilgileri kontrol edin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             #endregion
+        }
 
-
+        // Email doğrulama metodunu ekleyin
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private STUDENT currentStudent;
