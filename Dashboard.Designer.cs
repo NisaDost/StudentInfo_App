@@ -187,6 +187,12 @@
             this.newClassNameTextBox = new System.Windows.Forms.TextBox();
             this.UpdateClassInformationLbl = new System.Windows.Forms.Label();
             this.updateClassButton = new System.Windows.Forms.Button();
+            this.ListClassPnl = new System.Windows.Forms.Panel();
+            this.ListClassHeaderLbl = new System.Windows.Forms.Label();
+            this.StuıdentListLbl = new System.Windows.Forms.Label();
+            this.ListClassCB = new System.Windows.Forms.ComboBox();
+            this.HowManyStudentLbl = new System.Windows.Forms.Label();
+            this.ListStudentButton = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -206,6 +212,7 @@
             this.ClassPanel.SuspendLayout();
             this.AddClassPnl.SuspendLayout();
             this.UpdateClassPnl.SuspendLayout();
+            this.ListClassPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBar
@@ -1852,13 +1859,74 @@
             this.updateClassButton.UseVisualStyleBackColor = true;
             this.updateClassButton.Click += new System.EventHandler(this.updateClassButton_Click);
             // 
+            // ListClassPnl
+            // 
+            this.ListClassPnl.BackColor = System.Drawing.Color.Khaki;
+            this.ListClassPnl.Controls.Add(this.ListStudentButton);
+            this.ListClassPnl.Controls.Add(this.HowManyStudentLbl);
+            this.ListClassPnl.Controls.Add(this.ListClassCB);
+            this.ListClassPnl.Controls.Add(this.StuıdentListLbl);
+            this.ListClassPnl.Controls.Add(this.ListClassHeaderLbl);
+            this.ListClassPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ListClassPnl.Location = new System.Drawing.Point(200, 51);
+            this.ListClassPnl.Name = "ListClassPnl";
+            this.ListClassPnl.Size = new System.Drawing.Size(650, 400);
+            this.ListClassPnl.TabIndex = 27;
+            // 
+            // ListClassHeaderLbl
+            // 
+            this.ListClassHeaderLbl.AutoSize = true;
+            this.ListClassHeaderLbl.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ListClassHeaderLbl.Location = new System.Drawing.Point(39, 22);
+            this.ListClassHeaderLbl.Name = "ListClassHeaderLbl";
+            this.ListClassHeaderLbl.Size = new System.Drawing.Size(82, 22);
+            this.ListClassHeaderLbl.TabIndex = 0;
+            this.ListClassHeaderLbl.Text = "List Class";
+            // 
+            // StuıdentListLbl
+            // 
+            this.StuıdentListLbl.AutoSize = true;
+            this.StuıdentListLbl.Location = new System.Drawing.Point(104, 67);
+            this.StuıdentListLbl.Name = "StuıdentListLbl";
+            this.StuıdentListLbl.Size = new System.Drawing.Size(83, 16);
+            this.StuıdentListLbl.TabIndex = 1;
+            this.StuıdentListLbl.Text = "Select Class :";
+            // 
+            // ListClassCB
+            // 
+            this.ListClassCB.FormattingEnabled = true;
+            this.ListClassCB.Location = new System.Drawing.Point(197, 64);
+            this.ListClassCB.Name = "ListClassCB";
+            this.ListClassCB.Size = new System.Drawing.Size(121, 24);
+            this.ListClassCB.TabIndex = 2;
+            // 
+            // HowManyStudentLbl
+            // 
+            this.HowManyStudentLbl.AutoSize = true;
+            this.HowManyStudentLbl.Location = new System.Drawing.Point(194, 118);
+            this.HowManyStudentLbl.Name = "HowManyStudentLbl";
+            this.HowManyStudentLbl.Size = new System.Drawing.Size(42, 16);
+            this.HowManyStudentLbl.TabIndex = 3;
+            this.HowManyStudentLbl.Text = "label7";
+            // 
+            // ListStudentButton
+            // 
+            this.ListStudentButton.Location = new System.Drawing.Point(360, 64);
+            this.ListStudentButton.Name = "ListStudentButton";
+            this.ListStudentButton.Size = new System.Drawing.Size(109, 23);
+            this.ListStudentButton.TabIndex = 4;
+            this.ListStudentButton.Text = "List Student";
+            this.ListStudentButton.UseVisualStyleBackColor = true;
+            this.ListStudentButton.Click += new System.EventHandler(this.ListStudentButton_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 484);
-            this.Controls.Add(this.UpdateClassPnl);
+            this.Controls.Add(this.ListClassPnl);
             this.Controls.Add(this.ClassPanel);
+            this.Controls.Add(this.UpdateClassPnl);
             this.Controls.Add(this.StudentUpdatePanel);
             this.Controls.Add(this.DateAndTime);
             this.Controls.Add(this.label2);
@@ -1910,6 +1978,8 @@
             this.AddClassPnl.PerformLayout();
             this.UpdateClassPnl.ResumeLayout(false);
             this.UpdateClassPnl.PerformLayout();
+            this.ListClassPnl.ResumeLayout(false);
+            this.ListClassPnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2074,5 +2144,11 @@
         private System.Windows.Forms.TextBox newClassNameTextBox;
         private System.Windows.Forms.Label UpdateClassInformationLbl;
         private System.Windows.Forms.Label newClassNameLbl;
+        private System.Windows.Forms.Panel ListClassPnl;
+        private System.Windows.Forms.Label ListClassHeaderLbl;
+        private System.Windows.Forms.Label StuıdentListLbl;
+        private System.Windows.Forms.Button ListStudentButton;
+        private System.Windows.Forms.Label HowManyStudentLbl;
+        private System.Windows.Forms.ComboBox ListClassCB;
     }
 }

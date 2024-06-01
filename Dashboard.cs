@@ -39,13 +39,13 @@ namespace StudentInfo_App
         public Dashboard()
         {
             InitializeComponent();
-
             LoadClassesAndBranches();
             //update için
             LoadCities();
             // Şehir ComboBox'ında seçim değiştiğinde ilçeleri yükle
             UpdateStudentCityCB.SelectedIndexChanged += new EventHandler(UpdateStudentCityCB_SelectedIndexChanged);
             LoadClassNames();
+            LoadUpdateClassNames();
 
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
@@ -62,6 +62,8 @@ namespace StudentInfo_App
             buttonPanelMap.Add("ClassButon", ClassPanel);
             buttonPanelMap.Add("AddClassBtn", AddClassPnl);
             buttonPanelMap.Add("UpdateClassBtn", UpdateClassPnl);
+            buttonPanelMap.Add("ListClassBtn", ListClassPnl);
+
             //buttonPanelMap.Add("TeacherDeleteBtn", TeacherDeletePnl);
 
             ShowPanel(HomePanel);
@@ -1165,6 +1167,52 @@ namespace StudentInfo_App
             {
                 MessageBox.Show("Sınıf güncelleme işlemi sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+
+        #endregion
+
+        #region Sınıf Listeleme
+        private void ListStudentButton_Click(object sender, EventArgs e)
+        {
+            var DB = new NewSchoolDBEntities();
+
+            // Seçilen sınıf adını al
+            string selectedClassName = ListClassCB.SelectedItem.ToString();
+
+            // Eğer herhangi bir sınıf seçilmediyse işlemi durdur
+            if (string.IsNullOrEmpty(selectedClassName))
+            {
+                MessageBox.Show("Lütfen bir sınıf seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Seçilen sınıfın ID'sini bul
+            var selectedClass = DB.CLASSes.FirstOrDefault(c => c.class_name == selectedClassName);
+
+            // Eğer seçilen sınıf bulunamadıysa işlemi durdur
+            if (selectedClass == null)
+            {
+                MessageBox.Show("Seçilen sınıf bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Seçilen sınıftaki öğrenci sayısını bul
+            int studentCount = DB.STUDENTs.Count(s => s.class_id == selectedClass.class_id);
+
+            // Öğrenci sayısını ekrana yazdır
+            HowManyStudentLbl.Text = $"{selectedClassName} sınıfında toplam {studentCount} öğrenci bulunmaktadır.";
+
+        }
+
+        private void LoadUpdateClassNames()
+        {
+            var DB = new NewSchoolDBEntities();
+            // Veritabanından sınıf isimlerini al
+            var classNames = DB.CLASSes.Select(c => c.class_name).ToList();
+
+            // ComboBox'ı sınıf isimleriyle doldur
+            ListClassCB.DataSource = classNames;
         }
 
 
