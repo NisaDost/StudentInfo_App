@@ -193,6 +193,12 @@
             this.ListClassCB = new System.Windows.Forms.ComboBox();
             this.HowManyStudentLbl = new System.Windows.Forms.Label();
             this.ListStudentButton = new System.Windows.Forms.Button();
+            this.DeleteClassPnl = new System.Windows.Forms.Panel();
+            this.ClassDeleteHeader = new System.Windows.Forms.Label();
+            this.DeleteClassLbl = new System.Windows.Forms.Label();
+            this.DeleteClassCB = new System.Windows.Forms.ComboBox();
+            this.DeleteClassButton = new System.Windows.Forms.Button();
+            this.DeleteClassImportantLbl = new System.Windows.Forms.Label();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -213,6 +219,7 @@
             this.AddClassPnl.SuspendLayout();
             this.UpdateClassPnl.SuspendLayout();
             this.ListClassPnl.SuspendLayout();
+            this.DeleteClassPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBar
@@ -1919,13 +1926,75 @@
             this.ListStudentButton.UseVisualStyleBackColor = true;
             this.ListStudentButton.Click += new System.EventHandler(this.ListStudentButton_Click);
             // 
+            // DeleteClassPnl
+            // 
+            this.DeleteClassPnl.BackColor = System.Drawing.Color.CadetBlue;
+            this.DeleteClassPnl.Controls.Add(this.DeleteClassButton);
+            this.DeleteClassPnl.Controls.Add(this.DeleteClassCB);
+            this.DeleteClassPnl.Controls.Add(this.DeleteClassImportantLbl);
+            this.DeleteClassPnl.Controls.Add(this.DeleteClassLbl);
+            this.DeleteClassPnl.Controls.Add(this.ClassDeleteHeader);
+            this.DeleteClassPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteClassPnl.Location = new System.Drawing.Point(200, 51);
+            this.DeleteClassPnl.Name = "DeleteClassPnl";
+            this.DeleteClassPnl.Size = new System.Drawing.Size(650, 400);
+            this.DeleteClassPnl.TabIndex = 28;
+            // 
+            // ClassDeleteHeader
+            // 
+            this.ClassDeleteHeader.AutoSize = true;
+            this.ClassDeleteHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ClassDeleteHeader.Location = new System.Drawing.Point(28, 12);
+            this.ClassDeleteHeader.Name = "ClassDeleteHeader";
+            this.ClassDeleteHeader.Size = new System.Drawing.Size(108, 22);
+            this.ClassDeleteHeader.TabIndex = 0;
+            this.ClassDeleteHeader.Text = "Delete Class";
+            // 
+            // DeleteClassLbl
+            // 
+            this.DeleteClassLbl.AutoSize = true;
+            this.DeleteClassLbl.Location = new System.Drawing.Point(118, 68);
+            this.DeleteClassLbl.Name = "DeleteClassLbl";
+            this.DeleteClassLbl.Size = new System.Drawing.Size(86, 16);
+            this.DeleteClassLbl.TabIndex = 1;
+            this.DeleteClassLbl.Text = "Select Class : ";
+            // 
+            // DeleteClassCB
+            // 
+            this.DeleteClassCB.FormattingEnabled = true;
+            this.DeleteClassCB.Location = new System.Drawing.Point(213, 64);
+            this.DeleteClassCB.Name = "DeleteClassCB";
+            this.DeleteClassCB.Size = new System.Drawing.Size(121, 24);
+            this.DeleteClassCB.TabIndex = 2;
+            // 
+            // DeleteClassButton
+            // 
+            this.DeleteClassButton.Location = new System.Drawing.Point(371, 64);
+            this.DeleteClassButton.Name = "DeleteClassButton";
+            this.DeleteClassButton.Size = new System.Drawing.Size(116, 23);
+            this.DeleteClassButton.TabIndex = 3;
+            this.DeleteClassButton.Text = "Delete Class";
+            this.DeleteClassButton.UseVisualStyleBackColor = true;
+            this.DeleteClassButton.Click += new System.EventHandler(this.DeleteClassButton_Click);
+            // 
+            // DeleteClassImportantLbl
+            // 
+            this.DeleteClassImportantLbl.AutoSize = true;
+            this.DeleteClassImportantLbl.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteClassImportantLbl.Location = new System.Drawing.Point(142, 96);
+            this.DeleteClassImportantLbl.Name = "DeleteClassImportantLbl";
+            this.DeleteClassImportantLbl.Size = new System.Drawing.Size(340, 15);
+            this.DeleteClassImportantLbl.TabIndex = 1;
+            this.DeleteClassImportantLbl.Text = "*Before deleting a class, make sure there are no students in it.";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 484);
-            this.Controls.Add(this.ListClassPnl);
+            this.Controls.Add(this.DeleteClassPnl);
             this.Controls.Add(this.ClassPanel);
+            this.Controls.Add(this.ListClassPnl);
             this.Controls.Add(this.UpdateClassPnl);
             this.Controls.Add(this.StudentUpdatePanel);
             this.Controls.Add(this.DateAndTime);
@@ -1980,6 +2049,8 @@
             this.UpdateClassPnl.PerformLayout();
             this.ListClassPnl.ResumeLayout(false);
             this.ListClassPnl.PerformLayout();
+            this.DeleteClassPnl.ResumeLayout(false);
+            this.DeleteClassPnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2150,5 +2221,11 @@
         private System.Windows.Forms.Button ListStudentButton;
         private System.Windows.Forms.Label HowManyStudentLbl;
         private System.Windows.Forms.ComboBox ListClassCB;
+        private System.Windows.Forms.Panel DeleteClassPnl;
+        private System.Windows.Forms.Label ClassDeleteHeader;
+        private System.Windows.Forms.Button DeleteClassButton;
+        private System.Windows.Forms.ComboBox DeleteClassCB;
+        private System.Windows.Forms.Label DeleteClassImportantLbl;
+        private System.Windows.Forms.Label DeleteClassLbl;
     }
 }

@@ -46,6 +46,7 @@ namespace StudentInfo_App
             UpdateStudentCityCB.SelectedIndexChanged += new EventHandler(UpdateStudentCityCB_SelectedIndexChanged);
             LoadClassNames();
             LoadUpdateClassNames();
+            LoadDeleteClassNames();
 
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
@@ -63,6 +64,7 @@ namespace StudentInfo_App
             buttonPanelMap.Add("AddClassBtn", AddClassPnl);
             buttonPanelMap.Add("UpdateClassBtn", UpdateClassPnl);
             buttonPanelMap.Add("ListClassBtn", ListClassPnl);
+            buttonPanelMap.Add("DeleteClassBtn", DeleteClassPnl);
 
             //buttonPanelMap.Add("TeacherDeleteBtn", TeacherDeletePnl);
 
@@ -1215,6 +1217,61 @@ namespace StudentInfo_App
             ListClassCB.DataSource = classNames;
         }
 
+
+        #endregion
+
+        #region Sınıf Silme
+        private void DeleteClassButton_Click(object sender, EventArgs e)
+        {
+            var DB = new NewSchoolDBEntities();
+
+            // Seçilen sınıf adını al
+            string selectedClassName = DeleteClassCB.SelectedItem.ToString();
+
+            // Eğer herhangi bir sınıf seçilmediyse işlemi durdur
+            if (string.IsNullOrEmpty(selectedClassName))
+            {
+                MessageBox.Show("Lütfen bir sınıf seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Seçilen sınıfın ID'sini bul
+            var selectedClass = DB.CLASSes.FirstOrDefault(c => c.class_name == selectedClassName);
+
+            // Eğer seçilen sınıf bulunamadıysa işlemi durdur
+            if (selectedClass == null)
+            {
+                MessageBox.Show("Seçilen sınıf bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Seçilen sınıfta öğrenci veya öğretmen var mı kontrol et
+            bool hasStudents = DB.STUDENTs.Any(s => s.class_id == selectedClass.class_id);
+
+            // Eğer sınıfta öğrenci veya öğretmen yoksa sınıfı sil
+            DB.CLASSes.Remove(selectedClass);
+
+            try
+            {
+                // Değişiklikleri kaydet
+                DB.SaveChanges();
+                MessageBox.Show("Sınıf başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sınıf silme işlemi sırasında bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+        private void LoadDeleteClassNames()
+        {
+            var DB = new NewSchoolDBEntities();
+            // Veritabanından sınıf isimlerini al
+            var classNames = DB.CLASSes.Select(c => c.class_name).ToList();
+
+            // ComboBox'ı sınıf isimleriyle doldur
+            DeleteClassCB.DataSource = classNames;
+        }
 
         #endregion
     }
