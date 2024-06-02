@@ -136,7 +136,7 @@
           <Key>
             <PropertyRef Name="teacher_class_id" />
           </Key>
-          <Property Name="teacher_class_id" Type="int" Nullable="false" />
+          <Property Name="teacher_class_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="teacher_id" Type="int" Nullable="false" />
           <Property Name="class_id" Type="int" Nullable="false" />
         </EntityType>
