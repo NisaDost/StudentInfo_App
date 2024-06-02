@@ -480,60 +480,63 @@ namespace StudentInfo_App
         }
         private void DeleteStudentButton_Click(object sender, EventArgs e)
         {
-            #region Öğrenci silme
-            // biz parent ı student a student ı parent relation kurduğumuz için önce parent ı silmemiz gerekiyor.
             if (currentStudent != null)
             {
                 using (var DB = new NewSchoolDBEntities())
                 {
-                    // Öğrenci kaydını bul
                     var studentToDelete = DB.STUDENTs.FirstOrDefault(s => s.student_id == currentStudent.student_id);
 
                     if (studentToDelete != null)
                     {
-                        // Önce ilgili ATTENDANCE kayıtlarını sil veya güncelle
-                        var attendanceRecordsToUpdate = DB.ATTENDANCEs.Where(a => a.student_id == studentToDelete.student_id).ToList();
-                        foreach (var record in attendanceRecordsToUpdate)
+                        try
                         {
-                            // Ya silme
-                            // DB.ATTENDANCEs.Remove(record);
+                            // Öğrenciye ait CANTEEN kayıtlarını sil
+                            var canteenRecordsToDelete = DB.CANTEENs.Where(c => c.student_id == studentToDelete.student_id).ToList();
+                            foreach (var record in canteenRecordsToDelete)
+                            {
+                                DB.CANTEENs.Remove(record);
+                            }
 
-                            // Ya da null yapma
-                            record.student_id = null;
+                            // Öğrenciye ait ATTENDANCE kayıtlarını güncelle (student_id'yi null yap)
+                            var attendanceRecordsToUpdate = DB.ATTENDANCEs.Where(a => a.student_id == studentToDelete.student_id).ToList();
+                            foreach (var record in attendanceRecordsToUpdate)
+                            {
+                                record.student_id = null;
+                            }
+
+                            // Öğrenciye ait ACCESS_LOG kayıtlarını güncelle (student_id'yi null yap)
+                            var accessLogRecordsToUpdate = DB.ACCESS_LOG.Where(a => a.student_id == studentToDelete.student_id).ToList();
+                            foreach (var record in accessLogRecordsToUpdate)
+                            {
+                                record.student_id = null;
+                            }
+
+                            // Öğrenciye ait parent kayıtlarının student_id alanını null yap
+                            var parentsToUpdate = DB.PARENTs.Where(p => p.student_id == studentToDelete.student_id).ToList();
+                            foreach (var parent in parentsToUpdate)
+                            {
+                                parent.student_id = null;
+                            }
+
+                            // Değişiklikleri kaydet
+                            DB.SaveChanges();
+
+                            // Öğrenciyi sil
+                            DB.STUDENTs.Remove(studentToDelete);
+                            DB.SaveChanges();
+
+                            MessageBox.Show("Öğrenci ve ilgili kayıtlar başarıyla silindi.", "Silme Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // UI elemanlarını sıfırla
+                            StudentNumberTextBox.Clear();
+                            StudentInfoLabel2.Text = "";
+                            DeleteStudentButton.Enabled = false;
+                            currentStudent = null;
                         }
-
-                        // Önce ilgili ACCESS_LOG kayıtlarını sil veya güncelle
-                        var accessLogRecordsToUpdate = DB.ACCESS_LOG.Where(a => a.student_id == studentToDelete.student_id).ToList();
-                        foreach (var record in accessLogRecordsToUpdate)
+                        catch (Exception ex)
                         {
-                            // Ya silme
-                            // DB.ACCESS_LOGs.Remove(record);
-
-                            // Ya da null yapma
-                            record.student_id = null;
+                            MessageBox.Show("Öğrenci silinirken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
-                        // Önce ilgili parent kayıtlarının student_id alanını null yap
-                        var parentsToUpdate = DB.PARENTs.Where(p => p.student_id == studentToDelete.student_id).ToList();
-                        foreach (var parent in parentsToUpdate)
-                        {
-                            parent.student_id = null;
-                        }
-
-                        // Değişiklikleri kaydet
-                        DB.SaveChanges();
-
-                        // Şimdi öğrenci kaydını sil
-                        DB.STUDENTs.Remove(studentToDelete);
-                        DB.SaveChanges();
-
-                        MessageBox.Show("Öğrenci ve ilgili parent kayıtları başarıyla silindi.", "Silme Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // UI elemanlarını sıfırla
-                        StudentNumberTextBox.Clear();
-                        StudentInfoLabel2.Text = "";
-                        DeleteStudentButton.Enabled = false;
-                        currentStudent = null;
                     }
                     else
                     {
@@ -545,7 +548,6 @@ namespace StudentInfo_App
             {
                 MessageBox.Show("Öğrenci silinemedi. Lütfen önce arama yapınız.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            #endregion
         }
 
         #region Öğrenci Absence ve Attandance Gösterilme paneli
