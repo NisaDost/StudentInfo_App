@@ -306,6 +306,16 @@
             this.SelectUpdatedDateLbl = new System.Windows.Forms.Label();
             this.SelectUpdatedDateDTP = new System.Windows.Forms.DateTimePicker();
             this.UpdateDateBtn = new System.Windows.Forms.Button();
+            this.DeleteAbscenceBtn = new System.Windows.Forms.Button();
+            this.DeleteAbscencePnl = new System.Windows.Forms.Panel();
+            this.DeleteAbscenceHeader = new System.Windows.Forms.Label();
+            this.DeleteAbscenceStudentNumberLbl = new System.Windows.Forms.Label();
+            this.DeleteAbscenceStudentNumberTB = new System.Windows.Forms.TextBox();
+            this.DeleteGetStudentInfoBtn = new System.Windows.Forms.Button();
+            this.DeleteGetStudentInfoLbl = new System.Windows.Forms.Label();
+            this.DeleteAbscenceStudentLbl = new System.Windows.Forms.Label();
+            this.DeleteAbscenceStudentCB = new System.Windows.Forms.ComboBox();
+            this.DeleteAbscenceButton = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -341,6 +351,7 @@
             this.UpdateProductPnl.SuspendLayout();
             this.DeleteProductPnl.SuspendLayout();
             this.UpdateStudentAttandancePnl.SuspendLayout();
+            this.DeleteAbscencePnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBar
@@ -1313,6 +1324,7 @@
             // 
             this.AbscencePanel.BackColor = System.Drawing.SystemColors.Control;
             this.AbscencePanel.Controls.Add(this.Abscence);
+            this.AbscencePanel.Controls.Add(this.DeleteAbscenceBtn);
             this.AbscencePanel.Controls.Add(this.UpdateStudentAttandanceBtn);
             this.AbscencePanel.Controls.Add(this.StudentEntryAttandanceBtn);
             this.AbscencePanel.Controls.Add(this.StudentAbsenceAttandanceBtn);
@@ -3170,17 +3182,115 @@
             this.UpdateDateBtn.UseVisualStyleBackColor = true;
             this.UpdateDateBtn.Click += new System.EventHandler(this.UpdateDateBtn_Click);
             // 
+            // DeleteAbscenceBtn
+            // 
+            this.DeleteAbscenceBtn.Location = new System.Drawing.Point(237, 240);
+            this.DeleteAbscenceBtn.Name = "DeleteAbscenceBtn";
+            this.DeleteAbscenceBtn.Size = new System.Drawing.Size(198, 50);
+            this.DeleteAbscenceBtn.TabIndex = 1;
+            this.DeleteAbscenceBtn.Text = "Delete Student Attandance";
+            this.DeleteAbscenceBtn.UseVisualStyleBackColor = true;
+            this.DeleteAbscenceBtn.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // DeleteAbscencePnl
+            // 
+            this.DeleteAbscencePnl.Controls.Add(this.DeleteAbscenceStudentCB);
+            this.DeleteAbscencePnl.Controls.Add(this.DeleteGetStudentInfoLbl);
+            this.DeleteAbscencePnl.Controls.Add(this.DeleteAbscenceButton);
+            this.DeleteAbscencePnl.Controls.Add(this.DeleteGetStudentInfoBtn);
+            this.DeleteAbscencePnl.Controls.Add(this.DeleteAbscenceStudentNumberTB);
+            this.DeleteAbscencePnl.Controls.Add(this.DeleteAbscenceStudentLbl);
+            this.DeleteAbscencePnl.Controls.Add(this.DeleteAbscenceStudentNumberLbl);
+            this.DeleteAbscencePnl.Controls.Add(this.DeleteAbscenceHeader);
+            this.DeleteAbscencePnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteAbscencePnl.Location = new System.Drawing.Point(188, 55);
+            this.DeleteAbscencePnl.Name = "DeleteAbscencePnl";
+            this.DeleteAbscencePnl.Size = new System.Drawing.Size(702, 410);
+            this.DeleteAbscencePnl.TabIndex = 39;
+            // 
+            // DeleteAbscenceHeader
+            // 
+            this.DeleteAbscenceHeader.AutoSize = true;
+            this.DeleteAbscenceHeader.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteAbscenceHeader.Location = new System.Drawing.Point(28, 19);
+            this.DeleteAbscenceHeader.Name = "DeleteAbscenceHeader";
+            this.DeleteAbscenceHeader.Size = new System.Drawing.Size(196, 29);
+            this.DeleteAbscenceHeader.TabIndex = 0;
+            this.DeleteAbscenceHeader.Text = "Delete Abscence";
+            // 
+            // DeleteAbscenceStudentNumberLbl
+            // 
+            this.DeleteAbscenceStudentNumberLbl.AutoSize = true;
+            this.DeleteAbscenceStudentNumberLbl.Location = new System.Drawing.Point(119, 71);
+            this.DeleteAbscenceStudentNumberLbl.Name = "DeleteAbscenceStudentNumberLbl";
+            this.DeleteAbscenceStudentNumberLbl.Size = new System.Drawing.Size(115, 16);
+            this.DeleteAbscenceStudentNumberLbl.TabIndex = 1;
+            this.DeleteAbscenceStudentNumberLbl.Text = "Student Number :";
+            // 
+            // DeleteAbscenceStudentNumberTB
+            // 
+            this.DeleteAbscenceStudentNumberTB.Location = new System.Drawing.Point(240, 66);
+            this.DeleteAbscenceStudentNumberTB.Name = "DeleteAbscenceStudentNumberTB";
+            this.DeleteAbscenceStudentNumberTB.Size = new System.Drawing.Size(100, 22);
+            this.DeleteAbscenceStudentNumberTB.TabIndex = 2;
+            // 
+            // DeleteGetStudentInfoBtn
+            // 
+            this.DeleteGetStudentInfoBtn.Location = new System.Drawing.Point(372, 65);
+            this.DeleteGetStudentInfoBtn.Name = "DeleteGetStudentInfoBtn";
+            this.DeleteGetStudentInfoBtn.Size = new System.Drawing.Size(75, 23);
+            this.DeleteGetStudentInfoBtn.TabIndex = 3;
+            this.DeleteGetStudentInfoBtn.Text = "Search";
+            this.DeleteGetStudentInfoBtn.UseVisualStyleBackColor = true;
+            this.DeleteGetStudentInfoBtn.Click += new System.EventHandler(this.DeleteGetStudentInfoBtn_Click);
+            // 
+            // DeleteGetStudentInfoLbl
+            // 
+            this.DeleteGetStudentInfoLbl.AutoSize = true;
+            this.DeleteGetStudentInfoLbl.Location = new System.Drawing.Point(471, 69);
+            this.DeleteGetStudentInfoLbl.Name = "DeleteGetStudentInfoLbl";
+            this.DeleteGetStudentInfoLbl.Size = new System.Drawing.Size(183, 16);
+            this.DeleteGetStudentInfoLbl.TabIndex = 4;
+            this.DeleteGetStudentInfoLbl.Text = "There is no searched student.";
+            // 
+            // DeleteAbscenceStudentLbl
+            // 
+            this.DeleteAbscenceStudentLbl.AutoSize = true;
+            this.DeleteAbscenceStudentLbl.Location = new System.Drawing.Point(118, 105);
+            this.DeleteAbscenceStudentLbl.Name = "DeleteAbscenceStudentLbl";
+            this.DeleteAbscenceStudentLbl.Size = new System.Drawing.Size(81, 16);
+            this.DeleteAbscenceStudentLbl.TabIndex = 1;
+            this.DeleteAbscenceStudentLbl.Text = "Select Date :";
+            // 
+            // DeleteAbscenceStudentCB
+            // 
+            this.DeleteAbscenceStudentCB.FormattingEnabled = true;
+            this.DeleteAbscenceStudentCB.Location = new System.Drawing.Point(209, 99);
+            this.DeleteAbscenceStudentCB.Name = "DeleteAbscenceStudentCB";
+            this.DeleteAbscenceStudentCB.Size = new System.Drawing.Size(121, 24);
+            this.DeleteAbscenceStudentCB.TabIndex = 5;
+            // 
+            // DeleteAbscenceButton
+            // 
+            this.DeleteAbscenceButton.Location = new System.Drawing.Point(496, 189);
+            this.DeleteAbscenceButton.Name = "DeleteAbscenceButton";
+            this.DeleteAbscenceButton.Size = new System.Drawing.Size(75, 23);
+            this.DeleteAbscenceButton.TabIndex = 3;
+            this.DeleteAbscenceButton.Text = "Delete";
+            this.DeleteAbscenceButton.UseVisualStyleBackColor = true;
+            this.DeleteAbscenceButton.Click += new System.EventHandler(this.DeleteAbscenceButton_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 484);
-            this.Controls.Add(this.UpdateStudentAttandancePnl);
             this.Controls.Add(this.DateAndTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.AbscencePanel);
+            this.Controls.Add(this.DeleteAbscencePnl);
             this.Controls.Add(this.StudentListPanel);
             this.Controls.Add(this.ClassPanel);
             this.Controls.Add(this.AddClassPnl);
@@ -3206,6 +3316,7 @@
             this.Controls.Add(this.DeleteTeacherPnl);
             this.Controls.Add(this.TeacherPanel);
             this.Controls.Add(this.UpdateTeacherPnl);
+            this.Controls.Add(this.UpdateStudentAttandancePnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
@@ -3273,6 +3384,8 @@
             this.DeleteProductPnl.PerformLayout();
             this.UpdateStudentAttandancePnl.ResumeLayout(false);
             this.UpdateStudentAttandancePnl.PerformLayout();
+            this.DeleteAbscencePnl.ResumeLayout(false);
+            this.DeleteAbscencePnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3556,5 +3669,15 @@
         private System.Windows.Forms.ComboBox SelectDateCB;
         private System.Windows.Forms.Button UpdateDateBtn;
         private System.Windows.Forms.Label SelectUpdatedDateLbl;
+        private System.Windows.Forms.Button DeleteAbscenceBtn;
+        private System.Windows.Forms.Panel DeleteAbscencePnl;
+        private System.Windows.Forms.Label DeleteAbscenceHeader;
+        private System.Windows.Forms.TextBox DeleteAbscenceStudentNumberTB;
+        private System.Windows.Forms.Label DeleteAbscenceStudentNumberLbl;
+        private System.Windows.Forms.Label DeleteGetStudentInfoLbl;
+        private System.Windows.Forms.Button DeleteGetStudentInfoBtn;
+        private System.Windows.Forms.ComboBox DeleteAbscenceStudentCB;
+        private System.Windows.Forms.Button DeleteAbscenceButton;
+        private System.Windows.Forms.Label DeleteAbscenceStudentLbl;
     }
 }
