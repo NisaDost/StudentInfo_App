@@ -227,6 +227,13 @@
             this.FilterClassLbl = new System.Windows.Forms.Label();
             this.ListedTeacherDGV = new System.Windows.Forms.DataGridView();
             this.FilterTeacherBtn = new System.Windows.Forms.Button();
+            this.DeleteTeacherPnl = new System.Windows.Forms.Panel();
+            this.DeleteTeacherHeader = new System.Windows.Forms.Label();
+            this.SelectDeleteTeacherLbl = new System.Windows.Forms.Label();
+            this.SelectDeleteTeacherCB = new System.Windows.Forms.ComboBox();
+            this.DeleteTeacherBtn = new System.Windows.Forms.Button();
+            this.GetTeacherInfoLbl = new System.Windows.Forms.Label();
+            this.SearchTeacherBtn = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -252,6 +259,7 @@
             this.UpdateTeacherPnl.SuspendLayout();
             this.ListTeacherPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListedTeacherDGV)).BeginInit();
+            this.DeleteTeacherPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBar
@@ -2298,18 +2306,89 @@
             this.FilterTeacherBtn.UseVisualStyleBackColor = true;
             this.FilterTeacherBtn.Click += new System.EventHandler(this.FilterTeacherBtn_Click);
             // 
+            // DeleteTeacherPnl
+            // 
+            this.DeleteTeacherPnl.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.DeleteTeacherPnl.Controls.Add(this.SearchTeacherBtn);
+            this.DeleteTeacherPnl.Controls.Add(this.GetTeacherInfoLbl);
+            this.DeleteTeacherPnl.Controls.Add(this.DeleteTeacherBtn);
+            this.DeleteTeacherPnl.Controls.Add(this.SelectDeleteTeacherCB);
+            this.DeleteTeacherPnl.Controls.Add(this.SelectDeleteTeacherLbl);
+            this.DeleteTeacherPnl.Controls.Add(this.DeleteTeacherHeader);
+            this.DeleteTeacherPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteTeacherPnl.Location = new System.Drawing.Point(177, 25);
+            this.DeleteTeacherPnl.Name = "DeleteTeacherPnl";
+            this.DeleteTeacherPnl.Size = new System.Drawing.Size(696, 406);
+            this.DeleteTeacherPnl.TabIndex = 32;
+            // 
+            // DeleteTeacherHeader
+            // 
+            this.DeleteTeacherHeader.AutoSize = true;
+            this.DeleteTeacherHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteTeacherHeader.Location = new System.Drawing.Point(31, 23);
+            this.DeleteTeacherHeader.Name = "DeleteTeacherHeader";
+            this.DeleteTeacherHeader.Size = new System.Drawing.Size(124, 22);
+            this.DeleteTeacherHeader.TabIndex = 0;
+            this.DeleteTeacherHeader.Text = "DeleteTeacher";
+            // 
+            // SelectDeleteTeacherLbl
+            // 
+            this.SelectDeleteTeacherLbl.AutoSize = true;
+            this.SelectDeleteTeacherLbl.Location = new System.Drawing.Point(125, 84);
+            this.SelectDeleteTeacherLbl.Name = "SelectDeleteTeacherLbl";
+            this.SelectDeleteTeacherLbl.Size = new System.Drawing.Size(99, 16);
+            this.SelectDeleteTeacherLbl.TabIndex = 1;
+            this.SelectDeleteTeacherLbl.Text = "Select Teacher :";
+            // 
+            // SelectDeleteTeacherCB
+            // 
+            this.SelectDeleteTeacherCB.FormattingEnabled = true;
+            this.SelectDeleteTeacherCB.Location = new System.Drawing.Point(233, 81);
+            this.SelectDeleteTeacherCB.Name = "SelectDeleteTeacherCB";
+            this.SelectDeleteTeacherCB.Size = new System.Drawing.Size(121, 24);
+            this.SelectDeleteTeacherCB.TabIndex = 2;
+            // 
+            // DeleteTeacherBtn
+            // 
+            this.DeleteTeacherBtn.Location = new System.Drawing.Point(498, 174);
+            this.DeleteTeacherBtn.Name = "DeleteTeacherBtn";
+            this.DeleteTeacherBtn.Size = new System.Drawing.Size(75, 23);
+            this.DeleteTeacherBtn.TabIndex = 3;
+            this.DeleteTeacherBtn.Text = "Delete Teacher";
+            this.DeleteTeacherBtn.UseVisualStyleBackColor = true;
+            this.DeleteTeacherBtn.Click += new System.EventHandler(this.DeleteTeacherBtn_Click);
+            // 
+            // GetTeacherInfoLbl
+            // 
+            this.GetTeacherInfoLbl.AutoSize = true;
+            this.GetTeacherInfoLbl.Location = new System.Drawing.Point(234, 119);
+            this.GetTeacherInfoLbl.Name = "GetTeacherInfoLbl";
+            this.GetTeacherInfoLbl.Size = new System.Drawing.Size(42, 16);
+            this.GetTeacherInfoLbl.TabIndex = 4;
+            this.GetTeacherInfoLbl.Text = "label7";
+            // 
+            // SearchTeacherBtn
+            // 
+            this.SearchTeacherBtn.Location = new System.Drawing.Point(379, 81);
+            this.SearchTeacherBtn.Name = "SearchTeacherBtn";
+            this.SearchTeacherBtn.Size = new System.Drawing.Size(113, 23);
+            this.SearchTeacherBtn.TabIndex = 5;
+            this.SearchTeacherBtn.Text = "Search Teacher";
+            this.SearchTeacherBtn.UseVisualStyleBackColor = true;
+            this.SearchTeacherBtn.Click += new System.EventHandler(this.SearchTeacherBtn_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 484);
-            this.Controls.Add(this.ListTeacherPnl);
-            this.Controls.Add(this.TeacherPanel);
-            this.Controls.Add(this.UpdateTeacherPnl);
+            this.Controls.Add(this.DeleteTeacherPnl);
             this.Controls.Add(this.DateAndTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.MenuBar);
+            this.Controls.Add(this.TeacherPanel);
+            this.Controls.Add(this.UpdateTeacherPnl);
             this.Controls.Add(this.AbscencePanel);
             this.Controls.Add(this.StudentListPanel);
             this.Controls.Add(this.ClassPanel);
@@ -2327,6 +2406,7 @@
             this.Controls.Add(this.StudentPanelRegistrationPanel);
             this.Controls.Add(this.CanteenPanel);
             this.Controls.Add(this.StudentDeletePanel);
+            this.Controls.Add(this.ListTeacherPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
@@ -2372,6 +2452,8 @@
             this.ListTeacherPnl.ResumeLayout(false);
             this.ListTeacherPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListedTeacherDGV)).EndInit();
+            this.DeleteTeacherPnl.ResumeLayout(false);
+            this.DeleteTeacherPnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2576,5 +2658,12 @@
         private System.Windows.Forms.Label ListTeacherHeader;
         private System.Windows.Forms.Button FilterTeacherBtn;
         private System.Windows.Forms.DataGridView ListedTeacherDGV;
+        private System.Windows.Forms.Panel DeleteTeacherPnl;
+        private System.Windows.Forms.Button DeleteTeacherBtn;
+        private System.Windows.Forms.ComboBox SelectDeleteTeacherCB;
+        private System.Windows.Forms.Label SelectDeleteTeacherLbl;
+        private System.Windows.Forms.Label DeleteTeacherHeader;
+        private System.Windows.Forms.Label GetTeacherInfoLbl;
+        private System.Windows.Forms.Button SearchTeacherBtn;
     }
 }

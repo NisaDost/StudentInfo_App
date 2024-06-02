@@ -16,6 +16,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 using System.Data.Entity.Validation;
 using System.Net.Mail;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 
 namespace StudentInfo_App
 {
@@ -54,6 +55,7 @@ namespace StudentInfo_App
             UpdateTeacherLoadBranchesAndClasses();
             SelectUpdateTeacherCB.SelectedIndexChanged += new System.EventHandler(this.UpdateSelectTeacherCB_SelectedIndexChanged);
             TeacherListLoadAllClasses();
+            TeacherDeleteLoadTeachers();
 
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
@@ -75,6 +77,7 @@ namespace StudentInfo_App
             buttonPanelMap.Add("DefineAClassTeacherBtn", AssignTeacherToClassPnl);
             buttonPanelMap.Add("UpdateTeacherBtn", UpdateTeacherPnl);
             buttonPanelMap.Add("ListTeacherBtn", ListTeacherPnl);
+            buttonPanelMap.Add("TeacherDeleteBtn", DeleteTeacherPnl);
 
             //buttonPanelMap.Add("TeacherDeleteBtn", TeacherDeletePnl);
 
@@ -1376,7 +1379,7 @@ namespace StudentInfo_App
 
         #endregion
 
-        #region Update Teacher
+        #region Öğretmen Güncelleme
         private void UpdateTeacherLoadBranchesAndClasses()
         {
             var DB = new NewSchoolDBEntities();
@@ -1497,7 +1500,7 @@ namespace StudentInfo_App
         }
         #endregion
 
-        #region List Teacher
+        #region Öğretmen Listeleme
         private void TeacherListLoadAllClasses()
         {
             var DB = new NewSchoolDBEntities();
@@ -1533,6 +1536,73 @@ namespace StudentInfo_App
             ListedTeacherDGV.Columns["BranchName"].HeaderText = "Branşı";
             ListedTeacherDGV.Columns["ClassName"].HeaderText = "Şube/Şubeler";
         }
+        #endregion
+
+        #region Öğretmen silme
+        private void TeacherDeleteLoadTeachers()
+        {
+            var DB = new NewSchoolDBEntities();
+
+            // Tüm öğretmenleri ComboBox'a yükle
+            var teachers = DB.TEACHERs.ToList();
+            SelectDeleteTeacherCB.DataSource = teachers;
+            SelectDeleteTeacherCB.DisplayMember = "teacher_fullname";
+            SelectDeleteTeacherCB.ValueMember = "teacher_id";
+        }
+        private void SearchTeacherBtn_Click(object sender, EventArgs e)
+        {
+            if (SelectDeleteTeacherCB.SelectedItem != null)
+            {
+                var selectedTeacher = (TEACHER)SelectDeleteTeacherCB.SelectedItem;
+                GetTeacherInfoLbl.Text = $"Öğretmen Adı: {selectedTeacher.teacher_fullname}\nBranşı: {selectedTeacher.BRANCH.branch_name}\n";
+            }
+            else
+            {
+                MessageBox.Show("Lütfen öğretmen seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+        private void DeleteTeacherBtn_Click(object sender, EventArgs e)
+        {
+            if (SelectDeleteTeacherCB.SelectedItem != null)
+            {
+                var selectedTeacher = (TEACHER)SelectDeleteTeacherCB.SelectedItem;
+                var selectedTeacherId = selectedTeacher.teacher_id;
+
+                var DB = new NewSchoolDBEntities();
+
+                try
+                {
+                    // Nesneyi izlenmeyen duruma getir
+                    DB.Entry(selectedTeacher).State = EntityState.Detached;
+
+                    // Nesneyi yeniden al
+                    selectedTeacher = DB.TEACHERs.Find(selectedTeacherId);
+
+                    // Nesneyi sil
+                    DB.TEACHERs.Remove(selectedTeacher);
+                    DB.SaveChanges();
+
+                    // Başarılı bir şekilde silindiğine dair mesaj göster
+                    MessageBox.Show("Öğretmen başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Öğretmenleri yeniden yükle
+                    TeacherDeleteLoadTeachers();
+                }
+                catch (Exception ex)
+                {
+                    // Hata durumunda kullanıcıya bilgi ver
+                    MessageBox.Show("Öğretmen silinirken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // Öğretmen seçilmediğinde kullanıcıya bilgi ver
+                MessageBox.Show("Lütfen silmek istediğiniz öğretmeni seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
         #endregion
     }
 }
