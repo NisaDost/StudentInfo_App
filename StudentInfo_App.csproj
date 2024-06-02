@@ -117,6 +117,9 @@
     <Compile Include="Models\CANTEEN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CATEGORY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CITY.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -34,6 +34,8 @@
         <AssociationConnector Association="NewSchoolDBModel.FK__PARENT__student___5441852A" ManuallyRouted="false" />
         <AssociationConnector Association="NewSchoolDBModel.FK__STUDENT__parent___52593CB8" ManuallyRouted="false" />
         <AssociationConnector Association="NewSchoolDBModel.FK__TEACHER_C__teach__5BE2A6F2" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NewSchoolDBModel.CATEGORY" Width="1.5" PointX="3.75" PointY="0.875" />
+        <AssociationConnector Association="NewSchoolDBModel.FK__PRODUCT__categor__151B244E" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

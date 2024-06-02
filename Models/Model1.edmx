@@ -45,6 +45,15 @@
           <Property Name="canteen_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="student_id" Type="int" />
           <Property Name="product_id" Type="int" />
+          <Property Name="is_available_for_student" Type="bit" />
+        </EntityType>
+        <EntityType Name="CATEGORY">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="category_description" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="CITY">
           <Key>
@@ -96,6 +105,9 @@
           <Property Name="product_name" Type="varchar" MaxLength="255" />
           <Property Name="is_available" Type="bit" />
           <Property Name="product_price" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="category_id" Type="int" />
+          <Property Name="stock_amount" Type="int" />
+          <Property Name="expiration_date" Type="date" />
         </EntityType>
         <EntityType Name="STUDENT">
           <Key>
@@ -236,6 +248,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__PRODUCT__categor__151B244E">
+          <End Role="CATEGORY" Type="Self.CATEGORY" Multiplicity="0..1" />
+          <End Role="PRODUCT" Type="Self.PRODUCT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATEGORY">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="PRODUCT">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__STUDENT__class_i__534D60F1">
           <End Role="CLASS" Type="Self.CLASS" Multiplicity="0..1" />
           <End Role="STUDENT" Type="Self.STUDENT" Multiplicity="*" />
@@ -345,6 +369,7 @@
           <EntitySet Name="ATTENDANCE" EntityType="Self.ATTENDANCE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BRANCH" EntityType="Self.BRANCH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CANTEEN" EntityType="Self.CANTEEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CATEGORY" EntityType="Self.CATEGORY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CITY" EntityType="Self.CITY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CLASS" EntityType="Self.CLASS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DISTRICT" EntityType="Self.DISTRICT" Schema="dbo" store:Type="Tables" />
@@ -386,6 +411,10 @@
           <AssociationSet Name="FK__PARENT__student___5441852A" Association="Self.FK__PARENT__student___5441852A">
             <End Role="STUDENT" EntitySet="STUDENT" />
             <End Role="PARENT" EntitySet="PARENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PRODUCT__categor__151B244E" Association="Self.FK__PRODUCT__categor__151B244E">
+            <End Role="CATEGORY" EntitySet="CATEGORY" />
+            <End Role="PRODUCT" EntitySet="PRODUCT" />
           </AssociationSet>
           <AssociationSet Name="FK__STUDENT__class_i__534D60F1" Association="Self.FK__STUDENT__class_i__534D60F1">
             <End Role="CLASS" EntitySet="CLASS" />
@@ -462,6 +491,7 @@
           <Property Name="product_id" Type="Int32" />
           <NavigationProperty Name="PRODUCT" Relationship="Self.FK__CANTEEN__product__5812160E" FromRole="CANTEEN" ToRole="PRODUCT" />
           <NavigationProperty Name="STUDENT" Relationship="Self.FK__CANTEEN__student__571DF1D5" FromRole="CANTEEN" ToRole="STUDENT" />
+          <Property Name="is_available_for_student" Type="Boolean" />
         </EntityType>
         <EntityType Name="CITY">
           <Key>
@@ -524,6 +554,10 @@
           <Property Name="is_available" Type="Boolean" />
           <Property Name="product_price" Type="Decimal" Precision="10" Scale="2" />
           <NavigationProperty Name="CANTEENs" Relationship="Self.FK__CANTEEN__product__5812160E" FromRole="PRODUCT" ToRole="CANTEEN" />
+          <Property Name="category_id" Type="Int32" />
+          <Property Name="stock_amount" Type="Int32" />
+          <Property Name="expiration_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CATEGORY" Relationship="NewSchoolDBModel.FK__PRODUCT__categor__151B244E" FromRole="PRODUCT" ToRole="CATEGORY" />
         </EntityType>
         <EntityType Name="STUDENT">
           <Key>
@@ -849,6 +883,11 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="CATEGORies" EntityType="NewSchoolDBModel.CATEGORY" />
+          <AssociationSet Name="FK__PRODUCT__categor__151B244E" Association="NewSchoolDBModel.FK__PRODUCT__categor__151B244E">
+            <End Role="CATEGORY" EntitySet="CATEGORies" />
+            <End Role="PRODUCT" EntitySet="PRODUCTs" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -861,6 +900,27 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="CATEGORY">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="category_description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PRODUCTs" Relationship="NewSchoolDBModel.FK__PRODUCT__categor__151B244E" FromRole="CATEGORY" ToRole="PRODUCT" />
+        </EntityType>
+        <Association Name="FK__PRODUCT__categor__151B244E">
+          <End Type="NewSchoolDBModel.CATEGORY" Role="CATEGORY" Multiplicity="0..1" />
+          <End Type="NewSchoolDBModel.PRODUCT" Role="PRODUCT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATEGORY">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="PRODUCT">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -907,6 +967,7 @@
           <EntitySetMapping Name="CANTEENs">
             <EntityTypeMapping TypeName="NewSchoolDBModel.CANTEEN">
               <MappingFragment StoreEntitySet="CANTEEN">
+                <ScalarProperty Name="is_available_for_student" ColumnName="is_available_for_student" />
                 <ScalarProperty Name="canteen_id" ColumnName="canteen_id" />
                 <ScalarProperty Name="student_id" ColumnName="student_id" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
@@ -963,6 +1024,9 @@
           <EntitySetMapping Name="PRODUCTs">
             <EntityTypeMapping TypeName="NewSchoolDBModel.PRODUCT">
               <MappingFragment StoreEntitySet="PRODUCT">
+                <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+                <ScalarProperty Name="stock_amount" ColumnName="stock_amount" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="product_name" ColumnName="product_name" />
                 <ScalarProperty Name="is_available" ColumnName="is_available" />
@@ -1041,6 +1105,15 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="NewSchoolDBModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="NewSchoolDBModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="CATEGORies">
+            <EntityTypeMapping TypeName="NewSchoolDBModel.CATEGORY">
+              <MappingFragment StoreEntitySet="CATEGORY">
+                <ScalarProperty Name="category_description" ColumnName="category_description" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

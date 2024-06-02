@@ -56,6 +56,7 @@ namespace StudentInfo_App
             SelectUpdateTeacherCB.SelectedIndexChanged += new System.EventHandler(this.UpdateSelectTeacherCB_SelectedIndexChanged);
             TeacherListLoadAllClasses();
             TeacherDeleteLoadTeachers();
+            LoadCategories();
 
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
@@ -78,6 +79,9 @@ namespace StudentInfo_App
             buttonPanelMap.Add("UpdateTeacherBtn", UpdateTeacherPnl);
             buttonPanelMap.Add("ListTeacherBtn", ListTeacherPnl);
             buttonPanelMap.Add("TeacherDeleteBtn", DeleteTeacherPnl);
+            buttonPanelMap.Add("StudentCanteenButton", StudentCanteenPnl);
+            buttonPanelMap.Add("ListProductBtn", ListProductPnl);
+
 
             //buttonPanelMap.Add("TeacherDeleteBtn", TeacherDeletePnl);
 
@@ -1602,6 +1606,106 @@ namespace StudentInfo_App
             }
         }
 
+        #endregion
+
+        #region kantinde öğrencinin yasaklı ürün getirme
+        private void CanteenSeachStudentBtn_Click(object sender, EventArgs e)
+        {
+            int studentNumber;
+            if (int.TryParse(CanteenStudentNumberTB.Text, out studentNumber))
+            {
+                LoadStudentCanteenInfo(studentNumber);
+            }
+            else
+            {
+                MessageBox.Show("Lütfen geçerli bir öğrenci numarası girin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void LoadStudentCanteenInfo(int studentNumber)
+        {
+            using (var DB = new NewSchoolDBEntities())
+            {
+                // Öğrenci bilgilerini al
+                var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == studentNumber);
+                if (student != null)
+                {
+                    CanteenStudentGetInfoLbl.Text = $"Adı: {student.student_firstname} {student.student_lastname}\n Sınıfı: {student.CLASS.class_name} \n Numarası: {student.student_schoolNo}";
+
+                    // Yasaklı ürünleri al
+                    var bannedProducts = DB.CANTEENs
+                        .Where(c => c.student_id == student.student_id && (c.is_available_for_student ?? false) == false)
+                        .Select(c => new
+                        {
+                            ÜrünAdı = c.PRODUCT.product_name,
+                            Kategori = c.PRODUCT.CATEGORY.category_name,
+                            Fiyat = c.PRODUCT.product_price
+                        })
+                        .ToList();
+
+                    // DataGridView'a yükle
+                    CanteenStudentDGV.DataSource = bannedProducts;
+                }
+                else
+                {
+                    MessageBox.Show("Öğrenci bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    CanteenStudentGetInfoLbl.Text = string.Empty;
+                    CanteenStudentDGV.DataSource = null;
+                }
+            }
+        }
+        #endregion
+
+        #region List Product
+        private void LoadCategories()
+        {
+            using (var DB = new NewSchoolDBEntities())
+            {
+                var categories = DB.CATEGORies.Select(c => new { c.category_id, c.category_name }).ToList();
+                SelectCategoryCB.DataSource = categories;
+                SelectCategoryCB.DisplayMember = "category_name";
+                SelectCategoryCB.ValueMember = "category_id";
+            }
+        }
+        private void bFilterListByCategorysBtn_Click(object sender, EventArgs e)
+        {
+            int selectedCategoryId = (int)SelectCategoryCB.SelectedValue;
+            LoadProducts(selectedCategoryId);
+        }
+        private void LoadProducts(int categoryId)
+        {
+            using (var DB = new NewSchoolDBEntities())
+            {
+                var products = DB.PRODUCTs
+                    .Where(p => p.category_id == categoryId)
+                    .Select(p => new
+                    {
+                        ÜrünAdı = p.product_name,
+                        Kategori = p.CATEGORY.category_name,
+                        Fiyat = p.product_price,
+                        StokDurumu = p.stock_amount,
+                        SKT = p.expiration_date
+                    })
+                    .ToList();
+
+                ListProductDGV.DataSource = products;
+
+                foreach (DataGridViewRow row in ListProductDGV.Rows)
+                {
+                    var stockQuantity = (int)row.Cells["StokDurumu"].Value;
+                    var expirationDate = (DateTime)row.Cells["SKT"].Value;
+
+                    if (stockQuantity < 3)
+                    {
+                        row.Cells["StokDurumu"].Style.BackColor = Color.Red;
+                    }
+
+                    if ((expirationDate - DateTime.Now).TotalDays <= 3)
+                    {
+                        row.Cells["SKT"].Style.BackColor = Color.Red;
+                    }
+                }
+            }
+        }
 
         #endregion
     }

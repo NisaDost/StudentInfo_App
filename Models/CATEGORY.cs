@@ -12,24 +12,19 @@ namespace StudentInfo_App.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PRODUCT
+    public partial class CATEGORY
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PRODUCT()
+        public CATEGORY()
         {
-            this.CANTEENs = new HashSet<CANTEEN>();
+            this.PRODUCTs = new HashSet<PRODUCT>();
         }
     
-        public int product_id { get; set; }
-        public string product_name { get; set; }
-        public Nullable<bool> is_available { get; set; }
-        public Nullable<decimal> product_price { get; set; }
-        public Nullable<int> category_id { get; set; }
-        public Nullable<int> stock_amount { get; set; }
-        public Nullable<System.DateTime> expiration_date { get; set; }
+        public int category_id { get; set; }
+        public string category_name { get; set; }
+        public string category_description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CANTEEN> CANTEENs { get; set; }
-        public virtual CATEGORY CATEGORY { get; set; }
+        public virtual ICollection<PRODUCT> PRODUCTs { get; set; }
     }
 }

@@ -73,6 +73,8 @@
             this.StudentLastNameTB = new System.Windows.Forms.TextBox();
             this.StudentFirstNameTB = new System.Windows.Forms.TextBox();
             this.CanteenPanel = new System.Windows.Forms.Panel();
+            this.ListProductBtn = new System.Windows.Forms.Button();
+            this.StudentCanteenButton = new System.Windows.Forms.Button();
             this.AbscenceInfoPanel = new System.Windows.Forms.Panel();
             this.ExportButton = new System.Windows.Forms.Button();
             this.FilterButton = new System.Windows.Forms.Button();
@@ -127,6 +129,7 @@
             this.StudentNumberAbscenceLbl = new System.Windows.Forms.Label();
             this.StudentAbsenceEntryHeaderLbl = new System.Windows.Forms.Label();
             this.TeacherPanel = new System.Windows.Forms.Panel();
+            this.ListTeacherBtn = new System.Windows.Forms.Button();
             this.UpdateTeacherBtn = new System.Windows.Forms.Button();
             this.TeacherDeleteBtn = new System.Windows.Forms.Button();
             this.TeacherAddBtn = new System.Windows.Forms.Button();
@@ -211,6 +214,7 @@
             this.UpdateTeacherBtn2 = new System.Windows.Forms.Button();
             this.UpdateTeacherNameTB = new System.Windows.Forms.TextBox();
             this.SelectTeacherClassCB = new System.Windows.Forms.ComboBox();
+            this.UpdateTeacherBranchCB = new System.Windows.Forms.ComboBox();
             this.WhichClassUpdatedCB = new System.Windows.Forms.ComboBox();
             this.SelectUpdateTeacherCB = new System.Windows.Forms.ComboBox();
             this.WhichClassLbl = new System.Windows.Forms.Label();
@@ -219,25 +223,37 @@
             this.TeacherNameLbl = new System.Windows.Forms.Label();
             this.SelectUpdatedTeacherLbl = new System.Windows.Forms.Label();
             this.UpdateTeacherHeader = new System.Windows.Forms.Label();
-            this.UpdateTeacherBranchCB = new System.Windows.Forms.ComboBox();
-            this.ListTeacherBtn = new System.Windows.Forms.Button();
             this.ListTeacherPnl = new System.Windows.Forms.Panel();
-            this.ListTeacherHeader = new System.Windows.Forms.Label();
-            this.FilterClassCB = new System.Windows.Forms.ComboBox();
-            this.FilterClassLbl = new System.Windows.Forms.Label();
-            this.ListedTeacherDGV = new System.Windows.Forms.DataGridView();
             this.FilterTeacherBtn = new System.Windows.Forms.Button();
+            this.ListedTeacherDGV = new System.Windows.Forms.DataGridView();
+            this.FilterClassLbl = new System.Windows.Forms.Label();
+            this.FilterClassCB = new System.Windows.Forms.ComboBox();
+            this.ListTeacherHeader = new System.Windows.Forms.Label();
             this.DeleteTeacherPnl = new System.Windows.Forms.Panel();
-            this.DeleteTeacherHeader = new System.Windows.Forms.Label();
-            this.SelectDeleteTeacherLbl = new System.Windows.Forms.Label();
-            this.SelectDeleteTeacherCB = new System.Windows.Forms.ComboBox();
-            this.DeleteTeacherBtn = new System.Windows.Forms.Button();
-            this.GetTeacherInfoLbl = new System.Windows.Forms.Label();
             this.SearchTeacherBtn = new System.Windows.Forms.Button();
+            this.GetTeacherInfoLbl = new System.Windows.Forms.Label();
+            this.DeleteTeacherBtn = new System.Windows.Forms.Button();
+            this.SelectDeleteTeacherCB = new System.Windows.Forms.ComboBox();
+            this.SelectDeleteTeacherLbl = new System.Windows.Forms.Label();
+            this.DeleteTeacherHeader = new System.Windows.Forms.Label();
+            this.StudentCanteenPnl = new System.Windows.Forms.Panel();
+            this.CanteenStudentDGV = new System.Windows.Forms.DataGridView();
+            this.CanteenSeachStudentBtn = new System.Windows.Forms.Button();
+            this.CanteenStudentGetInfoLbl = new System.Windows.Forms.Label();
+            this.CanteenStudentNumberLbl = new System.Windows.Forms.Label();
+            this.CanteenStudentNumberTB = new System.Windows.Forms.TextBox();
+            this.StudentCanteenHeader = new System.Windows.Forms.Label();
+            this.ListProductPnl = new System.Windows.Forms.Panel();
+            this.FilterListByCategorysBtn = new System.Windows.Forms.Button();
+            this.ListProductDGV = new System.Windows.Forms.DataGridView();
+            this.SelectCategoryCB = new System.Windows.Forms.ComboBox();
+            this.SelectCategoryLbl = new System.Windows.Forms.Label();
+            this.ListProductHeader = new System.Windows.Forms.Label();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
             this.StudentPanelRegistrationPanel.SuspendLayout();
+            this.CanteenPanel.SuspendLayout();
             this.AbscenceInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccessLogDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AttendanceDataGridView)).BeginInit();
@@ -260,6 +276,10 @@
             this.ListTeacherPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListedTeacherDGV)).BeginInit();
             this.DeleteTeacherPnl.SuspendLayout();
+            this.StudentCanteenPnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CanteenStudentDGV)).BeginInit();
+            this.ListProductPnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ListProductDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuBar
@@ -738,11 +758,34 @@
             // CanteenPanel
             // 
             this.CanteenPanel.BackColor = System.Drawing.Color.Maroon;
+            this.CanteenPanel.Controls.Add(this.ListProductBtn);
+            this.CanteenPanel.Controls.Add(this.StudentCanteenButton);
+            this.CanteenPanel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.CanteenPanel.Location = new System.Drawing.Point(188, 55);
             this.CanteenPanel.Margin = new System.Windows.Forms.Padding(2);
             this.CanteenPanel.Name = "CanteenPanel";
             this.CanteenPanel.Size = new System.Drawing.Size(702, 410);
             this.CanteenPanel.TabIndex = 2;
+            // 
+            // ListProductBtn
+            // 
+            this.ListProductBtn.Location = new System.Drawing.Point(242, 194);
+            this.ListProductBtn.Name = "ListProductBtn";
+            this.ListProductBtn.Size = new System.Drawing.Size(193, 42);
+            this.ListProductBtn.TabIndex = 0;
+            this.ListProductBtn.Text = "List Product";
+            this.ListProductBtn.UseVisualStyleBackColor = true;
+            this.ListProductBtn.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // StudentCanteenButton
+            // 
+            this.StudentCanteenButton.Location = new System.Drawing.Point(242, 142);
+            this.StudentCanteenButton.Name = "StudentCanteenButton";
+            this.StudentCanteenButton.Size = new System.Drawing.Size(193, 42);
+            this.StudentCanteenButton.TabIndex = 0;
+            this.StudentCanteenButton.Text = "Student Canteen";
+            this.StudentCanteenButton.UseVisualStyleBackColor = true;
+            this.StudentCanteenButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // AbscenceInfoPanel
             // 
@@ -1293,6 +1336,17 @@
             this.TeacherPanel.Name = "TeacherPanel";
             this.TeacherPanel.Size = new System.Drawing.Size(696, 406);
             this.TeacherPanel.TabIndex = 21;
+            // 
+            // ListTeacherBtn
+            // 
+            this.ListTeacherBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ListTeacherBtn.Location = new System.Drawing.Point(239, 210);
+            this.ListTeacherBtn.Name = "ListTeacherBtn";
+            this.ListTeacherBtn.Size = new System.Drawing.Size(168, 41);
+            this.ListTeacherBtn.TabIndex = 0;
+            this.ListTeacherBtn.Text = "List Teacher";
+            this.ListTeacherBtn.UseVisualStyleBackColor = true;
+            this.ListTeacherBtn.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // UpdateTeacherBtn
             // 
@@ -2156,6 +2210,14 @@
             this.SelectTeacherClassCB.Size = new System.Drawing.Size(121, 24);
             this.SelectTeacherClassCB.TabIndex = 2;
             // 
+            // UpdateTeacherBranchCB
+            // 
+            this.UpdateTeacherBranchCB.FormattingEnabled = true;
+            this.UpdateTeacherBranchCB.Location = new System.Drawing.Point(197, 130);
+            this.UpdateTeacherBranchCB.Name = "UpdateTeacherBranchCB";
+            this.UpdateTeacherBranchCB.Size = new System.Drawing.Size(121, 24);
+            this.UpdateTeacherBranchCB.TabIndex = 2;
+            // 
             // WhichClassUpdatedCB
             // 
             this.WhichClassUpdatedCB.FormattingEnabled = true;
@@ -2227,25 +2289,6 @@
             this.UpdateTeacherHeader.TabIndex = 0;
             this.UpdateTeacherHeader.Text = "Update Teacher";
             // 
-            // UpdateTeacherBranchCB
-            // 
-            this.UpdateTeacherBranchCB.FormattingEnabled = true;
-            this.UpdateTeacherBranchCB.Location = new System.Drawing.Point(197, 130);
-            this.UpdateTeacherBranchCB.Name = "UpdateTeacherBranchCB";
-            this.UpdateTeacherBranchCB.Size = new System.Drawing.Size(121, 24);
-            this.UpdateTeacherBranchCB.TabIndex = 2;
-            // 
-            // ListTeacherBtn
-            // 
-            this.ListTeacherBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListTeacherBtn.Location = new System.Drawing.Point(239, 210);
-            this.ListTeacherBtn.Name = "ListTeacherBtn";
-            this.ListTeacherBtn.Size = new System.Drawing.Size(168, 41);
-            this.ListTeacherBtn.TabIndex = 0;
-            this.ListTeacherBtn.Text = "List Teacher";
-            this.ListTeacherBtn.UseVisualStyleBackColor = true;
-            this.ListTeacherBtn.Click += new System.EventHandler(this.MenuButton_Click);
-            // 
             // ListTeacherPnl
             // 
             this.ListTeacherPnl.BackColor = System.Drawing.Color.HotPink;
@@ -2261,23 +2304,23 @@
             this.ListTeacherPnl.Size = new System.Drawing.Size(696, 406);
             this.ListTeacherPnl.TabIndex = 31;
             // 
-            // ListTeacherHeader
+            // FilterTeacherBtn
             // 
-            this.ListTeacherHeader.AutoSize = true;
-            this.ListTeacherHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListTeacherHeader.Location = new System.Drawing.Point(17, 19);
-            this.ListTeacherHeader.Name = "ListTeacherHeader";
-            this.ListTeacherHeader.Size = new System.Drawing.Size(104, 22);
-            this.ListTeacherHeader.TabIndex = 0;
-            this.ListTeacherHeader.Text = "List Teacher";
+            this.FilterTeacherBtn.Location = new System.Drawing.Point(263, 46);
+            this.FilterTeacherBtn.Name = "FilterTeacherBtn";
+            this.FilterTeacherBtn.Size = new System.Drawing.Size(75, 23);
+            this.FilterTeacherBtn.TabIndex = 4;
+            this.FilterTeacherBtn.Text = "Filter";
+            this.FilterTeacherBtn.UseVisualStyleBackColor = true;
+            this.FilterTeacherBtn.Click += new System.EventHandler(this.FilterTeacherBtn_Click);
             // 
-            // FilterClassCB
+            // ListedTeacherDGV
             // 
-            this.FilterClassCB.FormattingEnabled = true;
-            this.FilterClassCB.Location = new System.Drawing.Point(117, 47);
-            this.FilterClassCB.Name = "FilterClassCB";
-            this.FilterClassCB.Size = new System.Drawing.Size(121, 24);
-            this.FilterClassCB.TabIndex = 1;
+            this.ListedTeacherDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListedTeacherDGV.Location = new System.Drawing.Point(65, 85);
+            this.ListedTeacherDGV.Name = "ListedTeacherDGV";
+            this.ListedTeacherDGV.Size = new System.Drawing.Size(452, 233);
+            this.ListedTeacherDGV.TabIndex = 3;
             // 
             // FilterClassLbl
             // 
@@ -2288,23 +2331,23 @@
             this.FilterClassLbl.TabIndex = 2;
             this.FilterClassLbl.Text = "Class : ";
             // 
-            // ListedTeacherDGV
+            // FilterClassCB
             // 
-            this.ListedTeacherDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListedTeacherDGV.Location = new System.Drawing.Point(65, 85);
-            this.ListedTeacherDGV.Name = "ListedTeacherDGV";
-            this.ListedTeacherDGV.Size = new System.Drawing.Size(452, 233);
-            this.ListedTeacherDGV.TabIndex = 3;
+            this.FilterClassCB.FormattingEnabled = true;
+            this.FilterClassCB.Location = new System.Drawing.Point(117, 47);
+            this.FilterClassCB.Name = "FilterClassCB";
+            this.FilterClassCB.Size = new System.Drawing.Size(121, 24);
+            this.FilterClassCB.TabIndex = 1;
             // 
-            // FilterTeacherBtn
+            // ListTeacherHeader
             // 
-            this.FilterTeacherBtn.Location = new System.Drawing.Point(263, 46);
-            this.FilterTeacherBtn.Name = "FilterTeacherBtn";
-            this.FilterTeacherBtn.Size = new System.Drawing.Size(75, 23);
-            this.FilterTeacherBtn.TabIndex = 4;
-            this.FilterTeacherBtn.Text = "Filter";
-            this.FilterTeacherBtn.UseVisualStyleBackColor = true;
-            this.FilterTeacherBtn.Click += new System.EventHandler(this.FilterTeacherBtn_Click);
+            this.ListTeacherHeader.AutoSize = true;
+            this.ListTeacherHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ListTeacherHeader.Location = new System.Drawing.Point(17, 19);
+            this.ListTeacherHeader.Name = "ListTeacherHeader";
+            this.ListTeacherHeader.Size = new System.Drawing.Size(104, 22);
+            this.ListTeacherHeader.TabIndex = 0;
+            this.ListTeacherHeader.Text = "List Teacher";
             // 
             // DeleteTeacherPnl
             // 
@@ -2321,32 +2364,24 @@
             this.DeleteTeacherPnl.Size = new System.Drawing.Size(696, 406);
             this.DeleteTeacherPnl.TabIndex = 32;
             // 
-            // DeleteTeacherHeader
+            // SearchTeacherBtn
             // 
-            this.DeleteTeacherHeader.AutoSize = true;
-            this.DeleteTeacherHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteTeacherHeader.Location = new System.Drawing.Point(31, 23);
-            this.DeleteTeacherHeader.Name = "DeleteTeacherHeader";
-            this.DeleteTeacherHeader.Size = new System.Drawing.Size(124, 22);
-            this.DeleteTeacherHeader.TabIndex = 0;
-            this.DeleteTeacherHeader.Text = "DeleteTeacher";
+            this.SearchTeacherBtn.Location = new System.Drawing.Point(379, 81);
+            this.SearchTeacherBtn.Name = "SearchTeacherBtn";
+            this.SearchTeacherBtn.Size = new System.Drawing.Size(113, 23);
+            this.SearchTeacherBtn.TabIndex = 5;
+            this.SearchTeacherBtn.Text = "Search Teacher";
+            this.SearchTeacherBtn.UseVisualStyleBackColor = true;
+            this.SearchTeacherBtn.Click += new System.EventHandler(this.SearchTeacherBtn_Click);
             // 
-            // SelectDeleteTeacherLbl
+            // GetTeacherInfoLbl
             // 
-            this.SelectDeleteTeacherLbl.AutoSize = true;
-            this.SelectDeleteTeacherLbl.Location = new System.Drawing.Point(125, 84);
-            this.SelectDeleteTeacherLbl.Name = "SelectDeleteTeacherLbl";
-            this.SelectDeleteTeacherLbl.Size = new System.Drawing.Size(99, 16);
-            this.SelectDeleteTeacherLbl.TabIndex = 1;
-            this.SelectDeleteTeacherLbl.Text = "Select Teacher :";
-            // 
-            // SelectDeleteTeacherCB
-            // 
-            this.SelectDeleteTeacherCB.FormattingEnabled = true;
-            this.SelectDeleteTeacherCB.Location = new System.Drawing.Point(233, 81);
-            this.SelectDeleteTeacherCB.Name = "SelectDeleteTeacherCB";
-            this.SelectDeleteTeacherCB.Size = new System.Drawing.Size(121, 24);
-            this.SelectDeleteTeacherCB.TabIndex = 2;
+            this.GetTeacherInfoLbl.AutoSize = true;
+            this.GetTeacherInfoLbl.Location = new System.Drawing.Point(234, 119);
+            this.GetTeacherInfoLbl.Name = "GetTeacherInfoLbl";
+            this.GetTeacherInfoLbl.Size = new System.Drawing.Size(42, 16);
+            this.GetTeacherInfoLbl.TabIndex = 4;
+            this.GetTeacherInfoLbl.Text = "label7";
             // 
             // DeleteTeacherBtn
             // 
@@ -2358,35 +2393,174 @@
             this.DeleteTeacherBtn.UseVisualStyleBackColor = true;
             this.DeleteTeacherBtn.Click += new System.EventHandler(this.DeleteTeacherBtn_Click);
             // 
-            // GetTeacherInfoLbl
+            // SelectDeleteTeacherCB
             // 
-            this.GetTeacherInfoLbl.AutoSize = true;
-            this.GetTeacherInfoLbl.Location = new System.Drawing.Point(234, 119);
-            this.GetTeacherInfoLbl.Name = "GetTeacherInfoLbl";
-            this.GetTeacherInfoLbl.Size = new System.Drawing.Size(42, 16);
-            this.GetTeacherInfoLbl.TabIndex = 4;
-            this.GetTeacherInfoLbl.Text = "label7";
+            this.SelectDeleteTeacherCB.FormattingEnabled = true;
+            this.SelectDeleteTeacherCB.Location = new System.Drawing.Point(233, 81);
+            this.SelectDeleteTeacherCB.Name = "SelectDeleteTeacherCB";
+            this.SelectDeleteTeacherCB.Size = new System.Drawing.Size(121, 24);
+            this.SelectDeleteTeacherCB.TabIndex = 2;
             // 
-            // SearchTeacherBtn
+            // SelectDeleteTeacherLbl
             // 
-            this.SearchTeacherBtn.Location = new System.Drawing.Point(379, 81);
-            this.SearchTeacherBtn.Name = "SearchTeacherBtn";
-            this.SearchTeacherBtn.Size = new System.Drawing.Size(113, 23);
-            this.SearchTeacherBtn.TabIndex = 5;
-            this.SearchTeacherBtn.Text = "Search Teacher";
-            this.SearchTeacherBtn.UseVisualStyleBackColor = true;
-            this.SearchTeacherBtn.Click += new System.EventHandler(this.SearchTeacherBtn_Click);
+            this.SelectDeleteTeacherLbl.AutoSize = true;
+            this.SelectDeleteTeacherLbl.Location = new System.Drawing.Point(125, 84);
+            this.SelectDeleteTeacherLbl.Name = "SelectDeleteTeacherLbl";
+            this.SelectDeleteTeacherLbl.Size = new System.Drawing.Size(99, 16);
+            this.SelectDeleteTeacherLbl.TabIndex = 1;
+            this.SelectDeleteTeacherLbl.Text = "Select Teacher :";
+            // 
+            // DeleteTeacherHeader
+            // 
+            this.DeleteTeacherHeader.AutoSize = true;
+            this.DeleteTeacherHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteTeacherHeader.Location = new System.Drawing.Point(31, 23);
+            this.DeleteTeacherHeader.Name = "DeleteTeacherHeader";
+            this.DeleteTeacherHeader.Size = new System.Drawing.Size(124, 22);
+            this.DeleteTeacherHeader.TabIndex = 0;
+            this.DeleteTeacherHeader.Text = "DeleteTeacher";
+            // 
+            // StudentCanteenPnl
+            // 
+            this.StudentCanteenPnl.BackColor = System.Drawing.Color.Crimson;
+            this.StudentCanteenPnl.Controls.Add(this.CanteenStudentDGV);
+            this.StudentCanteenPnl.Controls.Add(this.CanteenSeachStudentBtn);
+            this.StudentCanteenPnl.Controls.Add(this.CanteenStudentGetInfoLbl);
+            this.StudentCanteenPnl.Controls.Add(this.CanteenStudentNumberLbl);
+            this.StudentCanteenPnl.Controls.Add(this.CanteenStudentNumberTB);
+            this.StudentCanteenPnl.Controls.Add(this.StudentCanteenHeader);
+            this.StudentCanteenPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentCanteenPnl.Location = new System.Drawing.Point(203, 50);
+            this.StudentCanteenPnl.Name = "StudentCanteenPnl";
+            this.StudentCanteenPnl.Size = new System.Drawing.Size(640, 414);
+            this.StudentCanteenPnl.TabIndex = 33;
+            // 
+            // CanteenStudentDGV
+            // 
+            this.CanteenStudentDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CanteenStudentDGV.Location = new System.Drawing.Point(127, 127);
+            this.CanteenStudentDGV.Name = "CanteenStudentDGV";
+            this.CanteenStudentDGV.Size = new System.Drawing.Size(367, 180);
+            this.CanteenStudentDGV.TabIndex = 5;
+            // 
+            // CanteenSeachStudentBtn
+            // 
+            this.CanteenSeachStudentBtn.Location = new System.Drawing.Point(320, 46);
+            this.CanteenSeachStudentBtn.Name = "CanteenSeachStudentBtn";
+            this.CanteenSeachStudentBtn.Size = new System.Drawing.Size(75, 23);
+            this.CanteenSeachStudentBtn.TabIndex = 4;
+            this.CanteenSeachStudentBtn.Text = "Search";
+            this.CanteenSeachStudentBtn.UseVisualStyleBackColor = true;
+            this.CanteenSeachStudentBtn.Click += new System.EventHandler(this.CanteenSeachStudentBtn_Click);
+            // 
+            // CanteenStudentGetInfoLbl
+            // 
+            this.CanteenStudentGetInfoLbl.AutoSize = true;
+            this.CanteenStudentGetInfoLbl.Location = new System.Drawing.Point(437, 50);
+            this.CanteenStudentGetInfoLbl.Name = "CanteenStudentGetInfoLbl";
+            this.CanteenStudentGetInfoLbl.Size = new System.Drawing.Size(42, 16);
+            this.CanteenStudentGetInfoLbl.TabIndex = 3;
+            this.CanteenStudentGetInfoLbl.Text = "label7";
+            // 
+            // CanteenStudentNumberLbl
+            // 
+            this.CanteenStudentNumberLbl.AutoSize = true;
+            this.CanteenStudentNumberLbl.Location = new System.Drawing.Point(77, 49);
+            this.CanteenStudentNumberLbl.Name = "CanteenStudentNumberLbl";
+            this.CanteenStudentNumberLbl.Size = new System.Drawing.Size(115, 16);
+            this.CanteenStudentNumberLbl.TabIndex = 2;
+            this.CanteenStudentNumberLbl.Text = "Student Number :";
+            // 
+            // CanteenStudentNumberTB
+            // 
+            this.CanteenStudentNumberTB.Location = new System.Drawing.Point(196, 48);
+            this.CanteenStudentNumberTB.Name = "CanteenStudentNumberTB";
+            this.CanteenStudentNumberTB.Size = new System.Drawing.Size(100, 22);
+            this.CanteenStudentNumberTB.TabIndex = 1;
+            // 
+            // StudentCanteenHeader
+            // 
+            this.StudentCanteenHeader.AutoSize = true;
+            this.StudentCanteenHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentCanteenHeader.Location = new System.Drawing.Point(22, 15);
+            this.StudentCanteenHeader.Name = "StudentCanteenHeader";
+            this.StudentCanteenHeader.Size = new System.Drawing.Size(148, 22);
+            this.StudentCanteenHeader.TabIndex = 0;
+            this.StudentCanteenHeader.Text = "Student Canteen";
+            // 
+            // ListProductPnl
+            // 
+            this.ListProductPnl.BackColor = System.Drawing.Color.Yellow;
+            this.ListProductPnl.Controls.Add(this.FilterListByCategorysBtn);
+            this.ListProductPnl.Controls.Add(this.ListProductDGV);
+            this.ListProductPnl.Controls.Add(this.SelectCategoryCB);
+            this.ListProductPnl.Controls.Add(this.SelectCategoryLbl);
+            this.ListProductPnl.Controls.Add(this.ListProductHeader);
+            this.ListProductPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ListProductPnl.Location = new System.Drawing.Point(200, 50);
+            this.ListProductPnl.Name = "ListProductPnl";
+            this.ListProductPnl.Size = new System.Drawing.Size(659, 391);
+            this.ListProductPnl.TabIndex = 34;
+            // 
+            // FilterListByCategorysBtn
+            // 
+            this.FilterListByCategorysBtn.Location = new System.Drawing.Point(364, 46);
+            this.FilterListByCategorysBtn.Name = "FilterListByCategorysBtn";
+            this.FilterListByCategorysBtn.Size = new System.Drawing.Size(75, 23);
+            this.FilterListByCategorysBtn.TabIndex = 4;
+            this.FilterListByCategorysBtn.Text = "Filter";
+            this.FilterListByCategorysBtn.UseVisualStyleBackColor = true;
+            this.FilterListByCategorysBtn.Click += new System.EventHandler(this.bFilterListByCategorysBtn_Click);
+            // 
+            // ListProductDGV
+            // 
+            this.ListProductDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListProductDGV.Location = new System.Drawing.Point(40, 90);
+            this.ListProductDGV.Name = "ListProductDGV";
+            this.ListProductDGV.Size = new System.Drawing.Size(560, 257);
+            this.ListProductDGV.TabIndex = 3;
+            // 
+            // SelectCategoryCB
+            // 
+            this.SelectCategoryCB.FormattingEnabled = true;
+            this.SelectCategoryCB.Location = new System.Drawing.Point(224, 46);
+            this.SelectCategoryCB.Name = "SelectCategoryCB";
+            this.SelectCategoryCB.Size = new System.Drawing.Size(121, 24);
+            this.SelectCategoryCB.TabIndex = 2;
+            // 
+            // SelectCategoryLbl
+            // 
+            this.SelectCategoryLbl.AutoSize = true;
+            this.SelectCategoryLbl.Location = new System.Drawing.Point(103, 50);
+            this.SelectCategoryLbl.Name = "SelectCategoryLbl";
+            this.SelectCategoryLbl.Size = new System.Drawing.Size(108, 16);
+            this.SelectCategoryLbl.TabIndex = 1;
+            this.SelectCategoryLbl.Text = "Select Category :";
+            // 
+            // ListProductHeader
+            // 
+            this.ListProductHeader.AutoSize = true;
+            this.ListProductHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ListProductHeader.Location = new System.Drawing.Point(26, 13);
+            this.ListProductHeader.Name = "ListProductHeader";
+            this.ListProductHeader.Size = new System.Drawing.Size(105, 22);
+            this.ListProductHeader.TabIndex = 0;
+            this.ListProductHeader.Text = "List Product";
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 484);
-            this.Controls.Add(this.DeleteTeacherPnl);
+            this.Controls.Add(this.ListProductPnl);
             this.Controls.Add(this.DateAndTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.MenuBar);
+            this.Controls.Add(this.CanteenPanel);
+            this.Controls.Add(this.StudentDeletePanel);
+            this.Controls.Add(this.ListTeacherPnl);
+            this.Controls.Add(this.DeleteTeacherPnl);
             this.Controls.Add(this.TeacherPanel);
             this.Controls.Add(this.UpdateTeacherPnl);
             this.Controls.Add(this.AbscencePanel);
@@ -2404,9 +2578,7 @@
             this.Controls.Add(this.AbscenceInfoPanel);
             this.Controls.Add(this.HomePanel);
             this.Controls.Add(this.StudentPanelRegistrationPanel);
-            this.Controls.Add(this.CanteenPanel);
-            this.Controls.Add(this.StudentDeletePanel);
-            this.Controls.Add(this.ListTeacherPnl);
+            this.Controls.Add(this.StudentCanteenPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
@@ -2418,6 +2590,7 @@
             this.HomePanel.PerformLayout();
             this.StudentPanelRegistrationPanel.ResumeLayout(false);
             this.StudentPanelRegistrationPanel.PerformLayout();
+            this.CanteenPanel.ResumeLayout(false);
             this.AbscenceInfoPanel.ResumeLayout(false);
             this.AbscenceInfoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccessLogDataGridView)).EndInit();
@@ -2454,6 +2627,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.ListedTeacherDGV)).EndInit();
             this.DeleteTeacherPnl.ResumeLayout(false);
             this.DeleteTeacherPnl.PerformLayout();
+            this.StudentCanteenPnl.ResumeLayout(false);
+            this.StudentCanteenPnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CanteenStudentDGV)).EndInit();
+            this.ListProductPnl.ResumeLayout(false);
+            this.ListProductPnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ListProductDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2665,5 +2844,20 @@
         private System.Windows.Forms.Label DeleteTeacherHeader;
         private System.Windows.Forms.Label GetTeacherInfoLbl;
         private System.Windows.Forms.Button SearchTeacherBtn;
+        private System.Windows.Forms.Button StudentCanteenButton;
+        private System.Windows.Forms.Button ListProductBtn;
+        private System.Windows.Forms.Panel StudentCanteenPnl;
+        private System.Windows.Forms.TextBox CanteenStudentNumberTB;
+        private System.Windows.Forms.Label StudentCanteenHeader;
+        private System.Windows.Forms.Label CanteenStudentNumberLbl;
+        private System.Windows.Forms.DataGridView CanteenStudentDGV;
+        private System.Windows.Forms.Button CanteenSeachStudentBtn;
+        private System.Windows.Forms.Label CanteenStudentGetInfoLbl;
+        private System.Windows.Forms.Panel ListProductPnl;
+        private System.Windows.Forms.DataGridView ListProductDGV;
+        private System.Windows.Forms.ComboBox SelectCategoryCB;
+        private System.Windows.Forms.Label SelectCategoryLbl;
+        private System.Windows.Forms.Label ListProductHeader;
+        private System.Windows.Forms.Button FilterListByCategorysBtn;
     }
 }

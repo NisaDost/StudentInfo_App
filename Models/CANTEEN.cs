@@ -17,6 +17,7 @@ namespace StudentInfo_App.Models
         public int canteen_id { get; set; }
         public Nullable<int> student_id { get; set; }
         public Nullable<int> product_id { get; set; }
+        public Nullable<bool> is_available_for_student { get; set; }
     
         public virtual PRODUCT PRODUCT { get; set; }
         public virtual STUDENT STUDENT { get; set; }
