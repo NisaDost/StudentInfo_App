@@ -73,6 +73,8 @@
             this.StudentLastNameTB = new System.Windows.Forms.TextBox();
             this.StudentFirstNameTB = new System.Windows.Forms.TextBox();
             this.CanteenPanel = new System.Windows.Forms.Panel();
+            this.UpdateProductBtn = new System.Windows.Forms.Button();
+            this.AddProductBtn = new System.Windows.Forms.Button();
             this.ListProductBtn = new System.Windows.Forms.Button();
             this.StudentCanteenButton = new System.Windows.Forms.Button();
             this.AbscenceInfoPanel = new System.Windows.Forms.Panel();
@@ -249,6 +251,45 @@
             this.SelectCategoryCB = new System.Windows.Forms.ComboBox();
             this.SelectCategoryLbl = new System.Windows.Forms.Label();
             this.ListProductHeader = new System.Windows.Forms.Label();
+            this.AddProductPnl = new System.Windows.Forms.Panel();
+            this.AddProductButton = new System.Windows.Forms.Button();
+            this.AddProductExprationDateDTP = new System.Windows.Forms.DateTimePicker();
+            this.AddProductCategoryCB = new System.Windows.Forms.ComboBox();
+            this.AddProductStockTB = new System.Windows.Forms.TextBox();
+            this.AddProductPriceTB = new System.Windows.Forms.TextBox();
+            this.AddProductNameTB = new System.Windows.Forms.TextBox();
+            this.AddProductExprationDateLbl = new System.Windows.Forms.Label();
+            this.AddProductStockLbl = new System.Windows.Forms.Label();
+            this.AddProductCategoryLbl = new System.Windows.Forms.Label();
+            this.AddProductPriceLbl = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.AddProductNameLbl = new System.Windows.Forms.Label();
+            this.AddProductHeader = new System.Windows.Forms.Label();
+            this.UpdateProductPnl = new System.Windows.Forms.Panel();
+            this.UpdateProductExprationDateDTP = new System.Windows.Forms.DateTimePicker();
+            this.UpdateProductCategoryCB = new System.Windows.Forms.ComboBox();
+            this.UpdateProductGetInfoBtn = new System.Windows.Forms.Button();
+            this.GetInfoProductLbl = new System.Windows.Forms.Label();
+            this.UpdateProductStockAmountTB = new System.Windows.Forms.TextBox();
+            this.UpdateProductPriceTB = new System.Windows.Forms.TextBox();
+            this.UpdateProductNameTB = new System.Windows.Forms.TextBox();
+            this.EnterProductNameTB = new System.Windows.Forms.TextBox();
+            this.UpdateProductExprationDateLbl = new System.Windows.Forms.Label();
+            this.UpdateProductStockAmountLbl = new System.Windows.Forms.Label();
+            this.UpdateProductCategoryLbl = new System.Windows.Forms.Label();
+            this.UpdateProductPriceLbl = new System.Windows.Forms.Label();
+            this.UpdateProductNameLbl = new System.Windows.Forms.Label();
+            this.EnterProductNameLbl = new System.Windows.Forms.Label();
+            this.UpdateProductHeader = new System.Windows.Forms.Label();
+            this.UpdateProductButton = new System.Windows.Forms.Button();
+            this.DeleteProductBtn = new System.Windows.Forms.Button();
+            this.DeleteProductPnl = new System.Windows.Forms.Panel();
+            this.DeleteProductHeader = new System.Windows.Forms.Label();
+            this.DeleteProductSearchLbl = new System.Windows.Forms.Label();
+            this.DeleteProductSearchTB = new System.Windows.Forms.TextBox();
+            this.SearchDeleteProductBtn = new System.Windows.Forms.Button();
+            this.SearchDeleteProductLbl = new System.Windows.Forms.Label();
+            this.DeleteProductButton = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -280,6 +321,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.CanteenStudentDGV)).BeginInit();
             this.ListProductPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListProductDGV)).BeginInit();
+            this.AddProductPnl.SuspendLayout();
+            this.UpdateProductPnl.SuspendLayout();
+            this.DeleteProductPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuBar
@@ -758,6 +802,9 @@
             // CanteenPanel
             // 
             this.CanteenPanel.BackColor = System.Drawing.Color.Maroon;
+            this.CanteenPanel.Controls.Add(this.DeleteProductBtn);
+            this.CanteenPanel.Controls.Add(this.UpdateProductBtn);
+            this.CanteenPanel.Controls.Add(this.AddProductBtn);
             this.CanteenPanel.Controls.Add(this.ListProductBtn);
             this.CanteenPanel.Controls.Add(this.StudentCanteenButton);
             this.CanteenPanel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -767,9 +814,29 @@
             this.CanteenPanel.Size = new System.Drawing.Size(702, 410);
             this.CanteenPanel.TabIndex = 2;
             // 
+            // UpdateProductBtn
+            // 
+            this.UpdateProductBtn.Location = new System.Drawing.Point(242, 216);
+            this.UpdateProductBtn.Name = "UpdateProductBtn";
+            this.UpdateProductBtn.Size = new System.Drawing.Size(193, 42);
+            this.UpdateProductBtn.TabIndex = 0;
+            this.UpdateProductBtn.Text = "Update Product";
+            this.UpdateProductBtn.UseVisualStyleBackColor = true;
+            this.UpdateProductBtn.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // AddProductBtn
+            // 
+            this.AddProductBtn.Location = new System.Drawing.Point(242, 169);
+            this.AddProductBtn.Name = "AddProductBtn";
+            this.AddProductBtn.Size = new System.Drawing.Size(193, 42);
+            this.AddProductBtn.TabIndex = 0;
+            this.AddProductBtn.Text = "Add Product";
+            this.AddProductBtn.UseVisualStyleBackColor = true;
+            this.AddProductBtn.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
             // ListProductBtn
             // 
-            this.ListProductBtn.Location = new System.Drawing.Point(242, 194);
+            this.ListProductBtn.Location = new System.Drawing.Point(242, 119);
             this.ListProductBtn.Name = "ListProductBtn";
             this.ListProductBtn.Size = new System.Drawing.Size(193, 42);
             this.ListProductBtn.TabIndex = 0;
@@ -779,7 +846,7 @@
             // 
             // StudentCanteenButton
             // 
-            this.StudentCanteenButton.Location = new System.Drawing.Point(242, 142);
+            this.StudentCanteenButton.Location = new System.Drawing.Point(242, 69);
             this.StudentCanteenButton.Name = "StudentCanteenButton";
             this.StudentCanteenButton.Size = new System.Drawing.Size(193, 42);
             this.StudentCanteenButton.TabIndex = 0;
@@ -2547,12 +2614,385 @@
             this.ListProductHeader.TabIndex = 0;
             this.ListProductHeader.Text = "List Product";
             // 
+            // AddProductPnl
+            // 
+            this.AddProductPnl.BackColor = System.Drawing.Color.Gold;
+            this.AddProductPnl.Controls.Add(this.AddProductButton);
+            this.AddProductPnl.Controls.Add(this.AddProductExprationDateDTP);
+            this.AddProductPnl.Controls.Add(this.AddProductCategoryCB);
+            this.AddProductPnl.Controls.Add(this.AddProductStockTB);
+            this.AddProductPnl.Controls.Add(this.AddProductPriceTB);
+            this.AddProductPnl.Controls.Add(this.AddProductNameTB);
+            this.AddProductPnl.Controls.Add(this.AddProductExprationDateLbl);
+            this.AddProductPnl.Controls.Add(this.AddProductStockLbl);
+            this.AddProductPnl.Controls.Add(this.AddProductCategoryLbl);
+            this.AddProductPnl.Controls.Add(this.AddProductPriceLbl);
+            this.AddProductPnl.Controls.Add(this.label7);
+            this.AddProductPnl.Controls.Add(this.AddProductNameLbl);
+            this.AddProductPnl.Controls.Add(this.AddProductHeader);
+            this.AddProductPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AddProductPnl.Location = new System.Drawing.Point(188, 55);
+            this.AddProductPnl.Name = "AddProductPnl";
+            this.AddProductPnl.Size = new System.Drawing.Size(702, 410);
+            this.AddProductPnl.TabIndex = 35;
+            // 
+            // AddProductButton
+            // 
+            this.AddProductButton.Location = new System.Drawing.Point(552, 276);
+            this.AddProductButton.Name = "AddProductButton";
+            this.AddProductButton.Size = new System.Drawing.Size(100, 23);
+            this.AddProductButton.TabIndex = 5;
+            this.AddProductButton.Text = "Add Product";
+            this.AddProductButton.UseVisualStyleBackColor = true;
+            this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
+            // 
+            // AddProductExprationDateDTP
+            // 
+            this.AddProductExprationDateDTP.Location = new System.Drawing.Point(242, 182);
+            this.AddProductExprationDateDTP.Name = "AddProductExprationDateDTP";
+            this.AddProductExprationDateDTP.Size = new System.Drawing.Size(239, 22);
+            this.AddProductExprationDateDTP.TabIndex = 4;
+            // 
+            // AddProductCategoryCB
+            // 
+            this.AddProductCategoryCB.FormattingEnabled = true;
+            this.AddProductCategoryCB.Location = new System.Drawing.Point(211, 129);
+            this.AddProductCategoryCB.Name = "AddProductCategoryCB";
+            this.AddProductCategoryCB.Size = new System.Drawing.Size(121, 24);
+            this.AddProductCategoryCB.TabIndex = 3;
+            // 
+            // AddProductStockTB
+            // 
+            this.AddProductStockTB.Location = new System.Drawing.Point(211, 157);
+            this.AddProductStockTB.Name = "AddProductStockTB";
+            this.AddProductStockTB.Size = new System.Drawing.Size(100, 22);
+            this.AddProductStockTB.TabIndex = 2;
+            // 
+            // AddProductPriceTB
+            // 
+            this.AddProductPriceTB.Location = new System.Drawing.Point(211, 103);
+            this.AddProductPriceTB.Name = "AddProductPriceTB";
+            this.AddProductPriceTB.Size = new System.Drawing.Size(100, 22);
+            this.AddProductPriceTB.TabIndex = 2;
+            // 
+            // AddProductNameTB
+            // 
+            this.AddProductNameTB.Location = new System.Drawing.Point(211, 77);
+            this.AddProductNameTB.Name = "AddProductNameTB";
+            this.AddProductNameTB.Size = new System.Drawing.Size(100, 22);
+            this.AddProductNameTB.TabIndex = 2;
+            // 
+            // AddProductExprationDateLbl
+            // 
+            this.AddProductExprationDateLbl.AutoSize = true;
+            this.AddProductExprationDateLbl.Location = new System.Drawing.Point(83, 187);
+            this.AddProductExprationDateLbl.Name = "AddProductExprationDateLbl";
+            this.AddProductExprationDateLbl.Size = new System.Drawing.Size(155, 16);
+            this.AddProductExprationDateLbl.TabIndex = 1;
+            this.AddProductExprationDateLbl.Text = "Product Expration Date :";
+            // 
+            // AddProductStockLbl
+            // 
+            this.AddProductStockLbl.AutoSize = true;
+            this.AddProductStockLbl.Location = new System.Drawing.Point(83, 161);
+            this.AddProductStockLbl.Name = "AddProductStockLbl";
+            this.AddProductStockLbl.Size = new System.Drawing.Size(100, 16);
+            this.AddProductStockLbl.TabIndex = 1;
+            this.AddProductStockLbl.Text = "Product Stock :";
+            // 
+            // AddProductCategoryLbl
+            // 
+            this.AddProductCategoryLbl.AutoSize = true;
+            this.AddProductCategoryLbl.Location = new System.Drawing.Point(83, 133);
+            this.AddProductCategoryLbl.Name = "AddProductCategoryLbl";
+            this.AddProductCategoryLbl.Size = new System.Drawing.Size(122, 16);
+            this.AddProductCategoryLbl.TabIndex = 1;
+            this.AddProductCategoryLbl.Text = "Product Category :";
+            // 
+            // AddProductPriceLbl
+            // 
+            this.AddProductPriceLbl.AutoSize = true;
+            this.AddProductPriceLbl.Location = new System.Drawing.Point(83, 106);
+            this.AddProductPriceLbl.Name = "AddProductPriceLbl";
+            this.AddProductPriceLbl.Size = new System.Drawing.Size(97, 16);
+            this.AddProductPriceLbl.TabIndex = 1;
+            this.AddProductPriceLbl.Text = "Product Price :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(83, 102);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 16);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Product Name :";
+            // 
+            // AddProductNameLbl
+            // 
+            this.AddProductNameLbl.AutoSize = true;
+            this.AddProductNameLbl.Location = new System.Drawing.Point(83, 80);
+            this.AddProductNameLbl.Name = "AddProductNameLbl";
+            this.AddProductNameLbl.Size = new System.Drawing.Size(103, 16);
+            this.AddProductNameLbl.TabIndex = 1;
+            this.AddProductNameLbl.Text = "Product Name :";
+            // 
+            // AddProductHeader
+            // 
+            this.AddProductHeader.AutoSize = true;
+            this.AddProductHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AddProductHeader.Location = new System.Drawing.Point(33, 26);
+            this.AddProductHeader.Name = "AddProductHeader";
+            this.AddProductHeader.Size = new System.Drawing.Size(111, 22);
+            this.AddProductHeader.TabIndex = 0;
+            this.AddProductHeader.Text = "Add Product";
+            // 
+            // UpdateProductPnl
+            // 
+            this.UpdateProductPnl.BackColor = System.Drawing.Color.Plum;
+            this.UpdateProductPnl.Controls.Add(this.UpdateProductExprationDateDTP);
+            this.UpdateProductPnl.Controls.Add(this.UpdateProductCategoryCB);
+            this.UpdateProductPnl.Controls.Add(this.UpdateProductButton);
+            this.UpdateProductPnl.Controls.Add(this.UpdateProductGetInfoBtn);
+            this.UpdateProductPnl.Controls.Add(this.GetInfoProductLbl);
+            this.UpdateProductPnl.Controls.Add(this.UpdateProductStockAmountTB);
+            this.UpdateProductPnl.Controls.Add(this.UpdateProductPriceTB);
+            this.UpdateProductPnl.Controls.Add(this.UpdateProductNameTB);
+            this.UpdateProductPnl.Controls.Add(this.EnterProductNameTB);
+            this.UpdateProductPnl.Controls.Add(this.UpdateProductExprationDateLbl);
+            this.UpdateProductPnl.Controls.Add(this.UpdateProductStockAmountLbl);
+            this.UpdateProductPnl.Controls.Add(this.UpdateProductCategoryLbl);
+            this.UpdateProductPnl.Controls.Add(this.UpdateProductPriceLbl);
+            this.UpdateProductPnl.Controls.Add(this.UpdateProductNameLbl);
+            this.UpdateProductPnl.Controls.Add(this.EnterProductNameLbl);
+            this.UpdateProductPnl.Controls.Add(this.UpdateProductHeader);
+            this.UpdateProductPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateProductPnl.Location = new System.Drawing.Point(188, 55);
+            this.UpdateProductPnl.Name = "UpdateProductPnl";
+            this.UpdateProductPnl.Size = new System.Drawing.Size(702, 410);
+            this.UpdateProductPnl.TabIndex = 36;
+            // 
+            // UpdateProductExprationDateDTP
+            // 
+            this.UpdateProductExprationDateDTP.Location = new System.Drawing.Point(268, 222);
+            this.UpdateProductExprationDateDTP.Name = "UpdateProductExprationDateDTP";
+            this.UpdateProductExprationDateDTP.Size = new System.Drawing.Size(241, 22);
+            this.UpdateProductExprationDateDTP.TabIndex = 6;
+            // 
+            // UpdateProductCategoryCB
+            // 
+            this.UpdateProductCategoryCB.FormattingEnabled = true;
+            this.UpdateProductCategoryCB.Location = new System.Drawing.Point(228, 165);
+            this.UpdateProductCategoryCB.Name = "UpdateProductCategoryCB";
+            this.UpdateProductCategoryCB.Size = new System.Drawing.Size(121, 24);
+            this.UpdateProductCategoryCB.TabIndex = 5;
+            // 
+            // UpdateProductGetInfoBtn
+            // 
+            this.UpdateProductGetInfoBtn.Location = new System.Drawing.Point(372, 65);
+            this.UpdateProductGetInfoBtn.Name = "UpdateProductGetInfoBtn";
+            this.UpdateProductGetInfoBtn.Size = new System.Drawing.Size(75, 23);
+            this.UpdateProductGetInfoBtn.TabIndex = 4;
+            this.UpdateProductGetInfoBtn.Text = "Search";
+            this.UpdateProductGetInfoBtn.UseVisualStyleBackColor = true;
+            this.UpdateProductGetInfoBtn.Click += new System.EventHandler(this.UpdateProductGetInfoBtn_Click);
+            // 
+            // GetInfoProductLbl
+            // 
+            this.GetInfoProductLbl.AutoSize = true;
+            this.GetInfoProductLbl.Location = new System.Drawing.Point(484, 69);
+            this.GetInfoProductLbl.Name = "GetInfoProductLbl";
+            this.GetInfoProductLbl.Size = new System.Drawing.Size(43, 16);
+            this.GetInfoProductLbl.TabIndex = 3;
+            this.GetInfoProductLbl.Text = "label8";
+            // 
+            // UpdateProductStockAmountTB
+            // 
+            this.UpdateProductStockAmountTB.Location = new System.Drawing.Point(264, 194);
+            this.UpdateProductStockAmountTB.Name = "UpdateProductStockAmountTB";
+            this.UpdateProductStockAmountTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateProductStockAmountTB.TabIndex = 2;
+            // 
+            // UpdateProductPriceTB
+            // 
+            this.UpdateProductPriceTB.Location = new System.Drawing.Point(209, 136);
+            this.UpdateProductPriceTB.Name = "UpdateProductPriceTB";
+            this.UpdateProductPriceTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateProductPriceTB.TabIndex = 2;
+            // 
+            // UpdateProductNameTB
+            // 
+            this.UpdateProductNameTB.Location = new System.Drawing.Point(209, 108);
+            this.UpdateProductNameTB.Name = "UpdateProductNameTB";
+            this.UpdateProductNameTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateProductNameTB.TabIndex = 2;
+            // 
+            // EnterProductNameTB
+            // 
+            this.EnterProductNameTB.Location = new System.Drawing.Point(249, 66);
+            this.EnterProductNameTB.Name = "EnterProductNameTB";
+            this.EnterProductNameTB.Size = new System.Drawing.Size(100, 22);
+            this.EnterProductNameTB.TabIndex = 2;
+            // 
+            // UpdateProductExprationDateLbl
+            // 
+            this.UpdateProductExprationDateLbl.AutoSize = true;
+            this.UpdateProductExprationDateLbl.Location = new System.Drawing.Point(106, 225);
+            this.UpdateProductExprationDateLbl.Name = "UpdateProductExprationDateLbl";
+            this.UpdateProductExprationDateLbl.Size = new System.Drawing.Size(155, 16);
+            this.UpdateProductExprationDateLbl.TabIndex = 1;
+            this.UpdateProductExprationDateLbl.Text = "Product Expration Date :";
+            // 
+            // UpdateProductStockAmountLbl
+            // 
+            this.UpdateProductStockAmountLbl.AutoSize = true;
+            this.UpdateProductStockAmountLbl.Location = new System.Drawing.Point(104, 197);
+            this.UpdateProductStockAmountLbl.Name = "UpdateProductStockAmountLbl";
+            this.UpdateProductStockAmountLbl.Size = new System.Drawing.Size(154, 16);
+            this.UpdateProductStockAmountLbl.TabIndex = 1;
+            this.UpdateProductStockAmountLbl.Text = "Product Stock Amount :";
+            // 
+            // UpdateProductCategoryLbl
+            // 
+            this.UpdateProductCategoryLbl.AutoSize = true;
+            this.UpdateProductCategoryLbl.Location = new System.Drawing.Point(106, 168);
+            this.UpdateProductCategoryLbl.Name = "UpdateProductCategoryLbl";
+            this.UpdateProductCategoryLbl.Size = new System.Drawing.Size(122, 16);
+            this.UpdateProductCategoryLbl.TabIndex = 1;
+            this.UpdateProductCategoryLbl.Text = "Product Category :";
+            // 
+            // UpdateProductPriceLbl
+            // 
+            this.UpdateProductPriceLbl.AutoSize = true;
+            this.UpdateProductPriceLbl.Location = new System.Drawing.Point(106, 137);
+            this.UpdateProductPriceLbl.Name = "UpdateProductPriceLbl";
+            this.UpdateProductPriceLbl.Size = new System.Drawing.Size(97, 16);
+            this.UpdateProductPriceLbl.TabIndex = 1;
+            this.UpdateProductPriceLbl.Text = "Product Price :";
+            // 
+            // UpdateProductNameLbl
+            // 
+            this.UpdateProductNameLbl.AutoSize = true;
+            this.UpdateProductNameLbl.Location = new System.Drawing.Point(104, 111);
+            this.UpdateProductNameLbl.Name = "UpdateProductNameLbl";
+            this.UpdateProductNameLbl.Size = new System.Drawing.Size(103, 16);
+            this.UpdateProductNameLbl.TabIndex = 1;
+            this.UpdateProductNameLbl.Text = "Product Name :";
+            // 
+            // EnterProductNameLbl
+            // 
+            this.EnterProductNameLbl.AutoSize = true;
+            this.EnterProductNameLbl.Location = new System.Drawing.Point(104, 67);
+            this.EnterProductNameLbl.Name = "EnterProductNameLbl";
+            this.EnterProductNameLbl.Size = new System.Drawing.Size(139, 16);
+            this.EnterProductNameLbl.TabIndex = 1;
+            this.EnterProductNameLbl.Text = "Enter Product Name :";
+            // 
+            // UpdateProductHeader
+            // 
+            this.UpdateProductHeader.AutoSize = true;
+            this.UpdateProductHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateProductHeader.Location = new System.Drawing.Point(36, 20);
+            this.UpdateProductHeader.Name = "UpdateProductHeader";
+            this.UpdateProductHeader.Size = new System.Drawing.Size(138, 22);
+            this.UpdateProductHeader.TabIndex = 0;
+            this.UpdateProductHeader.Text = "Update Product";
+            // 
+            // UpdateProductButton
+            // 
+            this.UpdateProductButton.Location = new System.Drawing.Point(537, 276);
+            this.UpdateProductButton.Name = "UpdateProductButton";
+            this.UpdateProductButton.Size = new System.Drawing.Size(115, 23);
+            this.UpdateProductButton.TabIndex = 4;
+            this.UpdateProductButton.Text = "Update Product";
+            this.UpdateProductButton.UseVisualStyleBackColor = true;
+            this.UpdateProductButton.Click += new System.EventHandler(this.UpdateProductButton_Click);
+            // 
+            // DeleteProductBtn
+            // 
+            this.DeleteProductBtn.Location = new System.Drawing.Point(242, 265);
+            this.DeleteProductBtn.Name = "DeleteProductBtn";
+            this.DeleteProductBtn.Size = new System.Drawing.Size(193, 42);
+            this.DeleteProductBtn.TabIndex = 0;
+            this.DeleteProductBtn.Text = "Delete Product";
+            this.DeleteProductBtn.UseVisualStyleBackColor = true;
+            this.DeleteProductBtn.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // DeleteProductPnl
+            // 
+            this.DeleteProductPnl.BackColor = System.Drawing.Color.SteelBlue;
+            this.DeleteProductPnl.Controls.Add(this.DeleteProductButton);
+            this.DeleteProductPnl.Controls.Add(this.SearchDeleteProductLbl);
+            this.DeleteProductPnl.Controls.Add(this.SearchDeleteProductBtn);
+            this.DeleteProductPnl.Controls.Add(this.DeleteProductSearchTB);
+            this.DeleteProductPnl.Controls.Add(this.DeleteProductSearchLbl);
+            this.DeleteProductPnl.Controls.Add(this.DeleteProductHeader);
+            this.DeleteProductPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteProductPnl.Location = new System.Drawing.Point(188, 55);
+            this.DeleteProductPnl.Name = "DeleteProductPnl";
+            this.DeleteProductPnl.Size = new System.Drawing.Size(702, 410);
+            this.DeleteProductPnl.TabIndex = 37;
+            // 
+            // DeleteProductHeader
+            // 
+            this.DeleteProductHeader.AutoSize = true;
+            this.DeleteProductHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteProductHeader.Location = new System.Drawing.Point(41, 23);
+            this.DeleteProductHeader.Name = "DeleteProductHeader";
+            this.DeleteProductHeader.Size = new System.Drawing.Size(131, 22);
+            this.DeleteProductHeader.TabIndex = 0;
+            this.DeleteProductHeader.Text = "Delete Product";
+            // 
+            // DeleteProductSearchLbl
+            // 
+            this.DeleteProductSearchLbl.AutoSize = true;
+            this.DeleteProductSearchLbl.Location = new System.Drawing.Point(129, 78);
+            this.DeleteProductSearchLbl.Name = "DeleteProductSearchLbl";
+            this.DeleteProductSearchLbl.Size = new System.Drawing.Size(139, 16);
+            this.DeleteProductSearchLbl.TabIndex = 1;
+            this.DeleteProductSearchLbl.Text = "Enter Product Name :";
+            // 
+            // DeleteProductSearchTB
+            // 
+            this.DeleteProductSearchTB.Location = new System.Drawing.Point(277, 75);
+            this.DeleteProductSearchTB.Name = "DeleteProductSearchTB";
+            this.DeleteProductSearchTB.Size = new System.Drawing.Size(100, 22);
+            this.DeleteProductSearchTB.TabIndex = 2;
+            // 
+            // SearchDeleteProductBtn
+            // 
+            this.SearchDeleteProductBtn.Location = new System.Drawing.Point(403, 75);
+            this.SearchDeleteProductBtn.Name = "SearchDeleteProductBtn";
+            this.SearchDeleteProductBtn.Size = new System.Drawing.Size(75, 23);
+            this.SearchDeleteProductBtn.TabIndex = 3;
+            this.SearchDeleteProductBtn.Text = "Search";
+            this.SearchDeleteProductBtn.UseVisualStyleBackColor = true;
+            this.SearchDeleteProductBtn.Click += new System.EventHandler(this.SearchDeleteProductBtn_Click);
+            // 
+            // SearchDeleteProductLbl
+            // 
+            this.SearchDeleteProductLbl.AutoSize = true;
+            this.SearchDeleteProductLbl.Location = new System.Drawing.Point(131, 119);
+            this.SearchDeleteProductLbl.Name = "SearchDeleteProductLbl";
+            this.SearchDeleteProductLbl.Size = new System.Drawing.Size(43, 16);
+            this.SearchDeleteProductLbl.TabIndex = 4;
+            this.SearchDeleteProductLbl.Text = "label8";
+            // 
+            // DeleteProductButton
+            // 
+            this.DeleteProductButton.Location = new System.Drawing.Point(388, 189);
+            this.DeleteProductButton.Name = "DeleteProductButton";
+            this.DeleteProductButton.Size = new System.Drawing.Size(121, 23);
+            this.DeleteProductButton.TabIndex = 5;
+            this.DeleteProductButton.Text = "Delete Product";
+            this.DeleteProductButton.UseVisualStyleBackColor = true;
+            this.DeleteProductButton.Click += new System.EventHandler(this.DeleteProductButton_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 484);
-            this.Controls.Add(this.ListProductPnl);
+            this.Controls.Add(this.DeleteProductPnl);
             this.Controls.Add(this.DateAndTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.QuitButton);
@@ -2579,6 +3019,9 @@
             this.Controls.Add(this.HomePanel);
             this.Controls.Add(this.StudentPanelRegistrationPanel);
             this.Controls.Add(this.StudentCanteenPnl);
+            this.Controls.Add(this.ListProductPnl);
+            this.Controls.Add(this.AddProductPnl);
+            this.Controls.Add(this.UpdateProductPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
@@ -2633,6 +3076,12 @@
             this.ListProductPnl.ResumeLayout(false);
             this.ListProductPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListProductDGV)).EndInit();
+            this.AddProductPnl.ResumeLayout(false);
+            this.AddProductPnl.PerformLayout();
+            this.UpdateProductPnl.ResumeLayout(false);
+            this.UpdateProductPnl.PerformLayout();
+            this.DeleteProductPnl.ResumeLayout(false);
+            this.DeleteProductPnl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2859,5 +3308,46 @@
         private System.Windows.Forms.Label SelectCategoryLbl;
         private System.Windows.Forms.Label ListProductHeader;
         private System.Windows.Forms.Button FilterListByCategorysBtn;
+        private System.Windows.Forms.Button AddProductBtn;
+        private System.Windows.Forms.Panel AddProductPnl;
+        private System.Windows.Forms.Label AddProductHeader;
+        private System.Windows.Forms.Label AddProductNameLbl;
+        private System.Windows.Forms.TextBox AddProductNameTB;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox AddProductPriceTB;
+        private System.Windows.Forms.Label AddProductPriceLbl;
+        private System.Windows.Forms.Button AddProductButton;
+        private System.Windows.Forms.DateTimePicker AddProductExprationDateDTP;
+        private System.Windows.Forms.ComboBox AddProductCategoryCB;
+        private System.Windows.Forms.TextBox AddProductStockTB;
+        private System.Windows.Forms.Label AddProductExprationDateLbl;
+        private System.Windows.Forms.Label AddProductStockLbl;
+        private System.Windows.Forms.Label AddProductCategoryLbl;
+        private System.Windows.Forms.Button UpdateProductBtn;
+        private System.Windows.Forms.Panel UpdateProductPnl;
+        private System.Windows.Forms.Button UpdateProductGetInfoBtn;
+        private System.Windows.Forms.Label GetInfoProductLbl;
+        private System.Windows.Forms.TextBox EnterProductNameTB;
+        private System.Windows.Forms.Label EnterProductNameLbl;
+        private System.Windows.Forms.Label UpdateProductHeader;
+        private System.Windows.Forms.DateTimePicker UpdateProductExprationDateDTP;
+        private System.Windows.Forms.ComboBox UpdateProductCategoryCB;
+        private System.Windows.Forms.TextBox UpdateProductStockAmountTB;
+        private System.Windows.Forms.TextBox UpdateProductPriceTB;
+        private System.Windows.Forms.TextBox UpdateProductNameTB;
+        private System.Windows.Forms.Label UpdateProductExprationDateLbl;
+        private System.Windows.Forms.Label UpdateProductStockAmountLbl;
+        private System.Windows.Forms.Label UpdateProductCategoryLbl;
+        private System.Windows.Forms.Label UpdateProductPriceLbl;
+        private System.Windows.Forms.Label UpdateProductNameLbl;
+        private System.Windows.Forms.Button UpdateProductButton;
+        private System.Windows.Forms.Button DeleteProductBtn;
+        private System.Windows.Forms.Panel DeleteProductPnl;
+        private System.Windows.Forms.Label DeleteProductHeader;
+        private System.Windows.Forms.Button DeleteProductButton;
+        private System.Windows.Forms.Label SearchDeleteProductLbl;
+        private System.Windows.Forms.Button SearchDeleteProductBtn;
+        private System.Windows.Forms.TextBox DeleteProductSearchTB;
+        private System.Windows.Forms.Label DeleteProductSearchLbl;
     }
 }

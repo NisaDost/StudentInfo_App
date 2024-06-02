@@ -57,6 +57,8 @@ namespace StudentInfo_App
             TeacherListLoadAllClasses();
             TeacherDeleteLoadTeachers();
             LoadCategories();
+            AddProductLoadCategories();
+            UpdateProductLoadCategories();
 
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
@@ -81,6 +83,9 @@ namespace StudentInfo_App
             buttonPanelMap.Add("TeacherDeleteBtn", DeleteTeacherPnl);
             buttonPanelMap.Add("StudentCanteenButton", StudentCanteenPnl);
             buttonPanelMap.Add("ListProductBtn", ListProductPnl);
+            buttonPanelMap.Add("AddProductBtn", AddProductPnl);
+            buttonPanelMap.Add("UpdateProductBtn", UpdateProductPnl);
+            buttonPanelMap.Add("DeleteProductBtn", DeleteProductPnl);
 
 
             //buttonPanelMap.Add("TeacherDeleteBtn", TeacherDeletePnl);
@@ -1655,7 +1660,7 @@ namespace StudentInfo_App
         }
         #endregion
 
-        #region List Product
+        #region ürün listeleme
         private void LoadCategories()
         {
             using (var DB = new NewSchoolDBEntities())
@@ -1707,6 +1712,253 @@ namespace StudentInfo_App
             }
         }
 
+        #endregion
+
+        #region ürün ekleme
+        private void AddProductLoadCategories()
+        {
+            using (var DB = new NewSchoolDBEntities())
+            {
+                var categories = DB.CATEGORies.Select(c => new { c.category_id, c.category_name }).ToList();
+                AddProductCategoryCB.DataSource = categories;
+                AddProductCategoryCB.DisplayMember = "category_name";
+                AddProductCategoryCB.ValueMember = "category_id";
+            }
+        }
+        private bool IsNumeric(string input)
+        {
+            return int.TryParse(input, out _);
+        }
+
+        private bool IsDecimal(string input)
+        {
+            return decimal.TryParse(input, out _);
+        }
+        private void AddProductButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(AddProductNameTB.Text))
+            {
+                MessageBox.Show("Ürün adı boş olamaz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!IsDecimal(AddProductPriceTB.Text))
+            {
+                MessageBox.Show("Ürün fiyatı sayısal olmalıdır.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!IsNumeric(AddProductStockTB.Text))
+            {
+                MessageBox.Show("Stok sayısı sayısal olmalıdır.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (AddProductCategoryCB.SelectedItem == null)
+            {
+                MessageBox.Show("Lütfen bir kategori seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            using (var DB = new NewSchoolDBEntities())
+            {
+                var newProduct = new PRODUCT
+                {
+                    product_name = AddProductNameTB.Text,
+                    product_price = decimal.Parse(AddProductPriceTB.Text),
+                    stock_amount = int.Parse(AddProductStockTB.Text),
+                    expiration_date = AddProductExprationDateDTP.Value,
+                    category_id = (int)AddProductCategoryCB.SelectedValue
+                };
+
+                DB.PRODUCTs.Add(newProduct);
+
+                try
+                {
+                    DB.SaveChanges();
+                    MessageBox.Show("Ürün başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // TextBox ve diğer alanları temizle
+                    AddProductNameTB.Clear();
+                    AddProductPriceTB.Clear();
+                    AddProductStockTB.Clear();
+                    AddProductCategoryCB.SelectedIndex = -1;
+                    AddProductExprationDateDTP.Value = DateTime.Now;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ürün eklenirken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        #endregion
+
+        #region ürün updateleme
+        private void UpdateProductLoadCategories()
+        {
+            using (var DB = new NewSchoolDBEntities())
+            {
+                var categories = DB.CATEGORies.Select(c => new { c.category_id, c.category_name }).ToList();
+                UpdateProductCategoryCB.DataSource = categories;
+                UpdateProductCategoryCB.DisplayMember = "category_name";
+                UpdateProductCategoryCB.ValueMember = "category_id";
+            }
+        }
+
+        private void UpdateProductGetInfoBtn_Click(object sender, EventArgs e)
+        {
+            using (var DB = new NewSchoolDBEntities())
+            {
+                string productName = EnterProductNameTB.Text;
+
+                var product = DB.PRODUCTs.FirstOrDefault(p => p.product_name == productName);
+
+                if (product != null)
+                {
+                    // Null kontrolü ve ToShortDateString çağrısı
+                    string expirationDateStr = product.expiration_date.HasValue ? product.expiration_date.Value.ToShortDateString() : "N/A";
+
+                    GetInfoProductLbl.Text = $"Ad: {product.product_name} \n Fiyat: {product.product_price}\n Stok: {product.stock_amount}\n SKT: {expirationDateStr}";
+
+                    UpdateProductNameTB.Text = product.product_name;
+                    UpdateProductPriceTB.Text = product.product_price.ToString();
+                    UpdateProductStockAmountTB.Text = product.stock_amount.ToString();
+                    UpdateProductExprationDateDTP.Value = product.expiration_date ?? DateTime.Now;
+
+                    UpdateProductCategoryCB.SelectedValue = product.category_id;
+                }
+                else
+                {
+                    MessageBox.Show("Ürün bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void UpdateProductButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(UpdateProductNameTB.Text))
+            {
+                MessageBox.Show("Ürün adı boş olamaz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!IsDecimal(UpdateProductPriceTB.Text))
+            {
+                MessageBox.Show("Ürün fiyatı sayısal olmalıdır.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!IsNumeric(UpdateProductStockAmountTB.Text))
+            {
+                MessageBox.Show("Stok sayısı sayısal olmalıdır.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            using (var DB = new NewSchoolDBEntities())
+            {
+                string productName = EnterProductNameTB.Text;
+
+                var product = DB.PRODUCTs.FirstOrDefault(p => p.product_name == productName);
+
+                if (product != null)
+                {
+                    product.product_name = UpdateProductNameTB.Text;
+                    product.product_price = decimal.Parse(UpdateProductPriceTB.Text);
+                    product.stock_amount = int.Parse(UpdateProductStockAmountTB.Text);
+                    product.expiration_date = UpdateProductExprationDateDTP.Value;
+                    product.category_id = (int)UpdateProductCategoryCB.SelectedValue;
+
+                    try
+                    {
+                        DB.SaveChanges();
+                        MessageBox.Show("Ürün başarıyla güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Alanları temizle
+                        UpdateProductNameTB.Clear();
+                        UpdateProductPriceTB.Clear();
+                        UpdateProductStockAmountTB.Clear();
+                        UpdateProductExprationDateDTP.Value = DateTime.Now;
+                        UpdateProductCategoryCB.SelectedIndex = -1;
+                        EnterProductNameTB.Clear();
+                        GetInfoProductLbl.Text = string.Empty;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ürün güncellenirken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ürün bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        #endregion
+
+        #region ürün silme
+        private void SearchDeleteProductBtn_Click(object sender, EventArgs e)
+        {
+            using (var DB = new NewSchoolDBEntities())
+            {
+                string productName = DeleteProductSearchTB.Text;
+
+                var product = DB.PRODUCTs.FirstOrDefault(p => p.product_name == productName);
+
+                if (product != null)
+                {
+                    SearchDeleteProductLbl.Text = $"Ad: {product.product_name}, Fiyat: {product.product_price}, Stok: {product.stock_amount}, SKT: {product.expiration_date.ToString()}";
+
+                    // Ürünü bulunduğunda, silme işlemini gerçekleştirecek olan DeleteProductButton'un Enabled özelliğini true yapın
+                    DeleteProductButton.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Ürün bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    // Ürün bulunamadığında, silme işlemini gerçekleştirecek olan DeleteProductButton'un Enabled özelliğini false yapın
+                    DeleteProductButton.Enabled = false;
+                }
+            }
+        }
+
+        private void DeleteProductButton_Click(object sender, EventArgs e)
+        {
+            using (var DB = new NewSchoolDBEntities())
+            {
+                string productName = DeleteProductSearchTB.Text;
+
+                var product = DB.PRODUCTs.FirstOrDefault(p => p.product_name == productName);
+
+                if (product != null)
+                {
+                    try
+                    {
+                        // Ürünü veritabanından kaldırın
+                        DB.PRODUCTs.Remove(product);
+
+                        // Ürünün ilişkili olduğu CANTEEN tablosundaki kayıtları silin
+                        var relatedCanteenEntries = DB.CANTEENs.Where(c => c.product_id == product.product_id);
+                        DB.CANTEENs.RemoveRange(relatedCanteenEntries);
+
+                        // Değişiklikleri kaydedin
+                        DB.SaveChanges();
+
+                        MessageBox.Show("Ürün başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Alanı temizle
+                        DeleteProductSearchTB.Clear();
+                        SearchDeleteProductLbl.Text = string.Empty;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ürün silinirken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ürün bulunamadı veya silinemez.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
         #endregion
     }
 }
