@@ -73,12 +73,12 @@
             this.StudentLastNameTB = new System.Windows.Forms.TextBox();
             this.StudentFirstNameTB = new System.Windows.Forms.TextBox();
             this.CanteenPanel = new System.Windows.Forms.Panel();
+            this.DeleteProductBtn = new System.Windows.Forms.Button();
             this.UpdateProductBtn = new System.Windows.Forms.Button();
             this.AddProductBtn = new System.Windows.Forms.Button();
             this.ListProductBtn = new System.Windows.Forms.Button();
             this.StudentCanteenButton = new System.Windows.Forms.Button();
             this.AbscenceInfoPanel = new System.Windows.Forms.Panel();
-            this.ExportButton = new System.Windows.Forms.Button();
             this.FilterButton = new System.Windows.Forms.Button();
             this.EndDatePicker = new System.Windows.Forms.DateTimePicker();
             this.StartDatePicker = new System.Windows.Forms.DateTimePicker();
@@ -268,6 +268,7 @@
             this.UpdateProductPnl = new System.Windows.Forms.Panel();
             this.UpdateProductExprationDateDTP = new System.Windows.Forms.DateTimePicker();
             this.UpdateProductCategoryCB = new System.Windows.Forms.ComboBox();
+            this.UpdateProductButton = new System.Windows.Forms.Button();
             this.UpdateProductGetInfoBtn = new System.Windows.Forms.Button();
             this.GetInfoProductLbl = new System.Windows.Forms.Label();
             this.UpdateProductStockAmountTB = new System.Windows.Forms.TextBox();
@@ -281,15 +282,18 @@
             this.UpdateProductNameLbl = new System.Windows.Forms.Label();
             this.EnterProductNameLbl = new System.Windows.Forms.Label();
             this.UpdateProductHeader = new System.Windows.Forms.Label();
-            this.UpdateProductButton = new System.Windows.Forms.Button();
-            this.DeleteProductBtn = new System.Windows.Forms.Button();
             this.DeleteProductPnl = new System.Windows.Forms.Panel();
-            this.DeleteProductHeader = new System.Windows.Forms.Label();
-            this.DeleteProductSearchLbl = new System.Windows.Forms.Label();
-            this.DeleteProductSearchTB = new System.Windows.Forms.TextBox();
-            this.SearchDeleteProductBtn = new System.Windows.Forms.Button();
-            this.SearchDeleteProductLbl = new System.Windows.Forms.Label();
             this.DeleteProductButton = new System.Windows.Forms.Button();
+            this.SearchDeleteProductLbl = new System.Windows.Forms.Label();
+            this.SearchDeleteProductBtn = new System.Windows.Forms.Button();
+            this.DeleteProductSearchTB = new System.Windows.Forms.TextBox();
+            this.DeleteProductSearchLbl = new System.Windows.Forms.Label();
+            this.DeleteProductHeader = new System.Windows.Forms.Label();
+            this.StudentLbl = new System.Windows.Forms.Label();
+            this.Canteen = new System.Windows.Forms.Label();
+            this.Teacher = new System.Windows.Forms.Label();
+            this.Abscence = new System.Windows.Forms.Label();
+            this.Class = new System.Windows.Forms.Label();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -522,7 +526,7 @@
             // 
             // HomePanel
             // 
-            this.HomePanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.HomePanel.BackColor = System.Drawing.SystemColors.Control;
             this.HomePanel.Controls.Add(this.WelcomeText);
             this.HomePanel.Controls.Add(this.label1);
             this.HomePanel.Controls.Add(this.DashboardText2);
@@ -536,7 +540,7 @@
             // 
             // StudentPanelRegistrationPanel
             // 
-            this.StudentPanelRegistrationPanel.BackColor = System.Drawing.Color.Brown;
+            this.StudentPanelRegistrationPanel.BackColor = System.Drawing.Color.Snow;
             this.StudentPanelRegistrationPanel.Controls.Add(this.StudentSchoolNumberTB);
             this.StudentPanelRegistrationPanel.Controls.Add(this.StudentSchoolNumberLbl);
             this.StudentPanelRegistrationPanel.Controls.Add(this.StudentClassCB);
@@ -567,7 +571,7 @@
             this.StudentPanelRegistrationPanel.Location = new System.Drawing.Point(188, 55);
             this.StudentPanelRegistrationPanel.Margin = new System.Windows.Forms.Padding(2);
             this.StudentPanelRegistrationPanel.Name = "StudentPanelRegistrationPanel";
-            this.StudentPanelRegistrationPanel.Size = new System.Drawing.Size(688, 410);
+            this.StudentPanelRegistrationPanel.Size = new System.Drawing.Size(702, 410);
             this.StudentPanelRegistrationPanel.TabIndex = 2;
             // 
             // StudentSchoolNumberTB
@@ -606,10 +610,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.Location = new System.Drawing.Point(50, 4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 22);
+            this.label4.Size = new System.Drawing.Size(217, 26);
             this.label4.TabIndex = 7;
             this.label4.Text = "Student Registration";
             // 
@@ -801,7 +805,8 @@
             // 
             // CanteenPanel
             // 
-            this.CanteenPanel.BackColor = System.Drawing.Color.Maroon;
+            this.CanteenPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.CanteenPanel.Controls.Add(this.Canteen);
             this.CanteenPanel.Controls.Add(this.DeleteProductBtn);
             this.CanteenPanel.Controls.Add(this.UpdateProductBtn);
             this.CanteenPanel.Controls.Add(this.AddProductBtn);
@@ -814,9 +819,19 @@
             this.CanteenPanel.Size = new System.Drawing.Size(702, 410);
             this.CanteenPanel.TabIndex = 2;
             // 
+            // DeleteProductBtn
+            // 
+            this.DeleteProductBtn.Location = new System.Drawing.Point(242, 292);
+            this.DeleteProductBtn.Name = "DeleteProductBtn";
+            this.DeleteProductBtn.Size = new System.Drawing.Size(193, 42);
+            this.DeleteProductBtn.TabIndex = 0;
+            this.DeleteProductBtn.Text = "Delete Product";
+            this.DeleteProductBtn.UseVisualStyleBackColor = true;
+            this.DeleteProductBtn.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
             // UpdateProductBtn
             // 
-            this.UpdateProductBtn.Location = new System.Drawing.Point(242, 216);
+            this.UpdateProductBtn.Location = new System.Drawing.Point(242, 243);
             this.UpdateProductBtn.Name = "UpdateProductBtn";
             this.UpdateProductBtn.Size = new System.Drawing.Size(193, 42);
             this.UpdateProductBtn.TabIndex = 0;
@@ -826,7 +841,7 @@
             // 
             // AddProductBtn
             // 
-            this.AddProductBtn.Location = new System.Drawing.Point(242, 169);
+            this.AddProductBtn.Location = new System.Drawing.Point(242, 196);
             this.AddProductBtn.Name = "AddProductBtn";
             this.AddProductBtn.Size = new System.Drawing.Size(193, 42);
             this.AddProductBtn.TabIndex = 0;
@@ -836,7 +851,7 @@
             // 
             // ListProductBtn
             // 
-            this.ListProductBtn.Location = new System.Drawing.Point(242, 119);
+            this.ListProductBtn.Location = new System.Drawing.Point(242, 146);
             this.ListProductBtn.Name = "ListProductBtn";
             this.ListProductBtn.Size = new System.Drawing.Size(193, 42);
             this.ListProductBtn.TabIndex = 0;
@@ -846,7 +861,7 @@
             // 
             // StudentCanteenButton
             // 
-            this.StudentCanteenButton.Location = new System.Drawing.Point(242, 69);
+            this.StudentCanteenButton.Location = new System.Drawing.Point(242, 96);
             this.StudentCanteenButton.Name = "StudentCanteenButton";
             this.StudentCanteenButton.Size = new System.Drawing.Size(193, 42);
             this.StudentCanteenButton.TabIndex = 0;
@@ -856,8 +871,7 @@
             // 
             // AbscenceInfoPanel
             // 
-            this.AbscenceInfoPanel.BackColor = System.Drawing.Color.LightGreen;
-            this.AbscenceInfoPanel.Controls.Add(this.ExportButton);
+            this.AbscenceInfoPanel.BackColor = System.Drawing.SystemColors.Control;
             this.AbscenceInfoPanel.Controls.Add(this.FilterButton);
             this.AbscenceInfoPanel.Controls.Add(this.EndDatePicker);
             this.AbscenceInfoPanel.Controls.Add(this.StartDatePicker);
@@ -875,26 +889,15 @@
             this.AbscenceInfoPanel.Location = new System.Drawing.Point(188, 55);
             this.AbscenceInfoPanel.Margin = new System.Windows.Forms.Padding(2);
             this.AbscenceInfoPanel.Name = "AbscenceInfoPanel";
-            this.AbscenceInfoPanel.Size = new System.Drawing.Size(716, 410);
+            this.AbscenceInfoPanel.Size = new System.Drawing.Size(702, 410);
             this.AbscenceInfoPanel.TabIndex = 2;
-            // 
-            // ExportButton
-            // 
-            this.ExportButton.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ExportButton.Location = new System.Drawing.Point(633, 378);
-            this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(75, 23);
-            this.ExportButton.TabIndex = 12;
-            this.ExportButton.Text = "Export";
-            this.ExportButton.UseVisualStyleBackColor = true;
-            this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
             // 
             // FilterButton
             // 
             this.FilterButton.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FilterButton.Location = new System.Drawing.Point(633, 75);
             this.FilterButton.Name = "FilterButton";
-            this.FilterButton.Size = new System.Drawing.Size(75, 23);
+            this.FilterButton.Size = new System.Drawing.Size(66, 23);
             this.FilterButton.TabIndex = 11;
             this.FilterButton.Text = "Filter";
             this.FilterButton.UseVisualStyleBackColor = true;
@@ -959,7 +962,7 @@
             this.AccessLogDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AccessLogDataGridView.Location = new System.Drawing.Point(339, 154);
             this.AccessLogDataGridView.Name = "AccessLogDataGridView";
-            this.AccessLogDataGridView.Size = new System.Drawing.Size(369, 150);
+            this.AccessLogDataGridView.Size = new System.Drawing.Size(357, 150);
             this.AccessLogDataGridView.TabIndex = 6;
             // 
             // AttendanceDataGridView
@@ -973,11 +976,12 @@
             // StudentInfo2Label
             // 
             this.StudentInfo2Label.AutoSize = true;
+            this.StudentInfo2Label.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentInfo2Label.Location = new System.Drawing.Point(396, 26);
             this.StudentInfo2Label.Name = "StudentInfo2Label";
-            this.StudentInfo2Label.Size = new System.Drawing.Size(14, 13);
+            this.StudentInfo2Label.Size = new System.Drawing.Size(187, 16);
             this.StudentInfo2Label.TabIndex = 4;
-            this.StudentInfo2Label.Text = "A";
+            this.StudentInfo2Label.Text = "There is no sherched student .";
             // 
             // FetchStudentButton
             // 
@@ -1010,26 +1014,26 @@
             // StudentAbsenceReportHeaderLbl
             // 
             this.StudentAbsenceReportHeaderLbl.AutoSize = true;
-            this.StudentAbsenceReportHeaderLbl.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentAbsenceReportHeaderLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentAbsenceReportHeaderLbl.Location = new System.Drawing.Point(11, 8);
             this.StudentAbsenceReportHeaderLbl.Name = "StudentAbsenceReportHeaderLbl";
-            this.StudentAbsenceReportHeaderLbl.Size = new System.Drawing.Size(178, 18);
+            this.StudentAbsenceReportHeaderLbl.Size = new System.Drawing.Size(254, 26);
             this.StudentAbsenceReportHeaderLbl.TabIndex = 0;
             this.StudentAbsenceReportHeaderLbl.Text = "Student Absence Report";
             // 
             // QuitButton
             // 
-            this.QuitButton.BackColor = System.Drawing.Color.IndianRed;
+            this.QuitButton.BackColor = System.Drawing.Color.LightGreen;
             this.QuitButton.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.QuitButton.ForeColor = System.Drawing.Color.Transparent;
-            this.QuitButton.Location = new System.Drawing.Point(848, 7);
+            this.QuitButton.ForeColor = System.Drawing.Color.Black;
+            this.QuitButton.Location = new System.Drawing.Point(806, 7);
             this.QuitButton.Margin = new System.Windows.Forms.Padding(2);
             this.QuitButton.Name = "QuitButton";
-            this.QuitButton.Size = new System.Drawing.Size(55, 33);
+            this.QuitButton.Size = new System.Drawing.Size(97, 33);
             this.QuitButton.TabIndex = 1;
-            this.QuitButton.Text = "X";
+            this.QuitButton.Text = "Refresh";
             this.QuitButton.UseVisualStyleBackColor = false;
-            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
+            this.QuitButton.Click += new System.EventHandler(this.Refresh_Click);
             // 
             // label2
             // 
@@ -1057,22 +1061,22 @@
             // 
             // StudentListPanel
             // 
-            this.StudentListPanel.BackColor = System.Drawing.Color.DodgerBlue;
+            this.StudentListPanel.BackColor = System.Drawing.SystemColors.Control;
             this.StudentListPanel.Controls.Add(this.StudentDataGridView);
             this.StudentListPanel.Controls.Add(this.label5);
             this.StudentListPanel.Controls.Add(this.StudentListClassCB);
             this.StudentListPanel.Controls.Add(this.StudentListTitleLbl);
-            this.StudentListPanel.Location = new System.Drawing.Point(180, 47);
+            this.StudentListPanel.Location = new System.Drawing.Point(188, 55);
             this.StudentListPanel.Name = "StudentListPanel";
-            this.StudentListPanel.Size = new System.Drawing.Size(696, 409);
+            this.StudentListPanel.Size = new System.Drawing.Size(702, 410);
             this.StudentListPanel.TabIndex = 1;
             // 
             // StudentDataGridView
             // 
             this.StudentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.StudentDataGridView.Location = new System.Drawing.Point(0, 69);
+            this.StudentDataGridView.Location = new System.Drawing.Point(16, 84);
             this.StudentDataGridView.Name = "StudentDataGridView";
-            this.StudentDataGridView.Size = new System.Drawing.Size(696, 337);
+            this.StudentDataGridView.Size = new System.Drawing.Size(657, 301);
             this.StudentDataGridView.TabIndex = 3;
             // 
             // label5
@@ -1096,28 +1100,30 @@
             // StudentListTitleLbl
             // 
             this.StudentListTitleLbl.AutoSize = true;
-            this.StudentListTitleLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentListTitleLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentListTitleLbl.Location = new System.Drawing.Point(29, 12);
             this.StudentListTitleLbl.Name = "StudentListTitleLbl";
-            this.StudentListTitleLbl.Size = new System.Drawing.Size(99, 26);
+            this.StudentListTitleLbl.Size = new System.Drawing.Size(101, 26);
             this.StudentListTitleLbl.TabIndex = 0;
             this.StudentListTitleLbl.Text = "Students";
             // 
             // StudentPanel
             // 
-            this.StudentPanel.BackColor = System.Drawing.Color.OliveDrab;
+            this.StudentPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.StudentPanel.Controls.Add(this.StudentLbl);
             this.StudentPanel.Controls.Add(this.StudentUpdatebtn);
             this.StudentPanel.Controls.Add(this.StudentDeleteBtn);
             this.StudentPanel.Controls.Add(this.StudentListBtn);
             this.StudentPanel.Controls.Add(this.StudentRegistrationBtn);
-            this.StudentPanel.Location = new System.Drawing.Point(224, 47);
+            this.StudentPanel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentPanel.Location = new System.Drawing.Point(188, 55);
             this.StudentPanel.Name = "StudentPanel";
-            this.StudentPanel.Size = new System.Drawing.Size(591, 318);
+            this.StudentPanel.Size = new System.Drawing.Size(702, 410);
             this.StudentPanel.TabIndex = 17;
             // 
             // StudentUpdatebtn
             // 
-            this.StudentUpdatebtn.Location = new System.Drawing.Point(195, 174);
+            this.StudentUpdatebtn.Location = new System.Drawing.Point(253, 236);
             this.StudentUpdatebtn.Name = "StudentUpdatebtn";
             this.StudentUpdatebtn.Size = new System.Drawing.Size(198, 38);
             this.StudentUpdatebtn.TabIndex = 0;
@@ -1127,7 +1133,7 @@
             // 
             // StudentDeleteBtn
             // 
-            this.StudentDeleteBtn.Location = new System.Drawing.Point(195, 130);
+            this.StudentDeleteBtn.Location = new System.Drawing.Point(253, 192);
             this.StudentDeleteBtn.Name = "StudentDeleteBtn";
             this.StudentDeleteBtn.Size = new System.Drawing.Size(198, 38);
             this.StudentDeleteBtn.TabIndex = 0;
@@ -1137,7 +1143,7 @@
             // 
             // StudentListBtn
             // 
-            this.StudentListBtn.Location = new System.Drawing.Point(195, 86);
+            this.StudentListBtn.Location = new System.Drawing.Point(253, 148);
             this.StudentListBtn.Name = "StudentListBtn";
             this.StudentListBtn.Size = new System.Drawing.Size(198, 38);
             this.StudentListBtn.TabIndex = 0;
@@ -1147,7 +1153,7 @@
             // 
             // StudentRegistrationBtn
             // 
-            this.StudentRegistrationBtn.Location = new System.Drawing.Point(195, 42);
+            this.StudentRegistrationBtn.Location = new System.Drawing.Point(253, 104);
             this.StudentRegistrationBtn.Name = "StudentRegistrationBtn";
             this.StudentRegistrationBtn.Size = new System.Drawing.Size(198, 38);
             this.StudentRegistrationBtn.TabIndex = 0;
@@ -1157,7 +1163,7 @@
             // 
             // StudentDeletePanel
             // 
-            this.StudentDeletePanel.BackColor = System.Drawing.Color.Magenta;
+            this.StudentDeletePanel.BackColor = System.Drawing.SystemColors.Control;
             this.StudentDeletePanel.Controls.Add(this.InformationLbl2);
             this.StudentDeletePanel.Controls.Add(this.informationLbl);
             this.StudentDeletePanel.Controls.Add(this.StudentInfoLabel2);
@@ -1167,9 +1173,9 @@
             this.StudentDeletePanel.Controls.Add(this.EnterSchoolNumberLbl);
             this.StudentDeletePanel.Controls.Add(this.StudentDeleteHeaderLbl);
             this.StudentDeletePanel.Controls.Add(this.StudentNumberTextBox);
-            this.StudentDeletePanel.Location = new System.Drawing.Point(192, 50);
+            this.StudentDeletePanel.Location = new System.Drawing.Point(188, 55);
             this.StudentDeletePanel.Name = "StudentDeletePanel";
-            this.StudentDeletePanel.Size = new System.Drawing.Size(651, 395);
+            this.StudentDeletePanel.Size = new System.Drawing.Size(702, 410);
             this.StudentDeletePanel.TabIndex = 18;
             // 
             // InformationLbl2
@@ -1198,9 +1204,9 @@
             this.StudentInfoLabel2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentInfoLabel2.Location = new System.Drawing.Point(241, 140);
             this.StudentInfoLabel2.Name = "StudentInfoLabel2";
-            this.StudentInfoLabel2.Size = new System.Drawing.Size(16, 16);
+            this.StudentInfoLabel2.Size = new System.Drawing.Size(121, 16);
             this.StudentInfoLabel2.TabIndex = 7;
-            this.StudentInfoLabel2.Text = "A";
+            this.StudentInfoLabel2.Text = "Student not found.";
             // 
             // DeleteStudentButton
             // 
@@ -1272,19 +1278,21 @@
             // 
             // AbscencePanel
             // 
-            this.AbscencePanel.BackColor = System.Drawing.Color.Orange;
+            this.AbscencePanel.BackColor = System.Drawing.SystemColors.Control;
+            this.AbscencePanel.Controls.Add(this.Abscence);
             this.AbscencePanel.Controls.Add(this.StudentEntryAttandanceBtn);
             this.AbscencePanel.Controls.Add(this.StudentAbsenceAttandanceBtn);
-            this.AbscencePanel.Location = new System.Drawing.Point(200, 50);
+            this.AbscencePanel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AbscencePanel.Location = new System.Drawing.Point(188, 55);
             this.AbscencePanel.Name = "AbscencePanel";
-            this.AbscencePanel.Size = new System.Drawing.Size(664, 377);
+            this.AbscencePanel.Size = new System.Drawing.Size(702, 410);
             this.AbscencePanel.TabIndex = 19;
             // 
             // StudentEntryAttandanceBtn
             // 
-            this.StudentEntryAttandanceBtn.Location = new System.Drawing.Point(219, 207);
+            this.StudentEntryAttandanceBtn.Location = new System.Drawing.Point(242, 214);
             this.StudentEntryAttandanceBtn.Name = "StudentEntryAttandanceBtn";
-            this.StudentEntryAttandanceBtn.Size = new System.Drawing.Size(198, 38);
+            this.StudentEntryAttandanceBtn.Size = new System.Drawing.Size(198, 50);
             this.StudentEntryAttandanceBtn.TabIndex = 1;
             this.StudentEntryAttandanceBtn.Text = "Student Attandance Entry";
             this.StudentEntryAttandanceBtn.UseVisualStyleBackColor = true;
@@ -1292,9 +1300,9 @@
             // 
             // StudentAbsenceAttandanceBtn
             // 
-            this.StudentAbsenceAttandanceBtn.Location = new System.Drawing.Point(219, 141);
+            this.StudentAbsenceAttandanceBtn.Location = new System.Drawing.Point(242, 148);
             this.StudentAbsenceAttandanceBtn.Name = "StudentAbsenceAttandanceBtn";
-            this.StudentAbsenceAttandanceBtn.Size = new System.Drawing.Size(198, 38);
+            this.StudentAbsenceAttandanceBtn.Size = new System.Drawing.Size(198, 47);
             this.StudentAbsenceAttandanceBtn.TabIndex = 1;
             this.StudentAbsenceAttandanceBtn.Text = "Student Abscence and Attandance ";
             this.StudentAbsenceAttandanceBtn.UseVisualStyleBackColor = true;
@@ -1302,7 +1310,7 @@
             // 
             // StudentAttandanceEntryPanel
             // 
-            this.StudentAttandanceEntryPanel.BackColor = System.Drawing.Color.Lime;
+            this.StudentAttandanceEntryPanel.BackColor = System.Drawing.SystemColors.Control;
             this.StudentAttandanceEntryPanel.Controls.Add(this.AddAttendanceButton);
             this.StudentAttandanceEntryPanel.Controls.Add(this.AttendanceDatePicker);
             this.StudentAttandanceEntryPanel.Controls.Add(this.StudentSelectDateLbl);
@@ -1311,9 +1319,9 @@
             this.StudentAttandanceEntryPanel.Controls.Add(this.StudentNumber3TB);
             this.StudentAttandanceEntryPanel.Controls.Add(this.StudentNumberAbscenceLbl);
             this.StudentAttandanceEntryPanel.Controls.Add(this.StudentAbsenceEntryHeaderLbl);
-            this.StudentAttandanceEntryPanel.Location = new System.Drawing.Point(214, 63);
+            this.StudentAttandanceEntryPanel.Location = new System.Drawing.Point(188, 55);
             this.StudentAttandanceEntryPanel.Name = "StudentAttandanceEntryPanel";
-            this.StudentAttandanceEntryPanel.Size = new System.Drawing.Size(676, 399);
+            this.StudentAttandanceEntryPanel.Size = new System.Drawing.Size(702, 410);
             this.StudentAttandanceEntryPanel.TabIndex = 20;
             // 
             // AddAttendanceButton
@@ -1347,11 +1355,12 @@
             // StudentInfo3Label
             // 
             this.StudentInfo3Label.AutoSize = true;
+            this.StudentInfo3Label.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentInfo3Label.Location = new System.Drawing.Point(403, 78);
             this.StudentInfo3Label.Name = "StudentInfo3Label";
-            this.StudentInfo3Label.Size = new System.Drawing.Size(14, 13);
+            this.StudentInfo3Label.Size = new System.Drawing.Size(187, 16);
             this.StudentInfo3Label.TabIndex = 3;
-            this.StudentInfo3Label.Text = "A";
+            this.StudentInfo3Label.Text = "There is no sherched student .";
             // 
             // StudentSearchBtn
             // 
@@ -1385,29 +1394,30 @@
             // StudentAbsenceEntryHeaderLbl
             // 
             this.StudentAbsenceEntryHeaderLbl.AutoSize = true;
-            this.StudentAbsenceEntryHeaderLbl.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentAbsenceEntryHeaderLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentAbsenceEntryHeaderLbl.Location = new System.Drawing.Point(27, 21);
             this.StudentAbsenceEntryHeaderLbl.Name = "StudentAbsenceEntryHeaderLbl";
-            this.StudentAbsenceEntryHeaderLbl.Size = new System.Drawing.Size(172, 22);
+            this.StudentAbsenceEntryHeaderLbl.Size = new System.Drawing.Size(213, 26);
             this.StudentAbsenceEntryHeaderLbl.TabIndex = 0;
             this.StudentAbsenceEntryHeaderLbl.Text = "Student Attandance";
             // 
             // TeacherPanel
             // 
-            this.TeacherPanel.BackColor = System.Drawing.Color.Cyan;
+            this.TeacherPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.TeacherPanel.Controls.Add(this.Teacher);
             this.TeacherPanel.Controls.Add(this.ListTeacherBtn);
             this.TeacherPanel.Controls.Add(this.UpdateTeacherBtn);
             this.TeacherPanel.Controls.Add(this.TeacherDeleteBtn);
             this.TeacherPanel.Controls.Add(this.TeacherAddBtn);
             this.TeacherPanel.Location = new System.Drawing.Point(180, 50);
             this.TeacherPanel.Name = "TeacherPanel";
-            this.TeacherPanel.Size = new System.Drawing.Size(696, 406);
+            this.TeacherPanel.Size = new System.Drawing.Size(702, 410);
             this.TeacherPanel.TabIndex = 21;
             // 
             // ListTeacherBtn
             // 
             this.ListTeacherBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListTeacherBtn.Location = new System.Drawing.Point(239, 210);
+            this.ListTeacherBtn.Location = new System.Drawing.Point(250, 258);
             this.ListTeacherBtn.Name = "ListTeacherBtn";
             this.ListTeacherBtn.Size = new System.Drawing.Size(168, 41);
             this.ListTeacherBtn.TabIndex = 0;
@@ -1418,7 +1428,7 @@
             // UpdateTeacherBtn
             // 
             this.UpdateTeacherBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateTeacherBtn.Location = new System.Drawing.Point(239, 161);
+            this.UpdateTeacherBtn.Location = new System.Drawing.Point(250, 209);
             this.UpdateTeacherBtn.Name = "UpdateTeacherBtn";
             this.UpdateTeacherBtn.Size = new System.Drawing.Size(168, 41);
             this.UpdateTeacherBtn.TabIndex = 0;
@@ -1429,7 +1439,7 @@
             // TeacherDeleteBtn
             // 
             this.TeacherDeleteBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TeacherDeleteBtn.Location = new System.Drawing.Point(239, 114);
+            this.TeacherDeleteBtn.Location = new System.Drawing.Point(250, 162);
             this.TeacherDeleteBtn.Name = "TeacherDeleteBtn";
             this.TeacherDeleteBtn.Size = new System.Drawing.Size(168, 41);
             this.TeacherDeleteBtn.TabIndex = 0;
@@ -1440,7 +1450,7 @@
             // TeacherAddBtn
             // 
             this.TeacherAddBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TeacherAddBtn.Location = new System.Drawing.Point(239, 70);
+            this.TeacherAddBtn.Location = new System.Drawing.Point(250, 118);
             this.TeacherAddBtn.Name = "TeacherAddBtn";
             this.TeacherAddBtn.Size = new System.Drawing.Size(168, 41);
             this.TeacherAddBtn.TabIndex = 0;
@@ -1450,7 +1460,7 @@
             // 
             // TeacheAddPnl
             // 
-            this.TeacheAddPnl.BackColor = System.Drawing.Color.Crimson;
+            this.TeacheAddPnl.BackColor = System.Drawing.SystemColors.Control;
             this.TeacheAddPnl.Controls.Add(this.DefineAClassTeacherBtn);
             this.TeacheAddPnl.Controls.Add(this.TeacherAddBranchCB);
             this.TeacheAddPnl.Controls.Add(this.TeacherAdd2Btn);
@@ -1459,9 +1469,9 @@
             this.TeacheAddPnl.Controls.Add(this.TeacherAddNameLbl);
             this.TeacheAddPnl.Controls.Add(this.TeacherAddHeadher);
             this.TeacheAddPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TeacheAddPnl.Location = new System.Drawing.Point(200, 56);
+            this.TeacheAddPnl.Location = new System.Drawing.Point(188, 55);
             this.TeacheAddPnl.Name = "TeacheAddPnl";
-            this.TeacheAddPnl.Size = new System.Drawing.Size(662, 388);
+            this.TeacheAddPnl.Size = new System.Drawing.Size(702, 410);
             this.TeacheAddPnl.TabIndex = 22;
             // 
             // DefineAClassTeacherBtn
@@ -1522,16 +1532,16 @@
             // TeacherAddHeadher
             // 
             this.TeacherAddHeadher.AutoSize = true;
-            this.TeacherAddHeadher.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TeacherAddHeadher.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TeacherAddHeadher.Location = new System.Drawing.Point(24, 17);
             this.TeacherAddHeadher.Name = "TeacherAddHeadher";
-            this.TeacherAddHeadher.Size = new System.Drawing.Size(132, 26);
+            this.TeacherAddHeadher.Size = new System.Drawing.Size(137, 26);
             this.TeacherAddHeadher.TabIndex = 0;
             this.TeacherAddHeadher.Text = "Add Teacher";
             // 
             // StudentUpdatePanel
             // 
-            this.StudentUpdatePanel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.StudentUpdatePanel.BackColor = System.Drawing.SystemColors.Control;
             this.StudentUpdatePanel.Controls.Add(this.UpdateStudentDistrictCB);
             this.StudentUpdatePanel.Controls.Add(this.UpdateStudentClassCB);
             this.StudentUpdatePanel.Controls.Add(this.UpdateStudentCityCB);
@@ -1562,9 +1572,9 @@
             this.StudentUpdatePanel.Controls.Add(this.UpdateStudentFirstNameTB);
             this.StudentUpdatePanel.Controls.Add(this.UpdateStudentSchoolNumberTB);
             this.StudentUpdatePanel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.StudentUpdatePanel.Location = new System.Drawing.Point(200, 51);
+            this.StudentUpdatePanel.Location = new System.Drawing.Point(188, 55);
             this.StudentUpdatePanel.Name = "StudentUpdatePanel";
-            this.StudentUpdatePanel.Size = new System.Drawing.Size(650, 400);
+            this.StudentUpdatePanel.Size = new System.Drawing.Size(702, 410);
             this.StudentUpdatePanel.TabIndex = 23;
             // 
             // UpdateStudentDistrictCB
@@ -1762,10 +1772,10 @@
             // UpdateStudentHeaderLbl
             // 
             this.UpdateStudentHeaderLbl.AutoSize = true;
-            this.UpdateStudentHeaderLbl.Font = new System.Drawing.Font("Montserrat", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateStudentHeaderLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateStudentHeaderLbl.Location = new System.Drawing.Point(27, 13);
             this.UpdateStudentHeaderLbl.Name = "UpdateStudentHeaderLbl";
-            this.UpdateStudentHeaderLbl.Size = new System.Drawing.Size(130, 21);
+            this.UpdateStudentHeaderLbl.Size = new System.Drawing.Size(169, 26);
             this.UpdateStudentHeaderLbl.TabIndex = 1;
             this.UpdateStudentHeaderLbl.Text = "Update Student";
             // 
@@ -1835,20 +1845,22 @@
             // 
             // ClassPanel
             // 
-            this.ClassPanel.BackColor = System.Drawing.Color.Indigo;
+            this.ClassPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.ClassPanel.Controls.Add(this.Class);
             this.ClassPanel.Controls.Add(this.DeleteClassBtn);
             this.ClassPanel.Controls.Add(this.ListClassBtn);
             this.ClassPanel.Controls.Add(this.UpdateClassBtn);
             this.ClassPanel.Controls.Add(this.AddClassBtn);
-            this.ClassPanel.Location = new System.Drawing.Point(200, 60);
+            this.ClassPanel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ClassPanel.Location = new System.Drawing.Point(188, 55);
             this.ClassPanel.Name = "ClassPanel";
-            this.ClassPanel.Size = new System.Drawing.Size(650, 400);
+            this.ClassPanel.Size = new System.Drawing.Size(702, 410);
             this.ClassPanel.TabIndex = 24;
             // 
             // DeleteClassBtn
             // 
             this.DeleteClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteClassBtn.Location = new System.Drawing.Point(219, 189);
+            this.DeleteClassBtn.Location = new System.Drawing.Point(242, 258);
             this.DeleteClassBtn.Name = "DeleteClassBtn";
             this.DeleteClassBtn.Size = new System.Drawing.Size(179, 37);
             this.DeleteClassBtn.TabIndex = 0;
@@ -1859,7 +1871,7 @@
             // ListClassBtn
             // 
             this.ListClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListClassBtn.Location = new System.Drawing.Point(219, 146);
+            this.ListClassBtn.Location = new System.Drawing.Point(242, 215);
             this.ListClassBtn.Name = "ListClassBtn";
             this.ListClassBtn.Size = new System.Drawing.Size(179, 37);
             this.ListClassBtn.TabIndex = 0;
@@ -1870,7 +1882,7 @@
             // UpdateClassBtn
             // 
             this.UpdateClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateClassBtn.Location = new System.Drawing.Point(219, 103);
+            this.UpdateClassBtn.Location = new System.Drawing.Point(242, 172);
             this.UpdateClassBtn.Name = "UpdateClassBtn";
             this.UpdateClassBtn.Size = new System.Drawing.Size(179, 37);
             this.UpdateClassBtn.TabIndex = 0;
@@ -1881,7 +1893,7 @@
             // AddClassBtn
             // 
             this.AddClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AddClassBtn.Location = new System.Drawing.Point(219, 60);
+            this.AddClassBtn.Location = new System.Drawing.Point(242, 129);
             this.AddClassBtn.Name = "AddClassBtn";
             this.AddClassBtn.Size = new System.Drawing.Size(179, 37);
             this.AddClassBtn.TabIndex = 0;
@@ -1891,15 +1903,15 @@
             // 
             // AddClassPnl
             // 
-            this.AddClassPnl.BackColor = System.Drawing.Color.LightPink;
+            this.AddClassPnl.BackColor = System.Drawing.SystemColors.Control;
             this.AddClassPnl.Controls.Add(this.AddClassBtn2);
             this.AddClassPnl.Controls.Add(this.AddClassTB);
             this.AddClassPnl.Controls.Add(this.ClassNameLbl2);
             this.AddClassPnl.Controls.Add(this.ClassNameLbl);
             this.AddClassPnl.Controls.Add(this.AddClassHeader);
-            this.AddClassPnl.Location = new System.Drawing.Point(200, 51);
+            this.AddClassPnl.Location = new System.Drawing.Point(188, 55);
             this.AddClassPnl.Name = "AddClassPnl";
-            this.AddClassPnl.Size = new System.Drawing.Size(650, 400);
+            this.AddClassPnl.Size = new System.Drawing.Size(702, 410);
             this.AddClassPnl.TabIndex = 25;
             // 
             // AddClassBtn2
@@ -1943,16 +1955,16 @@
             // AddClassHeader
             // 
             this.AddClassHeader.AutoSize = true;
-            this.AddClassHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AddClassHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AddClassHeader.Location = new System.Drawing.Point(40, 22);
             this.AddClassHeader.Name = "AddClassHeader";
-            this.AddClassHeader.Size = new System.Drawing.Size(88, 22);
+            this.AddClassHeader.Size = new System.Drawing.Size(110, 26);
             this.AddClassHeader.TabIndex = 0;
             this.AddClassHeader.Text = "Add Class";
             // 
             // UpdateClassPnl
             // 
-            this.UpdateClassPnl.BackColor = System.Drawing.Color.SaddleBrown;
+            this.UpdateClassPnl.BackColor = System.Drawing.SystemColors.Control;
             this.UpdateClassPnl.Controls.Add(this.updateClassButton);
             this.UpdateClassPnl.Controls.Add(this.newClassNameTextBox);
             this.UpdateClassPnl.Controls.Add(this.UpdateClassInformationLbl);
@@ -1960,9 +1972,9 @@
             this.UpdateClassPnl.Controls.Add(this.classLbl);
             this.UpdateClassPnl.Controls.Add(this.classComboBox);
             this.UpdateClassPnl.Controls.Add(this.UpdateClassLbl);
-            this.UpdateClassPnl.Location = new System.Drawing.Point(200, 51);
+            this.UpdateClassPnl.Location = new System.Drawing.Point(188, 55);
             this.UpdateClassPnl.Name = "UpdateClassPnl";
-            this.UpdateClassPnl.Size = new System.Drawing.Size(650, 400);
+            this.UpdateClassPnl.Size = new System.Drawing.Size(702, 410);
             this.UpdateClassPnl.TabIndex = 26;
             // 
             // updateClassButton
@@ -2025,25 +2037,25 @@
             // UpdateClassLbl
             // 
             this.UpdateClassLbl.AutoSize = true;
-            this.UpdateClassLbl.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateClassLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateClassLbl.Location = new System.Drawing.Point(27, 17);
             this.UpdateClassLbl.Name = "UpdateClassLbl";
-            this.UpdateClassLbl.Size = new System.Drawing.Size(115, 22);
+            this.UpdateClassLbl.Size = new System.Drawing.Size(142, 26);
             this.UpdateClassLbl.TabIndex = 0;
             this.UpdateClassLbl.Text = "Update Class";
             // 
             // ListClassPnl
             // 
-            this.ListClassPnl.BackColor = System.Drawing.Color.Khaki;
+            this.ListClassPnl.BackColor = System.Drawing.SystemColors.Control;
             this.ListClassPnl.Controls.Add(this.ListStudentButton);
             this.ListClassPnl.Controls.Add(this.HowManyStudentLbl);
             this.ListClassPnl.Controls.Add(this.ListClassCB);
             this.ListClassPnl.Controls.Add(this.StuıdentListLbl);
             this.ListClassPnl.Controls.Add(this.ListClassHeaderLbl);
             this.ListClassPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListClassPnl.Location = new System.Drawing.Point(200, 51);
+            this.ListClassPnl.Location = new System.Drawing.Point(188, 55);
             this.ListClassPnl.Name = "ListClassPnl";
-            this.ListClassPnl.Size = new System.Drawing.Size(650, 400);
+            this.ListClassPnl.Size = new System.Drawing.Size(702, 410);
             this.ListClassPnl.TabIndex = 27;
             // 
             // ListStudentButton
@@ -2061,9 +2073,9 @@
             this.HowManyStudentLbl.AutoSize = true;
             this.HowManyStudentLbl.Location = new System.Drawing.Point(194, 118);
             this.HowManyStudentLbl.Name = "HowManyStudentLbl";
-            this.HowManyStudentLbl.Size = new System.Drawing.Size(42, 16);
+            this.HowManyStudentLbl.Size = new System.Drawing.Size(181, 16);
             this.HowManyStudentLbl.TabIndex = 3;
-            this.HowManyStudentLbl.Text = "label7";
+            this.HowManyStudentLbl.Text = "There is no selected student .";
             // 
             // ListClassCB
             // 
@@ -2085,25 +2097,25 @@
             // ListClassHeaderLbl
             // 
             this.ListClassHeaderLbl.AutoSize = true;
-            this.ListClassHeaderLbl.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ListClassHeaderLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ListClassHeaderLbl.Location = new System.Drawing.Point(39, 22);
             this.ListClassHeaderLbl.Name = "ListClassHeaderLbl";
-            this.ListClassHeaderLbl.Size = new System.Drawing.Size(82, 22);
+            this.ListClassHeaderLbl.Size = new System.Drawing.Size(104, 26);
             this.ListClassHeaderLbl.TabIndex = 0;
             this.ListClassHeaderLbl.Text = "List Class";
             // 
             // DeleteClassPnl
             // 
-            this.DeleteClassPnl.BackColor = System.Drawing.Color.CadetBlue;
+            this.DeleteClassPnl.BackColor = System.Drawing.SystemColors.Control;
             this.DeleteClassPnl.Controls.Add(this.DeleteClassButton);
             this.DeleteClassPnl.Controls.Add(this.DeleteClassCB);
             this.DeleteClassPnl.Controls.Add(this.DeleteClassImportantLbl);
             this.DeleteClassPnl.Controls.Add(this.DeleteClassLbl);
             this.DeleteClassPnl.Controls.Add(this.ClassDeleteHeader);
             this.DeleteClassPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteClassPnl.Location = new System.Drawing.Point(200, 51);
+            this.DeleteClassPnl.Location = new System.Drawing.Point(188, 55);
             this.DeleteClassPnl.Name = "DeleteClassPnl";
-            this.DeleteClassPnl.Size = new System.Drawing.Size(650, 400);
+            this.DeleteClassPnl.Size = new System.Drawing.Size(702, 410);
             this.DeleteClassPnl.TabIndex = 28;
             // 
             // DeleteClassButton
@@ -2146,10 +2158,10 @@
             // ClassDeleteHeader
             // 
             this.ClassDeleteHeader.AutoSize = true;
-            this.ClassDeleteHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ClassDeleteHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ClassDeleteHeader.Location = new System.Drawing.Point(28, 12);
             this.ClassDeleteHeader.Name = "ClassDeleteHeader";
-            this.ClassDeleteHeader.Size = new System.Drawing.Size(108, 22);
+            this.ClassDeleteHeader.Size = new System.Drawing.Size(135, 26);
             this.ClassDeleteHeader.TabIndex = 0;
             this.ClassDeleteHeader.Text = "Delete Class";
             // 
@@ -2163,9 +2175,9 @@
             this.AssignTeacherToClassPnl.Controls.Add(this.SelectTeacherNameLbl);
             this.AssignTeacherToClassPnl.Controls.Add(this.AssignTeacherToClassHeader);
             this.AssignTeacherToClassPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AssignTeacherToClassPnl.Location = new System.Drawing.Point(200, 40);
+            this.AssignTeacherToClassPnl.Location = new System.Drawing.Point(188, 55);
             this.AssignTeacherToClassPnl.Name = "AssignTeacherToClassPnl";
-            this.AssignTeacherToClassPnl.Size = new System.Drawing.Size(662, 300);
+            this.AssignTeacherToClassPnl.Size = new System.Drawing.Size(702, 410);
             this.AssignTeacherToClassPnl.TabIndex = 29;
             // 
             // TeacherBranchLbl
@@ -2173,9 +2185,9 @@
             this.TeacherBranchLbl.AutoSize = true;
             this.TeacherBranchLbl.Location = new System.Drawing.Point(345, 61);
             this.TeacherBranchLbl.Name = "TeacherBranchLbl";
-            this.TeacherBranchLbl.Size = new System.Drawing.Size(42, 16);
+            this.TeacherBranchLbl.Size = new System.Drawing.Size(120, 16);
             this.TeacherBranchLbl.TabIndex = 4;
-            this.TeacherBranchLbl.Text = "label7";
+            this.TeacherBranchLbl.Text = "Teacher not found.";
             // 
             // AssignClassBtn
             // 
@@ -2224,16 +2236,16 @@
             // AssignTeacherToClassHeader
             // 
             this.AssignTeacherToClassHeader.AutoSize = true;
-            this.AssignTeacherToClassHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AssignTeacherToClassHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AssignTeacherToClassHeader.Location = new System.Drawing.Point(36, 20);
             this.AssignTeacherToClassHeader.Name = "AssignTeacherToClassHeader";
-            this.AssignTeacherToClassHeader.Size = new System.Drawing.Size(108, 22);
+            this.AssignTeacherToClassHeader.Size = new System.Drawing.Size(136, 26);
             this.AssignTeacherToClassHeader.TabIndex = 0;
             this.AssignTeacherToClassHeader.Text = "Assign Class";
             // 
             // UpdateTeacherPnl
             // 
-            this.UpdateTeacherPnl.BackColor = System.Drawing.Color.Salmon;
+            this.UpdateTeacherPnl.BackColor = System.Drawing.SystemColors.Control;
             this.UpdateTeacherPnl.Controls.Add(this.UpdateTeacherBtn2);
             this.UpdateTeacherPnl.Controls.Add(this.UpdateTeacherNameTB);
             this.UpdateTeacherPnl.Controls.Add(this.SelectTeacherClassCB);
@@ -2247,9 +2259,9 @@
             this.UpdateTeacherPnl.Controls.Add(this.SelectUpdatedTeacherLbl);
             this.UpdateTeacherPnl.Controls.Add(this.UpdateTeacherHeader);
             this.UpdateTeacherPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateTeacherPnl.Location = new System.Drawing.Point(200, 52);
+            this.UpdateTeacherPnl.Location = new System.Drawing.Point(188, 55);
             this.UpdateTeacherPnl.Name = "UpdateTeacherPnl";
-            this.UpdateTeacherPnl.Size = new System.Drawing.Size(600, 400);
+            this.UpdateTeacherPnl.Size = new System.Drawing.Size(702, 410);
             this.UpdateTeacherPnl.TabIndex = 30;
             // 
             // UpdateTeacherBtn2
@@ -2349,16 +2361,16 @@
             // UpdateTeacherHeader
             // 
             this.UpdateTeacherHeader.AutoSize = true;
-            this.UpdateTeacherHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateTeacherHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateTeacherHeader.Location = new System.Drawing.Point(37, 14);
             this.UpdateTeacherHeader.Name = "UpdateTeacherHeader";
-            this.UpdateTeacherHeader.Size = new System.Drawing.Size(137, 22);
+            this.UpdateTeacherHeader.Size = new System.Drawing.Size(169, 26);
             this.UpdateTeacherHeader.TabIndex = 0;
             this.UpdateTeacherHeader.Text = "Update Teacher";
             // 
             // ListTeacherPnl
             // 
-            this.ListTeacherPnl.BackColor = System.Drawing.Color.HotPink;
+            this.ListTeacherPnl.BackColor = System.Drawing.SystemColors.Control;
             this.ListTeacherPnl.Controls.Add(this.FilterTeacherBtn);
             this.ListTeacherPnl.Controls.Add(this.ListedTeacherDGV);
             this.ListTeacherPnl.Controls.Add(this.FilterClassLbl);
@@ -2366,14 +2378,14 @@
             this.ListTeacherPnl.Controls.Add(this.ListTeacherHeader);
             this.ListTeacherPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ListTeacherPnl.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.ListTeacherPnl.Location = new System.Drawing.Point(180, 50);
+            this.ListTeacherPnl.Location = new System.Drawing.Point(188, 55);
             this.ListTeacherPnl.Name = "ListTeacherPnl";
-            this.ListTeacherPnl.Size = new System.Drawing.Size(696, 406);
+            this.ListTeacherPnl.Size = new System.Drawing.Size(702, 410);
             this.ListTeacherPnl.TabIndex = 31;
             // 
             // FilterTeacherBtn
             // 
-            this.FilterTeacherBtn.Location = new System.Drawing.Point(263, 46);
+            this.FilterTeacherBtn.Location = new System.Drawing.Point(307, 64);
             this.FilterTeacherBtn.Name = "FilterTeacherBtn";
             this.FilterTeacherBtn.Size = new System.Drawing.Size(75, 23);
             this.FilterTeacherBtn.TabIndex = 4;
@@ -2384,7 +2396,7 @@
             // ListedTeacherDGV
             // 
             this.ListedTeacherDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListedTeacherDGV.Location = new System.Drawing.Point(65, 85);
+            this.ListedTeacherDGV.Location = new System.Drawing.Point(109, 103);
             this.ListedTeacherDGV.Name = "ListedTeacherDGV";
             this.ListedTeacherDGV.Size = new System.Drawing.Size(452, 233);
             this.ListedTeacherDGV.TabIndex = 3;
@@ -2392,7 +2404,7 @@
             // FilterClassLbl
             // 
             this.FilterClassLbl.AutoSize = true;
-            this.FilterClassLbl.Location = new System.Drawing.Point(57, 51);
+            this.FilterClassLbl.Location = new System.Drawing.Point(101, 69);
             this.FilterClassLbl.Name = "FilterClassLbl";
             this.FilterClassLbl.Size = new System.Drawing.Size(47, 16);
             this.FilterClassLbl.TabIndex = 2;
@@ -2401,7 +2413,7 @@
             // FilterClassCB
             // 
             this.FilterClassCB.FormattingEnabled = true;
-            this.FilterClassCB.Location = new System.Drawing.Point(117, 47);
+            this.FilterClassCB.Location = new System.Drawing.Point(161, 65);
             this.FilterClassCB.Name = "FilterClassCB";
             this.FilterClassCB.Size = new System.Drawing.Size(121, 24);
             this.FilterClassCB.TabIndex = 1;
@@ -2409,16 +2421,16 @@
             // ListTeacherHeader
             // 
             this.ListTeacherHeader.AutoSize = true;
-            this.ListTeacherHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ListTeacherHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ListTeacherHeader.Location = new System.Drawing.Point(17, 19);
             this.ListTeacherHeader.Name = "ListTeacherHeader";
-            this.ListTeacherHeader.Size = new System.Drawing.Size(104, 22);
+            this.ListTeacherHeader.Size = new System.Drawing.Size(131, 26);
             this.ListTeacherHeader.TabIndex = 0;
             this.ListTeacherHeader.Text = "List Teacher";
             // 
             // DeleteTeacherPnl
             // 
-            this.DeleteTeacherPnl.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.DeleteTeacherPnl.BackColor = System.Drawing.SystemColors.Control;
             this.DeleteTeacherPnl.Controls.Add(this.SearchTeacherBtn);
             this.DeleteTeacherPnl.Controls.Add(this.GetTeacherInfoLbl);
             this.DeleteTeacherPnl.Controls.Add(this.DeleteTeacherBtn);
@@ -2426,9 +2438,9 @@
             this.DeleteTeacherPnl.Controls.Add(this.SelectDeleteTeacherLbl);
             this.DeleteTeacherPnl.Controls.Add(this.DeleteTeacherHeader);
             this.DeleteTeacherPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteTeacherPnl.Location = new System.Drawing.Point(177, 25);
+            this.DeleteTeacherPnl.Location = new System.Drawing.Point(188, 55);
             this.DeleteTeacherPnl.Name = "DeleteTeacherPnl";
-            this.DeleteTeacherPnl.Size = new System.Drawing.Size(696, 406);
+            this.DeleteTeacherPnl.Size = new System.Drawing.Size(702, 410);
             this.DeleteTeacherPnl.TabIndex = 32;
             // 
             // SearchTeacherBtn
@@ -2446,9 +2458,9 @@
             this.GetTeacherInfoLbl.AutoSize = true;
             this.GetTeacherInfoLbl.Location = new System.Drawing.Point(234, 119);
             this.GetTeacherInfoLbl.Name = "GetTeacherInfoLbl";
-            this.GetTeacherInfoLbl.Size = new System.Drawing.Size(42, 16);
+            this.GetTeacherInfoLbl.Size = new System.Drawing.Size(117, 16);
             this.GetTeacherInfoLbl.TabIndex = 4;
-            this.GetTeacherInfoLbl.Text = "label7";
+            this.GetTeacherInfoLbl.Text = "Teacher not found";
             // 
             // DeleteTeacherBtn
             // 
@@ -2480,16 +2492,16 @@
             // DeleteTeacherHeader
             // 
             this.DeleteTeacherHeader.AutoSize = true;
-            this.DeleteTeacherHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteTeacherHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DeleteTeacherHeader.Location = new System.Drawing.Point(31, 23);
             this.DeleteTeacherHeader.Name = "DeleteTeacherHeader";
-            this.DeleteTeacherHeader.Size = new System.Drawing.Size(124, 22);
+            this.DeleteTeacherHeader.Size = new System.Drawing.Size(162, 26);
             this.DeleteTeacherHeader.TabIndex = 0;
-            this.DeleteTeacherHeader.Text = "DeleteTeacher";
+            this.DeleteTeacherHeader.Text = "Delete Teacher";
             // 
             // StudentCanteenPnl
             // 
-            this.StudentCanteenPnl.BackColor = System.Drawing.Color.Crimson;
+            this.StudentCanteenPnl.BackColor = System.Drawing.SystemColors.Control;
             this.StudentCanteenPnl.Controls.Add(this.CanteenStudentDGV);
             this.StudentCanteenPnl.Controls.Add(this.CanteenSeachStudentBtn);
             this.StudentCanteenPnl.Controls.Add(this.CanteenStudentGetInfoLbl);
@@ -2497,9 +2509,9 @@
             this.StudentCanteenPnl.Controls.Add(this.CanteenStudentNumberTB);
             this.StudentCanteenPnl.Controls.Add(this.StudentCanteenHeader);
             this.StudentCanteenPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentCanteenPnl.Location = new System.Drawing.Point(203, 50);
+            this.StudentCanteenPnl.Location = new System.Drawing.Point(188, 55);
             this.StudentCanteenPnl.Name = "StudentCanteenPnl";
-            this.StudentCanteenPnl.Size = new System.Drawing.Size(640, 414);
+            this.StudentCanteenPnl.Size = new System.Drawing.Size(702, 410);
             this.StudentCanteenPnl.TabIndex = 33;
             // 
             // CanteenStudentDGV
@@ -2525,9 +2537,9 @@
             this.CanteenStudentGetInfoLbl.AutoSize = true;
             this.CanteenStudentGetInfoLbl.Location = new System.Drawing.Point(437, 50);
             this.CanteenStudentGetInfoLbl.Name = "CanteenStudentGetInfoLbl";
-            this.CanteenStudentGetInfoLbl.Size = new System.Drawing.Size(42, 16);
+            this.CanteenStudentGetInfoLbl.Size = new System.Drawing.Size(184, 16);
             this.CanteenStudentGetInfoLbl.TabIndex = 3;
-            this.CanteenStudentGetInfoLbl.Text = "label7";
+            this.CanteenStudentGetInfoLbl.Text = "There is no sherched student.";
             // 
             // CanteenStudentNumberLbl
             // 
@@ -2548,25 +2560,25 @@
             // StudentCanteenHeader
             // 
             this.StudentCanteenHeader.AutoSize = true;
-            this.StudentCanteenHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentCanteenHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentCanteenHeader.Location = new System.Drawing.Point(22, 15);
             this.StudentCanteenHeader.Name = "StudentCanteenHeader";
-            this.StudentCanteenHeader.Size = new System.Drawing.Size(148, 22);
+            this.StudentCanteenHeader.Size = new System.Drawing.Size(180, 26);
             this.StudentCanteenHeader.TabIndex = 0;
             this.StudentCanteenHeader.Text = "Student Canteen";
             // 
             // ListProductPnl
             // 
-            this.ListProductPnl.BackColor = System.Drawing.Color.Yellow;
+            this.ListProductPnl.BackColor = System.Drawing.SystemColors.Control;
             this.ListProductPnl.Controls.Add(this.FilterListByCategorysBtn);
             this.ListProductPnl.Controls.Add(this.ListProductDGV);
             this.ListProductPnl.Controls.Add(this.SelectCategoryCB);
             this.ListProductPnl.Controls.Add(this.SelectCategoryLbl);
             this.ListProductPnl.Controls.Add(this.ListProductHeader);
             this.ListProductPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListProductPnl.Location = new System.Drawing.Point(200, 50);
+            this.ListProductPnl.Location = new System.Drawing.Point(188, 55);
             this.ListProductPnl.Name = "ListProductPnl";
-            this.ListProductPnl.Size = new System.Drawing.Size(659, 391);
+            this.ListProductPnl.Size = new System.Drawing.Size(702, 410);
             this.ListProductPnl.TabIndex = 34;
             // 
             // FilterListByCategorysBtn
@@ -2607,16 +2619,16 @@
             // ListProductHeader
             // 
             this.ListProductHeader.AutoSize = true;
-            this.ListProductHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ListProductHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ListProductHeader.Location = new System.Drawing.Point(26, 13);
             this.ListProductHeader.Name = "ListProductHeader";
-            this.ListProductHeader.Size = new System.Drawing.Size(105, 22);
+            this.ListProductHeader.Size = new System.Drawing.Size(131, 26);
             this.ListProductHeader.TabIndex = 0;
             this.ListProductHeader.Text = "List Product";
             // 
             // AddProductPnl
             // 
-            this.AddProductPnl.BackColor = System.Drawing.Color.Gold;
+            this.AddProductPnl.BackColor = System.Drawing.SystemColors.Control;
             this.AddProductPnl.Controls.Add(this.AddProductButton);
             this.AddProductPnl.Controls.Add(this.AddProductExprationDateDTP);
             this.AddProductPnl.Controls.Add(this.AddProductCategoryCB);
@@ -2739,16 +2751,16 @@
             // AddProductHeader
             // 
             this.AddProductHeader.AutoSize = true;
-            this.AddProductHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AddProductHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AddProductHeader.Location = new System.Drawing.Point(33, 26);
             this.AddProductHeader.Name = "AddProductHeader";
-            this.AddProductHeader.Size = new System.Drawing.Size(111, 22);
+            this.AddProductHeader.Size = new System.Drawing.Size(137, 26);
             this.AddProductHeader.TabIndex = 0;
             this.AddProductHeader.Text = "Add Product";
             // 
             // UpdateProductPnl
             // 
-            this.UpdateProductPnl.BackColor = System.Drawing.Color.Plum;
+            this.UpdateProductPnl.BackColor = System.Drawing.SystemColors.Control;
             this.UpdateProductPnl.Controls.Add(this.UpdateProductExprationDateDTP);
             this.UpdateProductPnl.Controls.Add(this.UpdateProductCategoryCB);
             this.UpdateProductPnl.Controls.Add(this.UpdateProductButton);
@@ -2785,6 +2797,16 @@
             this.UpdateProductCategoryCB.Name = "UpdateProductCategoryCB";
             this.UpdateProductCategoryCB.Size = new System.Drawing.Size(121, 24);
             this.UpdateProductCategoryCB.TabIndex = 5;
+            // 
+            // UpdateProductButton
+            // 
+            this.UpdateProductButton.Location = new System.Drawing.Point(537, 276);
+            this.UpdateProductButton.Name = "UpdateProductButton";
+            this.UpdateProductButton.Size = new System.Drawing.Size(115, 23);
+            this.UpdateProductButton.TabIndex = 4;
+            this.UpdateProductButton.Text = "Update Product";
+            this.UpdateProductButton.UseVisualStyleBackColor = true;
+            this.UpdateProductButton.Click += new System.EventHandler(this.UpdateProductButton_Click);
             // 
             // UpdateProductGetInfoBtn
             // 
@@ -2890,36 +2912,16 @@
             // UpdateProductHeader
             // 
             this.UpdateProductHeader.AutoSize = true;
-            this.UpdateProductHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateProductHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateProductHeader.Location = new System.Drawing.Point(36, 20);
             this.UpdateProductHeader.Name = "UpdateProductHeader";
-            this.UpdateProductHeader.Size = new System.Drawing.Size(138, 22);
+            this.UpdateProductHeader.Size = new System.Drawing.Size(169, 26);
             this.UpdateProductHeader.TabIndex = 0;
             this.UpdateProductHeader.Text = "Update Product";
             // 
-            // UpdateProductButton
-            // 
-            this.UpdateProductButton.Location = new System.Drawing.Point(537, 276);
-            this.UpdateProductButton.Name = "UpdateProductButton";
-            this.UpdateProductButton.Size = new System.Drawing.Size(115, 23);
-            this.UpdateProductButton.TabIndex = 4;
-            this.UpdateProductButton.Text = "Update Product";
-            this.UpdateProductButton.UseVisualStyleBackColor = true;
-            this.UpdateProductButton.Click += new System.EventHandler(this.UpdateProductButton_Click);
-            // 
-            // DeleteProductBtn
-            // 
-            this.DeleteProductBtn.Location = new System.Drawing.Point(242, 265);
-            this.DeleteProductBtn.Name = "DeleteProductBtn";
-            this.DeleteProductBtn.Size = new System.Drawing.Size(193, 42);
-            this.DeleteProductBtn.TabIndex = 0;
-            this.DeleteProductBtn.Text = "Delete Product";
-            this.DeleteProductBtn.UseVisualStyleBackColor = true;
-            this.DeleteProductBtn.Click += new System.EventHandler(this.MenuButton_Click);
-            // 
             // DeleteProductPnl
             // 
-            this.DeleteProductPnl.BackColor = System.Drawing.Color.SteelBlue;
+            this.DeleteProductPnl.BackColor = System.Drawing.SystemColors.Control;
             this.DeleteProductPnl.Controls.Add(this.DeleteProductButton);
             this.DeleteProductPnl.Controls.Add(this.SearchDeleteProductLbl);
             this.DeleteProductPnl.Controls.Add(this.SearchDeleteProductBtn);
@@ -2932,31 +2934,24 @@
             this.DeleteProductPnl.Size = new System.Drawing.Size(702, 410);
             this.DeleteProductPnl.TabIndex = 37;
             // 
-            // DeleteProductHeader
+            // DeleteProductButton
             // 
-            this.DeleteProductHeader.AutoSize = true;
-            this.DeleteProductHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteProductHeader.Location = new System.Drawing.Point(41, 23);
-            this.DeleteProductHeader.Name = "DeleteProductHeader";
-            this.DeleteProductHeader.Size = new System.Drawing.Size(131, 22);
-            this.DeleteProductHeader.TabIndex = 0;
-            this.DeleteProductHeader.Text = "Delete Product";
+            this.DeleteProductButton.Location = new System.Drawing.Point(388, 189);
+            this.DeleteProductButton.Name = "DeleteProductButton";
+            this.DeleteProductButton.Size = new System.Drawing.Size(121, 23);
+            this.DeleteProductButton.TabIndex = 5;
+            this.DeleteProductButton.Text = "Delete Product";
+            this.DeleteProductButton.UseVisualStyleBackColor = true;
+            this.DeleteProductButton.Click += new System.EventHandler(this.DeleteProductButton_Click);
             // 
-            // DeleteProductSearchLbl
+            // SearchDeleteProductLbl
             // 
-            this.DeleteProductSearchLbl.AutoSize = true;
-            this.DeleteProductSearchLbl.Location = new System.Drawing.Point(129, 78);
-            this.DeleteProductSearchLbl.Name = "DeleteProductSearchLbl";
-            this.DeleteProductSearchLbl.Size = new System.Drawing.Size(139, 16);
-            this.DeleteProductSearchLbl.TabIndex = 1;
-            this.DeleteProductSearchLbl.Text = "Enter Product Name :";
-            // 
-            // DeleteProductSearchTB
-            // 
-            this.DeleteProductSearchTB.Location = new System.Drawing.Point(277, 75);
-            this.DeleteProductSearchTB.Name = "DeleteProductSearchTB";
-            this.DeleteProductSearchTB.Size = new System.Drawing.Size(100, 22);
-            this.DeleteProductSearchTB.TabIndex = 2;
+            this.SearchDeleteProductLbl.AutoSize = true;
+            this.SearchDeleteProductLbl.Location = new System.Drawing.Point(131, 119);
+            this.SearchDeleteProductLbl.Name = "SearchDeleteProductLbl";
+            this.SearchDeleteProductLbl.Size = new System.Drawing.Size(123, 16);
+            this.SearchDeleteProductLbl.TabIndex = 4;
+            this.SearchDeleteProductLbl.Text = "Product not found.";
             // 
             // SearchDeleteProductBtn
             // 
@@ -2968,35 +2963,101 @@
             this.SearchDeleteProductBtn.UseVisualStyleBackColor = true;
             this.SearchDeleteProductBtn.Click += new System.EventHandler(this.SearchDeleteProductBtn_Click);
             // 
-            // SearchDeleteProductLbl
+            // DeleteProductSearchTB
             // 
-            this.SearchDeleteProductLbl.AutoSize = true;
-            this.SearchDeleteProductLbl.Location = new System.Drawing.Point(131, 119);
-            this.SearchDeleteProductLbl.Name = "SearchDeleteProductLbl";
-            this.SearchDeleteProductLbl.Size = new System.Drawing.Size(43, 16);
-            this.SearchDeleteProductLbl.TabIndex = 4;
-            this.SearchDeleteProductLbl.Text = "label8";
+            this.DeleteProductSearchTB.Location = new System.Drawing.Point(277, 75);
+            this.DeleteProductSearchTB.Name = "DeleteProductSearchTB";
+            this.DeleteProductSearchTB.Size = new System.Drawing.Size(100, 22);
+            this.DeleteProductSearchTB.TabIndex = 2;
             // 
-            // DeleteProductButton
+            // DeleteProductSearchLbl
             // 
-            this.DeleteProductButton.Location = new System.Drawing.Point(388, 189);
-            this.DeleteProductButton.Name = "DeleteProductButton";
-            this.DeleteProductButton.Size = new System.Drawing.Size(121, 23);
-            this.DeleteProductButton.TabIndex = 5;
-            this.DeleteProductButton.Text = "Delete Product";
-            this.DeleteProductButton.UseVisualStyleBackColor = true;
-            this.DeleteProductButton.Click += new System.EventHandler(this.DeleteProductButton_Click);
+            this.DeleteProductSearchLbl.AutoSize = true;
+            this.DeleteProductSearchLbl.Location = new System.Drawing.Point(129, 78);
+            this.DeleteProductSearchLbl.Name = "DeleteProductSearchLbl";
+            this.DeleteProductSearchLbl.Size = new System.Drawing.Size(139, 16);
+            this.DeleteProductSearchLbl.TabIndex = 1;
+            this.DeleteProductSearchLbl.Text = "Enter Product Name :";
+            // 
+            // DeleteProductHeader
+            // 
+            this.DeleteProductHeader.AutoSize = true;
+            this.DeleteProductHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteProductHeader.Location = new System.Drawing.Point(41, 23);
+            this.DeleteProductHeader.Name = "DeleteProductHeader";
+            this.DeleteProductHeader.Size = new System.Drawing.Size(137, 22);
+            this.DeleteProductHeader.TabIndex = 0;
+            this.DeleteProductHeader.Text = "Delete Product";
+            // 
+            // StudentLbl
+            // 
+            this.StudentLbl.AutoSize = true;
+            this.StudentLbl.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StudentLbl.Location = new System.Drawing.Point(302, 58);
+            this.StudentLbl.Name = "StudentLbl";
+            this.StudentLbl.Size = new System.Drawing.Size(101, 29);
+            this.StudentLbl.TabIndex = 1;
+            this.StudentLbl.Text = "Student";
+            // 
+            // Canteen
+            // 
+            this.Canteen.AutoSize = true;
+            this.Canteen.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Canteen.Location = new System.Drawing.Point(275, 56);
+            this.Canteen.Name = "Canteen";
+            this.Canteen.Size = new System.Drawing.Size(106, 29);
+            this.Canteen.TabIndex = 1;
+            this.Canteen.Text = "Canteen";
+            // 
+            // Teacher
+            // 
+            this.Teacher.AutoSize = true;
+            this.Teacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Teacher.Location = new System.Drawing.Point(287, 82);
+            this.Teacher.Name = "Teacher";
+            this.Teacher.Size = new System.Drawing.Size(98, 25);
+            this.Teacher.TabIndex = 1;
+            this.Teacher.Text = "Teacher";
+            // 
+            // Abscence
+            // 
+            this.Abscence.AutoSize = true;
+            this.Abscence.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Abscence.Location = new System.Drawing.Point(286, 104);
+            this.Abscence.Name = "Abscence";
+            this.Abscence.Size = new System.Drawing.Size(109, 26);
+            this.Abscence.TabIndex = 2;
+            this.Abscence.Text = "Abscence";
+            // 
+            // Class
+            // 
+            this.Class.AutoSize = true;
+            this.Class.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Class.Location = new System.Drawing.Point(297, 82);
+            this.Class.Name = "Class";
+            this.Class.Size = new System.Drawing.Size(69, 29);
+            this.Class.TabIndex = 1;
+            this.Class.Text = "Class";
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 484);
-            this.Controls.Add(this.DeleteProductPnl);
             this.Controls.Add(this.DateAndTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.MenuBar);
+            this.Controls.Add(this.StudentPanel);
+            this.Controls.Add(this.StudentAttandanceEntryPanel);
+            this.Controls.Add(this.AbscenceInfoPanel);
+            this.Controls.Add(this.HomePanel);
+            this.Controls.Add(this.StudentPanelRegistrationPanel);
+            this.Controls.Add(this.StudentCanteenPnl);
+            this.Controls.Add(this.ListProductPnl);
+            this.Controls.Add(this.AddProductPnl);
+            this.Controls.Add(this.UpdateProductPnl);
+            this.Controls.Add(this.DeleteProductPnl);
             this.Controls.Add(this.CanteenPanel);
             this.Controls.Add(this.StudentDeletePanel);
             this.Controls.Add(this.ListTeacherPnl);
@@ -3013,15 +3074,6 @@
             this.Controls.Add(this.ListClassPnl);
             this.Controls.Add(this.UpdateClassPnl);
             this.Controls.Add(this.StudentUpdatePanel);
-            this.Controls.Add(this.StudentPanel);
-            this.Controls.Add(this.StudentAttandanceEntryPanel);
-            this.Controls.Add(this.AbscenceInfoPanel);
-            this.Controls.Add(this.HomePanel);
-            this.Controls.Add(this.StudentPanelRegistrationPanel);
-            this.Controls.Add(this.StudentCanteenPnl);
-            this.Controls.Add(this.ListProductPnl);
-            this.Controls.Add(this.AddProductPnl);
-            this.Controls.Add(this.UpdateProductPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
@@ -3034,6 +3086,7 @@
             this.StudentPanelRegistrationPanel.ResumeLayout(false);
             this.StudentPanelRegistrationPanel.PerformLayout();
             this.CanteenPanel.ResumeLayout(false);
+            this.CanteenPanel.PerformLayout();
             this.AbscenceInfoPanel.ResumeLayout(false);
             this.AbscenceInfoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccessLogDataGridView)).EndInit();
@@ -3042,17 +3095,21 @@
             this.StudentListPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StudentDataGridView)).EndInit();
             this.StudentPanel.ResumeLayout(false);
+            this.StudentPanel.PerformLayout();
             this.StudentDeletePanel.ResumeLayout(false);
             this.StudentDeletePanel.PerformLayout();
             this.AbscencePanel.ResumeLayout(false);
+            this.AbscencePanel.PerformLayout();
             this.StudentAttandanceEntryPanel.ResumeLayout(false);
             this.StudentAttandanceEntryPanel.PerformLayout();
             this.TeacherPanel.ResumeLayout(false);
+            this.TeacherPanel.PerformLayout();
             this.TeacheAddPnl.ResumeLayout(false);
             this.TeacheAddPnl.PerformLayout();
             this.StudentUpdatePanel.ResumeLayout(false);
             this.StudentUpdatePanel.PerformLayout();
             this.ClassPanel.ResumeLayout(false);
+            this.ClassPanel.PerformLayout();
             this.AddClassPnl.ResumeLayout(false);
             this.AddClassPnl.PerformLayout();
             this.UpdateClassPnl.ResumeLayout(false);
@@ -3164,7 +3221,6 @@
         private System.Windows.Forms.DataGridView AccessLogDataGridView;
         private System.Windows.Forms.DataGridView AttendanceDataGridView;
         private System.Windows.Forms.Label StudentInfo2Label;
-        private System.Windows.Forms.Button ExportButton;
         private System.Windows.Forms.Button FilterButton;
         private System.Windows.Forms.DateTimePicker EndDatePicker;
         private System.Windows.Forms.DateTimePicker StartDatePicker;
@@ -3349,5 +3405,10 @@
         private System.Windows.Forms.Button SearchDeleteProductBtn;
         private System.Windows.Forms.TextBox DeleteProductSearchTB;
         private System.Windows.Forms.Label DeleteProductSearchLbl;
+        private System.Windows.Forms.Label Canteen;
+        private System.Windows.Forms.Label StudentLbl;
+        private System.Windows.Forms.Label Teacher;
+        private System.Windows.Forms.Label Abscence;
+        private System.Windows.Forms.Label Class;
     }
 }

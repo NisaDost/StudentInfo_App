@@ -271,9 +271,26 @@ namespace StudentInfo_App
                 return;
             }
         }
-        private void QuitButton_Click(object sender, EventArgs e)
+        //combobox ın içini doldurur
+        private void Refresh_Click(object sender, EventArgs e)
         {
-            this.Close();
+            LoadCities();
+            // Şehir ComboBox'ında seçim değiştiğinde ilçeleri yükle
+            UpdateStudentCityCB.SelectedIndexChanged += new EventHandler(UpdateStudentCityCB_SelectedIndexChanged);
+            LoadClassNames();
+            LoadUpdateClassNames();
+            LoadDeleteClassNames();
+            TeacherAddLoadBranches();
+            TeacherAddLoadTeachers();
+            TeacherAddLoadClasses();
+            SelectTeacherCB.SelectedIndexChanged += SelectTeacherCB_SelectedIndexChanged;
+            UpdateTeacherLoadBranchesAndClasses();
+            SelectUpdateTeacherCB.SelectedIndexChanged += new System.EventHandler(this.UpdateSelectTeacherCB_SelectedIndexChanged);
+            TeacherListLoadAllClasses();
+            TeacherDeleteLoadTeachers();
+            LoadCategories();
+            AddProductLoadCategories();
+            UpdateProductLoadCategories();
         }
 
         private void SaveStudentBtn_Click(object sender, EventArgs e)
@@ -478,6 +495,7 @@ namespace StudentInfo_App
             #endregion
 
         }
+        #region Öğrenci Silme
         private void DeleteStudentButton_Click(object sender, EventArgs e)
         {
             if (currentStudent != null)
@@ -549,6 +567,7 @@ namespace StudentInfo_App
                 MessageBox.Show("Öğrenci silinemedi. Lütfen önce arama yapınız.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
 
         #region Öğrenci Absence ve Attandance Gösterilme paneli
         private void FetchStudentButton_Click(object sender, EventArgs e)
