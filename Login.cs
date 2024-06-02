@@ -13,7 +13,7 @@ using System.Configuration;
 
 namespace StudentInfo_App
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         #region move form borderless
         protected override void WndProc(ref Message m)
@@ -30,7 +30,7 @@ namespace StudentInfo_App
             base.WndProc(ref m);
         }
         #endregion
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }

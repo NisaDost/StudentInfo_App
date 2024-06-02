@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentInfo_App.SplashScreen1), true, true);
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true);
             this.MenuBar = new System.Windows.Forms.Panel();
             this.StudentsButton = new System.Windows.Forms.Button();
             this.ClassButon = new System.Windows.Forms.Button();
@@ -122,6 +124,7 @@
             this.StudentInfoLabel = new System.Windows.Forms.Label();
             this.AbscencePanel = new System.Windows.Forms.Panel();
             this.Abscence = new System.Windows.Forms.Label();
+            this.DeleteAbscenceBtn = new System.Windows.Forms.Button();
             this.UpdateStudentAttandanceBtn = new System.Windows.Forms.Button();
             this.StudentEntryAttandanceBtn = new System.Windows.Forms.Button();
             this.StudentAbsenceAttandanceBtn = new System.Windows.Forms.Button();
@@ -296,26 +299,26 @@
             this.DeleteProductSearchLbl = new System.Windows.Forms.Label();
             this.DeleteProductHeader = new System.Windows.Forms.Label();
             this.UpdateStudentAttandancePnl = new System.Windows.Forms.Panel();
-            this.UpdateAbscenceLbl = new System.Windows.Forms.Label();
-            this.EnterStudentNumberAbscenceLbl = new System.Windows.Forms.Label();
-            this.UpdateAbscenceEnterStudentNumberTB = new System.Windows.Forms.TextBox();
-            this.GetStudentInfoLbl = new System.Windows.Forms.Label();
-            this.StudentGetInfoBtn = new System.Windows.Forms.Button();
-            this.SelectDateLbl = new System.Windows.Forms.Label();
-            this.SelectDateCB = new System.Windows.Forms.ComboBox();
-            this.SelectUpdatedDateLbl = new System.Windows.Forms.Label();
             this.SelectUpdatedDateDTP = new System.Windows.Forms.DateTimePicker();
+            this.SelectDateCB = new System.Windows.Forms.ComboBox();
             this.UpdateDateBtn = new System.Windows.Forms.Button();
-            this.DeleteAbscenceBtn = new System.Windows.Forms.Button();
+            this.StudentGetInfoBtn = new System.Windows.Forms.Button();
+            this.GetStudentInfoLbl = new System.Windows.Forms.Label();
+            this.UpdateAbscenceEnterStudentNumberTB = new System.Windows.Forms.TextBox();
+            this.SelectUpdatedDateLbl = new System.Windows.Forms.Label();
+            this.SelectDateLbl = new System.Windows.Forms.Label();
+            this.EnterStudentNumberAbscenceLbl = new System.Windows.Forms.Label();
+            this.UpdateAbscenceLbl = new System.Windows.Forms.Label();
             this.DeleteAbscencePnl = new System.Windows.Forms.Panel();
-            this.DeleteAbscenceHeader = new System.Windows.Forms.Label();
-            this.DeleteAbscenceStudentNumberLbl = new System.Windows.Forms.Label();
-            this.DeleteAbscenceStudentNumberTB = new System.Windows.Forms.TextBox();
-            this.DeleteGetStudentInfoBtn = new System.Windows.Forms.Button();
-            this.DeleteGetStudentInfoLbl = new System.Windows.Forms.Label();
-            this.DeleteAbscenceStudentLbl = new System.Windows.Forms.Label();
             this.DeleteAbscenceStudentCB = new System.Windows.Forms.ComboBox();
+            this.DeleteGetStudentInfoLbl = new System.Windows.Forms.Label();
             this.DeleteAbscenceButton = new System.Windows.Forms.Button();
+            this.DeleteGetStudentInfoBtn = new System.Windows.Forms.Button();
+            this.DeleteAbscenceStudentNumberTB = new System.Windows.Forms.TextBox();
+            this.DeleteAbscenceStudentLbl = new System.Windows.Forms.Label();
+            this.DeleteAbscenceStudentNumberLbl = new System.Windows.Forms.Label();
+            this.DeleteAbscenceHeader = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -367,9 +370,9 @@
             this.MenuBar.Controls.Add(this.Logo);
             this.MenuBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuBar.Location = new System.Drawing.Point(0, 0);
-            this.MenuBar.Margin = new System.Windows.Forms.Padding(2);
+            this.MenuBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MenuBar.Name = "MenuBar";
-            this.MenuBar.Size = new System.Drawing.Size(172, 484);
+            this.MenuBar.Size = new System.Drawing.Size(229, 596);
             this.MenuBar.TabIndex = 0;
             // 
             // StudentsButton
@@ -378,11 +381,11 @@
             this.StudentsButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.StudentsButton.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentsButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.StudentsButton.Location = new System.Drawing.Point(9, 167);
-            this.StudentsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.StudentsButton.Location = new System.Drawing.Point(12, 206);
+            this.StudentsButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StudentsButton.Name = "StudentsButton";
-            this.StudentsButton.Size = new System.Drawing.Size(148, 33);
-            this.StudentsButton.TabIndex = 1;
+            this.StudentsButton.Size = new System.Drawing.Size(197, 41);
+            this.StudentsButton.TabIndex = 2;
             this.StudentsButton.Text = "Students";
             this.StudentsButton.UseVisualStyleBackColor = false;
             this.StudentsButton.Click += new System.EventHandler(this.MenuButton_Click);
@@ -393,11 +396,11 @@
             this.ClassButon.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ClassButon.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ClassButon.ForeColor = System.Drawing.SystemColors.Window;
-            this.ClassButon.Location = new System.Drawing.Point(9, 321);
-            this.ClassButon.Margin = new System.Windows.Forms.Padding(2);
+            this.ClassButon.Location = new System.Drawing.Point(12, 395);
+            this.ClassButon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ClassButon.Name = "ClassButon";
-            this.ClassButon.Size = new System.Drawing.Size(148, 33);
-            this.ClassButon.TabIndex = 1;
+            this.ClassButon.Size = new System.Drawing.Size(197, 41);
+            this.ClassButon.TabIndex = 6;
             this.ClassButon.Text = "Class";
             this.ClassButon.UseVisualStyleBackColor = false;
             this.ClassButon.Click += new System.EventHandler(this.MenuButton_Click);
@@ -408,11 +411,11 @@
             this.TeacherButoon.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.TeacherButoon.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TeacherButoon.ForeColor = System.Drawing.SystemColors.Window;
-            this.TeacherButoon.Location = new System.Drawing.Point(9, 283);
-            this.TeacherButoon.Margin = new System.Windows.Forms.Padding(2);
+            this.TeacherButoon.Location = new System.Drawing.Point(12, 348);
+            this.TeacherButoon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TeacherButoon.Name = "TeacherButoon";
-            this.TeacherButoon.Size = new System.Drawing.Size(148, 33);
-            this.TeacherButoon.TabIndex = 1;
+            this.TeacherButoon.Size = new System.Drawing.Size(197, 41);
+            this.TeacherButoon.TabIndex = 5;
             this.TeacherButoon.Text = "Teacher";
             this.TeacherButoon.UseVisualStyleBackColor = false;
             this.TeacherButoon.Click += new System.EventHandler(this.MenuButton_Click);
@@ -423,11 +426,11 @@
             this.AbscenceButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.AbscenceButton.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AbscenceButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.AbscenceButton.Location = new System.Drawing.Point(9, 244);
-            this.AbscenceButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AbscenceButton.Location = new System.Drawing.Point(12, 300);
+            this.AbscenceButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AbscenceButton.Name = "AbscenceButton";
-            this.AbscenceButton.Size = new System.Drawing.Size(148, 33);
-            this.AbscenceButton.TabIndex = 1;
+            this.AbscenceButton.Size = new System.Drawing.Size(197, 41);
+            this.AbscenceButton.TabIndex = 4;
             this.AbscenceButton.Text = "Abscence";
             this.AbscenceButton.UseVisualStyleBackColor = false;
             this.AbscenceButton.Click += new System.EventHandler(this.MenuButton_Click);
@@ -438,11 +441,11 @@
             this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.LogoutButton.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.LogoutButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.LogoutButton.Location = new System.Drawing.Point(9, 441);
-            this.LogoutButton.Margin = new System.Windows.Forms.Padding(2);
+            this.LogoutButton.Location = new System.Drawing.Point(12, 543);
+            this.LogoutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(148, 33);
-            this.LogoutButton.TabIndex = 1;
+            this.LogoutButton.Size = new System.Drawing.Size(197, 41);
+            this.LogoutButton.TabIndex = 7;
             this.LogoutButton.Text = "Log Out";
             this.LogoutButton.UseVisualStyleBackColor = false;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
@@ -453,11 +456,11 @@
             this.CanteenButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.CanteenButton.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.CanteenButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.CanteenButton.Location = new System.Drawing.Point(9, 206);
-            this.CanteenButton.Margin = new System.Windows.Forms.Padding(2);
+            this.CanteenButton.Location = new System.Drawing.Point(12, 254);
+            this.CanteenButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CanteenButton.Name = "CanteenButton";
-            this.CanteenButton.Size = new System.Drawing.Size(148, 33);
-            this.CanteenButton.TabIndex = 1;
+            this.CanteenButton.Size = new System.Drawing.Size(197, 41);
+            this.CanteenButton.TabIndex = 3;
             this.CanteenButton.Text = "Canteen";
             this.CanteenButton.UseVisualStyleBackColor = false;
             this.CanteenButton.Click += new System.EventHandler(this.MenuButton_Click);
@@ -468,10 +471,10 @@
             this.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.HomeButton.Font = new System.Drawing.Font("Montserrat", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.HomeButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.HomeButton.Location = new System.Drawing.Point(9, 129);
-            this.HomeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.HomeButton.Location = new System.Drawing.Point(12, 159);
+            this.HomeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.HomeButton.Name = "HomeButton";
-            this.HomeButton.Size = new System.Drawing.Size(148, 33);
+            this.HomeButton.Size = new System.Drawing.Size(197, 41);
             this.HomeButton.TabIndex = 1;
             this.HomeButton.Text = "Home";
             this.HomeButton.UseVisualStyleBackColor = false;
@@ -480,10 +483,10 @@
             // Logo
             // 
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
-            this.Logo.Location = new System.Drawing.Point(49, 25);
-            this.Logo.Margin = new System.Windows.Forms.Padding(2);
+            this.Logo.Location = new System.Drawing.Point(65, 31);
+            this.Logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(72, 84);
+            this.Logo.Size = new System.Drawing.Size(96, 103);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Logo.TabIndex = 0;
             this.Logo.TabStop = false;
@@ -493,22 +496,20 @@
             this.WelcomeText.AutoSize = true;
             this.WelcomeText.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.WelcomeText.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.WelcomeText.Location = new System.Drawing.Point(19, 26);
-            this.WelcomeText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.WelcomeText.Location = new System.Drawing.Point(25, 32);
             this.WelcomeText.Name = "WelcomeText";
-            this.WelcomeText.Size = new System.Drawing.Size(439, 37);
+            this.WelcomeText.Size = new System.Drawing.Size(521, 46);
             this.WelcomeText.TabIndex = 1;
-            this.WelcomeText.Text = "Welcome to your dashboard, ";
+            this.WelcomeText.Text = "Welcome to your dashboard.";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(32, 85);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(43, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 22);
+            this.label1.Size = new System.Drawing.Size(219, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Manage Your School";
             // 
@@ -517,36 +518,33 @@
             this.DashboardText2.AutoSize = true;
             this.DashboardText2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DashboardText2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DashboardText2.Location = new System.Drawing.Point(50, 136);
-            this.DashboardText2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DashboardText2.Location = new System.Drawing.Point(67, 167);
             this.DashboardText2.Name = "DashboardText2";
-            this.DashboardText2.Size = new System.Drawing.Size(154, 22);
+            this.DashboardText2.Size = new System.Drawing.Size(189, 27);
             this.DashboardText2.TabIndex = 1;
-            this.DashboardText2.Text = "Add other admins";
+            this.DashboardText2.Text = "Manage students";
             // 
             // DasboardText3
             // 
             this.DasboardText3.AutoSize = true;
             this.DasboardText3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DasboardText3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DasboardText3.Location = new System.Drawing.Point(50, 187);
-            this.DasboardText3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DasboardText3.Location = new System.Drawing.Point(67, 230);
             this.DasboardText3.Name = "DasboardText3";
-            this.DasboardText3.Size = new System.Drawing.Size(107, 22);
+            this.DasboardText3.Size = new System.Drawing.Size(175, 27);
             this.DasboardText3.TabIndex = 1;
-            this.DasboardText3.Text = "Add classes ";
+            this.DasboardText3.Text = "Manage classes ";
             // 
             // DashboardText4
             // 
             this.DashboardText4.AutoSize = true;
             this.DashboardText4.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DashboardText4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DashboardText4.Location = new System.Drawing.Point(50, 236);
-            this.DashboardText4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DashboardText4.Location = new System.Drawing.Point(68, 297);
             this.DashboardText4.Name = "DashboardText4";
-            this.DashboardText4.Size = new System.Drawing.Size(118, 22);
+            this.DashboardText4.Size = new System.Drawing.Size(294, 27);
             this.DashboardText4.TabIndex = 1;
-            this.DashboardText4.Text = "Add students";
+            this.DashboardText4.Text = "Manage student\'s abscence";
             // 
             // HomePanel
             // 
@@ -555,11 +553,12 @@
             this.HomePanel.Controls.Add(this.label1);
             this.HomePanel.Controls.Add(this.DashboardText2);
             this.HomePanel.Controls.Add(this.DasboardText3);
+            this.HomePanel.Controls.Add(this.label8);
             this.HomePanel.Controls.Add(this.DashboardText4);
-            this.HomePanel.Location = new System.Drawing.Point(188, 55);
-            this.HomePanel.Margin = new System.Windows.Forms.Padding(2);
+            this.HomePanel.Location = new System.Drawing.Point(251, 68);
+            this.HomePanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.HomePanel.Name = "HomePanel";
-            this.HomePanel.Size = new System.Drawing.Size(676, 410);
+            this.HomePanel.Size = new System.Drawing.Size(901, 505);
             this.HomePanel.TabIndex = 2;
             // 
             // StudentPanelRegistrationPanel
@@ -592,42 +591,46 @@
             this.StudentPanelRegistrationPanel.Controls.Add(this.StudentLastNameTB);
             this.StudentPanelRegistrationPanel.Controls.Add(this.StudentFirstNameTB);
             this.StudentPanelRegistrationPanel.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentPanelRegistrationPanel.Location = new System.Drawing.Point(188, 55);
-            this.StudentPanelRegistrationPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.StudentPanelRegistrationPanel.Location = new System.Drawing.Point(251, 68);
+            this.StudentPanelRegistrationPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StudentPanelRegistrationPanel.Name = "StudentPanelRegistrationPanel";
-            this.StudentPanelRegistrationPanel.Size = new System.Drawing.Size(702, 410);
+            this.StudentPanelRegistrationPanel.Size = new System.Drawing.Size(936, 505);
             this.StudentPanelRegistrationPanel.TabIndex = 2;
             // 
             // StudentSchoolNumberTB
             // 
-            this.StudentSchoolNumberTB.Location = new System.Drawing.Point(399, 231);
+            this.StudentSchoolNumberTB.Location = new System.Drawing.Point(532, 284);
+            this.StudentSchoolNumberTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentSchoolNumberTB.Name = "StudentSchoolNumberTB";
-            this.StudentSchoolNumberTB.Size = new System.Drawing.Size(100, 23);
-            this.StudentSchoolNumberTB.TabIndex = 12;
+            this.StudentSchoolNumberTB.Size = new System.Drawing.Size(132, 27);
+            this.StudentSchoolNumberTB.TabIndex = 9;
             // 
             // StudentSchoolNumberLbl
             // 
             this.StudentSchoolNumberLbl.AutoSize = true;
-            this.StudentSchoolNumberLbl.Location = new System.Drawing.Point(277, 236);
+            this.StudentSchoolNumberLbl.Location = new System.Drawing.Point(369, 290);
+            this.StudentSchoolNumberLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentSchoolNumberLbl.Name = "StudentSchoolNumberLbl";
-            this.StudentSchoolNumberLbl.Size = new System.Drawing.Size(116, 18);
+            this.StudentSchoolNumberLbl.Size = new System.Drawing.Size(152, 24);
             this.StudentSchoolNumberLbl.TabIndex = 11;
             this.StudentSchoolNumberLbl.Text = "School Number :";
             // 
             // StudentClassCB
             // 
             this.StudentClassCB.FormattingEnabled = true;
-            this.StudentClassCB.Location = new System.Drawing.Point(140, 231);
+            this.StudentClassCB.Location = new System.Drawing.Point(187, 284);
+            this.StudentClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentClassCB.Name = "StudentClassCB";
-            this.StudentClassCB.Size = new System.Drawing.Size(121, 26);
-            this.StudentClassCB.TabIndex = 10;
+            this.StudentClassCB.Size = new System.Drawing.Size(160, 30);
+            this.StudentClassCB.TabIndex = 8;
             // 
             // StudentClassLbl
             // 
             this.StudentClassLbl.AutoSize = true;
-            this.StudentClassLbl.Location = new System.Drawing.Point(51, 234);
+            this.StudentClassLbl.Location = new System.Drawing.Point(68, 288);
+            this.StudentClassLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentClassLbl.Name = "StudentClassLbl";
-            this.StudentClassLbl.Size = new System.Drawing.Size(46, 18);
+            this.StudentClassLbl.Size = new System.Drawing.Size(61, 24);
             this.StudentClassLbl.TabIndex = 9;
             this.StudentClassLbl.Text = "Class :";
             // 
@@ -635,65 +638,73 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(50, 4);
+            this.label4.Location = new System.Drawing.Point(67, 5);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(217, 26);
+            this.label4.Size = new System.Drawing.Size(276, 33);
             this.label4.TabIndex = 7;
             this.label4.Text = "Student Registration";
             // 
             // SaveStudentBtn
             // 
-            this.SaveStudentBtn.Location = new System.Drawing.Point(585, 342);
+            this.SaveStudentBtn.Location = new System.Drawing.Point(780, 421);
+            this.SaveStudentBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SaveStudentBtn.Name = "SaveStudentBtn";
-            this.SaveStudentBtn.Size = new System.Drawing.Size(75, 23);
-            this.SaveStudentBtn.TabIndex = 6;
+            this.SaveStudentBtn.Size = new System.Drawing.Size(100, 28);
+            this.SaveStudentBtn.TabIndex = 13;
             this.SaveStudentBtn.Text = "Save";
             this.SaveStudentBtn.UseVisualStyleBackColor = true;
             this.SaveStudentBtn.Click += new System.EventHandler(this.SaveStudentBtn_Click);
             // 
             // StudentAdressTB
             // 
-            this.StudentAdressTB.Location = new System.Drawing.Point(140, 202);
+            this.StudentAdressTB.Location = new System.Drawing.Point(187, 249);
+            this.StudentAdressTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentAdressTB.Name = "StudentAdressTB";
-            this.StudentAdressTB.Size = new System.Drawing.Size(327, 23);
-            this.StudentAdressTB.TabIndex = 5;
+            this.StudentAdressTB.Size = new System.Drawing.Size(435, 27);
+            this.StudentAdressTB.TabIndex = 7;
             // 
             // ParentPhoneTB
             // 
-            this.ParentPhoneTB.Location = new System.Drawing.Point(162, 321);
+            this.ParentPhoneTB.Location = new System.Drawing.Point(216, 395);
+            this.ParentPhoneTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ParentPhoneTB.Name = "ParentPhoneTB";
-            this.ParentPhoneTB.Size = new System.Drawing.Size(121, 23);
-            this.ParentPhoneTB.TabIndex = 5;
+            this.ParentPhoneTB.Size = new System.Drawing.Size(160, 27);
+            this.ParentPhoneTB.TabIndex = 12;
             // 
             // ParentEmailTB
             // 
-            this.ParentEmailTB.Location = new System.Drawing.Point(162, 292);
+            this.ParentEmailTB.Location = new System.Drawing.Point(216, 359);
+            this.ParentEmailTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ParentEmailTB.Name = "ParentEmailTB";
-            this.ParentEmailTB.Size = new System.Drawing.Size(121, 23);
-            this.ParentEmailTB.TabIndex = 5;
+            this.ParentEmailTB.Size = new System.Drawing.Size(160, 27);
+            this.ParentEmailTB.TabIndex = 11;
             // 
             // ParentNameTB
             // 
-            this.ParentNameTB.Location = new System.Drawing.Point(162, 263);
+            this.ParentNameTB.Location = new System.Drawing.Point(216, 324);
+            this.ParentNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ParentNameTB.Name = "ParentNameTB";
-            this.ParentNameTB.Size = new System.Drawing.Size(121, 23);
-            this.ParentNameTB.TabIndex = 5;
+            this.ParentNameTB.Size = new System.Drawing.Size(160, 27);
+            this.ParentNameTB.TabIndex = 10;
             // 
             // StudentDistrictCB
             // 
             this.StudentDistrictCB.FormattingEnabled = true;
-            this.StudentDistrictCB.Location = new System.Drawing.Point(360, 171);
+            this.StudentDistrictCB.Location = new System.Drawing.Point(480, 210);
+            this.StudentDistrictCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentDistrictCB.Name = "StudentDistrictCB";
-            this.StudentDistrictCB.Size = new System.Drawing.Size(121, 26);
-            this.StudentDistrictCB.TabIndex = 4;
+            this.StudentDistrictCB.Size = new System.Drawing.Size(160, 30);
+            this.StudentDistrictCB.TabIndex = 6;
             // 
             // StudentCityCB
             // 
             this.StudentCityCB.FormattingEnabled = true;
-            this.StudentCityCB.Location = new System.Drawing.Point(140, 171);
+            this.StudentCityCB.Location = new System.Drawing.Point(187, 210);
+            this.StudentCityCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentCityCB.Name = "StudentCityCB";
-            this.StudentCityCB.Size = new System.Drawing.Size(121, 26);
-            this.StudentCityCB.TabIndex = 4;
+            this.StudentCityCB.Size = new System.Drawing.Size(160, 30);
+            this.StudentCityCB.TabIndex = 5;
             // 
             // StudentGenderCB
             // 
@@ -701,25 +712,28 @@
             "Male",
             "Female"});
             this.StudentGenderCB.FormattingEnabled = true;
-            this.StudentGenderCB.Location = new System.Drawing.Point(140, 136);
+            this.StudentGenderCB.Location = new System.Drawing.Point(187, 167);
+            this.StudentGenderCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentGenderCB.Name = "StudentGenderCB";
-            this.StudentGenderCB.Size = new System.Drawing.Size(121, 26);
-            this.StudentGenderCB.TabIndex = 3;
+            this.StudentGenderCB.Size = new System.Drawing.Size(160, 30);
+            this.StudentGenderCB.TabIndex = 4;
             // 
             // StudentBirthdayDTP
             // 
-            this.StudentBirthdayDTP.Location = new System.Drawing.Point(140, 103);
+            this.StudentBirthdayDTP.Location = new System.Drawing.Point(187, 127);
+            this.StudentBirthdayDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentBirthdayDTP.Name = "StudentBirthdayDTP";
-            this.StudentBirthdayDTP.Size = new System.Drawing.Size(200, 23);
-            this.StudentBirthdayDTP.TabIndex = 2;
+            this.StudentBirthdayDTP.Size = new System.Drawing.Size(265, 27);
+            this.StudentBirthdayDTP.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(292, 174);
+            this.label3.Location = new System.Drawing.Point(389, 214);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 18);
+            this.label3.Size = new System.Drawing.Size(85, 24);
             this.label3.TabIndex = 1;
             this.label3.Text = "District : ";
             // 
@@ -727,9 +741,10 @@
             // 
             this.ParentPhoneLbl.AutoSize = true;
             this.ParentPhoneLbl.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ParentPhoneLbl.Location = new System.Drawing.Point(51, 324);
+            this.ParentPhoneLbl.Location = new System.Drawing.Point(68, 399);
+            this.ParentPhoneLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ParentPhoneLbl.Name = "ParentPhoneLbl";
-            this.ParentPhoneLbl.Size = new System.Drawing.Size(107, 18);
+            this.ParentPhoneLbl.Size = new System.Drawing.Size(138, 24);
             this.ParentPhoneLbl.TabIndex = 1;
             this.ParentPhoneLbl.Text = "Parent Phone : ";
             // 
@@ -737,9 +752,10 @@
             // 
             this.ParentEmailLbl.AutoSize = true;
             this.ParentEmailLbl.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ParentEmailLbl.Location = new System.Drawing.Point(51, 295);
+            this.ParentEmailLbl.Location = new System.Drawing.Point(68, 363);
+            this.ParentEmailLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ParentEmailLbl.Name = "ParentEmailLbl";
-            this.ParentEmailLbl.Size = new System.Drawing.Size(101, 18);
+            this.ParentEmailLbl.Size = new System.Drawing.Size(132, 24);
             this.ParentEmailLbl.TabIndex = 1;
             this.ParentEmailLbl.Text = "Parent Email : ";
             // 
@@ -747,9 +763,10 @@
             // 
             this.ParentNameLbl.AutoSize = true;
             this.ParentNameLbl.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ParentNameLbl.Location = new System.Drawing.Point(51, 266);
+            this.ParentNameLbl.Location = new System.Drawing.Point(68, 327);
+            this.ParentNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ParentNameLbl.Name = "ParentNameLbl";
-            this.ParentNameLbl.Size = new System.Drawing.Size(105, 18);
+            this.ParentNameLbl.Size = new System.Drawing.Size(135, 24);
             this.ParentNameLbl.TabIndex = 1;
             this.ParentNameLbl.Text = "Parent Name : ";
             // 
@@ -757,9 +774,10 @@
             // 
             this.StudentAdressLbl.AutoSize = true;
             this.StudentAdressLbl.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentAdressLbl.Location = new System.Drawing.Point(51, 205);
+            this.StudentAdressLbl.Location = new System.Drawing.Point(68, 252);
+            this.StudentAdressLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentAdressLbl.Name = "StudentAdressLbl";
-            this.StudentAdressLbl.Size = new System.Drawing.Size(60, 18);
+            this.StudentAdressLbl.Size = new System.Drawing.Size(79, 24);
             this.StudentAdressLbl.TabIndex = 1;
             this.StudentAdressLbl.Text = "Adress : ";
             // 
@@ -767,9 +785,10 @@
             // 
             this.StudentCityLbl.AutoSize = true;
             this.StudentCityLbl.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentCityLbl.Location = new System.Drawing.Point(51, 174);
+            this.StudentCityLbl.Location = new System.Drawing.Point(68, 214);
+            this.StudentCityLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentCityLbl.Name = "StudentCityLbl";
-            this.StudentCityLbl.Size = new System.Drawing.Size(41, 18);
+            this.StudentCityLbl.Size = new System.Drawing.Size(55, 24);
             this.StudentCityLbl.TabIndex = 1;
             this.StudentCityLbl.Text = "City : ";
             // 
@@ -777,9 +796,10 @@
             // 
             this.StudentGenderLbl.AutoSize = true;
             this.StudentGenderLbl.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentGenderLbl.Location = new System.Drawing.Point(51, 140);
+            this.StudentGenderLbl.Location = new System.Drawing.Point(68, 172);
+            this.StudentGenderLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentGenderLbl.Name = "StudentGenderLbl";
-            this.StudentGenderLbl.Size = new System.Drawing.Size(66, 18);
+            this.StudentGenderLbl.Size = new System.Drawing.Size(85, 24);
             this.StudentGenderLbl.TabIndex = 1;
             this.StudentGenderLbl.Text = "Gender : ";
             // 
@@ -787,9 +807,10 @@
             // 
             this.StudentBirthdayLbl.AutoSize = true;
             this.StudentBirthdayLbl.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentBirthdayLbl.Location = new System.Drawing.Point(51, 107);
+            this.StudentBirthdayLbl.Location = new System.Drawing.Point(68, 132);
+            this.StudentBirthdayLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentBirthdayLbl.Name = "StudentBirthdayLbl";
-            this.StudentBirthdayLbl.Size = new System.Drawing.Size(73, 18);
+            this.StudentBirthdayLbl.Size = new System.Drawing.Size(96, 24);
             this.StudentBirthdayLbl.TabIndex = 1;
             this.StudentBirthdayLbl.Text = "Birthday : ";
             // 
@@ -797,9 +818,10 @@
             // 
             this.StudentLastNameLbl.AutoSize = true;
             this.StudentLastNameLbl.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentLastNameLbl.Location = new System.Drawing.Point(51, 74);
+            this.StudentLastNameLbl.Location = new System.Drawing.Point(68, 91);
+            this.StudentLastNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentLastNameLbl.Name = "StudentLastNameLbl";
-            this.StudentLastNameLbl.Size = new System.Drawing.Size(88, 18);
+            this.StudentLastNameLbl.Size = new System.Drawing.Size(113, 24);
             this.StudentLastNameLbl.TabIndex = 1;
             this.StudentLastNameLbl.Text = "Last Name : ";
             // 
@@ -807,25 +829,28 @@
             // 
             this.StudentFirstNameLbl.AutoSize = true;
             this.StudentFirstNameLbl.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentFirstNameLbl.Location = new System.Drawing.Point(51, 44);
+            this.StudentFirstNameLbl.Location = new System.Drawing.Point(68, 54);
+            this.StudentFirstNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentFirstNameLbl.Name = "StudentFirstNameLbl";
-            this.StudentFirstNameLbl.Size = new System.Drawing.Size(88, 18);
+            this.StudentFirstNameLbl.Size = new System.Drawing.Size(116, 24);
             this.StudentFirstNameLbl.TabIndex = 1;
             this.StudentFirstNameLbl.Text = "First Name : ";
             // 
             // StudentLastNameTB
             // 
-            this.StudentLastNameTB.Location = new System.Drawing.Point(140, 71);
+            this.StudentLastNameTB.Location = new System.Drawing.Point(187, 87);
+            this.StudentLastNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentLastNameTB.Name = "StudentLastNameTB";
-            this.StudentLastNameTB.Size = new System.Drawing.Size(125, 23);
-            this.StudentLastNameTB.TabIndex = 0;
+            this.StudentLastNameTB.Size = new System.Drawing.Size(165, 27);
+            this.StudentLastNameTB.TabIndex = 2;
             // 
             // StudentFirstNameTB
             // 
-            this.StudentFirstNameTB.Location = new System.Drawing.Point(140, 41);
+            this.StudentFirstNameTB.Location = new System.Drawing.Point(187, 50);
+            this.StudentFirstNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentFirstNameTB.Name = "StudentFirstNameTB";
-            this.StudentFirstNameTB.Size = new System.Drawing.Size(125, 23);
-            this.StudentFirstNameTB.TabIndex = 0;
+            this.StudentFirstNameTB.Size = new System.Drawing.Size(165, 27);
+            this.StudentFirstNameTB.TabIndex = 1;
             // 
             // CanteenPanel
             // 
@@ -837,27 +862,29 @@
             this.CanteenPanel.Controls.Add(this.ListProductBtn);
             this.CanteenPanel.Controls.Add(this.StudentCanteenButton);
             this.CanteenPanel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.CanteenPanel.Location = new System.Drawing.Point(188, 55);
-            this.CanteenPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.CanteenPanel.Location = new System.Drawing.Point(251, 68);
+            this.CanteenPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CanteenPanel.Name = "CanteenPanel";
-            this.CanteenPanel.Size = new System.Drawing.Size(702, 410);
+            this.CanteenPanel.Size = new System.Drawing.Size(936, 505);
             this.CanteenPanel.TabIndex = 2;
             // 
             // Canteen
             // 
             this.Canteen.AutoSize = true;
             this.Canteen.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Canteen.Location = new System.Drawing.Point(275, 56);
+            this.Canteen.Location = new System.Drawing.Point(367, 69);
+            this.Canteen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Canteen.Name = "Canteen";
-            this.Canteen.Size = new System.Drawing.Size(106, 29);
+            this.Canteen.Size = new System.Drawing.Size(137, 37);
             this.Canteen.TabIndex = 1;
             this.Canteen.Text = "Canteen";
             // 
             // DeleteProductBtn
             // 
-            this.DeleteProductBtn.Location = new System.Drawing.Point(242, 292);
+            this.DeleteProductBtn.Location = new System.Drawing.Point(323, 359);
+            this.DeleteProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteProductBtn.Name = "DeleteProductBtn";
-            this.DeleteProductBtn.Size = new System.Drawing.Size(193, 42);
+            this.DeleteProductBtn.Size = new System.Drawing.Size(257, 52);
             this.DeleteProductBtn.TabIndex = 0;
             this.DeleteProductBtn.Text = "Delete Product";
             this.DeleteProductBtn.UseVisualStyleBackColor = true;
@@ -865,9 +892,10 @@
             // 
             // UpdateProductBtn
             // 
-            this.UpdateProductBtn.Location = new System.Drawing.Point(242, 243);
+            this.UpdateProductBtn.Location = new System.Drawing.Point(323, 299);
+            this.UpdateProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateProductBtn.Name = "UpdateProductBtn";
-            this.UpdateProductBtn.Size = new System.Drawing.Size(193, 42);
+            this.UpdateProductBtn.Size = new System.Drawing.Size(257, 52);
             this.UpdateProductBtn.TabIndex = 0;
             this.UpdateProductBtn.Text = "Update Product";
             this.UpdateProductBtn.UseVisualStyleBackColor = true;
@@ -875,9 +903,10 @@
             // 
             // AddProductBtn
             // 
-            this.AddProductBtn.Location = new System.Drawing.Point(242, 196);
+            this.AddProductBtn.Location = new System.Drawing.Point(323, 241);
+            this.AddProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddProductBtn.Name = "AddProductBtn";
-            this.AddProductBtn.Size = new System.Drawing.Size(193, 42);
+            this.AddProductBtn.Size = new System.Drawing.Size(257, 52);
             this.AddProductBtn.TabIndex = 0;
             this.AddProductBtn.Text = "Add Product";
             this.AddProductBtn.UseVisualStyleBackColor = true;
@@ -885,9 +914,10 @@
             // 
             // ListProductBtn
             // 
-            this.ListProductBtn.Location = new System.Drawing.Point(242, 146);
+            this.ListProductBtn.Location = new System.Drawing.Point(323, 180);
+            this.ListProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListProductBtn.Name = "ListProductBtn";
-            this.ListProductBtn.Size = new System.Drawing.Size(193, 42);
+            this.ListProductBtn.Size = new System.Drawing.Size(257, 52);
             this.ListProductBtn.TabIndex = 0;
             this.ListProductBtn.Text = "List Product";
             this.ListProductBtn.UseVisualStyleBackColor = true;
@@ -895,9 +925,10 @@
             // 
             // StudentCanteenButton
             // 
-            this.StudentCanteenButton.Location = new System.Drawing.Point(242, 96);
+            this.StudentCanteenButton.Location = new System.Drawing.Point(323, 118);
+            this.StudentCanteenButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentCanteenButton.Name = "StudentCanteenButton";
-            this.StudentCanteenButton.Size = new System.Drawing.Size(193, 42);
+            this.StudentCanteenButton.Size = new System.Drawing.Size(257, 52);
             this.StudentCanteenButton.TabIndex = 0;
             this.StudentCanteenButton.Text = "Student Canteen";
             this.StudentCanteenButton.UseVisualStyleBackColor = true;
@@ -920,18 +951,19 @@
             this.AbscenceInfoPanel.Controls.Add(this.StudentNumber2TextBox);
             this.AbscenceInfoPanel.Controls.Add(this.StudentNumberLabel);
             this.AbscenceInfoPanel.Controls.Add(this.StudentAbsenceReportHeaderLbl);
-            this.AbscenceInfoPanel.Location = new System.Drawing.Point(188, 55);
-            this.AbscenceInfoPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.AbscenceInfoPanel.Location = new System.Drawing.Point(251, 68);
+            this.AbscenceInfoPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AbscenceInfoPanel.Name = "AbscenceInfoPanel";
-            this.AbscenceInfoPanel.Size = new System.Drawing.Size(702, 410);
+            this.AbscenceInfoPanel.Size = new System.Drawing.Size(936, 505);
             this.AbscenceInfoPanel.TabIndex = 2;
             // 
             // FilterButton
             // 
             this.FilterButton.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.FilterButton.Location = new System.Drawing.Point(633, 75);
+            this.FilterButton.Location = new System.Drawing.Point(844, 92);
+            this.FilterButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FilterButton.Name = "FilterButton";
-            this.FilterButton.Size = new System.Drawing.Size(66, 23);
+            this.FilterButton.Size = new System.Drawing.Size(88, 28);
             this.FilterButton.TabIndex = 11;
             this.FilterButton.Text = "Filter";
             this.FilterButton.UseVisualStyleBackColor = true;
@@ -939,25 +971,28 @@
             // 
             // EndDatePicker
             // 
-            this.EndDatePicker.Location = new System.Drawing.Point(411, 78);
+            this.EndDatePicker.Location = new System.Drawing.Point(548, 96);
+            this.EndDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EndDatePicker.Name = "EndDatePicker";
-            this.EndDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.EndDatePicker.Size = new System.Drawing.Size(265, 22);
             this.EndDatePicker.TabIndex = 10;
             // 
             // StartDatePicker
             // 
-            this.StartDatePicker.Location = new System.Drawing.Point(116, 77);
+            this.StartDatePicker.Location = new System.Drawing.Point(155, 95);
+            this.StartDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StartDatePicker.Name = "StartDatePicker";
-            this.StartDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.StartDatePicker.Size = new System.Drawing.Size(265, 22);
             this.StartDatePicker.TabIndex = 10;
             // 
             // EndDateLabel
             // 
             this.EndDateLabel.AutoSize = true;
             this.EndDateLabel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.EndDateLabel.Location = new System.Drawing.Point(336, 78);
+            this.EndDateLabel.Location = new System.Drawing.Point(448, 96);
+            this.EndDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EndDateLabel.Name = "EndDateLabel";
-            this.EndDateLabel.Size = new System.Drawing.Size(69, 16);
+            this.EndDateLabel.Size = new System.Drawing.Size(87, 21);
             this.EndDateLabel.TabIndex = 9;
             this.EndDateLabel.Text = "End Date :";
             // 
@@ -965,9 +1000,10 @@
             // 
             this.StartDateLabel.AutoSize = true;
             this.StartDateLabel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StartDateLabel.Location = new System.Drawing.Point(37, 78);
+            this.StartDateLabel.Location = new System.Drawing.Point(49, 96);
+            this.StartDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StartDateLabel.Name = "StartDateLabel";
-            this.StartDateLabel.Size = new System.Drawing.Size(74, 16);
+            this.StartDateLabel.Size = new System.Drawing.Size(93, 21);
             this.StartDateLabel.TabIndex = 9;
             this.StartDateLabel.Text = "Start Date :";
             // 
@@ -975,9 +1011,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(336, 129);
+            this.label6.Location = new System.Drawing.Point(448, 159);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 16);
+            this.label6.Size = new System.Drawing.Size(95, 21);
             this.label6.TabIndex = 8;
             this.label6.Text = "AccessLog :";
             // 
@@ -985,44 +1022,51 @@
             // 
             this.StudentAttandanceLbl.AutoSize = true;
             this.StudentAttandanceLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentAttandanceLbl.Location = new System.Drawing.Point(36, 129);
+            this.StudentAttandanceLbl.Location = new System.Drawing.Point(48, 159);
+            this.StudentAttandanceLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentAttandanceLbl.Name = "StudentAttandanceLbl";
-            this.StudentAttandanceLbl.Size = new System.Drawing.Size(84, 16);
+            this.StudentAttandanceLbl.Size = new System.Drawing.Size(105, 21);
             this.StudentAttandanceLbl.TabIndex = 7;
             this.StudentAttandanceLbl.Text = "Attandance :";
             // 
             // AccessLogDataGridView
             // 
             this.AccessLogDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AccessLogDataGridView.Location = new System.Drawing.Point(339, 154);
+            this.AccessLogDataGridView.Location = new System.Drawing.Point(452, 190);
+            this.AccessLogDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AccessLogDataGridView.Name = "AccessLogDataGridView";
-            this.AccessLogDataGridView.Size = new System.Drawing.Size(357, 150);
+            this.AccessLogDataGridView.RowHeadersWidth = 51;
+            this.AccessLogDataGridView.Size = new System.Drawing.Size(476, 185);
             this.AccessLogDataGridView.TabIndex = 6;
             // 
             // AttendanceDataGridView
             // 
             this.AttendanceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AttendanceDataGridView.Location = new System.Drawing.Point(36, 154);
+            this.AttendanceDataGridView.Location = new System.Drawing.Point(48, 190);
+            this.AttendanceDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AttendanceDataGridView.Name = "AttendanceDataGridView";
-            this.AttendanceDataGridView.Size = new System.Drawing.Size(240, 150);
+            this.AttendanceDataGridView.RowHeadersWidth = 51;
+            this.AttendanceDataGridView.Size = new System.Drawing.Size(320, 185);
             this.AttendanceDataGridView.TabIndex = 5;
             // 
             // StudentInfo2Label
             // 
             this.StudentInfo2Label.AutoSize = true;
             this.StudentInfo2Label.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentInfo2Label.Location = new System.Drawing.Point(396, 26);
+            this.StudentInfo2Label.Location = new System.Drawing.Point(528, 32);
+            this.StudentInfo2Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentInfo2Label.Name = "StudentInfo2Label";
-            this.StudentInfo2Label.Size = new System.Drawing.Size(187, 16);
+            this.StudentInfo2Label.Size = new System.Drawing.Size(233, 21);
             this.StudentInfo2Label.TabIndex = 4;
             this.StudentInfo2Label.Text = "There is no sherched student .";
             // 
             // FetchStudentButton
             // 
             this.FetchStudentButton.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.FetchStudentButton.Location = new System.Drawing.Point(267, 38);
+            this.FetchStudentButton.Location = new System.Drawing.Point(356, 47);
+            this.FetchStudentButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FetchStudentButton.Name = "FetchStudentButton";
-            this.FetchStudentButton.Size = new System.Drawing.Size(75, 23);
+            this.FetchStudentButton.Size = new System.Drawing.Size(100, 28);
             this.FetchStudentButton.TabIndex = 3;
             this.FetchStudentButton.Text = "Search";
             this.FetchStudentButton.UseVisualStyleBackColor = true;
@@ -1030,18 +1074,20 @@
             // 
             // StudentNumber2TextBox
             // 
-            this.StudentNumber2TextBox.Location = new System.Drawing.Point(154, 40);
+            this.StudentNumber2TextBox.Location = new System.Drawing.Point(205, 49);
+            this.StudentNumber2TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentNumber2TextBox.Name = "StudentNumber2TextBox";
-            this.StudentNumber2TextBox.Size = new System.Drawing.Size(100, 20);
+            this.StudentNumber2TextBox.Size = new System.Drawing.Size(132, 22);
             this.StudentNumber2TextBox.TabIndex = 2;
             // 
             // StudentNumberLabel
             // 
             this.StudentNumberLabel.AutoSize = true;
             this.StudentNumberLabel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentNumberLabel.Location = new System.Drawing.Point(33, 40);
+            this.StudentNumberLabel.Location = new System.Drawing.Point(44, 49);
+            this.StudentNumberLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentNumberLabel.Name = "StudentNumberLabel";
-            this.StudentNumberLabel.Size = new System.Drawing.Size(115, 16);
+            this.StudentNumberLabel.Size = new System.Drawing.Size(144, 21);
             this.StudentNumberLabel.TabIndex = 1;
             this.StudentNumberLabel.Text = "Student Number :";
             // 
@@ -1049,9 +1095,10 @@
             // 
             this.StudentAbsenceReportHeaderLbl.AutoSize = true;
             this.StudentAbsenceReportHeaderLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentAbsenceReportHeaderLbl.Location = new System.Drawing.Point(11, 8);
+            this.StudentAbsenceReportHeaderLbl.Location = new System.Drawing.Point(15, 10);
+            this.StudentAbsenceReportHeaderLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentAbsenceReportHeaderLbl.Name = "StudentAbsenceReportHeaderLbl";
-            this.StudentAbsenceReportHeaderLbl.Size = new System.Drawing.Size(254, 26);
+            this.StudentAbsenceReportHeaderLbl.Size = new System.Drawing.Size(324, 33);
             this.StudentAbsenceReportHeaderLbl.TabIndex = 0;
             this.StudentAbsenceReportHeaderLbl.Text = "Student Absence Report";
             // 
@@ -1060,10 +1107,10 @@
             this.QuitButton.BackColor = System.Drawing.Color.LightGreen;
             this.QuitButton.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.QuitButton.ForeColor = System.Drawing.Color.Black;
-            this.QuitButton.Location = new System.Drawing.Point(806, 7);
-            this.QuitButton.Margin = new System.Windows.Forms.Padding(2);
+            this.QuitButton.Location = new System.Drawing.Point(1075, 9);
+            this.QuitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QuitButton.Name = "QuitButton";
-            this.QuitButton.Size = new System.Drawing.Size(97, 33);
+            this.QuitButton.Size = new System.Drawing.Size(129, 41);
             this.QuitButton.TabIndex = 1;
             this.QuitButton.Text = "Refresh";
             this.QuitButton.UseVisualStyleBackColor = false;
@@ -1074,10 +1121,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat ExtraBold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(182, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(243, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 37);
+            this.label2.Size = new System.Drawing.Size(236, 46);
             this.label2.TabIndex = 1;
             this.label2.Text = "TrackSchool";
             // 
@@ -1086,10 +1132,9 @@
             this.DateAndTime.AutoSize = true;
             this.DateAndTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DateAndTime.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.DateAndTime.Location = new System.Drawing.Point(672, 467);
-            this.DateAndTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DateAndTime.Location = new System.Drawing.Point(896, 575);
             this.DateAndTime.Name = "DateAndTime";
-            this.DateAndTime.Size = new System.Drawing.Size(115, 13);
+            this.DateAndTime.Size = new System.Drawing.Size(147, 17);
             this.DateAndTime.TabIndex = 1;
             this.DateAndTime.Text = "00.00.2002 - 00.00";
             // 
@@ -1100,44 +1145,50 @@
             this.StudentListPanel.Controls.Add(this.label5);
             this.StudentListPanel.Controls.Add(this.StudentListClassCB);
             this.StudentListPanel.Controls.Add(this.StudentListTitleLbl);
-            this.StudentListPanel.Location = new System.Drawing.Point(188, 55);
+            this.StudentListPanel.Location = new System.Drawing.Point(251, 68);
+            this.StudentListPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentListPanel.Name = "StudentListPanel";
-            this.StudentListPanel.Size = new System.Drawing.Size(702, 410);
+            this.StudentListPanel.Size = new System.Drawing.Size(936, 505);
             this.StudentListPanel.TabIndex = 1;
             // 
             // StudentDataGridView
             // 
             this.StudentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.StudentDataGridView.Location = new System.Drawing.Point(16, 84);
+            this.StudentDataGridView.Location = new System.Drawing.Point(21, 103);
+            this.StudentDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentDataGridView.Name = "StudentDataGridView";
-            this.StudentDataGridView.Size = new System.Drawing.Size(657, 301);
+            this.StudentDataGridView.RowHeadersWidth = 51;
+            this.StudentDataGridView.Size = new System.Drawing.Size(876, 370);
             this.StudentDataGridView.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(59, 51);
+            this.label5.Location = new System.Drawing.Point(79, 63);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 15);
+            this.label5.Size = new System.Drawing.Size(103, 20);
             this.label5.TabIndex = 2;
             this.label5.Text = "Select Class : ";
             // 
             // StudentListClassCB
             // 
             this.StudentListClassCB.FormattingEnabled = true;
-            this.StudentListClassCB.Location = new System.Drawing.Point(148, 49);
+            this.StudentListClassCB.Location = new System.Drawing.Point(197, 60);
+            this.StudentListClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentListClassCB.Name = "StudentListClassCB";
-            this.StudentListClassCB.Size = new System.Drawing.Size(121, 21);
+            this.StudentListClassCB.Size = new System.Drawing.Size(160, 24);
             this.StudentListClassCB.TabIndex = 1;
             // 
             // StudentListTitleLbl
             // 
             this.StudentListTitleLbl.AutoSize = true;
             this.StudentListTitleLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentListTitleLbl.Location = new System.Drawing.Point(29, 12);
+            this.StudentListTitleLbl.Location = new System.Drawing.Point(39, 15);
+            this.StudentListTitleLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentListTitleLbl.Name = "StudentListTitleLbl";
-            this.StudentListTitleLbl.Size = new System.Drawing.Size(101, 26);
+            this.StudentListTitleLbl.Size = new System.Drawing.Size(128, 33);
             this.StudentListTitleLbl.TabIndex = 0;
             this.StudentListTitleLbl.Text = "Students";
             // 
@@ -1150,26 +1201,29 @@
             this.StudentPanel.Controls.Add(this.StudentListBtn);
             this.StudentPanel.Controls.Add(this.StudentRegistrationBtn);
             this.StudentPanel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentPanel.Location = new System.Drawing.Point(188, 55);
+            this.StudentPanel.Location = new System.Drawing.Point(251, 68);
+            this.StudentPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentPanel.Name = "StudentPanel";
-            this.StudentPanel.Size = new System.Drawing.Size(702, 410);
+            this.StudentPanel.Size = new System.Drawing.Size(936, 505);
             this.StudentPanel.TabIndex = 17;
             // 
             // StudentLbl
             // 
             this.StudentLbl.AutoSize = true;
             this.StudentLbl.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentLbl.Location = new System.Drawing.Point(302, 58);
+            this.StudentLbl.Location = new System.Drawing.Point(403, 71);
+            this.StudentLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentLbl.Name = "StudentLbl";
-            this.StudentLbl.Size = new System.Drawing.Size(101, 29);
+            this.StudentLbl.Size = new System.Drawing.Size(132, 37);
             this.StudentLbl.TabIndex = 1;
             this.StudentLbl.Text = "Student";
             // 
             // StudentUpdatebtn
             // 
-            this.StudentUpdatebtn.Location = new System.Drawing.Point(253, 236);
+            this.StudentUpdatebtn.Location = new System.Drawing.Point(337, 290);
+            this.StudentUpdatebtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentUpdatebtn.Name = "StudentUpdatebtn";
-            this.StudentUpdatebtn.Size = new System.Drawing.Size(198, 38);
+            this.StudentUpdatebtn.Size = new System.Drawing.Size(264, 47);
             this.StudentUpdatebtn.TabIndex = 0;
             this.StudentUpdatebtn.Text = "Update Student";
             this.StudentUpdatebtn.UseVisualStyleBackColor = true;
@@ -1177,9 +1231,10 @@
             // 
             // StudentDeleteBtn
             // 
-            this.StudentDeleteBtn.Location = new System.Drawing.Point(253, 192);
+            this.StudentDeleteBtn.Location = new System.Drawing.Point(337, 236);
+            this.StudentDeleteBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentDeleteBtn.Name = "StudentDeleteBtn";
-            this.StudentDeleteBtn.Size = new System.Drawing.Size(198, 38);
+            this.StudentDeleteBtn.Size = new System.Drawing.Size(264, 47);
             this.StudentDeleteBtn.TabIndex = 0;
             this.StudentDeleteBtn.Text = "Delete Student";
             this.StudentDeleteBtn.UseVisualStyleBackColor = true;
@@ -1187,9 +1242,10 @@
             // 
             // StudentListBtn
             // 
-            this.StudentListBtn.Location = new System.Drawing.Point(253, 148);
+            this.StudentListBtn.Location = new System.Drawing.Point(337, 182);
+            this.StudentListBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentListBtn.Name = "StudentListBtn";
-            this.StudentListBtn.Size = new System.Drawing.Size(198, 38);
+            this.StudentListBtn.Size = new System.Drawing.Size(264, 47);
             this.StudentListBtn.TabIndex = 0;
             this.StudentListBtn.Text = "Student List";
             this.StudentListBtn.UseVisualStyleBackColor = true;
@@ -1197,9 +1253,10 @@
             // 
             // StudentRegistrationBtn
             // 
-            this.StudentRegistrationBtn.Location = new System.Drawing.Point(253, 104);
+            this.StudentRegistrationBtn.Location = new System.Drawing.Point(337, 128);
+            this.StudentRegistrationBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentRegistrationBtn.Name = "StudentRegistrationBtn";
-            this.StudentRegistrationBtn.Size = new System.Drawing.Size(198, 38);
+            this.StudentRegistrationBtn.Size = new System.Drawing.Size(264, 47);
             this.StudentRegistrationBtn.TabIndex = 0;
             this.StudentRegistrationBtn.Text = "Student Registration";
             this.StudentRegistrationBtn.UseVisualStyleBackColor = true;
@@ -1217,18 +1274,20 @@
             this.StudentDeletePanel.Controls.Add(this.EnterSchoolNumberLbl);
             this.StudentDeletePanel.Controls.Add(this.StudentDeleteHeaderLbl);
             this.StudentDeletePanel.Controls.Add(this.StudentNumberTextBox);
-            this.StudentDeletePanel.Location = new System.Drawing.Point(188, 55);
+            this.StudentDeletePanel.Location = new System.Drawing.Point(251, 68);
+            this.StudentDeletePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentDeletePanel.Name = "StudentDeletePanel";
-            this.StudentDeletePanel.Size = new System.Drawing.Size(702, 410);
+            this.StudentDeletePanel.Size = new System.Drawing.Size(936, 505);
             this.StudentDeletePanel.TabIndex = 18;
             // 
             // InformationLbl2
             // 
             this.InformationLbl2.AutoSize = true;
             this.InformationLbl2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.InformationLbl2.Location = new System.Drawing.Point(78, 356);
+            this.InformationLbl2.Location = new System.Drawing.Point(104, 438);
+            this.InformationLbl2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.InformationLbl2.Name = "InformationLbl2";
-            this.InformationLbl2.Size = new System.Drawing.Size(89, 16);
+            this.InformationLbl2.Size = new System.Drawing.Size(110, 21);
             this.InformationLbl2.TabIndex = 9;
             this.InformationLbl2.Text = "Information : ";
             // 
@@ -1236,9 +1295,10 @@
             // 
             this.informationLbl.AutoSize = true;
             this.informationLbl.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.informationLbl.Location = new System.Drawing.Point(168, 358);
+            this.informationLbl.Location = new System.Drawing.Point(224, 441);
+            this.informationLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.informationLbl.Name = "informationLbl";
-            this.informationLbl.Size = new System.Drawing.Size(373, 15);
+            this.informationLbl.Size = new System.Drawing.Size(483, 20);
             this.informationLbl.TabIndex = 8;
             this.informationLbl.Text = "Associated parent records are also deleted when deleting a student.";
             // 
@@ -1246,18 +1306,20 @@
             // 
             this.StudentInfoLabel2.AutoSize = true;
             this.StudentInfoLabel2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentInfoLabel2.Location = new System.Drawing.Point(241, 140);
+            this.StudentInfoLabel2.Location = new System.Drawing.Point(321, 172);
+            this.StudentInfoLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentInfoLabel2.Name = "StudentInfoLabel2";
-            this.StudentInfoLabel2.Size = new System.Drawing.Size(121, 16);
+            this.StudentInfoLabel2.Size = new System.Drawing.Size(150, 21);
             this.StudentInfoLabel2.TabIndex = 7;
             this.StudentInfoLabel2.Text = "Student not found.";
             // 
             // DeleteStudentButton
             // 
             this.DeleteStudentButton.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteStudentButton.Location = new System.Drawing.Point(347, 205);
+            this.DeleteStudentButton.Location = new System.Drawing.Point(463, 252);
+            this.DeleteStudentButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteStudentButton.Name = "DeleteStudentButton";
-            this.DeleteStudentButton.Size = new System.Drawing.Size(107, 23);
+            this.DeleteStudentButton.Size = new System.Drawing.Size(143, 28);
             this.DeleteStudentButton.TabIndex = 6;
             this.DeleteStudentButton.Text = "Delete Student";
             this.DeleteStudentButton.UseVisualStyleBackColor = true;
@@ -1267,18 +1329,20 @@
             // 
             this.StudentInfoHeaderLbl.AutoSize = true;
             this.StudentInfoHeaderLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentInfoHeaderLbl.Location = new System.Drawing.Point(91, 140);
+            this.StudentInfoHeaderLbl.Location = new System.Drawing.Point(121, 172);
+            this.StudentInfoHeaderLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentInfoHeaderLbl.Name = "StudentInfoHeaderLbl";
-            this.StudentInfoHeaderLbl.Size = new System.Drawing.Size(140, 16);
+            this.StudentInfoHeaderLbl.Size = new System.Drawing.Size(174, 21);
             this.StudentInfoHeaderLbl.TabIndex = 4;
             this.StudentInfoHeaderLbl.Text = "Student Information : ";
             // 
             // SearchStudentButton
             // 
             this.SearchStudentButton.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.SearchStudentButton.Location = new System.Drawing.Point(348, 104);
+            this.SearchStudentButton.Location = new System.Drawing.Point(464, 128);
+            this.SearchStudentButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchStudentButton.Name = "SearchStudentButton";
-            this.SearchStudentButton.Size = new System.Drawing.Size(75, 23);
+            this.SearchStudentButton.Size = new System.Drawing.Size(100, 28);
             this.SearchStudentButton.TabIndex = 3;
             this.SearchStudentButton.Text = "Search";
             this.SearchStudentButton.UseVisualStyleBackColor = true;
@@ -1288,9 +1352,10 @@
             // 
             this.EnterSchoolNumberLbl.AutoSize = true;
             this.EnterSchoolNumberLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.EnterSchoolNumberLbl.Location = new System.Drawing.Point(92, 107);
+            this.EnterSchoolNumberLbl.Location = new System.Drawing.Point(123, 132);
+            this.EnterSchoolNumberLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EnterSchoolNumberLbl.Name = "EnterSchoolNumberLbl";
-            this.EnterSchoolNumberLbl.Size = new System.Drawing.Size(144, 16);
+            this.EnterSchoolNumberLbl.Size = new System.Drawing.Size(178, 21);
             this.EnterSchoolNumberLbl.TabIndex = 2;
             this.EnterSchoolNumberLbl.Text = "Enter School Number :";
             // 
@@ -1298,17 +1363,19 @@
             // 
             this.StudentDeleteHeaderLbl.AutoSize = true;
             this.StudentDeleteHeaderLbl.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentDeleteHeaderLbl.Location = new System.Drawing.Point(53, 32);
+            this.StudentDeleteHeaderLbl.Location = new System.Drawing.Point(71, 39);
+            this.StudentDeleteHeaderLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentDeleteHeaderLbl.Name = "StudentDeleteHeaderLbl";
-            this.StudentDeleteHeaderLbl.Size = new System.Drawing.Size(178, 29);
+            this.StudentDeleteHeaderLbl.Size = new System.Drawing.Size(232, 37);
             this.StudentDeleteHeaderLbl.TabIndex = 1;
             this.StudentDeleteHeaderLbl.Text = "Delete Student";
             // 
             // StudentNumberTextBox
             // 
-            this.StudentNumberTextBox.Location = new System.Drawing.Point(242, 106);
+            this.StudentNumberTextBox.Location = new System.Drawing.Point(323, 130);
+            this.StudentNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentNumberTextBox.Name = "StudentNumberTextBox";
-            this.StudentNumberTextBox.Size = new System.Drawing.Size(100, 20);
+            this.StudentNumberTextBox.Size = new System.Drawing.Size(132, 22);
             this.StudentNumberTextBox.TabIndex = 0;
             // 
             // StudentInfoLabel
@@ -1329,26 +1396,40 @@
             this.AbscencePanel.Controls.Add(this.StudentEntryAttandanceBtn);
             this.AbscencePanel.Controls.Add(this.StudentAbsenceAttandanceBtn);
             this.AbscencePanel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AbscencePanel.Location = new System.Drawing.Point(188, 55);
+            this.AbscencePanel.Location = new System.Drawing.Point(251, 68);
+            this.AbscencePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AbscencePanel.Name = "AbscencePanel";
-            this.AbscencePanel.Size = new System.Drawing.Size(702, 410);
+            this.AbscencePanel.Size = new System.Drawing.Size(936, 505);
             this.AbscencePanel.TabIndex = 19;
             // 
             // Abscence
             // 
             this.Abscence.AutoSize = true;
             this.Abscence.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Abscence.Location = new System.Drawing.Point(286, 42);
+            this.Abscence.Location = new System.Drawing.Point(381, 52);
+            this.Abscence.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Abscence.Name = "Abscence";
-            this.Abscence.Size = new System.Drawing.Size(109, 26);
+            this.Abscence.Size = new System.Drawing.Size(138, 33);
             this.Abscence.TabIndex = 2;
             this.Abscence.Text = "Abscence";
             // 
+            // DeleteAbscenceBtn
+            // 
+            this.DeleteAbscenceBtn.Location = new System.Drawing.Point(316, 295);
+            this.DeleteAbscenceBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteAbscenceBtn.Name = "DeleteAbscenceBtn";
+            this.DeleteAbscenceBtn.Size = new System.Drawing.Size(264, 62);
+            this.DeleteAbscenceBtn.TabIndex = 1;
+            this.DeleteAbscenceBtn.Text = "Delete Student Attandance";
+            this.DeleteAbscenceBtn.UseVisualStyleBackColor = true;
+            this.DeleteAbscenceBtn.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
             // UpdateStudentAttandanceBtn
             // 
-            this.UpdateStudentAttandanceBtn.Location = new System.Drawing.Point(237, 184);
+            this.UpdateStudentAttandanceBtn.Location = new System.Drawing.Point(316, 226);
+            this.UpdateStudentAttandanceBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateStudentAttandanceBtn.Name = "UpdateStudentAttandanceBtn";
-            this.UpdateStudentAttandanceBtn.Size = new System.Drawing.Size(198, 50);
+            this.UpdateStudentAttandanceBtn.Size = new System.Drawing.Size(264, 62);
             this.UpdateStudentAttandanceBtn.TabIndex = 1;
             this.UpdateStudentAttandanceBtn.Text = "Update Student Attandance";
             this.UpdateStudentAttandanceBtn.UseVisualStyleBackColor = true;
@@ -1356,9 +1437,10 @@
             // 
             // StudentEntryAttandanceBtn
             // 
-            this.StudentEntryAttandanceBtn.Location = new System.Drawing.Point(237, 128);
+            this.StudentEntryAttandanceBtn.Location = new System.Drawing.Point(316, 158);
+            this.StudentEntryAttandanceBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentEntryAttandanceBtn.Name = "StudentEntryAttandanceBtn";
-            this.StudentEntryAttandanceBtn.Size = new System.Drawing.Size(198, 50);
+            this.StudentEntryAttandanceBtn.Size = new System.Drawing.Size(264, 62);
             this.StudentEntryAttandanceBtn.TabIndex = 1;
             this.StudentEntryAttandanceBtn.Text = "Student Attandance Entry";
             this.StudentEntryAttandanceBtn.UseVisualStyleBackColor = true;
@@ -1366,9 +1448,10 @@
             // 
             // StudentAbsenceAttandanceBtn
             // 
-            this.StudentAbsenceAttandanceBtn.Location = new System.Drawing.Point(237, 76);
+            this.StudentAbsenceAttandanceBtn.Location = new System.Drawing.Point(316, 94);
+            this.StudentAbsenceAttandanceBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentAbsenceAttandanceBtn.Name = "StudentAbsenceAttandanceBtn";
-            this.StudentAbsenceAttandanceBtn.Size = new System.Drawing.Size(198, 47);
+            this.StudentAbsenceAttandanceBtn.Size = new System.Drawing.Size(264, 58);
             this.StudentAbsenceAttandanceBtn.TabIndex = 1;
             this.StudentAbsenceAttandanceBtn.Text = "Student Abscence and Attandance ";
             this.StudentAbsenceAttandanceBtn.UseVisualStyleBackColor = true;
@@ -1385,36 +1468,40 @@
             this.StudentAttandanceEntryPanel.Controls.Add(this.StudentNumber3TB);
             this.StudentAttandanceEntryPanel.Controls.Add(this.StudentNumberAbscenceLbl);
             this.StudentAttandanceEntryPanel.Controls.Add(this.StudentAbsenceEntryHeaderLbl);
-            this.StudentAttandanceEntryPanel.Location = new System.Drawing.Point(188, 55);
+            this.StudentAttandanceEntryPanel.Location = new System.Drawing.Point(251, 68);
+            this.StudentAttandanceEntryPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentAttandanceEntryPanel.Name = "StudentAttandanceEntryPanel";
-            this.StudentAttandanceEntryPanel.Size = new System.Drawing.Size(702, 410);
+            this.StudentAttandanceEntryPanel.Size = new System.Drawing.Size(936, 505);
             this.StudentAttandanceEntryPanel.TabIndex = 20;
             // 
             // AddAttendanceButton
             // 
             this.AddAttendanceButton.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AddAttendanceButton.Location = new System.Drawing.Point(406, 124);
+            this.AddAttendanceButton.Location = new System.Drawing.Point(541, 153);
+            this.AddAttendanceButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddAttendanceButton.Name = "AddAttendanceButton";
-            this.AddAttendanceButton.Size = new System.Drawing.Size(121, 23);
-            this.AddAttendanceButton.TabIndex = 6;
+            this.AddAttendanceButton.Size = new System.Drawing.Size(161, 28);
+            this.AddAttendanceButton.TabIndex = 4;
             this.AddAttendanceButton.Text = "Add Attandance";
             this.AddAttendanceButton.UseVisualStyleBackColor = true;
             this.AddAttendanceButton.Click += new System.EventHandler(this.AddAttendanceButton_Click);
             // 
             // AttendanceDatePicker
             // 
-            this.AttendanceDatePicker.Location = new System.Drawing.Point(165, 125);
+            this.AttendanceDatePicker.Location = new System.Drawing.Point(220, 154);
+            this.AttendanceDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AttendanceDatePicker.Name = "AttendanceDatePicker";
-            this.AttendanceDatePicker.Size = new System.Drawing.Size(200, 20);
-            this.AttendanceDatePicker.TabIndex = 5;
+            this.AttendanceDatePicker.Size = new System.Drawing.Size(265, 22);
+            this.AttendanceDatePicker.TabIndex = 3;
             // 
             // StudentSelectDateLbl
             // 
             this.StudentSelectDateLbl.AutoSize = true;
             this.StudentSelectDateLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentSelectDateLbl.Location = new System.Drawing.Point(44, 128);
+            this.StudentSelectDateLbl.Location = new System.Drawing.Point(59, 158);
+            this.StudentSelectDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentSelectDateLbl.Name = "StudentSelectDateLbl";
-            this.StudentSelectDateLbl.Size = new System.Drawing.Size(81, 16);
+            this.StudentSelectDateLbl.Size = new System.Drawing.Size(102, 21);
             this.StudentSelectDateLbl.TabIndex = 4;
             this.StudentSelectDateLbl.Text = "Selcet Date :";
             // 
@@ -1422,18 +1509,20 @@
             // 
             this.StudentInfo3Label.AutoSize = true;
             this.StudentInfo3Label.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentInfo3Label.Location = new System.Drawing.Point(403, 78);
+            this.StudentInfo3Label.Location = new System.Drawing.Point(537, 96);
+            this.StudentInfo3Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentInfo3Label.Name = "StudentInfo3Label";
-            this.StudentInfo3Label.Size = new System.Drawing.Size(187, 16);
+            this.StudentInfo3Label.Size = new System.Drawing.Size(233, 21);
             this.StudentInfo3Label.TabIndex = 3;
             this.StudentInfo3Label.Text = "There is no sherched student .";
             // 
             // StudentSearchBtn
             // 
             this.StudentSearchBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentSearchBtn.Location = new System.Drawing.Point(291, 73);
+            this.StudentSearchBtn.Location = new System.Drawing.Point(388, 90);
+            this.StudentSearchBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentSearchBtn.Name = "StudentSearchBtn";
-            this.StudentSearchBtn.Size = new System.Drawing.Size(75, 23);
+            this.StudentSearchBtn.Size = new System.Drawing.Size(100, 28);
             this.StudentSearchBtn.TabIndex = 2;
             this.StudentSearchBtn.Text = "Search";
             this.StudentSearchBtn.UseVisualStyleBackColor = true;
@@ -1442,18 +1531,20 @@
             // StudentNumber3TB
             // 
             this.StudentNumber3TB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentNumber3TB.Location = new System.Drawing.Point(165, 74);
+            this.StudentNumber3TB.Location = new System.Drawing.Point(220, 91);
+            this.StudentNumber3TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentNumber3TB.Name = "StudentNumber3TB";
-            this.StudentNumber3TB.Size = new System.Drawing.Size(100, 22);
+            this.StudentNumber3TB.Size = new System.Drawing.Size(132, 26);
             this.StudentNumber3TB.TabIndex = 1;
             // 
             // StudentNumberAbscenceLbl
             // 
             this.StudentNumberAbscenceLbl.AutoSize = true;
             this.StudentNumberAbscenceLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentNumberAbscenceLbl.Location = new System.Drawing.Point(44, 77);
+            this.StudentNumberAbscenceLbl.Location = new System.Drawing.Point(59, 95);
+            this.StudentNumberAbscenceLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentNumberAbscenceLbl.Name = "StudentNumberAbscenceLbl";
-            this.StudentNumberAbscenceLbl.Size = new System.Drawing.Size(118, 16);
+            this.StudentNumberAbscenceLbl.Size = new System.Drawing.Size(148, 21);
             this.StudentNumberAbscenceLbl.TabIndex = 0;
             this.StudentNumberAbscenceLbl.Text = "Student Number : ";
             // 
@@ -1461,9 +1552,10 @@
             // 
             this.StudentAbsenceEntryHeaderLbl.AutoSize = true;
             this.StudentAbsenceEntryHeaderLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentAbsenceEntryHeaderLbl.Location = new System.Drawing.Point(27, 21);
+            this.StudentAbsenceEntryHeaderLbl.Location = new System.Drawing.Point(36, 26);
+            this.StudentAbsenceEntryHeaderLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentAbsenceEntryHeaderLbl.Name = "StudentAbsenceEntryHeaderLbl";
-            this.StudentAbsenceEntryHeaderLbl.Size = new System.Drawing.Size(213, 26);
+            this.StudentAbsenceEntryHeaderLbl.Size = new System.Drawing.Size(270, 33);
             this.StudentAbsenceEntryHeaderLbl.TabIndex = 0;
             this.StudentAbsenceEntryHeaderLbl.Text = "Student Attandance";
             // 
@@ -1476,27 +1568,30 @@
             this.TeacherPanel.Controls.Add(this.TeacherDeleteBtn);
             this.TeacherPanel.Controls.Add(this.TeacherAddBtn);
             this.TeacherPanel.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TeacherPanel.Location = new System.Drawing.Point(180, 50);
+            this.TeacherPanel.Location = new System.Drawing.Point(240, 62);
+            this.TeacherPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TeacherPanel.Name = "TeacherPanel";
-            this.TeacherPanel.Size = new System.Drawing.Size(702, 410);
+            this.TeacherPanel.Size = new System.Drawing.Size(936, 505);
             this.TeacherPanel.TabIndex = 21;
             // 
             // Teacher
             // 
             this.Teacher.AutoSize = true;
             this.Teacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Teacher.Location = new System.Drawing.Point(287, 82);
+            this.Teacher.Location = new System.Drawing.Point(383, 101);
+            this.Teacher.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Teacher.Name = "Teacher";
-            this.Teacher.Size = new System.Drawing.Size(98, 25);
+            this.Teacher.Size = new System.Drawing.Size(121, 31);
             this.Teacher.TabIndex = 1;
             this.Teacher.Text = "Teacher";
             // 
             // ListTeacherBtn
             // 
             this.ListTeacherBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListTeacherBtn.Location = new System.Drawing.Point(250, 258);
+            this.ListTeacherBtn.Location = new System.Drawing.Point(333, 318);
+            this.ListTeacherBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListTeacherBtn.Name = "ListTeacherBtn";
-            this.ListTeacherBtn.Size = new System.Drawing.Size(168, 41);
+            this.ListTeacherBtn.Size = new System.Drawing.Size(224, 50);
             this.ListTeacherBtn.TabIndex = 0;
             this.ListTeacherBtn.Text = "List Teacher";
             this.ListTeacherBtn.UseVisualStyleBackColor = true;
@@ -1505,9 +1600,10 @@
             // UpdateTeacherBtn
             // 
             this.UpdateTeacherBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateTeacherBtn.Location = new System.Drawing.Point(250, 209);
+            this.UpdateTeacherBtn.Location = new System.Drawing.Point(333, 257);
+            this.UpdateTeacherBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateTeacherBtn.Name = "UpdateTeacherBtn";
-            this.UpdateTeacherBtn.Size = new System.Drawing.Size(168, 41);
+            this.UpdateTeacherBtn.Size = new System.Drawing.Size(224, 50);
             this.UpdateTeacherBtn.TabIndex = 0;
             this.UpdateTeacherBtn.Text = "Update Teacher";
             this.UpdateTeacherBtn.UseVisualStyleBackColor = true;
@@ -1516,9 +1612,10 @@
             // TeacherDeleteBtn
             // 
             this.TeacherDeleteBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TeacherDeleteBtn.Location = new System.Drawing.Point(250, 162);
+            this.TeacherDeleteBtn.Location = new System.Drawing.Point(333, 199);
+            this.TeacherDeleteBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TeacherDeleteBtn.Name = "TeacherDeleteBtn";
-            this.TeacherDeleteBtn.Size = new System.Drawing.Size(168, 41);
+            this.TeacherDeleteBtn.Size = new System.Drawing.Size(224, 50);
             this.TeacherDeleteBtn.TabIndex = 0;
             this.TeacherDeleteBtn.Text = "Delete Teacher";
             this.TeacherDeleteBtn.UseVisualStyleBackColor = true;
@@ -1527,9 +1624,10 @@
             // TeacherAddBtn
             // 
             this.TeacherAddBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TeacherAddBtn.Location = new System.Drawing.Point(250, 118);
+            this.TeacherAddBtn.Location = new System.Drawing.Point(333, 145);
+            this.TeacherAddBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TeacherAddBtn.Name = "TeacherAddBtn";
-            this.TeacherAddBtn.Size = new System.Drawing.Size(168, 41);
+            this.TeacherAddBtn.Size = new System.Drawing.Size(224, 50);
             this.TeacherAddBtn.TabIndex = 0;
             this.TeacherAddBtn.Text = "Add Teacher";
             this.TeacherAddBtn.UseVisualStyleBackColor = true;
@@ -1546,17 +1644,19 @@
             this.TeacheAddPnl.Controls.Add(this.TeacherAddNameLbl);
             this.TeacheAddPnl.Controls.Add(this.TeacherAddHeadher);
             this.TeacheAddPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TeacheAddPnl.Location = new System.Drawing.Point(188, 55);
+            this.TeacheAddPnl.Location = new System.Drawing.Point(251, 68);
+            this.TeacheAddPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TeacheAddPnl.Name = "TeacheAddPnl";
-            this.TeacheAddPnl.Size = new System.Drawing.Size(702, 410);
+            this.TeacheAddPnl.Size = new System.Drawing.Size(936, 505);
             this.TeacheAddPnl.TabIndex = 22;
             // 
             // DefineAClassTeacherBtn
             // 
-            this.DefineAClassTeacherBtn.Location = new System.Drawing.Point(396, 164);
+            this.DefineAClassTeacherBtn.Location = new System.Drawing.Point(528, 202);
+            this.DefineAClassTeacherBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DefineAClassTeacherBtn.Name = "DefineAClassTeacherBtn";
-            this.DefineAClassTeacherBtn.Size = new System.Drawing.Size(168, 23);
-            this.DefineAClassTeacherBtn.TabIndex = 6;
+            this.DefineAClassTeacherBtn.Size = new System.Drawing.Size(224, 28);
+            this.DefineAClassTeacherBtn.TabIndex = 4;
             this.DefineAClassTeacherBtn.Text = "Assign Teacher To Class";
             this.DefineAClassTeacherBtn.UseVisualStyleBackColor = true;
             this.DefineAClassTeacherBtn.Click += new System.EventHandler(this.MenuButton_Click);
@@ -1564,35 +1664,39 @@
             // TeacherAddBranchCB
             // 
             this.TeacherAddBranchCB.FormattingEnabled = true;
-            this.TeacherAddBranchCB.Location = new System.Drawing.Point(183, 101);
+            this.TeacherAddBranchCB.Location = new System.Drawing.Point(244, 124);
+            this.TeacherAddBranchCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TeacherAddBranchCB.Name = "TeacherAddBranchCB";
-            this.TeacherAddBranchCB.Size = new System.Drawing.Size(121, 24);
-            this.TeacherAddBranchCB.TabIndex = 5;
+            this.TeacherAddBranchCB.Size = new System.Drawing.Size(160, 29);
+            this.TeacherAddBranchCB.TabIndex = 2;
             // 
             // TeacherAdd2Btn
             // 
-            this.TeacherAdd2Btn.Location = new System.Drawing.Point(396, 129);
+            this.TeacherAdd2Btn.Location = new System.Drawing.Point(528, 159);
+            this.TeacherAdd2Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TeacherAdd2Btn.Name = "TeacherAdd2Btn";
-            this.TeacherAdd2Btn.Size = new System.Drawing.Size(101, 23);
-            this.TeacherAdd2Btn.TabIndex = 4;
+            this.TeacherAdd2Btn.Size = new System.Drawing.Size(135, 28);
+            this.TeacherAdd2Btn.TabIndex = 3;
             this.TeacherAdd2Btn.Text = "Add Teacher";
             this.TeacherAdd2Btn.UseVisualStyleBackColor = true;
             this.TeacherAdd2Btn.Click += new System.EventHandler(this.TeacherAdd2Btn_Click);
             // 
             // TeacherAddNameTB
             // 
-            this.TeacherAddNameTB.Location = new System.Drawing.Point(183, 72);
+            this.TeacherAddNameTB.Location = new System.Drawing.Point(244, 89);
+            this.TeacherAddNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TeacherAddNameTB.Name = "TeacherAddNameTB";
-            this.TeacherAddNameTB.Size = new System.Drawing.Size(100, 22);
-            this.TeacherAddNameTB.TabIndex = 2;
+            this.TeacherAddNameTB.Size = new System.Drawing.Size(132, 26);
+            this.TeacherAddNameTB.TabIndex = 1;
             // 
             // TeacherAddBranchLbl
             // 
             this.TeacherAddBranchLbl.AutoSize = true;
             this.TeacherAddBranchLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TeacherAddBranchLbl.Location = new System.Drawing.Point(77, 104);
+            this.TeacherAddBranchLbl.Location = new System.Drawing.Point(103, 128);
+            this.TeacherAddBranchLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TeacherAddBranchLbl.Name = "TeacherAddBranchLbl";
-            this.TeacherAddBranchLbl.Size = new System.Drawing.Size(59, 16);
+            this.TeacherAddBranchLbl.Size = new System.Drawing.Size(74, 21);
             this.TeacherAddBranchLbl.TabIndex = 1;
             this.TeacherAddBranchLbl.Text = "Branch  :";
             // 
@@ -1600,9 +1704,10 @@
             // 
             this.TeacherAddNameLbl.AutoSize = true;
             this.TeacherAddNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TeacherAddNameLbl.Location = new System.Drawing.Point(77, 75);
+            this.TeacherAddNameLbl.Location = new System.Drawing.Point(103, 92);
+            this.TeacherAddNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TeacherAddNameLbl.Name = "TeacherAddNameLbl";
-            this.TeacherAddNameLbl.Size = new System.Drawing.Size(100, 16);
+            this.TeacherAddNameLbl.Size = new System.Drawing.Size(126, 21);
             this.TeacherAddNameLbl.TabIndex = 1;
             this.TeacherAddNameLbl.Text = "Teacher Name :";
             // 
@@ -1610,9 +1715,10 @@
             // 
             this.TeacherAddHeadher.AutoSize = true;
             this.TeacherAddHeadher.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TeacherAddHeadher.Location = new System.Drawing.Point(24, 17);
+            this.TeacherAddHeadher.Location = new System.Drawing.Point(32, 21);
+            this.TeacherAddHeadher.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TeacherAddHeadher.Name = "TeacherAddHeadher";
-            this.TeacherAddHeadher.Size = new System.Drawing.Size(137, 26);
+            this.TeacherAddHeadher.Size = new System.Drawing.Size(174, 33);
             this.TeacherAddHeadher.TabIndex = 0;
             this.TeacherAddHeadher.Text = "Add Teacher";
             // 
@@ -1649,58 +1755,65 @@
             this.StudentUpdatePanel.Controls.Add(this.UpdateStudentFirstNameTB);
             this.StudentUpdatePanel.Controls.Add(this.UpdateStudentSchoolNumberTB);
             this.StudentUpdatePanel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.StudentUpdatePanel.Location = new System.Drawing.Point(188, 55);
+            this.StudentUpdatePanel.Location = new System.Drawing.Point(251, 68);
+            this.StudentUpdatePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentUpdatePanel.Name = "StudentUpdatePanel";
-            this.StudentUpdatePanel.Size = new System.Drawing.Size(702, 410);
+            this.StudentUpdatePanel.Size = new System.Drawing.Size(936, 505);
             this.StudentUpdatePanel.TabIndex = 23;
             // 
             // UpdateStudentDistrictCB
             // 
             this.UpdateStudentDistrictCB.FormattingEnabled = true;
-            this.UpdateStudentDistrictCB.Location = new System.Drawing.Point(360, 175);
+            this.UpdateStudentDistrictCB.Location = new System.Drawing.Point(480, 215);
+            this.UpdateStudentDistrictCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateStudentDistrictCB.Name = "UpdateStudentDistrictCB";
-            this.UpdateStudentDistrictCB.Size = new System.Drawing.Size(121, 21);
-            this.UpdateStudentDistrictCB.TabIndex = 5;
+            this.UpdateStudentDistrictCB.Size = new System.Drawing.Size(160, 24);
+            this.UpdateStudentDistrictCB.TabIndex = 7;
             // 
             // UpdateStudentClassCB
             // 
             this.UpdateStudentClassCB.FormattingEnabled = true;
-            this.UpdateStudentClassCB.Location = new System.Drawing.Point(161, 223);
+            this.UpdateStudentClassCB.Location = new System.Drawing.Point(215, 274);
+            this.UpdateStudentClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateStudentClassCB.Name = "UpdateStudentClassCB";
-            this.UpdateStudentClassCB.Size = new System.Drawing.Size(121, 21);
-            this.UpdateStudentClassCB.TabIndex = 5;
+            this.UpdateStudentClassCB.Size = new System.Drawing.Size(160, 24);
+            this.UpdateStudentClassCB.TabIndex = 9;
             // 
             // UpdateStudentCityCB
             // 
             this.UpdateStudentCityCB.FormattingEnabled = true;
-            this.UpdateStudentCityCB.Location = new System.Drawing.Point(162, 174);
+            this.UpdateStudentCityCB.Location = new System.Drawing.Point(216, 214);
+            this.UpdateStudentCityCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateStudentCityCB.Name = "UpdateStudentCityCB";
-            this.UpdateStudentCityCB.Size = new System.Drawing.Size(121, 21);
-            this.UpdateStudentCityCB.TabIndex = 5;
+            this.UpdateStudentCityCB.Size = new System.Drawing.Size(160, 24);
+            this.UpdateStudentCityCB.TabIndex = 6;
             // 
             // UpdateStudentGenderCB
             // 
             this.UpdateStudentGenderCB.FormattingEnabled = true;
-            this.UpdateStudentGenderCB.Location = new System.Drawing.Point(162, 151);
+            this.UpdateStudentGenderCB.Location = new System.Drawing.Point(216, 186);
+            this.UpdateStudentGenderCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateStudentGenderCB.Name = "UpdateStudentGenderCB";
-            this.UpdateStudentGenderCB.Size = new System.Drawing.Size(121, 21);
+            this.UpdateStudentGenderCB.Size = new System.Drawing.Size(160, 24);
             this.UpdateStudentGenderCB.TabIndex = 5;
             // 
             // UpdateStudentBirthdayDTP
             // 
             this.UpdateStudentBirthdayDTP.CalendarFont = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentBirthdayDTP.Location = new System.Drawing.Point(162, 127);
+            this.UpdateStudentBirthdayDTP.Location = new System.Drawing.Point(216, 156);
+            this.UpdateStudentBirthdayDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateStudentBirthdayDTP.Name = "UpdateStudentBirthdayDTP";
-            this.UpdateStudentBirthdayDTP.Size = new System.Drawing.Size(200, 20);
+            this.UpdateStudentBirthdayDTP.Size = new System.Drawing.Size(265, 22);
             this.UpdateStudentBirthdayDTP.TabIndex = 4;
             // 
             // UpdateStudentBtn
             // 
             this.UpdateStudentBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentBtn.Location = new System.Drawing.Point(475, 346);
+            this.UpdateStudentBtn.Location = new System.Drawing.Point(633, 426);
+            this.UpdateStudentBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateStudentBtn.Name = "UpdateStudentBtn";
-            this.UpdateStudentBtn.Size = new System.Drawing.Size(139, 23);
-            this.UpdateStudentBtn.TabIndex = 3;
+            this.UpdateStudentBtn.Size = new System.Drawing.Size(185, 28);
+            this.UpdateStudentBtn.TabIndex = 14;
             this.UpdateStudentBtn.Text = "Update Student";
             this.UpdateStudentBtn.UseVisualStyleBackColor = true;
             this.UpdateStudentBtn.Click += new System.EventHandler(this.UpdateStudentBtn_Click);
@@ -1708,10 +1821,11 @@
             // GetStudentInfoBtn
             // 
             this.GetStudentInfoBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.GetStudentInfoBtn.Location = new System.Drawing.Point(348, 42);
+            this.GetStudentInfoBtn.Location = new System.Drawing.Point(464, 52);
+            this.GetStudentInfoBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GetStudentInfoBtn.Name = "GetStudentInfoBtn";
-            this.GetStudentInfoBtn.Size = new System.Drawing.Size(139, 23);
-            this.GetStudentInfoBtn.TabIndex = 3;
+            this.GetStudentInfoBtn.Size = new System.Drawing.Size(185, 28);
+            this.GetStudentInfoBtn.TabIndex = 1;
             this.GetStudentInfoBtn.Text = "Get Student Info";
             this.GetStudentInfoBtn.UseVisualStyleBackColor = true;
             this.GetStudentInfoBtn.Click += new System.EventHandler(this.GetStudentInfoBtn_Click);
@@ -1720,9 +1834,10 @@
             // 
             this.UpdateStudentDistrictLbl.AutoSize = true;
             this.UpdateStudentDistrictLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentDistrictLbl.Location = new System.Drawing.Point(297, 176);
+            this.UpdateStudentDistrictLbl.Location = new System.Drawing.Point(396, 217);
+            this.UpdateStudentDistrictLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateStudentDistrictLbl.Name = "UpdateStudentDistrictLbl";
-            this.UpdateStudentDistrictLbl.Size = new System.Drawing.Size(57, 16);
+            this.UpdateStudentDistrictLbl.Size = new System.Drawing.Size(70, 21);
             this.UpdateStudentDistrictLbl.TabIndex = 2;
             this.UpdateStudentDistrictLbl.Text = "District :";
             // 
@@ -1730,9 +1845,10 @@
             // 
             this.UpdateParentPhoneLbl.AutoSize = true;
             this.UpdateParentPhoneLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateParentPhoneLbl.Location = new System.Drawing.Point(76, 299);
+            this.UpdateParentPhoneLbl.Location = new System.Drawing.Point(101, 368);
+            this.UpdateParentPhoneLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateParentPhoneLbl.Name = "UpdateParentPhoneLbl";
-            this.UpdateParentPhoneLbl.Size = new System.Drawing.Size(97, 16);
+            this.UpdateParentPhoneLbl.Size = new System.Drawing.Size(121, 21);
             this.UpdateParentPhoneLbl.TabIndex = 2;
             this.UpdateParentPhoneLbl.Text = "Parent Phone :";
             // 
@@ -1740,9 +1856,10 @@
             // 
             this.UpdateParentEmailLbl.AutoSize = true;
             this.UpdateParentEmailLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateParentEmailLbl.Location = new System.Drawing.Point(77, 274);
+            this.UpdateParentEmailLbl.Location = new System.Drawing.Point(103, 337);
+            this.UpdateParentEmailLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateParentEmailLbl.Name = "UpdateParentEmailLbl";
-            this.UpdateParentEmailLbl.Size = new System.Drawing.Size(91, 16);
+            this.UpdateParentEmailLbl.Size = new System.Drawing.Size(115, 21);
             this.UpdateParentEmailLbl.TabIndex = 2;
             this.UpdateParentEmailLbl.Text = "Parent Email :";
             // 
@@ -1750,9 +1867,10 @@
             // 
             this.UpdateParentNameLbl.AutoSize = true;
             this.UpdateParentNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateParentNameLbl.Location = new System.Drawing.Point(77, 253);
+            this.UpdateParentNameLbl.Location = new System.Drawing.Point(103, 311);
+            this.UpdateParentNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateParentNameLbl.Name = "UpdateParentNameLbl";
-            this.UpdateParentNameLbl.Size = new System.Drawing.Size(94, 16);
+            this.UpdateParentNameLbl.Size = new System.Drawing.Size(118, 21);
             this.UpdateParentNameLbl.TabIndex = 2;
             this.UpdateParentNameLbl.Text = "Parent Name :";
             // 
@@ -1760,9 +1878,10 @@
             // 
             this.UpdateStudentNumberLbl.AutoSize = true;
             this.UpdateStudentNumberLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentNumberLbl.Location = new System.Drawing.Point(290, 224);
+            this.UpdateStudentNumberLbl.Location = new System.Drawing.Point(387, 276);
+            this.UpdateStudentNumberLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateStudentNumberLbl.Name = "UpdateStudentNumberLbl";
-            this.UpdateStudentNumberLbl.Size = new System.Drawing.Size(44, 16);
+            this.UpdateStudentNumberLbl.Size = new System.Drawing.Size(55, 21);
             this.UpdateStudentNumberLbl.TabIndex = 2;
             this.UpdateStudentNumberLbl.Text = "Class :";
             // 
@@ -1770,9 +1889,10 @@
             // 
             this.UpdateStudentClassLbl.AutoSize = true;
             this.UpdateStudentClassLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentClassLbl.Location = new System.Drawing.Point(77, 224);
+            this.UpdateStudentClassLbl.Location = new System.Drawing.Point(103, 276);
+            this.UpdateStudentClassLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateStudentClassLbl.Name = "UpdateStudentClassLbl";
-            this.UpdateStudentClassLbl.Size = new System.Drawing.Size(44, 16);
+            this.UpdateStudentClassLbl.Size = new System.Drawing.Size(55, 21);
             this.UpdateStudentClassLbl.TabIndex = 2;
             this.UpdateStudentClassLbl.Text = "Class :";
             // 
@@ -1780,9 +1900,10 @@
             // 
             this.UpdateStudentAddressLbl.AutoSize = true;
             this.UpdateStudentAddressLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentAddressLbl.Location = new System.Drawing.Point(77, 201);
+            this.UpdateStudentAddressLbl.Location = new System.Drawing.Point(103, 247);
+            this.UpdateStudentAddressLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateStudentAddressLbl.Name = "UpdateStudentAddressLbl";
-            this.UpdateStudentAddressLbl.Size = new System.Drawing.Size(54, 16);
+            this.UpdateStudentAddressLbl.Size = new System.Drawing.Size(67, 21);
             this.UpdateStudentAddressLbl.TabIndex = 2;
             this.UpdateStudentAddressLbl.Text = "Adress :";
             // 
@@ -1790,9 +1911,10 @@
             // 
             this.UpdateStudentCityLbl.AutoSize = true;
             this.UpdateStudentCityLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentCityLbl.Location = new System.Drawing.Point(76, 176);
+            this.UpdateStudentCityLbl.Location = new System.Drawing.Point(101, 217);
+            this.UpdateStudentCityLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateStudentCityLbl.Name = "UpdateStudentCityLbl";
-            this.UpdateStudentCityLbl.Size = new System.Drawing.Size(37, 16);
+            this.UpdateStudentCityLbl.Size = new System.Drawing.Size(46, 21);
             this.UpdateStudentCityLbl.TabIndex = 2;
             this.UpdateStudentCityLbl.Text = "City :";
             // 
@@ -1800,9 +1922,10 @@
             // 
             this.UpdateStudentGenderLbl.AutoSize = true;
             this.UpdateStudentGenderLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentGenderLbl.Location = new System.Drawing.Point(76, 154);
+            this.UpdateStudentGenderLbl.Location = new System.Drawing.Point(101, 190);
+            this.UpdateStudentGenderLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateStudentGenderLbl.Name = "UpdateStudentGenderLbl";
-            this.UpdateStudentGenderLbl.Size = new System.Drawing.Size(57, 16);
+            this.UpdateStudentGenderLbl.Size = new System.Drawing.Size(73, 21);
             this.UpdateStudentGenderLbl.TabIndex = 2;
             this.UpdateStudentGenderLbl.Text = "Gender :";
             // 
@@ -1810,9 +1933,10 @@
             // 
             this.UpdateStudentBirthdayLbl.AutoSize = true;
             this.UpdateStudentBirthdayLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentBirthdayLbl.Location = new System.Drawing.Point(76, 131);
+            this.UpdateStudentBirthdayLbl.Location = new System.Drawing.Point(101, 161);
+            this.UpdateStudentBirthdayLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateStudentBirthdayLbl.Name = "UpdateStudentBirthdayLbl";
-            this.UpdateStudentBirthdayLbl.Size = new System.Drawing.Size(65, 16);
+            this.UpdateStudentBirthdayLbl.Size = new System.Drawing.Size(81, 21);
             this.UpdateStudentBirthdayLbl.TabIndex = 2;
             this.UpdateStudentBirthdayLbl.Text = "Birthday :";
             // 
@@ -1820,9 +1944,10 @@
             // 
             this.UpdateStudentLastNameLbl.AutoSize = true;
             this.UpdateStudentLastNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentLastNameLbl.Location = new System.Drawing.Point(76, 102);
+            this.UpdateStudentLastNameLbl.Location = new System.Drawing.Point(101, 126);
+            this.UpdateStudentLastNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateStudentLastNameLbl.Name = "UpdateStudentLastNameLbl";
-            this.UpdateStudentLastNameLbl.Size = new System.Drawing.Size(78, 16);
+            this.UpdateStudentLastNameLbl.Size = new System.Drawing.Size(98, 21);
             this.UpdateStudentLastNameLbl.TabIndex = 2;
             this.UpdateStudentLastNameLbl.Text = "Last Name :";
             // 
@@ -1830,9 +1955,10 @@
             // 
             this.UpdateStudentFirstNameLbl.AutoSize = true;
             this.UpdateStudentFirstNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentFirstNameLbl.Location = new System.Drawing.Point(76, 78);
+            this.UpdateStudentFirstNameLbl.Location = new System.Drawing.Point(101, 96);
+            this.UpdateStudentFirstNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateStudentFirstNameLbl.Name = "UpdateStudentFirstNameLbl";
-            this.UpdateStudentFirstNameLbl.Size = new System.Drawing.Size(80, 16);
+            this.UpdateStudentFirstNameLbl.Size = new System.Drawing.Size(99, 21);
             this.UpdateStudentFirstNameLbl.TabIndex = 2;
             this.UpdateStudentFirstNameLbl.Text = "First Name :";
             // 
@@ -1840,9 +1966,10 @@
             // 
             this.StudentSchoolNumberSearchlBL.AutoSize = true;
             this.StudentSchoolNumberSearchlBL.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentSchoolNumberSearchlBL.Location = new System.Drawing.Point(77, 45);
+            this.StudentSchoolNumberSearchlBL.Location = new System.Drawing.Point(103, 55);
+            this.StudentSchoolNumberSearchlBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentSchoolNumberSearchlBL.Name = "StudentSchoolNumberSearchlBL";
-            this.StudentSchoolNumberSearchlBL.Size = new System.Drawing.Size(144, 16);
+            this.StudentSchoolNumberSearchlBL.Size = new System.Drawing.Size(178, 21);
             this.StudentSchoolNumberSearchlBL.TabIndex = 2;
             this.StudentSchoolNumberSearchlBL.Text = "Enter School Number :";
             // 
@@ -1850,74 +1977,83 @@
             // 
             this.UpdateStudentHeaderLbl.AutoSize = true;
             this.UpdateStudentHeaderLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentHeaderLbl.Location = new System.Drawing.Point(27, 13);
+            this.UpdateStudentHeaderLbl.Location = new System.Drawing.Point(36, 16);
+            this.UpdateStudentHeaderLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateStudentHeaderLbl.Name = "UpdateStudentHeaderLbl";
-            this.UpdateStudentHeaderLbl.Size = new System.Drawing.Size(169, 26);
+            this.UpdateStudentHeaderLbl.Size = new System.Drawing.Size(215, 33);
             this.UpdateStudentHeaderLbl.TabIndex = 1;
             this.UpdateStudentHeaderLbl.Text = "Update Student";
             // 
             // UpdateStudentAddressTB
             // 
             this.UpdateStudentAddressTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentAddressTB.Location = new System.Drawing.Point(162, 198);
+            this.UpdateStudentAddressTB.Location = new System.Drawing.Point(216, 244);
+            this.UpdateStudentAddressTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateStudentAddressTB.Name = "UpdateStudentAddressTB";
-            this.UpdateStudentAddressTB.Size = new System.Drawing.Size(319, 22);
-            this.UpdateStudentAddressTB.TabIndex = 0;
+            this.UpdateStudentAddressTB.Size = new System.Drawing.Size(424, 26);
+            this.UpdateStudentAddressTB.TabIndex = 8;
             // 
             // UpdateParentPhoneTB
             // 
             this.UpdateParentPhoneTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateParentPhoneTB.Location = new System.Drawing.Point(176, 299);
+            this.UpdateParentPhoneTB.Location = new System.Drawing.Point(235, 368);
+            this.UpdateParentPhoneTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateParentPhoneTB.Name = "UpdateParentPhoneTB";
-            this.UpdateParentPhoneTB.Size = new System.Drawing.Size(100, 22);
-            this.UpdateParentPhoneTB.TabIndex = 0;
+            this.UpdateParentPhoneTB.Size = new System.Drawing.Size(132, 26);
+            this.UpdateParentPhoneTB.TabIndex = 13;
             // 
             // UpdateParentEmailTB
             // 
             this.UpdateParentEmailTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateParentEmailTB.Location = new System.Drawing.Point(176, 274);
+            this.UpdateParentEmailTB.Location = new System.Drawing.Point(235, 337);
+            this.UpdateParentEmailTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateParentEmailTB.Name = "UpdateParentEmailTB";
-            this.UpdateParentEmailTB.Size = new System.Drawing.Size(100, 22);
-            this.UpdateParentEmailTB.TabIndex = 0;
+            this.UpdateParentEmailTB.Size = new System.Drawing.Size(132, 26);
+            this.UpdateParentEmailTB.TabIndex = 12;
             // 
             // UpdateParentNameTB
             // 
             this.UpdateParentNameTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateParentNameTB.Location = new System.Drawing.Point(176, 250);
+            this.UpdateParentNameTB.Location = new System.Drawing.Point(235, 308);
+            this.UpdateParentNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateParentNameTB.Name = "UpdateParentNameTB";
-            this.UpdateParentNameTB.Size = new System.Drawing.Size(100, 22);
-            this.UpdateParentNameTB.TabIndex = 0;
+            this.UpdateParentNameTB.Size = new System.Drawing.Size(132, 26);
+            this.UpdateParentNameTB.TabIndex = 11;
             // 
             // UpdateStudentNumberTB
             // 
             this.UpdateStudentNumberTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentNumberTB.Location = new System.Drawing.Point(339, 221);
+            this.UpdateStudentNumberTB.Location = new System.Drawing.Point(452, 272);
+            this.UpdateStudentNumberTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateStudentNumberTB.Name = "UpdateStudentNumberTB";
-            this.UpdateStudentNumberTB.Size = new System.Drawing.Size(100, 22);
-            this.UpdateStudentNumberTB.TabIndex = 0;
+            this.UpdateStudentNumberTB.Size = new System.Drawing.Size(132, 26);
+            this.UpdateStudentNumberTB.TabIndex = 10;
             // 
             // UpdateStudentLastNameTB
             // 
             this.UpdateStudentLastNameTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentLastNameTB.Location = new System.Drawing.Point(162, 99);
+            this.UpdateStudentLastNameTB.Location = new System.Drawing.Point(216, 122);
+            this.UpdateStudentLastNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateStudentLastNameTB.Name = "UpdateStudentLastNameTB";
-            this.UpdateStudentLastNameTB.Size = new System.Drawing.Size(100, 22);
-            this.UpdateStudentLastNameTB.TabIndex = 0;
+            this.UpdateStudentLastNameTB.Size = new System.Drawing.Size(132, 26);
+            this.UpdateStudentLastNameTB.TabIndex = 3;
             // 
             // UpdateStudentFirstNameTB
             // 
             this.UpdateStudentFirstNameTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentFirstNameTB.Location = new System.Drawing.Point(162, 75);
+            this.UpdateStudentFirstNameTB.Location = new System.Drawing.Point(216, 92);
+            this.UpdateStudentFirstNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateStudentFirstNameTB.Name = "UpdateStudentFirstNameTB";
-            this.UpdateStudentFirstNameTB.Size = new System.Drawing.Size(100, 22);
-            this.UpdateStudentFirstNameTB.TabIndex = 0;
+            this.UpdateStudentFirstNameTB.Size = new System.Drawing.Size(132, 26);
+            this.UpdateStudentFirstNameTB.TabIndex = 2;
             // 
             // UpdateStudentSchoolNumberTB
             // 
             this.UpdateStudentSchoolNumberTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentSchoolNumberTB.Location = new System.Drawing.Point(230, 44);
+            this.UpdateStudentSchoolNumberTB.Location = new System.Drawing.Point(307, 54);
+            this.UpdateStudentSchoolNumberTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateStudentSchoolNumberTB.Name = "UpdateStudentSchoolNumberTB";
-            this.UpdateStudentSchoolNumberTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateStudentSchoolNumberTB.Size = new System.Drawing.Size(132, 26);
             this.UpdateStudentSchoolNumberTB.TabIndex = 0;
             // 
             // ClassPanel
@@ -1929,27 +2065,30 @@
             this.ClassPanel.Controls.Add(this.UpdateClassBtn);
             this.ClassPanel.Controls.Add(this.AddClassBtn);
             this.ClassPanel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ClassPanel.Location = new System.Drawing.Point(188, 55);
+            this.ClassPanel.Location = new System.Drawing.Point(251, 68);
+            this.ClassPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClassPanel.Name = "ClassPanel";
-            this.ClassPanel.Size = new System.Drawing.Size(702, 410);
+            this.ClassPanel.Size = new System.Drawing.Size(936, 505);
             this.ClassPanel.TabIndex = 24;
             // 
             // Class
             // 
             this.Class.AutoSize = true;
             this.Class.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Class.Location = new System.Drawing.Point(297, 82);
+            this.Class.Location = new System.Drawing.Point(396, 101);
+            this.Class.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Class.Name = "Class";
-            this.Class.Size = new System.Drawing.Size(69, 29);
+            this.Class.Size = new System.Drawing.Size(90, 37);
             this.Class.TabIndex = 1;
             this.Class.Text = "Class";
             // 
             // DeleteClassBtn
             // 
             this.DeleteClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteClassBtn.Location = new System.Drawing.Point(242, 258);
+            this.DeleteClassBtn.Location = new System.Drawing.Point(323, 318);
+            this.DeleteClassBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteClassBtn.Name = "DeleteClassBtn";
-            this.DeleteClassBtn.Size = new System.Drawing.Size(179, 37);
+            this.DeleteClassBtn.Size = new System.Drawing.Size(239, 46);
             this.DeleteClassBtn.TabIndex = 0;
             this.DeleteClassBtn.Text = "Delete Class";
             this.DeleteClassBtn.UseVisualStyleBackColor = true;
@@ -1958,9 +2097,10 @@
             // ListClassBtn
             // 
             this.ListClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListClassBtn.Location = new System.Drawing.Point(242, 215);
+            this.ListClassBtn.Location = new System.Drawing.Point(323, 265);
+            this.ListClassBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListClassBtn.Name = "ListClassBtn";
-            this.ListClassBtn.Size = new System.Drawing.Size(179, 37);
+            this.ListClassBtn.Size = new System.Drawing.Size(239, 46);
             this.ListClassBtn.TabIndex = 0;
             this.ListClassBtn.Text = "List Class";
             this.ListClassBtn.UseVisualStyleBackColor = true;
@@ -1969,9 +2109,10 @@
             // UpdateClassBtn
             // 
             this.UpdateClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateClassBtn.Location = new System.Drawing.Point(242, 172);
+            this.UpdateClassBtn.Location = new System.Drawing.Point(323, 212);
+            this.UpdateClassBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateClassBtn.Name = "UpdateClassBtn";
-            this.UpdateClassBtn.Size = new System.Drawing.Size(179, 37);
+            this.UpdateClassBtn.Size = new System.Drawing.Size(239, 46);
             this.UpdateClassBtn.TabIndex = 0;
             this.UpdateClassBtn.Text = "Update Class";
             this.UpdateClassBtn.UseVisualStyleBackColor = true;
@@ -1980,9 +2121,10 @@
             // AddClassBtn
             // 
             this.AddClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AddClassBtn.Location = new System.Drawing.Point(242, 129);
+            this.AddClassBtn.Location = new System.Drawing.Point(323, 159);
+            this.AddClassBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddClassBtn.Name = "AddClassBtn";
-            this.AddClassBtn.Size = new System.Drawing.Size(179, 37);
+            this.AddClassBtn.Size = new System.Drawing.Size(239, 46);
             this.AddClassBtn.TabIndex = 0;
             this.AddClassBtn.Text = "Add Class";
             this.AddClassBtn.UseVisualStyleBackColor = true;
@@ -1996,17 +2138,19 @@
             this.AddClassPnl.Controls.Add(this.ClassNameLbl2);
             this.AddClassPnl.Controls.Add(this.ClassNameLbl);
             this.AddClassPnl.Controls.Add(this.AddClassHeader);
-            this.AddClassPnl.Location = new System.Drawing.Point(188, 55);
+            this.AddClassPnl.Location = new System.Drawing.Point(251, 68);
+            this.AddClassPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddClassPnl.Name = "AddClassPnl";
-            this.AddClassPnl.Size = new System.Drawing.Size(702, 410);
+            this.AddClassPnl.Size = new System.Drawing.Size(936, 505);
             this.AddClassPnl.TabIndex = 25;
             // 
             // AddClassBtn2
             // 
             this.AddClassBtn2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AddClassBtn2.Location = new System.Drawing.Point(432, 133);
+            this.AddClassBtn2.Location = new System.Drawing.Point(576, 164);
+            this.AddClassBtn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddClassBtn2.Name = "AddClassBtn2";
-            this.AddClassBtn2.Size = new System.Drawing.Size(89, 23);
+            this.AddClassBtn2.Size = new System.Drawing.Size(119, 28);
             this.AddClassBtn2.TabIndex = 2;
             this.AddClassBtn2.Text = "Add Class";
             this.AddClassBtn2.UseVisualStyleBackColor = true;
@@ -2014,18 +2158,20 @@
             // 
             // AddClassTB
             // 
-            this.AddClassTB.Location = new System.Drawing.Point(190, 72);
+            this.AddClassTB.Location = new System.Drawing.Point(253, 89);
+            this.AddClassTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddClassTB.Name = "AddClassTB";
-            this.AddClassTB.Size = new System.Drawing.Size(100, 20);
+            this.AddClassTB.Size = new System.Drawing.Size(132, 22);
             this.AddClassTB.TabIndex = 1;
             // 
             // ClassNameLbl2
             // 
             this.ClassNameLbl2.AutoSize = true;
             this.ClassNameLbl2.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ClassNameLbl2.Location = new System.Drawing.Point(100, 100);
+            this.ClassNameLbl2.Location = new System.Drawing.Point(133, 123);
+            this.ClassNameLbl2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClassNameLbl2.Name = "ClassNameLbl2";
-            this.ClassNameLbl2.Size = new System.Drawing.Size(379, 15);
+            this.ClassNameLbl2.Size = new System.Drawing.Size(492, 20);
             this.ClassNameLbl2.TabIndex = 0;
             this.ClassNameLbl2.Text = "*When writing, please put a \'-\' sign between the branch and the class.";
             // 
@@ -2033,9 +2179,10 @@
             // 
             this.ClassNameLbl.AutoSize = true;
             this.ClassNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ClassNameLbl.Location = new System.Drawing.Point(100, 73);
+            this.ClassNameLbl.Location = new System.Drawing.Point(133, 90);
+            this.ClassNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClassNameLbl.Name = "ClassNameLbl";
-            this.ClassNameLbl.Size = new System.Drawing.Size(84, 16);
+            this.ClassNameLbl.Size = new System.Drawing.Size(105, 21);
             this.ClassNameLbl.TabIndex = 0;
             this.ClassNameLbl.Text = "Class Name :";
             // 
@@ -2043,9 +2190,10 @@
             // 
             this.AddClassHeader.AutoSize = true;
             this.AddClassHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AddClassHeader.Location = new System.Drawing.Point(40, 22);
+            this.AddClassHeader.Location = new System.Drawing.Point(53, 27);
+            this.AddClassHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddClassHeader.Name = "AddClassHeader";
-            this.AddClassHeader.Size = new System.Drawing.Size(110, 26);
+            this.AddClassHeader.Size = new System.Drawing.Size(140, 33);
             this.AddClassHeader.TabIndex = 0;
             this.AddClassHeader.Text = "Add Class";
             // 
@@ -2059,18 +2207,20 @@
             this.UpdateClassPnl.Controls.Add(this.classLbl);
             this.UpdateClassPnl.Controls.Add(this.classComboBox);
             this.UpdateClassPnl.Controls.Add(this.UpdateClassLbl);
-            this.UpdateClassPnl.Location = new System.Drawing.Point(188, 55);
+            this.UpdateClassPnl.Location = new System.Drawing.Point(251, 68);
+            this.UpdateClassPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateClassPnl.Name = "UpdateClassPnl";
-            this.UpdateClassPnl.Size = new System.Drawing.Size(702, 410);
+            this.UpdateClassPnl.Size = new System.Drawing.Size(936, 505);
             this.UpdateClassPnl.TabIndex = 26;
             // 
             // updateClassButton
             // 
             this.updateClassButton.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.updateClassButton.Location = new System.Drawing.Point(458, 148);
+            this.updateClassButton.Location = new System.Drawing.Point(611, 182);
+            this.updateClassButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.updateClassButton.Name = "updateClassButton";
-            this.updateClassButton.Size = new System.Drawing.Size(106, 23);
-            this.updateClassButton.TabIndex = 4;
+            this.updateClassButton.Size = new System.Drawing.Size(141, 28);
+            this.updateClassButton.TabIndex = 3;
             this.updateClassButton.Text = "Update Class";
             this.updateClassButton.UseVisualStyleBackColor = true;
             this.updateClassButton.Click += new System.EventHandler(this.updateClassButton_Click);
@@ -2078,18 +2228,20 @@
             // newClassNameTextBox
             // 
             this.newClassNameTextBox.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.newClassNameTextBox.Location = new System.Drawing.Point(183, 82);
+            this.newClassNameTextBox.Location = new System.Drawing.Point(244, 101);
+            this.newClassNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.newClassNameTextBox.Name = "newClassNameTextBox";
-            this.newClassNameTextBox.Size = new System.Drawing.Size(121, 22);
-            this.newClassNameTextBox.TabIndex = 3;
+            this.newClassNameTextBox.Size = new System.Drawing.Size(160, 26);
+            this.newClassNameTextBox.TabIndex = 2;
             // 
             // UpdateClassInformationLbl
             // 
             this.UpdateClassInformationLbl.AutoSize = true;
             this.UpdateClassInformationLbl.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateClassInformationLbl.Location = new System.Drawing.Point(118, 108);
+            this.UpdateClassInformationLbl.Location = new System.Drawing.Point(157, 133);
+            this.UpdateClassInformationLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateClassInformationLbl.Name = "UpdateClassInformationLbl";
-            this.UpdateClassInformationLbl.Size = new System.Drawing.Size(379, 15);
+            this.UpdateClassInformationLbl.Size = new System.Drawing.Size(492, 20);
             this.UpdateClassInformationLbl.TabIndex = 2;
             this.UpdateClassInformationLbl.Text = "*When writing, please put a \'-\' sign between the branch and the class.";
             // 
@@ -2097,9 +2249,10 @@
             // 
             this.newClassNameLbl.AutoSize = true;
             this.newClassNameLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.newClassNameLbl.Location = new System.Drawing.Point(98, 85);
+            this.newClassNameLbl.Location = new System.Drawing.Point(131, 105);
+            this.newClassNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.newClassNameLbl.Name = "newClassNameLbl";
-            this.newClassNameLbl.Size = new System.Drawing.Size(87, 16);
+            this.newClassNameLbl.Size = new System.Drawing.Size(109, 21);
             this.newClassNameLbl.TabIndex = 2;
             this.newClassNameLbl.Text = "Class Name : ";
             // 
@@ -2107,27 +2260,30 @@
             // 
             this.classLbl.AutoSize = true;
             this.classLbl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.classLbl.Location = new System.Drawing.Point(98, 58);
+            this.classLbl.Location = new System.Drawing.Point(131, 71);
+            this.classLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.classLbl.Name = "classLbl";
-            this.classLbl.Size = new System.Drawing.Size(83, 16);
+            this.classLbl.Size = new System.Drawing.Size(104, 21);
             this.classLbl.TabIndex = 2;
             this.classLbl.Text = "Select Class :";
             // 
             // classComboBox
             // 
             this.classComboBox.FormattingEnabled = true;
-            this.classComboBox.Location = new System.Drawing.Point(183, 57);
+            this.classComboBox.Location = new System.Drawing.Point(244, 70);
+            this.classComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.classComboBox.Name = "classComboBox";
-            this.classComboBox.Size = new System.Drawing.Size(121, 21);
+            this.classComboBox.Size = new System.Drawing.Size(160, 24);
             this.classComboBox.TabIndex = 1;
             // 
             // UpdateClassLbl
             // 
             this.UpdateClassLbl.AutoSize = true;
             this.UpdateClassLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateClassLbl.Location = new System.Drawing.Point(27, 17);
+            this.UpdateClassLbl.Location = new System.Drawing.Point(36, 21);
+            this.UpdateClassLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateClassLbl.Name = "UpdateClassLbl";
-            this.UpdateClassLbl.Size = new System.Drawing.Size(142, 26);
+            this.UpdateClassLbl.Size = new System.Drawing.Size(181, 33);
             this.UpdateClassLbl.TabIndex = 0;
             this.UpdateClassLbl.Text = "Update Class";
             // 
@@ -2140,17 +2296,19 @@
             this.ListClassPnl.Controls.Add(this.StuıdentListLbl);
             this.ListClassPnl.Controls.Add(this.ListClassHeaderLbl);
             this.ListClassPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListClassPnl.Location = new System.Drawing.Point(188, 55);
+            this.ListClassPnl.Location = new System.Drawing.Point(251, 68);
+            this.ListClassPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListClassPnl.Name = "ListClassPnl";
-            this.ListClassPnl.Size = new System.Drawing.Size(702, 410);
+            this.ListClassPnl.Size = new System.Drawing.Size(936, 505);
             this.ListClassPnl.TabIndex = 27;
             // 
             // ListStudentButton
             // 
-            this.ListStudentButton.Location = new System.Drawing.Point(360, 64);
+            this.ListStudentButton.Location = new System.Drawing.Point(480, 79);
+            this.ListStudentButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListStudentButton.Name = "ListStudentButton";
-            this.ListStudentButton.Size = new System.Drawing.Size(109, 23);
-            this.ListStudentButton.TabIndex = 4;
+            this.ListStudentButton.Size = new System.Drawing.Size(145, 28);
+            this.ListStudentButton.TabIndex = 2;
             this.ListStudentButton.Text = "List Student";
             this.ListStudentButton.UseVisualStyleBackColor = true;
             this.ListStudentButton.Click += new System.EventHandler(this.ListStudentButton_Click);
@@ -2158,26 +2316,29 @@
             // HowManyStudentLbl
             // 
             this.HowManyStudentLbl.AutoSize = true;
-            this.HowManyStudentLbl.Location = new System.Drawing.Point(194, 118);
+            this.HowManyStudentLbl.Location = new System.Drawing.Point(259, 145);
+            this.HowManyStudentLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.HowManyStudentLbl.Name = "HowManyStudentLbl";
-            this.HowManyStudentLbl.Size = new System.Drawing.Size(181, 16);
+            this.HowManyStudentLbl.Size = new System.Drawing.Size(226, 21);
             this.HowManyStudentLbl.TabIndex = 3;
             this.HowManyStudentLbl.Text = "There is no selected student .";
             // 
             // ListClassCB
             // 
             this.ListClassCB.FormattingEnabled = true;
-            this.ListClassCB.Location = new System.Drawing.Point(197, 64);
+            this.ListClassCB.Location = new System.Drawing.Point(263, 79);
+            this.ListClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListClassCB.Name = "ListClassCB";
-            this.ListClassCB.Size = new System.Drawing.Size(121, 24);
-            this.ListClassCB.TabIndex = 2;
+            this.ListClassCB.Size = new System.Drawing.Size(160, 29);
+            this.ListClassCB.TabIndex = 1;
             // 
             // StuıdentListLbl
             // 
             this.StuıdentListLbl.AutoSize = true;
-            this.StuıdentListLbl.Location = new System.Drawing.Point(104, 67);
+            this.StuıdentListLbl.Location = new System.Drawing.Point(139, 82);
+            this.StuıdentListLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuıdentListLbl.Name = "StuıdentListLbl";
-            this.StuıdentListLbl.Size = new System.Drawing.Size(83, 16);
+            this.StuıdentListLbl.Size = new System.Drawing.Size(104, 21);
             this.StuıdentListLbl.TabIndex = 1;
             this.StuıdentListLbl.Text = "Select Class :";
             // 
@@ -2185,9 +2346,10 @@
             // 
             this.ListClassHeaderLbl.AutoSize = true;
             this.ListClassHeaderLbl.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListClassHeaderLbl.Location = new System.Drawing.Point(39, 22);
+            this.ListClassHeaderLbl.Location = new System.Drawing.Point(52, 27);
+            this.ListClassHeaderLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ListClassHeaderLbl.Name = "ListClassHeaderLbl";
-            this.ListClassHeaderLbl.Size = new System.Drawing.Size(104, 26);
+            this.ListClassHeaderLbl.Size = new System.Drawing.Size(132, 33);
             this.ListClassHeaderLbl.TabIndex = 0;
             this.ListClassHeaderLbl.Text = "List Class";
             // 
@@ -2200,17 +2362,19 @@
             this.DeleteClassPnl.Controls.Add(this.DeleteClassLbl);
             this.DeleteClassPnl.Controls.Add(this.ClassDeleteHeader);
             this.DeleteClassPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteClassPnl.Location = new System.Drawing.Point(188, 55);
+            this.DeleteClassPnl.Location = new System.Drawing.Point(251, 68);
+            this.DeleteClassPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteClassPnl.Name = "DeleteClassPnl";
-            this.DeleteClassPnl.Size = new System.Drawing.Size(702, 410);
+            this.DeleteClassPnl.Size = new System.Drawing.Size(936, 505);
             this.DeleteClassPnl.TabIndex = 28;
             // 
             // DeleteClassButton
             // 
-            this.DeleteClassButton.Location = new System.Drawing.Point(371, 64);
+            this.DeleteClassButton.Location = new System.Drawing.Point(495, 79);
+            this.DeleteClassButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteClassButton.Name = "DeleteClassButton";
-            this.DeleteClassButton.Size = new System.Drawing.Size(116, 23);
-            this.DeleteClassButton.TabIndex = 3;
+            this.DeleteClassButton.Size = new System.Drawing.Size(155, 28);
+            this.DeleteClassButton.TabIndex = 2;
             this.DeleteClassButton.Text = "Delete Class";
             this.DeleteClassButton.UseVisualStyleBackColor = true;
             this.DeleteClassButton.Click += new System.EventHandler(this.DeleteClassButton_Click);
@@ -2218,27 +2382,30 @@
             // DeleteClassCB
             // 
             this.DeleteClassCB.FormattingEnabled = true;
-            this.DeleteClassCB.Location = new System.Drawing.Point(213, 64);
+            this.DeleteClassCB.Location = new System.Drawing.Point(284, 79);
+            this.DeleteClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteClassCB.Name = "DeleteClassCB";
-            this.DeleteClassCB.Size = new System.Drawing.Size(121, 24);
-            this.DeleteClassCB.TabIndex = 2;
+            this.DeleteClassCB.Size = new System.Drawing.Size(160, 29);
+            this.DeleteClassCB.TabIndex = 1;
             // 
             // DeleteClassImportantLbl
             // 
             this.DeleteClassImportantLbl.AutoSize = true;
             this.DeleteClassImportantLbl.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteClassImportantLbl.Location = new System.Drawing.Point(142, 96);
+            this.DeleteClassImportantLbl.Location = new System.Drawing.Point(189, 118);
+            this.DeleteClassImportantLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DeleteClassImportantLbl.Name = "DeleteClassImportantLbl";
-            this.DeleteClassImportantLbl.Size = new System.Drawing.Size(340, 15);
+            this.DeleteClassImportantLbl.Size = new System.Drawing.Size(441, 20);
             this.DeleteClassImportantLbl.TabIndex = 1;
             this.DeleteClassImportantLbl.Text = "*Before deleting a class, make sure there are no students in it.";
             // 
             // DeleteClassLbl
             // 
             this.DeleteClassLbl.AutoSize = true;
-            this.DeleteClassLbl.Location = new System.Drawing.Point(118, 68);
+            this.DeleteClassLbl.Location = new System.Drawing.Point(157, 84);
+            this.DeleteClassLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DeleteClassLbl.Name = "DeleteClassLbl";
-            this.DeleteClassLbl.Size = new System.Drawing.Size(86, 16);
+            this.DeleteClassLbl.Size = new System.Drawing.Size(108, 21);
             this.DeleteClassLbl.TabIndex = 1;
             this.DeleteClassLbl.Text = "Select Class : ";
             // 
@@ -2246,9 +2413,10 @@
             // 
             this.ClassDeleteHeader.AutoSize = true;
             this.ClassDeleteHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ClassDeleteHeader.Location = new System.Drawing.Point(28, 12);
+            this.ClassDeleteHeader.Location = new System.Drawing.Point(37, 15);
+            this.ClassDeleteHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClassDeleteHeader.Name = "ClassDeleteHeader";
-            this.ClassDeleteHeader.Size = new System.Drawing.Size(135, 26);
+            this.ClassDeleteHeader.Size = new System.Drawing.Size(170, 33);
             this.ClassDeleteHeader.TabIndex = 0;
             this.ClassDeleteHeader.Text = "Delete Class";
             // 
@@ -2262,25 +2430,28 @@
             this.AssignTeacherToClassPnl.Controls.Add(this.SelectTeacherNameLbl);
             this.AssignTeacherToClassPnl.Controls.Add(this.AssignTeacherToClassHeader);
             this.AssignTeacherToClassPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AssignTeacherToClassPnl.Location = new System.Drawing.Point(188, 55);
+            this.AssignTeacherToClassPnl.Location = new System.Drawing.Point(251, 68);
+            this.AssignTeacherToClassPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AssignTeacherToClassPnl.Name = "AssignTeacherToClassPnl";
-            this.AssignTeacherToClassPnl.Size = new System.Drawing.Size(702, 410);
+            this.AssignTeacherToClassPnl.Size = new System.Drawing.Size(936, 505);
             this.AssignTeacherToClassPnl.TabIndex = 29;
             // 
             // TeacherBranchLbl
             // 
             this.TeacherBranchLbl.AutoSize = true;
-            this.TeacherBranchLbl.Location = new System.Drawing.Point(345, 61);
+            this.TeacherBranchLbl.Location = new System.Drawing.Point(460, 75);
+            this.TeacherBranchLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TeacherBranchLbl.Name = "TeacherBranchLbl";
-            this.TeacherBranchLbl.Size = new System.Drawing.Size(120, 16);
+            this.TeacherBranchLbl.Size = new System.Drawing.Size(149, 21);
             this.TeacherBranchLbl.TabIndex = 4;
             this.TeacherBranchLbl.Text = "Teacher not found.";
             // 
             // AssignClassBtn
             // 
-            this.AssignClassBtn.Location = new System.Drawing.Point(423, 116);
+            this.AssignClassBtn.Location = new System.Drawing.Point(564, 143);
+            this.AssignClassBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AssignClassBtn.Name = "AssignClassBtn";
-            this.AssignClassBtn.Size = new System.Drawing.Size(110, 25);
+            this.AssignClassBtn.Size = new System.Drawing.Size(147, 31);
             this.AssignClassBtn.TabIndex = 3;
             this.AssignClassBtn.Text = "Assign Class";
             this.AssignClassBtn.UseVisualStyleBackColor = true;
@@ -2289,34 +2460,38 @@
             // SelectClassCB
             // 
             this.SelectClassCB.FormattingEnabled = true;
-            this.SelectClassCB.Location = new System.Drawing.Point(199, 88);
+            this.SelectClassCB.Location = new System.Drawing.Point(265, 108);
+            this.SelectClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelectClassCB.Name = "SelectClassCB";
-            this.SelectClassCB.Size = new System.Drawing.Size(121, 24);
+            this.SelectClassCB.Size = new System.Drawing.Size(160, 29);
             this.SelectClassCB.TabIndex = 2;
             // 
             // SelectTeacherCB
             // 
             this.SelectTeacherCB.FormattingEnabled = true;
-            this.SelectTeacherCB.Location = new System.Drawing.Point(199, 58);
+            this.SelectTeacherCB.Location = new System.Drawing.Point(265, 71);
+            this.SelectTeacherCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelectTeacherCB.Name = "SelectTeacherCB";
-            this.SelectTeacherCB.Size = new System.Drawing.Size(121, 24);
-            this.SelectTeacherCB.TabIndex = 2;
+            this.SelectTeacherCB.Size = new System.Drawing.Size(160, 29);
+            this.SelectTeacherCB.TabIndex = 1;
             // 
             // SelectClassLbl
             // 
             this.SelectClassLbl.AutoSize = true;
-            this.SelectClassLbl.Location = new System.Drawing.Point(94, 93);
+            this.SelectClassLbl.Location = new System.Drawing.Point(125, 114);
+            this.SelectClassLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SelectClassLbl.Name = "SelectClassLbl";
-            this.SelectClassLbl.Size = new System.Drawing.Size(83, 16);
+            this.SelectClassLbl.Size = new System.Drawing.Size(104, 21);
             this.SelectClassLbl.TabIndex = 1;
             this.SelectClassLbl.Text = "Select Class :";
             // 
             // SelectTeacherNameLbl
             // 
             this.SelectTeacherNameLbl.AutoSize = true;
-            this.SelectTeacherNameLbl.Location = new System.Drawing.Point(94, 61);
+            this.SelectTeacherNameLbl.Location = new System.Drawing.Point(125, 75);
+            this.SelectTeacherNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SelectTeacherNameLbl.Name = "SelectTeacherNameLbl";
-            this.SelectTeacherNameLbl.Size = new System.Drawing.Size(99, 16);
+            this.SelectTeacherNameLbl.Size = new System.Drawing.Size(125, 21);
             this.SelectTeacherNameLbl.TabIndex = 1;
             this.SelectTeacherNameLbl.Text = "Select Teacher :";
             // 
@@ -2324,9 +2499,10 @@
             // 
             this.AssignTeacherToClassHeader.AutoSize = true;
             this.AssignTeacherToClassHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AssignTeacherToClassHeader.Location = new System.Drawing.Point(36, 20);
+            this.AssignTeacherToClassHeader.Location = new System.Drawing.Point(48, 25);
+            this.AssignTeacherToClassHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AssignTeacherToClassHeader.Name = "AssignTeacherToClassHeader";
-            this.AssignTeacherToClassHeader.Size = new System.Drawing.Size(136, 26);
+            this.AssignTeacherToClassHeader.Size = new System.Drawing.Size(173, 33);
             this.AssignTeacherToClassHeader.TabIndex = 0;
             this.AssignTeacherToClassHeader.Text = "Assign Class";
             // 
@@ -2346,102 +2522,114 @@
             this.UpdateTeacherPnl.Controls.Add(this.SelectUpdatedTeacherLbl);
             this.UpdateTeacherPnl.Controls.Add(this.UpdateTeacherHeader);
             this.UpdateTeacherPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateTeacherPnl.Location = new System.Drawing.Point(188, 55);
+            this.UpdateTeacherPnl.Location = new System.Drawing.Point(251, 68);
+            this.UpdateTeacherPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateTeacherPnl.Name = "UpdateTeacherPnl";
-            this.UpdateTeacherPnl.Size = new System.Drawing.Size(702, 410);
+            this.UpdateTeacherPnl.Size = new System.Drawing.Size(936, 505);
             this.UpdateTeacherPnl.TabIndex = 30;
             // 
             // UpdateTeacherBtn2
             // 
-            this.UpdateTeacherBtn2.Location = new System.Drawing.Point(423, 223);
+            this.UpdateTeacherBtn2.Location = new System.Drawing.Point(564, 274);
+            this.UpdateTeacherBtn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateTeacherBtn2.Name = "UpdateTeacherBtn2";
-            this.UpdateTeacherBtn2.Size = new System.Drawing.Size(118, 23);
-            this.UpdateTeacherBtn2.TabIndex = 4;
+            this.UpdateTeacherBtn2.Size = new System.Drawing.Size(157, 28);
+            this.UpdateTeacherBtn2.TabIndex = 6;
             this.UpdateTeacherBtn2.Text = "Update Teacher";
             this.UpdateTeacherBtn2.UseVisualStyleBackColor = true;
             this.UpdateTeacherBtn2.Click += new System.EventHandler(this.UpdateTeacherBtn2_Click);
             // 
             // UpdateTeacherNameTB
             // 
-            this.UpdateTeacherNameTB.Location = new System.Drawing.Point(197, 102);
+            this.UpdateTeacherNameTB.Location = new System.Drawing.Point(263, 126);
+            this.UpdateTeacherNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateTeacherNameTB.Name = "UpdateTeacherNameTB";
-            this.UpdateTeacherNameTB.Size = new System.Drawing.Size(121, 22);
-            this.UpdateTeacherNameTB.TabIndex = 3;
+            this.UpdateTeacherNameTB.Size = new System.Drawing.Size(160, 26);
+            this.UpdateTeacherNameTB.TabIndex = 2;
             // 
             // SelectTeacherClassCB
             // 
             this.SelectTeacherClassCB.FormattingEnabled = true;
-            this.SelectTeacherClassCB.Location = new System.Drawing.Point(420, 161);
+            this.SelectTeacherClassCB.Location = new System.Drawing.Point(560, 198);
+            this.SelectTeacherClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelectTeacherClassCB.Name = "SelectTeacherClassCB";
-            this.SelectTeacherClassCB.Size = new System.Drawing.Size(121, 24);
-            this.SelectTeacherClassCB.TabIndex = 2;
+            this.SelectTeacherClassCB.Size = new System.Drawing.Size(160, 29);
+            this.SelectTeacherClassCB.TabIndex = 5;
             // 
             // UpdateTeacherBranchCB
             // 
             this.UpdateTeacherBranchCB.FormattingEnabled = true;
-            this.UpdateTeacherBranchCB.Location = new System.Drawing.Point(197, 130);
+            this.UpdateTeacherBranchCB.Location = new System.Drawing.Point(263, 160);
+            this.UpdateTeacherBranchCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateTeacherBranchCB.Name = "UpdateTeacherBranchCB";
-            this.UpdateTeacherBranchCB.Size = new System.Drawing.Size(121, 24);
-            this.UpdateTeacherBranchCB.TabIndex = 2;
+            this.UpdateTeacherBranchCB.Size = new System.Drawing.Size(160, 29);
+            this.UpdateTeacherBranchCB.TabIndex = 3;
             // 
             // WhichClassUpdatedCB
             // 
             this.WhichClassUpdatedCB.FormattingEnabled = true;
-            this.WhichClassUpdatedCB.Location = new System.Drawing.Point(197, 158);
+            this.WhichClassUpdatedCB.Location = new System.Drawing.Point(263, 194);
+            this.WhichClassUpdatedCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.WhichClassUpdatedCB.Name = "WhichClassUpdatedCB";
-            this.WhichClassUpdatedCB.Size = new System.Drawing.Size(121, 24);
-            this.WhichClassUpdatedCB.TabIndex = 2;
+            this.WhichClassUpdatedCB.Size = new System.Drawing.Size(160, 29);
+            this.WhichClassUpdatedCB.TabIndex = 4;
             // 
             // SelectUpdateTeacherCB
             // 
             this.SelectUpdateTeacherCB.FormattingEnabled = true;
-            this.SelectUpdateTeacherCB.Location = new System.Drawing.Point(197, 69);
+            this.SelectUpdateTeacherCB.Location = new System.Drawing.Point(263, 85);
+            this.SelectUpdateTeacherCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelectUpdateTeacherCB.Name = "SelectUpdateTeacherCB";
-            this.SelectUpdateTeacherCB.Size = new System.Drawing.Size(121, 24);
-            this.SelectUpdateTeacherCB.TabIndex = 2;
+            this.SelectUpdateTeacherCB.Size = new System.Drawing.Size(160, 29);
+            this.SelectUpdateTeacherCB.TabIndex = 1;
             // 
             // WhichClassLbl
             // 
             this.WhichClassLbl.AutoSize = true;
-            this.WhichClassLbl.Location = new System.Drawing.Point(323, 164);
+            this.WhichClassLbl.Location = new System.Drawing.Point(431, 202);
+            this.WhichClassLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.WhichClassLbl.Name = "WhichClassLbl";
-            this.WhichClassLbl.Size = new System.Drawing.Size(86, 16);
+            this.WhichClassLbl.Size = new System.Drawing.Size(108, 21);
             this.WhichClassLbl.TabIndex = 1;
             this.WhichClassLbl.Text = "Which Class :";
             // 
             // UpdateTeacherClassLbl
             // 
             this.UpdateTeacherClassLbl.AutoSize = true;
-            this.UpdateTeacherClassLbl.Location = new System.Drawing.Point(94, 161);
+            this.UpdateTeacherClassLbl.Location = new System.Drawing.Point(125, 198);
+            this.UpdateTeacherClassLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateTeacherClassLbl.Name = "UpdateTeacherClassLbl";
-            this.UpdateTeacherClassLbl.Size = new System.Drawing.Size(94, 16);
+            this.UpdateTeacherClassLbl.Size = new System.Drawing.Size(118, 21);
             this.UpdateTeacherClassLbl.TabIndex = 1;
             this.UpdateTeacherClassLbl.Text = "Teacher Class :";
             // 
             // UpdateTeacherBranchLbl
             // 
             this.UpdateTeacherBranchLbl.AutoSize = true;
-            this.UpdateTeacherBranchLbl.Location = new System.Drawing.Point(92, 133);
+            this.UpdateTeacherBranchLbl.Location = new System.Drawing.Point(123, 164);
+            this.UpdateTeacherBranchLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateTeacherBranchLbl.Name = "UpdateTeacherBranchLbl";
-            this.UpdateTeacherBranchLbl.Size = new System.Drawing.Size(106, 16);
+            this.UpdateTeacherBranchLbl.Size = new System.Drawing.Size(133, 21);
             this.UpdateTeacherBranchLbl.TabIndex = 1;
             this.UpdateTeacherBranchLbl.Text = "Teacher Branch :";
             // 
             // TeacherNameLbl
             // 
             this.TeacherNameLbl.AutoSize = true;
-            this.TeacherNameLbl.Location = new System.Drawing.Point(92, 104);
+            this.TeacherNameLbl.Location = new System.Drawing.Point(123, 128);
+            this.TeacherNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TeacherNameLbl.Name = "TeacherNameLbl";
-            this.TeacherNameLbl.Size = new System.Drawing.Size(100, 16);
+            this.TeacherNameLbl.Size = new System.Drawing.Size(126, 21);
             this.TeacherNameLbl.TabIndex = 1;
             this.TeacherNameLbl.Text = "Teacher Name :";
             // 
             // SelectUpdatedTeacherLbl
             // 
             this.SelectUpdatedTeacherLbl.AutoSize = true;
-            this.SelectUpdatedTeacherLbl.Location = new System.Drawing.Point(92, 71);
+            this.SelectUpdatedTeacherLbl.Location = new System.Drawing.Point(123, 87);
+            this.SelectUpdatedTeacherLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SelectUpdatedTeacherLbl.Name = "SelectUpdatedTeacherLbl";
-            this.SelectUpdatedTeacherLbl.Size = new System.Drawing.Size(99, 16);
+            this.SelectUpdatedTeacherLbl.Size = new System.Drawing.Size(125, 21);
             this.SelectUpdatedTeacherLbl.TabIndex = 1;
             this.SelectUpdatedTeacherLbl.Text = "Select Teacher :";
             // 
@@ -2449,9 +2637,10 @@
             // 
             this.UpdateTeacherHeader.AutoSize = true;
             this.UpdateTeacherHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateTeacherHeader.Location = new System.Drawing.Point(37, 14);
+            this.UpdateTeacherHeader.Location = new System.Drawing.Point(49, 17);
+            this.UpdateTeacherHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateTeacherHeader.Name = "UpdateTeacherHeader";
-            this.UpdateTeacherHeader.Size = new System.Drawing.Size(169, 26);
+            this.UpdateTeacherHeader.Size = new System.Drawing.Size(215, 33);
             this.UpdateTeacherHeader.TabIndex = 0;
             this.UpdateTeacherHeader.Text = "Update Teacher";
             // 
@@ -2465,16 +2654,18 @@
             this.ListTeacherPnl.Controls.Add(this.ListTeacherHeader);
             this.ListTeacherPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ListTeacherPnl.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.ListTeacherPnl.Location = new System.Drawing.Point(188, 55);
+            this.ListTeacherPnl.Location = new System.Drawing.Point(251, 68);
+            this.ListTeacherPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListTeacherPnl.Name = "ListTeacherPnl";
-            this.ListTeacherPnl.Size = new System.Drawing.Size(702, 410);
+            this.ListTeacherPnl.Size = new System.Drawing.Size(936, 505);
             this.ListTeacherPnl.TabIndex = 31;
             // 
             // FilterTeacherBtn
             // 
-            this.FilterTeacherBtn.Location = new System.Drawing.Point(307, 64);
+            this.FilterTeacherBtn.Location = new System.Drawing.Point(409, 79);
+            this.FilterTeacherBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FilterTeacherBtn.Name = "FilterTeacherBtn";
-            this.FilterTeacherBtn.Size = new System.Drawing.Size(75, 23);
+            this.FilterTeacherBtn.Size = new System.Drawing.Size(100, 28);
             this.FilterTeacherBtn.TabIndex = 4;
             this.FilterTeacherBtn.Text = "Filter";
             this.FilterTeacherBtn.UseVisualStyleBackColor = true;
@@ -2483,35 +2674,40 @@
             // ListedTeacherDGV
             // 
             this.ListedTeacherDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListedTeacherDGV.Location = new System.Drawing.Point(109, 103);
+            this.ListedTeacherDGV.Location = new System.Drawing.Point(145, 127);
+            this.ListedTeacherDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListedTeacherDGV.Name = "ListedTeacherDGV";
-            this.ListedTeacherDGV.Size = new System.Drawing.Size(452, 233);
+            this.ListedTeacherDGV.RowHeadersWidth = 51;
+            this.ListedTeacherDGV.Size = new System.Drawing.Size(603, 287);
             this.ListedTeacherDGV.TabIndex = 3;
             // 
             // FilterClassLbl
             // 
             this.FilterClassLbl.AutoSize = true;
-            this.FilterClassLbl.Location = new System.Drawing.Point(101, 69);
+            this.FilterClassLbl.Location = new System.Drawing.Point(135, 85);
+            this.FilterClassLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FilterClassLbl.Name = "FilterClassLbl";
-            this.FilterClassLbl.Size = new System.Drawing.Size(47, 16);
+            this.FilterClassLbl.Size = new System.Drawing.Size(59, 21);
             this.FilterClassLbl.TabIndex = 2;
             this.FilterClassLbl.Text = "Class : ";
             // 
             // FilterClassCB
             // 
             this.FilterClassCB.FormattingEnabled = true;
-            this.FilterClassCB.Location = new System.Drawing.Point(161, 65);
+            this.FilterClassCB.Location = new System.Drawing.Point(215, 80);
+            this.FilterClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FilterClassCB.Name = "FilterClassCB";
-            this.FilterClassCB.Size = new System.Drawing.Size(121, 24);
+            this.FilterClassCB.Size = new System.Drawing.Size(160, 29);
             this.FilterClassCB.TabIndex = 1;
             // 
             // ListTeacherHeader
             // 
             this.ListTeacherHeader.AutoSize = true;
             this.ListTeacherHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListTeacherHeader.Location = new System.Drawing.Point(17, 19);
+            this.ListTeacherHeader.Location = new System.Drawing.Point(23, 23);
+            this.ListTeacherHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ListTeacherHeader.Name = "ListTeacherHeader";
-            this.ListTeacherHeader.Size = new System.Drawing.Size(131, 26);
+            this.ListTeacherHeader.Size = new System.Drawing.Size(166, 33);
             this.ListTeacherHeader.TabIndex = 0;
             this.ListTeacherHeader.Text = "List Teacher";
             // 
@@ -2525,16 +2721,18 @@
             this.DeleteTeacherPnl.Controls.Add(this.SelectDeleteTeacherLbl);
             this.DeleteTeacherPnl.Controls.Add(this.DeleteTeacherHeader);
             this.DeleteTeacherPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteTeacherPnl.Location = new System.Drawing.Point(188, 55);
+            this.DeleteTeacherPnl.Location = new System.Drawing.Point(251, 68);
+            this.DeleteTeacherPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteTeacherPnl.Name = "DeleteTeacherPnl";
-            this.DeleteTeacherPnl.Size = new System.Drawing.Size(702, 410);
+            this.DeleteTeacherPnl.Size = new System.Drawing.Size(936, 505);
             this.DeleteTeacherPnl.TabIndex = 32;
             // 
             // SearchTeacherBtn
             // 
-            this.SearchTeacherBtn.Location = new System.Drawing.Point(379, 81);
+            this.SearchTeacherBtn.Location = new System.Drawing.Point(505, 100);
+            this.SearchTeacherBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchTeacherBtn.Name = "SearchTeacherBtn";
-            this.SearchTeacherBtn.Size = new System.Drawing.Size(113, 23);
+            this.SearchTeacherBtn.Size = new System.Drawing.Size(151, 28);
             this.SearchTeacherBtn.TabIndex = 5;
             this.SearchTeacherBtn.Text = "Search Teacher";
             this.SearchTeacherBtn.UseVisualStyleBackColor = true;
@@ -2543,17 +2741,19 @@
             // GetTeacherInfoLbl
             // 
             this.GetTeacherInfoLbl.AutoSize = true;
-            this.GetTeacherInfoLbl.Location = new System.Drawing.Point(234, 119);
+            this.GetTeacherInfoLbl.Location = new System.Drawing.Point(312, 146);
+            this.GetTeacherInfoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GetTeacherInfoLbl.Name = "GetTeacherInfoLbl";
-            this.GetTeacherInfoLbl.Size = new System.Drawing.Size(117, 16);
+            this.GetTeacherInfoLbl.Size = new System.Drawing.Size(146, 21);
             this.GetTeacherInfoLbl.TabIndex = 4;
             this.GetTeacherInfoLbl.Text = "Teacher not found";
             // 
             // DeleteTeacherBtn
             // 
-            this.DeleteTeacherBtn.Location = new System.Drawing.Point(498, 174);
+            this.DeleteTeacherBtn.Location = new System.Drawing.Point(664, 214);
+            this.DeleteTeacherBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteTeacherBtn.Name = "DeleteTeacherBtn";
-            this.DeleteTeacherBtn.Size = new System.Drawing.Size(75, 23);
+            this.DeleteTeacherBtn.Size = new System.Drawing.Size(100, 28);
             this.DeleteTeacherBtn.TabIndex = 3;
             this.DeleteTeacherBtn.Text = "Delete Teacher";
             this.DeleteTeacherBtn.UseVisualStyleBackColor = true;
@@ -2562,17 +2762,19 @@
             // SelectDeleteTeacherCB
             // 
             this.SelectDeleteTeacherCB.FormattingEnabled = true;
-            this.SelectDeleteTeacherCB.Location = new System.Drawing.Point(233, 81);
+            this.SelectDeleteTeacherCB.Location = new System.Drawing.Point(311, 100);
+            this.SelectDeleteTeacherCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelectDeleteTeacherCB.Name = "SelectDeleteTeacherCB";
-            this.SelectDeleteTeacherCB.Size = new System.Drawing.Size(121, 24);
+            this.SelectDeleteTeacherCB.Size = new System.Drawing.Size(160, 29);
             this.SelectDeleteTeacherCB.TabIndex = 2;
             // 
             // SelectDeleteTeacherLbl
             // 
             this.SelectDeleteTeacherLbl.AutoSize = true;
-            this.SelectDeleteTeacherLbl.Location = new System.Drawing.Point(125, 84);
+            this.SelectDeleteTeacherLbl.Location = new System.Drawing.Point(167, 103);
+            this.SelectDeleteTeacherLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SelectDeleteTeacherLbl.Name = "SelectDeleteTeacherLbl";
-            this.SelectDeleteTeacherLbl.Size = new System.Drawing.Size(99, 16);
+            this.SelectDeleteTeacherLbl.Size = new System.Drawing.Size(125, 21);
             this.SelectDeleteTeacherLbl.TabIndex = 1;
             this.SelectDeleteTeacherLbl.Text = "Select Teacher :";
             // 
@@ -2580,9 +2782,10 @@
             // 
             this.DeleteTeacherHeader.AutoSize = true;
             this.DeleteTeacherHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteTeacherHeader.Location = new System.Drawing.Point(31, 23);
+            this.DeleteTeacherHeader.Location = new System.Drawing.Point(41, 28);
+            this.DeleteTeacherHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DeleteTeacherHeader.Name = "DeleteTeacherHeader";
-            this.DeleteTeacherHeader.Size = new System.Drawing.Size(162, 26);
+            this.DeleteTeacherHeader.Size = new System.Drawing.Size(204, 33);
             this.DeleteTeacherHeader.TabIndex = 0;
             this.DeleteTeacherHeader.Text = "Delete Teacher";
             // 
@@ -2596,24 +2799,28 @@
             this.StudentCanteenPnl.Controls.Add(this.CanteenStudentNumberTB);
             this.StudentCanteenPnl.Controls.Add(this.StudentCanteenHeader);
             this.StudentCanteenPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentCanteenPnl.Location = new System.Drawing.Point(188, 55);
+            this.StudentCanteenPnl.Location = new System.Drawing.Point(251, 68);
+            this.StudentCanteenPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudentCanteenPnl.Name = "StudentCanteenPnl";
-            this.StudentCanteenPnl.Size = new System.Drawing.Size(702, 410);
+            this.StudentCanteenPnl.Size = new System.Drawing.Size(936, 505);
             this.StudentCanteenPnl.TabIndex = 33;
             // 
             // CanteenStudentDGV
             // 
             this.CanteenStudentDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CanteenStudentDGV.Location = new System.Drawing.Point(127, 127);
+            this.CanteenStudentDGV.Location = new System.Drawing.Point(169, 156);
+            this.CanteenStudentDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CanteenStudentDGV.Name = "CanteenStudentDGV";
-            this.CanteenStudentDGV.Size = new System.Drawing.Size(367, 180);
+            this.CanteenStudentDGV.RowHeadersWidth = 51;
+            this.CanteenStudentDGV.Size = new System.Drawing.Size(489, 222);
             this.CanteenStudentDGV.TabIndex = 5;
             // 
             // CanteenSeachStudentBtn
             // 
-            this.CanteenSeachStudentBtn.Location = new System.Drawing.Point(320, 46);
+            this.CanteenSeachStudentBtn.Location = new System.Drawing.Point(427, 57);
+            this.CanteenSeachStudentBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CanteenSeachStudentBtn.Name = "CanteenSeachStudentBtn";
-            this.CanteenSeachStudentBtn.Size = new System.Drawing.Size(75, 23);
+            this.CanteenSeachStudentBtn.Size = new System.Drawing.Size(100, 28);
             this.CanteenSeachStudentBtn.TabIndex = 4;
             this.CanteenSeachStudentBtn.Text = "Search";
             this.CanteenSeachStudentBtn.UseVisualStyleBackColor = true;
@@ -2622,35 +2829,39 @@
             // CanteenStudentGetInfoLbl
             // 
             this.CanteenStudentGetInfoLbl.AutoSize = true;
-            this.CanteenStudentGetInfoLbl.Location = new System.Drawing.Point(437, 50);
+            this.CanteenStudentGetInfoLbl.Location = new System.Drawing.Point(583, 62);
+            this.CanteenStudentGetInfoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CanteenStudentGetInfoLbl.Name = "CanteenStudentGetInfoLbl";
-            this.CanteenStudentGetInfoLbl.Size = new System.Drawing.Size(184, 16);
+            this.CanteenStudentGetInfoLbl.Size = new System.Drawing.Size(229, 21);
             this.CanteenStudentGetInfoLbl.TabIndex = 3;
             this.CanteenStudentGetInfoLbl.Text = "There is no sherched student.";
             // 
             // CanteenStudentNumberLbl
             // 
             this.CanteenStudentNumberLbl.AutoSize = true;
-            this.CanteenStudentNumberLbl.Location = new System.Drawing.Point(77, 49);
+            this.CanteenStudentNumberLbl.Location = new System.Drawing.Point(103, 60);
+            this.CanteenStudentNumberLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CanteenStudentNumberLbl.Name = "CanteenStudentNumberLbl";
-            this.CanteenStudentNumberLbl.Size = new System.Drawing.Size(115, 16);
+            this.CanteenStudentNumberLbl.Size = new System.Drawing.Size(144, 21);
             this.CanteenStudentNumberLbl.TabIndex = 2;
             this.CanteenStudentNumberLbl.Text = "Student Number :";
             // 
             // CanteenStudentNumberTB
             // 
-            this.CanteenStudentNumberTB.Location = new System.Drawing.Point(196, 48);
+            this.CanteenStudentNumberTB.Location = new System.Drawing.Point(261, 59);
+            this.CanteenStudentNumberTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CanteenStudentNumberTB.Name = "CanteenStudentNumberTB";
-            this.CanteenStudentNumberTB.Size = new System.Drawing.Size(100, 22);
+            this.CanteenStudentNumberTB.Size = new System.Drawing.Size(132, 26);
             this.CanteenStudentNumberTB.TabIndex = 1;
             // 
             // StudentCanteenHeader
             // 
             this.StudentCanteenHeader.AutoSize = true;
             this.StudentCanteenHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.StudentCanteenHeader.Location = new System.Drawing.Point(22, 15);
+            this.StudentCanteenHeader.Location = new System.Drawing.Point(29, 18);
+            this.StudentCanteenHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentCanteenHeader.Name = "StudentCanteenHeader";
-            this.StudentCanteenHeader.Size = new System.Drawing.Size(180, 26);
+            this.StudentCanteenHeader.Size = new System.Drawing.Size(229, 33);
             this.StudentCanteenHeader.TabIndex = 0;
             this.StudentCanteenHeader.Text = "Student Canteen";
             // 
@@ -2663,16 +2874,18 @@
             this.ListProductPnl.Controls.Add(this.SelectCategoryLbl);
             this.ListProductPnl.Controls.Add(this.ListProductHeader);
             this.ListProductPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListProductPnl.Location = new System.Drawing.Point(188, 55);
+            this.ListProductPnl.Location = new System.Drawing.Point(251, 68);
+            this.ListProductPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListProductPnl.Name = "ListProductPnl";
-            this.ListProductPnl.Size = new System.Drawing.Size(702, 410);
+            this.ListProductPnl.Size = new System.Drawing.Size(936, 505);
             this.ListProductPnl.TabIndex = 34;
             // 
             // FilterListByCategorysBtn
             // 
-            this.FilterListByCategorysBtn.Location = new System.Drawing.Point(364, 46);
+            this.FilterListByCategorysBtn.Location = new System.Drawing.Point(485, 57);
+            this.FilterListByCategorysBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FilterListByCategorysBtn.Name = "FilterListByCategorysBtn";
-            this.FilterListByCategorysBtn.Size = new System.Drawing.Size(75, 23);
+            this.FilterListByCategorysBtn.Size = new System.Drawing.Size(100, 28);
             this.FilterListByCategorysBtn.TabIndex = 4;
             this.FilterListByCategorysBtn.Text = "Filter";
             this.FilterListByCategorysBtn.UseVisualStyleBackColor = true;
@@ -2681,25 +2894,29 @@
             // ListProductDGV
             // 
             this.ListProductDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListProductDGV.Location = new System.Drawing.Point(40, 90);
+            this.ListProductDGV.Location = new System.Drawing.Point(53, 111);
+            this.ListProductDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ListProductDGV.Name = "ListProductDGV";
-            this.ListProductDGV.Size = new System.Drawing.Size(560, 257);
+            this.ListProductDGV.RowHeadersWidth = 51;
+            this.ListProductDGV.Size = new System.Drawing.Size(747, 316);
             this.ListProductDGV.TabIndex = 3;
             // 
             // SelectCategoryCB
             // 
             this.SelectCategoryCB.FormattingEnabled = true;
-            this.SelectCategoryCB.Location = new System.Drawing.Point(224, 46);
+            this.SelectCategoryCB.Location = new System.Drawing.Point(299, 57);
+            this.SelectCategoryCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelectCategoryCB.Name = "SelectCategoryCB";
-            this.SelectCategoryCB.Size = new System.Drawing.Size(121, 24);
+            this.SelectCategoryCB.Size = new System.Drawing.Size(160, 29);
             this.SelectCategoryCB.TabIndex = 2;
             // 
             // SelectCategoryLbl
             // 
             this.SelectCategoryLbl.AutoSize = true;
-            this.SelectCategoryLbl.Location = new System.Drawing.Point(103, 50);
+            this.SelectCategoryLbl.Location = new System.Drawing.Point(137, 62);
+            this.SelectCategoryLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SelectCategoryLbl.Name = "SelectCategoryLbl";
-            this.SelectCategoryLbl.Size = new System.Drawing.Size(108, 16);
+            this.SelectCategoryLbl.Size = new System.Drawing.Size(134, 21);
             this.SelectCategoryLbl.TabIndex = 1;
             this.SelectCategoryLbl.Text = "Select Category :";
             // 
@@ -2707,9 +2924,10 @@
             // 
             this.ListProductHeader.AutoSize = true;
             this.ListProductHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ListProductHeader.Location = new System.Drawing.Point(26, 13);
+            this.ListProductHeader.Location = new System.Drawing.Point(35, 16);
+            this.ListProductHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ListProductHeader.Name = "ListProductHeader";
-            this.ListProductHeader.Size = new System.Drawing.Size(131, 26);
+            this.ListProductHeader.Size = new System.Drawing.Size(166, 33);
             this.ListProductHeader.TabIndex = 0;
             this.ListProductHeader.Text = "List Product";
             // 
@@ -2730,108 +2948,121 @@
             this.AddProductPnl.Controls.Add(this.AddProductNameLbl);
             this.AddProductPnl.Controls.Add(this.AddProductHeader);
             this.AddProductPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AddProductPnl.Location = new System.Drawing.Point(188, 55);
+            this.AddProductPnl.Location = new System.Drawing.Point(251, 68);
+            this.AddProductPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddProductPnl.Name = "AddProductPnl";
-            this.AddProductPnl.Size = new System.Drawing.Size(702, 410);
+            this.AddProductPnl.Size = new System.Drawing.Size(936, 505);
             this.AddProductPnl.TabIndex = 35;
             // 
             // AddProductButton
             // 
-            this.AddProductButton.Location = new System.Drawing.Point(552, 276);
+            this.AddProductButton.Location = new System.Drawing.Point(736, 340);
+            this.AddProductButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddProductButton.Name = "AddProductButton";
-            this.AddProductButton.Size = new System.Drawing.Size(100, 23);
-            this.AddProductButton.TabIndex = 5;
+            this.AddProductButton.Size = new System.Drawing.Size(133, 28);
+            this.AddProductButton.TabIndex = 6;
             this.AddProductButton.Text = "Add Product";
             this.AddProductButton.UseVisualStyleBackColor = true;
             this.AddProductButton.Click += new System.EventHandler(this.AddProductButton_Click);
             // 
             // AddProductExprationDateDTP
             // 
-            this.AddProductExprationDateDTP.Location = new System.Drawing.Point(242, 182);
+            this.AddProductExprationDateDTP.Location = new System.Drawing.Point(323, 224);
+            this.AddProductExprationDateDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddProductExprationDateDTP.Name = "AddProductExprationDateDTP";
-            this.AddProductExprationDateDTP.Size = new System.Drawing.Size(239, 22);
-            this.AddProductExprationDateDTP.TabIndex = 4;
+            this.AddProductExprationDateDTP.Size = new System.Drawing.Size(317, 26);
+            this.AddProductExprationDateDTP.TabIndex = 5;
             // 
             // AddProductCategoryCB
             // 
             this.AddProductCategoryCB.FormattingEnabled = true;
-            this.AddProductCategoryCB.Location = new System.Drawing.Point(211, 129);
+            this.AddProductCategoryCB.Location = new System.Drawing.Point(281, 159);
+            this.AddProductCategoryCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddProductCategoryCB.Name = "AddProductCategoryCB";
-            this.AddProductCategoryCB.Size = new System.Drawing.Size(121, 24);
+            this.AddProductCategoryCB.Size = new System.Drawing.Size(160, 29);
             this.AddProductCategoryCB.TabIndex = 3;
             // 
             // AddProductStockTB
             // 
-            this.AddProductStockTB.Location = new System.Drawing.Point(211, 157);
+            this.AddProductStockTB.Location = new System.Drawing.Point(281, 193);
+            this.AddProductStockTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddProductStockTB.Name = "AddProductStockTB";
-            this.AddProductStockTB.Size = new System.Drawing.Size(100, 22);
-            this.AddProductStockTB.TabIndex = 2;
+            this.AddProductStockTB.Size = new System.Drawing.Size(132, 26);
+            this.AddProductStockTB.TabIndex = 4;
             // 
             // AddProductPriceTB
             // 
-            this.AddProductPriceTB.Location = new System.Drawing.Point(211, 103);
+            this.AddProductPriceTB.Location = new System.Drawing.Point(281, 127);
+            this.AddProductPriceTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddProductPriceTB.Name = "AddProductPriceTB";
-            this.AddProductPriceTB.Size = new System.Drawing.Size(100, 22);
+            this.AddProductPriceTB.Size = new System.Drawing.Size(132, 26);
             this.AddProductPriceTB.TabIndex = 2;
             // 
             // AddProductNameTB
             // 
-            this.AddProductNameTB.Location = new System.Drawing.Point(211, 77);
+            this.AddProductNameTB.Location = new System.Drawing.Point(281, 95);
+            this.AddProductNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddProductNameTB.Name = "AddProductNameTB";
-            this.AddProductNameTB.Size = new System.Drawing.Size(100, 22);
-            this.AddProductNameTB.TabIndex = 2;
+            this.AddProductNameTB.Size = new System.Drawing.Size(132, 26);
+            this.AddProductNameTB.TabIndex = 1;
             // 
             // AddProductExprationDateLbl
             // 
             this.AddProductExprationDateLbl.AutoSize = true;
-            this.AddProductExprationDateLbl.Location = new System.Drawing.Point(83, 187);
+            this.AddProductExprationDateLbl.Location = new System.Drawing.Point(111, 230);
+            this.AddProductExprationDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddProductExprationDateLbl.Name = "AddProductExprationDateLbl";
-            this.AddProductExprationDateLbl.Size = new System.Drawing.Size(155, 16);
+            this.AddProductExprationDateLbl.Size = new System.Drawing.Size(192, 21);
             this.AddProductExprationDateLbl.TabIndex = 1;
             this.AddProductExprationDateLbl.Text = "Product Expration Date :";
             // 
             // AddProductStockLbl
             // 
             this.AddProductStockLbl.AutoSize = true;
-            this.AddProductStockLbl.Location = new System.Drawing.Point(83, 161);
+            this.AddProductStockLbl.Location = new System.Drawing.Point(111, 198);
+            this.AddProductStockLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddProductStockLbl.Name = "AddProductStockLbl";
-            this.AddProductStockLbl.Size = new System.Drawing.Size(100, 16);
+            this.AddProductStockLbl.Size = new System.Drawing.Size(122, 21);
             this.AddProductStockLbl.TabIndex = 1;
             this.AddProductStockLbl.Text = "Product Stock :";
             // 
             // AddProductCategoryLbl
             // 
             this.AddProductCategoryLbl.AutoSize = true;
-            this.AddProductCategoryLbl.Location = new System.Drawing.Point(83, 133);
+            this.AddProductCategoryLbl.Location = new System.Drawing.Point(111, 164);
+            this.AddProductCategoryLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddProductCategoryLbl.Name = "AddProductCategoryLbl";
-            this.AddProductCategoryLbl.Size = new System.Drawing.Size(122, 16);
+            this.AddProductCategoryLbl.Size = new System.Drawing.Size(149, 21);
             this.AddProductCategoryLbl.TabIndex = 1;
             this.AddProductCategoryLbl.Text = "Product Category :";
             // 
             // AddProductPriceLbl
             // 
             this.AddProductPriceLbl.AutoSize = true;
-            this.AddProductPriceLbl.Location = new System.Drawing.Point(83, 106);
+            this.AddProductPriceLbl.Location = new System.Drawing.Point(111, 130);
+            this.AddProductPriceLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddProductPriceLbl.Name = "AddProductPriceLbl";
-            this.AddProductPriceLbl.Size = new System.Drawing.Size(97, 16);
+            this.AddProductPriceLbl.Size = new System.Drawing.Size(119, 21);
             this.AddProductPriceLbl.TabIndex = 1;
             this.AddProductPriceLbl.Text = "Product Price :";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(83, 102);
+            this.label7.Location = new System.Drawing.Point(111, 126);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 16);
+            this.label7.Size = new System.Drawing.Size(127, 21);
             this.label7.TabIndex = 1;
             this.label7.Text = "Product Name :";
             // 
             // AddProductNameLbl
             // 
             this.AddProductNameLbl.AutoSize = true;
-            this.AddProductNameLbl.Location = new System.Drawing.Point(83, 80);
+            this.AddProductNameLbl.Location = new System.Drawing.Point(111, 98);
+            this.AddProductNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddProductNameLbl.Name = "AddProductNameLbl";
-            this.AddProductNameLbl.Size = new System.Drawing.Size(103, 16);
+            this.AddProductNameLbl.Size = new System.Drawing.Size(127, 21);
             this.AddProductNameLbl.TabIndex = 1;
             this.AddProductNameLbl.Text = "Product Name :";
             // 
@@ -2839,9 +3070,10 @@
             // 
             this.AddProductHeader.AutoSize = true;
             this.AddProductHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AddProductHeader.Location = new System.Drawing.Point(33, 26);
+            this.AddProductHeader.Location = new System.Drawing.Point(44, 32);
+            this.AddProductHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddProductHeader.Name = "AddProductHeader";
-            this.AddProductHeader.Size = new System.Drawing.Size(137, 26);
+            this.AddProductHeader.Size = new System.Drawing.Size(174, 33);
             this.AddProductHeader.TabIndex = 0;
             this.AddProductHeader.Text = "Add Product";
             // 
@@ -2865,41 +3097,46 @@
             this.UpdateProductPnl.Controls.Add(this.EnterProductNameLbl);
             this.UpdateProductPnl.Controls.Add(this.UpdateProductHeader);
             this.UpdateProductPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateProductPnl.Location = new System.Drawing.Point(188, 55);
+            this.UpdateProductPnl.Location = new System.Drawing.Point(251, 68);
+            this.UpdateProductPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateProductPnl.Name = "UpdateProductPnl";
-            this.UpdateProductPnl.Size = new System.Drawing.Size(702, 410);
+            this.UpdateProductPnl.Size = new System.Drawing.Size(936, 505);
             this.UpdateProductPnl.TabIndex = 36;
             // 
             // UpdateProductExprationDateDTP
             // 
-            this.UpdateProductExprationDateDTP.Location = new System.Drawing.Point(268, 222);
+            this.UpdateProductExprationDateDTP.Location = new System.Drawing.Point(357, 273);
+            this.UpdateProductExprationDateDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateProductExprationDateDTP.Name = "UpdateProductExprationDateDTP";
-            this.UpdateProductExprationDateDTP.Size = new System.Drawing.Size(241, 22);
+            this.UpdateProductExprationDateDTP.Size = new System.Drawing.Size(320, 26);
             this.UpdateProductExprationDateDTP.TabIndex = 6;
             // 
             // UpdateProductCategoryCB
             // 
             this.UpdateProductCategoryCB.FormattingEnabled = true;
-            this.UpdateProductCategoryCB.Location = new System.Drawing.Point(228, 165);
+            this.UpdateProductCategoryCB.Location = new System.Drawing.Point(304, 203);
+            this.UpdateProductCategoryCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateProductCategoryCB.Name = "UpdateProductCategoryCB";
-            this.UpdateProductCategoryCB.Size = new System.Drawing.Size(121, 24);
-            this.UpdateProductCategoryCB.TabIndex = 5;
+            this.UpdateProductCategoryCB.Size = new System.Drawing.Size(160, 29);
+            this.UpdateProductCategoryCB.TabIndex = 4;
             // 
             // UpdateProductButton
             // 
-            this.UpdateProductButton.Location = new System.Drawing.Point(537, 276);
+            this.UpdateProductButton.Location = new System.Drawing.Point(716, 340);
+            this.UpdateProductButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateProductButton.Name = "UpdateProductButton";
-            this.UpdateProductButton.Size = new System.Drawing.Size(115, 23);
-            this.UpdateProductButton.TabIndex = 4;
+            this.UpdateProductButton.Size = new System.Drawing.Size(153, 28);
+            this.UpdateProductButton.TabIndex = 7;
             this.UpdateProductButton.Text = "Update Product";
             this.UpdateProductButton.UseVisualStyleBackColor = true;
             this.UpdateProductButton.Click += new System.EventHandler(this.UpdateProductButton_Click);
             // 
             // UpdateProductGetInfoBtn
             // 
-            this.UpdateProductGetInfoBtn.Location = new System.Drawing.Point(372, 65);
+            this.UpdateProductGetInfoBtn.Location = new System.Drawing.Point(496, 80);
+            this.UpdateProductGetInfoBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateProductGetInfoBtn.Name = "UpdateProductGetInfoBtn";
-            this.UpdateProductGetInfoBtn.Size = new System.Drawing.Size(75, 23);
+            this.UpdateProductGetInfoBtn.Size = new System.Drawing.Size(100, 28);
             this.UpdateProductGetInfoBtn.TabIndex = 4;
             this.UpdateProductGetInfoBtn.Text = "Search";
             this.UpdateProductGetInfoBtn.UseVisualStyleBackColor = true;
@@ -2908,91 +3145,102 @@
             // GetInfoProductLbl
             // 
             this.GetInfoProductLbl.AutoSize = true;
-            this.GetInfoProductLbl.Location = new System.Drawing.Point(484, 69);
+            this.GetInfoProductLbl.Location = new System.Drawing.Point(645, 85);
+            this.GetInfoProductLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GetInfoProductLbl.Name = "GetInfoProductLbl";
-            this.GetInfoProductLbl.Size = new System.Drawing.Size(43, 16);
+            this.GetInfoProductLbl.Size = new System.Drawing.Size(56, 21);
             this.GetInfoProductLbl.TabIndex = 3;
             this.GetInfoProductLbl.Text = "label8";
             // 
             // UpdateProductStockAmountTB
             // 
-            this.UpdateProductStockAmountTB.Location = new System.Drawing.Point(264, 194);
+            this.UpdateProductStockAmountTB.Location = new System.Drawing.Point(352, 239);
+            this.UpdateProductStockAmountTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateProductStockAmountTB.Name = "UpdateProductStockAmountTB";
-            this.UpdateProductStockAmountTB.Size = new System.Drawing.Size(100, 22);
-            this.UpdateProductStockAmountTB.TabIndex = 2;
+            this.UpdateProductStockAmountTB.Size = new System.Drawing.Size(132, 26);
+            this.UpdateProductStockAmountTB.TabIndex = 5;
             // 
             // UpdateProductPriceTB
             // 
-            this.UpdateProductPriceTB.Location = new System.Drawing.Point(209, 136);
+            this.UpdateProductPriceTB.Location = new System.Drawing.Point(279, 167);
+            this.UpdateProductPriceTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateProductPriceTB.Name = "UpdateProductPriceTB";
-            this.UpdateProductPriceTB.Size = new System.Drawing.Size(100, 22);
-            this.UpdateProductPriceTB.TabIndex = 2;
+            this.UpdateProductPriceTB.Size = new System.Drawing.Size(132, 26);
+            this.UpdateProductPriceTB.TabIndex = 3;
             // 
             // UpdateProductNameTB
             // 
-            this.UpdateProductNameTB.Location = new System.Drawing.Point(209, 108);
+            this.UpdateProductNameTB.Location = new System.Drawing.Point(279, 133);
+            this.UpdateProductNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateProductNameTB.Name = "UpdateProductNameTB";
-            this.UpdateProductNameTB.Size = new System.Drawing.Size(100, 22);
+            this.UpdateProductNameTB.Size = new System.Drawing.Size(132, 26);
             this.UpdateProductNameTB.TabIndex = 2;
             // 
             // EnterProductNameTB
             // 
-            this.EnterProductNameTB.Location = new System.Drawing.Point(249, 66);
+            this.EnterProductNameTB.Location = new System.Drawing.Point(332, 81);
+            this.EnterProductNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EnterProductNameTB.Name = "EnterProductNameTB";
-            this.EnterProductNameTB.Size = new System.Drawing.Size(100, 22);
-            this.EnterProductNameTB.TabIndex = 2;
+            this.EnterProductNameTB.Size = new System.Drawing.Size(132, 26);
+            this.EnterProductNameTB.TabIndex = 1;
             // 
             // UpdateProductExprationDateLbl
             // 
             this.UpdateProductExprationDateLbl.AutoSize = true;
-            this.UpdateProductExprationDateLbl.Location = new System.Drawing.Point(106, 225);
+            this.UpdateProductExprationDateLbl.Location = new System.Drawing.Point(141, 277);
+            this.UpdateProductExprationDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateProductExprationDateLbl.Name = "UpdateProductExprationDateLbl";
-            this.UpdateProductExprationDateLbl.Size = new System.Drawing.Size(155, 16);
+            this.UpdateProductExprationDateLbl.Size = new System.Drawing.Size(192, 21);
             this.UpdateProductExprationDateLbl.TabIndex = 1;
             this.UpdateProductExprationDateLbl.Text = "Product Expration Date :";
             // 
             // UpdateProductStockAmountLbl
             // 
             this.UpdateProductStockAmountLbl.AutoSize = true;
-            this.UpdateProductStockAmountLbl.Location = new System.Drawing.Point(104, 197);
+            this.UpdateProductStockAmountLbl.Location = new System.Drawing.Point(139, 242);
+            this.UpdateProductStockAmountLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateProductStockAmountLbl.Name = "UpdateProductStockAmountLbl";
-            this.UpdateProductStockAmountLbl.Size = new System.Drawing.Size(154, 16);
+            this.UpdateProductStockAmountLbl.Size = new System.Drawing.Size(188, 21);
             this.UpdateProductStockAmountLbl.TabIndex = 1;
             this.UpdateProductStockAmountLbl.Text = "Product Stock Amount :";
             // 
             // UpdateProductCategoryLbl
             // 
             this.UpdateProductCategoryLbl.AutoSize = true;
-            this.UpdateProductCategoryLbl.Location = new System.Drawing.Point(106, 168);
+            this.UpdateProductCategoryLbl.Location = new System.Drawing.Point(141, 207);
+            this.UpdateProductCategoryLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateProductCategoryLbl.Name = "UpdateProductCategoryLbl";
-            this.UpdateProductCategoryLbl.Size = new System.Drawing.Size(122, 16);
+            this.UpdateProductCategoryLbl.Size = new System.Drawing.Size(149, 21);
             this.UpdateProductCategoryLbl.TabIndex = 1;
             this.UpdateProductCategoryLbl.Text = "Product Category :";
             // 
             // UpdateProductPriceLbl
             // 
             this.UpdateProductPriceLbl.AutoSize = true;
-            this.UpdateProductPriceLbl.Location = new System.Drawing.Point(106, 137);
+            this.UpdateProductPriceLbl.Location = new System.Drawing.Point(141, 169);
+            this.UpdateProductPriceLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateProductPriceLbl.Name = "UpdateProductPriceLbl";
-            this.UpdateProductPriceLbl.Size = new System.Drawing.Size(97, 16);
+            this.UpdateProductPriceLbl.Size = new System.Drawing.Size(119, 21);
             this.UpdateProductPriceLbl.TabIndex = 1;
             this.UpdateProductPriceLbl.Text = "Product Price :";
             // 
             // UpdateProductNameLbl
             // 
             this.UpdateProductNameLbl.AutoSize = true;
-            this.UpdateProductNameLbl.Location = new System.Drawing.Point(104, 111);
+            this.UpdateProductNameLbl.Location = new System.Drawing.Point(139, 137);
+            this.UpdateProductNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateProductNameLbl.Name = "UpdateProductNameLbl";
-            this.UpdateProductNameLbl.Size = new System.Drawing.Size(103, 16);
+            this.UpdateProductNameLbl.Size = new System.Drawing.Size(127, 21);
             this.UpdateProductNameLbl.TabIndex = 1;
             this.UpdateProductNameLbl.Text = "Product Name :";
             // 
             // EnterProductNameLbl
             // 
             this.EnterProductNameLbl.AutoSize = true;
-            this.EnterProductNameLbl.Location = new System.Drawing.Point(104, 67);
+            this.EnterProductNameLbl.Location = new System.Drawing.Point(139, 82);
+            this.EnterProductNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EnterProductNameLbl.Name = "EnterProductNameLbl";
-            this.EnterProductNameLbl.Size = new System.Drawing.Size(139, 16);
+            this.EnterProductNameLbl.Size = new System.Drawing.Size(172, 21);
             this.EnterProductNameLbl.TabIndex = 1;
             this.EnterProductNameLbl.Text = "Enter Product Name :";
             // 
@@ -3000,9 +3248,10 @@
             // 
             this.UpdateProductHeader.AutoSize = true;
             this.UpdateProductHeader.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateProductHeader.Location = new System.Drawing.Point(36, 20);
+            this.UpdateProductHeader.Location = new System.Drawing.Point(48, 25);
+            this.UpdateProductHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UpdateProductHeader.Name = "UpdateProductHeader";
-            this.UpdateProductHeader.Size = new System.Drawing.Size(169, 26);
+            this.UpdateProductHeader.Size = new System.Drawing.Size(215, 33);
             this.UpdateProductHeader.TabIndex = 0;
             this.UpdateProductHeader.Text = "Update Product";
             // 
@@ -3016,16 +3265,18 @@
             this.DeleteProductPnl.Controls.Add(this.DeleteProductSearchLbl);
             this.DeleteProductPnl.Controls.Add(this.DeleteProductHeader);
             this.DeleteProductPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteProductPnl.Location = new System.Drawing.Point(188, 55);
+            this.DeleteProductPnl.Location = new System.Drawing.Point(251, 68);
+            this.DeleteProductPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteProductPnl.Name = "DeleteProductPnl";
-            this.DeleteProductPnl.Size = new System.Drawing.Size(702, 410);
+            this.DeleteProductPnl.Size = new System.Drawing.Size(936, 505);
             this.DeleteProductPnl.TabIndex = 37;
             // 
             // DeleteProductButton
             // 
-            this.DeleteProductButton.Location = new System.Drawing.Point(388, 189);
+            this.DeleteProductButton.Location = new System.Drawing.Point(517, 233);
+            this.DeleteProductButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteProductButton.Name = "DeleteProductButton";
-            this.DeleteProductButton.Size = new System.Drawing.Size(121, 23);
+            this.DeleteProductButton.Size = new System.Drawing.Size(161, 28);
             this.DeleteProductButton.TabIndex = 5;
             this.DeleteProductButton.Text = "Delete Product";
             this.DeleteProductButton.UseVisualStyleBackColor = true;
@@ -3034,17 +3285,19 @@
             // SearchDeleteProductLbl
             // 
             this.SearchDeleteProductLbl.AutoSize = true;
-            this.SearchDeleteProductLbl.Location = new System.Drawing.Point(131, 119);
+            this.SearchDeleteProductLbl.Location = new System.Drawing.Point(175, 146);
+            this.SearchDeleteProductLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SearchDeleteProductLbl.Name = "SearchDeleteProductLbl";
-            this.SearchDeleteProductLbl.Size = new System.Drawing.Size(123, 16);
+            this.SearchDeleteProductLbl.Size = new System.Drawing.Size(150, 21);
             this.SearchDeleteProductLbl.TabIndex = 4;
             this.SearchDeleteProductLbl.Text = "Product not found.";
             // 
             // SearchDeleteProductBtn
             // 
-            this.SearchDeleteProductBtn.Location = new System.Drawing.Point(403, 75);
+            this.SearchDeleteProductBtn.Location = new System.Drawing.Point(537, 92);
+            this.SearchDeleteProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchDeleteProductBtn.Name = "SearchDeleteProductBtn";
-            this.SearchDeleteProductBtn.Size = new System.Drawing.Size(75, 23);
+            this.SearchDeleteProductBtn.Size = new System.Drawing.Size(100, 28);
             this.SearchDeleteProductBtn.TabIndex = 3;
             this.SearchDeleteProductBtn.Text = "Search";
             this.SearchDeleteProductBtn.UseVisualStyleBackColor = true;
@@ -3052,17 +3305,19 @@
             // 
             // DeleteProductSearchTB
             // 
-            this.DeleteProductSearchTB.Location = new System.Drawing.Point(277, 75);
+            this.DeleteProductSearchTB.Location = new System.Drawing.Point(369, 92);
+            this.DeleteProductSearchTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteProductSearchTB.Name = "DeleteProductSearchTB";
-            this.DeleteProductSearchTB.Size = new System.Drawing.Size(100, 22);
+            this.DeleteProductSearchTB.Size = new System.Drawing.Size(132, 26);
             this.DeleteProductSearchTB.TabIndex = 2;
             // 
             // DeleteProductSearchLbl
             // 
             this.DeleteProductSearchLbl.AutoSize = true;
-            this.DeleteProductSearchLbl.Location = new System.Drawing.Point(129, 78);
+            this.DeleteProductSearchLbl.Location = new System.Drawing.Point(172, 96);
+            this.DeleteProductSearchLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DeleteProductSearchLbl.Name = "DeleteProductSearchLbl";
-            this.DeleteProductSearchLbl.Size = new System.Drawing.Size(139, 16);
+            this.DeleteProductSearchLbl.Size = new System.Drawing.Size(172, 21);
             this.DeleteProductSearchLbl.TabIndex = 1;
             this.DeleteProductSearchLbl.Text = "Enter Product Name :";
             // 
@@ -3070,9 +3325,10 @@
             // 
             this.DeleteProductHeader.AutoSize = true;
             this.DeleteProductHeader.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteProductHeader.Location = new System.Drawing.Point(41, 23);
+            this.DeleteProductHeader.Location = new System.Drawing.Point(55, 28);
+            this.DeleteProductHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DeleteProductHeader.Name = "DeleteProductHeader";
-            this.DeleteProductHeader.Size = new System.Drawing.Size(137, 22);
+            this.DeleteProductHeader.Size = new System.Drawing.Size(174, 27);
             this.DeleteProductHeader.TabIndex = 0;
             this.DeleteProductHeader.Text = "Delete Product";
             // 
@@ -3089,108 +3345,109 @@
             this.UpdateStudentAttandancePnl.Controls.Add(this.EnterStudentNumberAbscenceLbl);
             this.UpdateStudentAttandancePnl.Controls.Add(this.UpdateAbscenceLbl);
             this.UpdateStudentAttandancePnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateStudentAttandancePnl.Location = new System.Drawing.Point(188, 55);
+            this.UpdateStudentAttandancePnl.Location = new System.Drawing.Point(251, 68);
+            this.UpdateStudentAttandancePnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateStudentAttandancePnl.Name = "UpdateStudentAttandancePnl";
-            this.UpdateStudentAttandancePnl.Size = new System.Drawing.Size(702, 410);
+            this.UpdateStudentAttandancePnl.Size = new System.Drawing.Size(936, 505);
             this.UpdateStudentAttandancePnl.TabIndex = 38;
             // 
-            // UpdateAbscenceLbl
+            // SelectUpdatedDateDTP
             // 
-            this.UpdateAbscenceLbl.AutoSize = true;
-            this.UpdateAbscenceLbl.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.UpdateAbscenceLbl.Location = new System.Drawing.Point(18, 14);
-            this.UpdateAbscenceLbl.Name = "UpdateAbscenceLbl";
-            this.UpdateAbscenceLbl.Size = new System.Drawing.Size(206, 29);
-            this.UpdateAbscenceLbl.TabIndex = 0;
-            this.UpdateAbscenceLbl.Text = "Update Abscence";
-            // 
-            // EnterStudentNumberAbscenceLbl
-            // 
-            this.EnterStudentNumberAbscenceLbl.AutoSize = true;
-            this.EnterStudentNumberAbscenceLbl.Location = new System.Drawing.Point(115, 66);
-            this.EnterStudentNumberAbscenceLbl.Name = "EnterStudentNumberAbscenceLbl";
-            this.EnterStudentNumberAbscenceLbl.Size = new System.Drawing.Size(151, 16);
-            this.EnterStudentNumberAbscenceLbl.TabIndex = 1;
-            this.EnterStudentNumberAbscenceLbl.Text = "Enter Student Number :";
-            // 
-            // UpdateAbscenceEnterStudentNumberTB
-            // 
-            this.UpdateAbscenceEnterStudentNumberTB.Location = new System.Drawing.Point(266, 63);
-            this.UpdateAbscenceEnterStudentNumberTB.Name = "UpdateAbscenceEnterStudentNumberTB";
-            this.UpdateAbscenceEnterStudentNumberTB.Size = new System.Drawing.Size(100, 22);
-            this.UpdateAbscenceEnterStudentNumberTB.TabIndex = 2;
-            // 
-            // GetStudentInfoLbl
-            // 
-            this.GetStudentInfoLbl.AutoSize = true;
-            this.GetStudentInfoLbl.Location = new System.Drawing.Point(493, 65);
-            this.GetStudentInfoLbl.Name = "GetStudentInfoLbl";
-            this.GetStudentInfoLbl.Size = new System.Drawing.Size(181, 16);
-            this.GetStudentInfoLbl.TabIndex = 3;
-            this.GetStudentInfoLbl.Text = "There is no selected student .";
-            // 
-            // StudentGetInfoBtn
-            // 
-            this.StudentGetInfoBtn.Location = new System.Drawing.Point(403, 62);
-            this.StudentGetInfoBtn.Name = "StudentGetInfoBtn";
-            this.StudentGetInfoBtn.Size = new System.Drawing.Size(75, 23);
-            this.StudentGetInfoBtn.TabIndex = 4;
-            this.StudentGetInfoBtn.Text = "Search";
-            this.StudentGetInfoBtn.UseVisualStyleBackColor = true;
-            this.StudentGetInfoBtn.Click += new System.EventHandler(this.StudentGetInfoBtn_Click);
-            // 
-            // SelectDateLbl
-            // 
-            this.SelectDateLbl.AutoSize = true;
-            this.SelectDateLbl.Location = new System.Drawing.Point(115, 104);
-            this.SelectDateLbl.Name = "SelectDateLbl";
-            this.SelectDateLbl.Size = new System.Drawing.Size(81, 16);
-            this.SelectDateLbl.TabIndex = 1;
-            this.SelectDateLbl.Text = "Selcet Date :";
+            this.SelectUpdatedDateDTP.Location = new System.Drawing.Point(275, 159);
+            this.SelectUpdatedDateDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SelectUpdatedDateDTP.Name = "SelectUpdatedDateDTP";
+            this.SelectUpdatedDateDTP.Size = new System.Drawing.Size(309, 26);
+            this.SelectUpdatedDateDTP.TabIndex = 3;
             // 
             // SelectDateCB
             // 
             this.SelectDateCB.FormattingEnabled = true;
-            this.SelectDateCB.Location = new System.Drawing.Point(206, 99);
+            this.SelectDateCB.Location = new System.Drawing.Point(275, 122);
+            this.SelectDateCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelectDateCB.Name = "SelectDateCB";
-            this.SelectDateCB.Size = new System.Drawing.Size(121, 24);
-            this.SelectDateCB.TabIndex = 5;
-            // 
-            // SelectUpdatedDateLbl
-            // 
-            this.SelectUpdatedDateLbl.AutoSize = true;
-            this.SelectUpdatedDateLbl.Location = new System.Drawing.Point(115, 132);
-            this.SelectUpdatedDateLbl.Name = "SelectUpdatedDateLbl";
-            this.SelectUpdatedDateLbl.Size = new System.Drawing.Size(89, 16);
-            this.SelectUpdatedDateLbl.TabIndex = 1;
-            this.SelectUpdatedDateLbl.Text = "Update Date :";
-            // 
-            // SelectUpdatedDateDTP
-            // 
-            this.SelectUpdatedDateDTP.Location = new System.Drawing.Point(206, 129);
-            this.SelectUpdatedDateDTP.Name = "SelectUpdatedDateDTP";
-            this.SelectUpdatedDateDTP.Size = new System.Drawing.Size(233, 22);
-            this.SelectUpdatedDateDTP.TabIndex = 6;
+            this.SelectDateCB.Size = new System.Drawing.Size(160, 29);
+            this.SelectDateCB.TabIndex = 2;
             // 
             // UpdateDateBtn
             // 
-            this.UpdateDateBtn.Location = new System.Drawing.Point(525, 204);
+            this.UpdateDateBtn.Location = new System.Drawing.Point(700, 251);
+            this.UpdateDateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UpdateDateBtn.Name = "UpdateDateBtn";
-            this.UpdateDateBtn.Size = new System.Drawing.Size(75, 23);
+            this.UpdateDateBtn.Size = new System.Drawing.Size(100, 28);
             this.UpdateDateBtn.TabIndex = 4;
             this.UpdateDateBtn.Text = "Update";
             this.UpdateDateBtn.UseVisualStyleBackColor = true;
             this.UpdateDateBtn.Click += new System.EventHandler(this.UpdateDateBtn_Click);
             // 
-            // DeleteAbscenceBtn
+            // StudentGetInfoBtn
             // 
-            this.DeleteAbscenceBtn.Location = new System.Drawing.Point(237, 240);
-            this.DeleteAbscenceBtn.Name = "DeleteAbscenceBtn";
-            this.DeleteAbscenceBtn.Size = new System.Drawing.Size(198, 50);
-            this.DeleteAbscenceBtn.TabIndex = 1;
-            this.DeleteAbscenceBtn.Text = "Delete Student Attandance";
-            this.DeleteAbscenceBtn.UseVisualStyleBackColor = true;
-            this.DeleteAbscenceBtn.Click += new System.EventHandler(this.MenuButton_Click);
+            this.StudentGetInfoBtn.Location = new System.Drawing.Point(537, 76);
+            this.StudentGetInfoBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentGetInfoBtn.Name = "StudentGetInfoBtn";
+            this.StudentGetInfoBtn.Size = new System.Drawing.Size(100, 28);
+            this.StudentGetInfoBtn.TabIndex = 4;
+            this.StudentGetInfoBtn.Text = "Search";
+            this.StudentGetInfoBtn.UseVisualStyleBackColor = true;
+            this.StudentGetInfoBtn.Click += new System.EventHandler(this.StudentGetInfoBtn_Click);
+            // 
+            // GetStudentInfoLbl
+            // 
+            this.GetStudentInfoLbl.AutoSize = true;
+            this.GetStudentInfoLbl.Location = new System.Drawing.Point(657, 80);
+            this.GetStudentInfoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.GetStudentInfoLbl.Name = "GetStudentInfoLbl";
+            this.GetStudentInfoLbl.Size = new System.Drawing.Size(226, 21);
+            this.GetStudentInfoLbl.TabIndex = 3;
+            this.GetStudentInfoLbl.Text = "There is no selected student .";
+            // 
+            // UpdateAbscenceEnterStudentNumberTB
+            // 
+            this.UpdateAbscenceEnterStudentNumberTB.Location = new System.Drawing.Point(355, 78);
+            this.UpdateAbscenceEnterStudentNumberTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateAbscenceEnterStudentNumberTB.Name = "UpdateAbscenceEnterStudentNumberTB";
+            this.UpdateAbscenceEnterStudentNumberTB.Size = new System.Drawing.Size(132, 26);
+            this.UpdateAbscenceEnterStudentNumberTB.TabIndex = 1;
+            // 
+            // SelectUpdatedDateLbl
+            // 
+            this.SelectUpdatedDateLbl.AutoSize = true;
+            this.SelectUpdatedDateLbl.Location = new System.Drawing.Point(153, 162);
+            this.SelectUpdatedDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SelectUpdatedDateLbl.Name = "SelectUpdatedDateLbl";
+            this.SelectUpdatedDateLbl.Size = new System.Drawing.Size(113, 21);
+            this.SelectUpdatedDateLbl.TabIndex = 1;
+            this.SelectUpdatedDateLbl.Text = "Update Date :";
+            // 
+            // SelectDateLbl
+            // 
+            this.SelectDateLbl.AutoSize = true;
+            this.SelectDateLbl.Location = new System.Drawing.Point(153, 128);
+            this.SelectDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SelectDateLbl.Name = "SelectDateLbl";
+            this.SelectDateLbl.Size = new System.Drawing.Size(102, 21);
+            this.SelectDateLbl.TabIndex = 1;
+            this.SelectDateLbl.Text = "Selcet Date :";
+            // 
+            // EnterStudentNumberAbscenceLbl
+            // 
+            this.EnterStudentNumberAbscenceLbl.AutoSize = true;
+            this.EnterStudentNumberAbscenceLbl.Location = new System.Drawing.Point(153, 81);
+            this.EnterStudentNumberAbscenceLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.EnterStudentNumberAbscenceLbl.Name = "EnterStudentNumberAbscenceLbl";
+            this.EnterStudentNumberAbscenceLbl.Size = new System.Drawing.Size(189, 21);
+            this.EnterStudentNumberAbscenceLbl.TabIndex = 1;
+            this.EnterStudentNumberAbscenceLbl.Text = "Enter Student Number :";
+            // 
+            // UpdateAbscenceLbl
+            // 
+            this.UpdateAbscenceLbl.AutoSize = true;
+            this.UpdateAbscenceLbl.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.UpdateAbscenceLbl.Location = new System.Drawing.Point(24, 17);
+            this.UpdateAbscenceLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UpdateAbscenceLbl.Name = "UpdateAbscenceLbl";
+            this.UpdateAbscenceLbl.Size = new System.Drawing.Size(268, 37);
+            this.UpdateAbscenceLbl.TabIndex = 0;
+            this.UpdateAbscenceLbl.Text = "Update Abscence";
             // 
             // DeleteAbscencePnl
             // 
@@ -3203,92 +3460,134 @@
             this.DeleteAbscencePnl.Controls.Add(this.DeleteAbscenceStudentNumberLbl);
             this.DeleteAbscencePnl.Controls.Add(this.DeleteAbscenceHeader);
             this.DeleteAbscencePnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteAbscencePnl.Location = new System.Drawing.Point(188, 55);
+            this.DeleteAbscencePnl.Location = new System.Drawing.Point(251, 68);
+            this.DeleteAbscencePnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteAbscencePnl.Name = "DeleteAbscencePnl";
-            this.DeleteAbscencePnl.Size = new System.Drawing.Size(702, 410);
+            this.DeleteAbscencePnl.Size = new System.Drawing.Size(936, 505);
             this.DeleteAbscencePnl.TabIndex = 39;
-            // 
-            // DeleteAbscenceHeader
-            // 
-            this.DeleteAbscenceHeader.AutoSize = true;
-            this.DeleteAbscenceHeader.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DeleteAbscenceHeader.Location = new System.Drawing.Point(28, 19);
-            this.DeleteAbscenceHeader.Name = "DeleteAbscenceHeader";
-            this.DeleteAbscenceHeader.Size = new System.Drawing.Size(196, 29);
-            this.DeleteAbscenceHeader.TabIndex = 0;
-            this.DeleteAbscenceHeader.Text = "Delete Abscence";
-            // 
-            // DeleteAbscenceStudentNumberLbl
-            // 
-            this.DeleteAbscenceStudentNumberLbl.AutoSize = true;
-            this.DeleteAbscenceStudentNumberLbl.Location = new System.Drawing.Point(119, 71);
-            this.DeleteAbscenceStudentNumberLbl.Name = "DeleteAbscenceStudentNumberLbl";
-            this.DeleteAbscenceStudentNumberLbl.Size = new System.Drawing.Size(115, 16);
-            this.DeleteAbscenceStudentNumberLbl.TabIndex = 1;
-            this.DeleteAbscenceStudentNumberLbl.Text = "Student Number :";
-            // 
-            // DeleteAbscenceStudentNumberTB
-            // 
-            this.DeleteAbscenceStudentNumberTB.Location = new System.Drawing.Point(240, 66);
-            this.DeleteAbscenceStudentNumberTB.Name = "DeleteAbscenceStudentNumberTB";
-            this.DeleteAbscenceStudentNumberTB.Size = new System.Drawing.Size(100, 22);
-            this.DeleteAbscenceStudentNumberTB.TabIndex = 2;
-            // 
-            // DeleteGetStudentInfoBtn
-            // 
-            this.DeleteGetStudentInfoBtn.Location = new System.Drawing.Point(372, 65);
-            this.DeleteGetStudentInfoBtn.Name = "DeleteGetStudentInfoBtn";
-            this.DeleteGetStudentInfoBtn.Size = new System.Drawing.Size(75, 23);
-            this.DeleteGetStudentInfoBtn.TabIndex = 3;
-            this.DeleteGetStudentInfoBtn.Text = "Search";
-            this.DeleteGetStudentInfoBtn.UseVisualStyleBackColor = true;
-            this.DeleteGetStudentInfoBtn.Click += new System.EventHandler(this.DeleteGetStudentInfoBtn_Click);
-            // 
-            // DeleteGetStudentInfoLbl
-            // 
-            this.DeleteGetStudentInfoLbl.AutoSize = true;
-            this.DeleteGetStudentInfoLbl.Location = new System.Drawing.Point(471, 69);
-            this.DeleteGetStudentInfoLbl.Name = "DeleteGetStudentInfoLbl";
-            this.DeleteGetStudentInfoLbl.Size = new System.Drawing.Size(183, 16);
-            this.DeleteGetStudentInfoLbl.TabIndex = 4;
-            this.DeleteGetStudentInfoLbl.Text = "There is no searched student.";
-            // 
-            // DeleteAbscenceStudentLbl
-            // 
-            this.DeleteAbscenceStudentLbl.AutoSize = true;
-            this.DeleteAbscenceStudentLbl.Location = new System.Drawing.Point(118, 105);
-            this.DeleteAbscenceStudentLbl.Name = "DeleteAbscenceStudentLbl";
-            this.DeleteAbscenceStudentLbl.Size = new System.Drawing.Size(81, 16);
-            this.DeleteAbscenceStudentLbl.TabIndex = 1;
-            this.DeleteAbscenceStudentLbl.Text = "Select Date :";
             // 
             // DeleteAbscenceStudentCB
             // 
             this.DeleteAbscenceStudentCB.FormattingEnabled = true;
-            this.DeleteAbscenceStudentCB.Location = new System.Drawing.Point(209, 99);
+            this.DeleteAbscenceStudentCB.Location = new System.Drawing.Point(279, 122);
+            this.DeleteAbscenceStudentCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteAbscenceStudentCB.Name = "DeleteAbscenceStudentCB";
-            this.DeleteAbscenceStudentCB.Size = new System.Drawing.Size(121, 24);
-            this.DeleteAbscenceStudentCB.TabIndex = 5;
+            this.DeleteAbscenceStudentCB.Size = new System.Drawing.Size(160, 29);
+            this.DeleteAbscenceStudentCB.TabIndex = 2;
+            // 
+            // DeleteGetStudentInfoLbl
+            // 
+            this.DeleteGetStudentInfoLbl.AutoSize = true;
+            this.DeleteGetStudentInfoLbl.Location = new System.Drawing.Point(628, 85);
+            this.DeleteGetStudentInfoLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DeleteGetStudentInfoLbl.Name = "DeleteGetStudentInfoLbl";
+            this.DeleteGetStudentInfoLbl.Size = new System.Drawing.Size(228, 21);
+            this.DeleteGetStudentInfoLbl.TabIndex = 4;
+            this.DeleteGetStudentInfoLbl.Text = "There is no searched student.";
             // 
             // DeleteAbscenceButton
             // 
-            this.DeleteAbscenceButton.Location = new System.Drawing.Point(496, 189);
+            this.DeleteAbscenceButton.Location = new System.Drawing.Point(661, 233);
+            this.DeleteAbscenceButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DeleteAbscenceButton.Name = "DeleteAbscenceButton";
-            this.DeleteAbscenceButton.Size = new System.Drawing.Size(75, 23);
+            this.DeleteAbscenceButton.Size = new System.Drawing.Size(100, 28);
             this.DeleteAbscenceButton.TabIndex = 3;
             this.DeleteAbscenceButton.Text = "Delete";
             this.DeleteAbscenceButton.UseVisualStyleBackColor = true;
             this.DeleteAbscenceButton.Click += new System.EventHandler(this.DeleteAbscenceButton_Click);
             // 
+            // DeleteGetStudentInfoBtn
+            // 
+            this.DeleteGetStudentInfoBtn.Location = new System.Drawing.Point(496, 80);
+            this.DeleteGetStudentInfoBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteGetStudentInfoBtn.Name = "DeleteGetStudentInfoBtn";
+            this.DeleteGetStudentInfoBtn.Size = new System.Drawing.Size(100, 28);
+            this.DeleteGetStudentInfoBtn.TabIndex = 3;
+            this.DeleteGetStudentInfoBtn.Text = "Search";
+            this.DeleteGetStudentInfoBtn.UseVisualStyleBackColor = true;
+            this.DeleteGetStudentInfoBtn.Click += new System.EventHandler(this.DeleteGetStudentInfoBtn_Click);
+            // 
+            // DeleteAbscenceStudentNumberTB
+            // 
+            this.DeleteAbscenceStudentNumberTB.Location = new System.Drawing.Point(320, 81);
+            this.DeleteAbscenceStudentNumberTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteAbscenceStudentNumberTB.Name = "DeleteAbscenceStudentNumberTB";
+            this.DeleteAbscenceStudentNumberTB.Size = new System.Drawing.Size(132, 26);
+            this.DeleteAbscenceStudentNumberTB.TabIndex = 1;
+            // 
+            // DeleteAbscenceStudentLbl
+            // 
+            this.DeleteAbscenceStudentLbl.AutoSize = true;
+            this.DeleteAbscenceStudentLbl.Location = new System.Drawing.Point(157, 129);
+            this.DeleteAbscenceStudentLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DeleteAbscenceStudentLbl.Name = "DeleteAbscenceStudentLbl";
+            this.DeleteAbscenceStudentLbl.Size = new System.Drawing.Size(102, 21);
+            this.DeleteAbscenceStudentLbl.TabIndex = 1;
+            this.DeleteAbscenceStudentLbl.Text = "Select Date :";
+            // 
+            // DeleteAbscenceStudentNumberLbl
+            // 
+            this.DeleteAbscenceStudentNumberLbl.AutoSize = true;
+            this.DeleteAbscenceStudentNumberLbl.Location = new System.Drawing.Point(159, 87);
+            this.DeleteAbscenceStudentNumberLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DeleteAbscenceStudentNumberLbl.Name = "DeleteAbscenceStudentNumberLbl";
+            this.DeleteAbscenceStudentNumberLbl.Size = new System.Drawing.Size(144, 21);
+            this.DeleteAbscenceStudentNumberLbl.TabIndex = 1;
+            this.DeleteAbscenceStudentNumberLbl.Text = "Student Number :";
+            // 
+            // DeleteAbscenceHeader
+            // 
+            this.DeleteAbscenceHeader.AutoSize = true;
+            this.DeleteAbscenceHeader.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DeleteAbscenceHeader.Location = new System.Drawing.Point(37, 23);
+            this.DeleteAbscenceHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DeleteAbscenceHeader.Name = "DeleteAbscenceHeader";
+            this.DeleteAbscenceHeader.Size = new System.Drawing.Size(256, 37);
+            this.DeleteAbscenceHeader.TabIndex = 0;
+            this.DeleteAbscenceHeader.Text = "Delete Abscence";
+            // 
+            // splashScreenManager1
+            // 
+            splashScreenManager1.ClosingDelay = 1000;
+            // 
+            // splashScreenManager2
+            // 
+            splashScreenManager2.ClosingDelay = 500;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label8.Location = new System.Drawing.Point(66, 359);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(183, 27);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Manage canteen";
+            // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 484);
+            this.ClientSize = new System.Drawing.Size(1216, 596);
             this.Controls.Add(this.DateAndTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.MenuBar);
+            this.Controls.Add(this.HomePanel);
+            this.Controls.Add(this.StudentPanelRegistrationPanel);
+            this.Controls.Add(this.StudentCanteenPnl);
+            this.Controls.Add(this.ListProductPnl);
+            this.Controls.Add(this.AddProductPnl);
+            this.Controls.Add(this.UpdateProductPnl);
+            this.Controls.Add(this.DeleteProductPnl);
+            this.Controls.Add(this.CanteenPanel);
+            this.Controls.Add(this.StudentDeletePanel);
+            this.Controls.Add(this.ListTeacherPnl);
+            this.Controls.Add(this.DeleteTeacherPnl);
+            this.Controls.Add(this.UpdateTeacherPnl);
+            this.Controls.Add(this.UpdateStudentAttandancePnl);
+            this.Controls.Add(this.TeacherPanel);
             this.Controls.Add(this.AbscencePanel);
             this.Controls.Add(this.DeleteAbscencePnl);
             this.Controls.Add(this.StudentListPanel);
@@ -3303,22 +3602,8 @@
             this.Controls.Add(this.StudentPanel);
             this.Controls.Add(this.StudentAttandanceEntryPanel);
             this.Controls.Add(this.AbscenceInfoPanel);
-            this.Controls.Add(this.HomePanel);
-            this.Controls.Add(this.StudentPanelRegistrationPanel);
-            this.Controls.Add(this.StudentCanteenPnl);
-            this.Controls.Add(this.ListProductPnl);
-            this.Controls.Add(this.AddProductPnl);
-            this.Controls.Add(this.UpdateProductPnl);
-            this.Controls.Add(this.DeleteProductPnl);
-            this.Controls.Add(this.CanteenPanel);
-            this.Controls.Add(this.StudentDeletePanel);
-            this.Controls.Add(this.ListTeacherPnl);
-            this.Controls.Add(this.DeleteTeacherPnl);
-            this.Controls.Add(this.TeacherPanel);
-            this.Controls.Add(this.UpdateTeacherPnl);
-            this.Controls.Add(this.UpdateStudentAttandancePnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
@@ -3679,5 +3964,6 @@
         private System.Windows.Forms.ComboBox DeleteAbscenceStudentCB;
         private System.Windows.Forms.Button DeleteAbscenceButton;
         private System.Windows.Forms.Label DeleteAbscenceStudentLbl;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -266,7 +266,7 @@ namespace StudentInfo_App
             if (dialogResult == DialogResult.Yes)
             {
                 this.Hide();
-                Form1 form1 = new Form1();
+                Login form1 = new Login();
                 form1.Show();
             }
             else
