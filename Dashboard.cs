@@ -271,7 +271,7 @@ namespace StudentInfo_App
                 return;
             }
         }
-        //combobox ın içini doldurur
+        //combobox ın içini doldurur refreshler .
         private void Refresh_Click(object sender, EventArgs e)
         {
             LoadCities();
@@ -464,11 +464,10 @@ namespace StudentInfo_App
                 return false;
             }
         }
-
+        #region Öğrenci arama
         private STUDENT currentStudent;
         private void SearchStudentButton_Click(object sender, EventArgs e)
-        {
-            #region Öğrenci arama 
+        { 
             var DB = new NewSchoolDBEntities();
             int studentNumber;
             if (int.TryParse(StudentNumberTextBox.Text, out studentNumber))
@@ -492,9 +491,9 @@ namespace StudentInfo_App
             {
                 MessageBox.Show("Geçerli bir öğrenci numarası giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            #endregion
-
         }
+        #endregion
+
         #region Öğrenci Silme
         private void DeleteStudentButton_Click(object sender, EventArgs e)
         {
@@ -671,66 +670,6 @@ namespace StudentInfo_App
                 MessageBox.Show("Geçersiz öğrenci numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             #endregion
-        }
-
-        private void ExportButton_Click(object sender, EventArgs e)
-        {
-            #region Excel dosyasına döküyor
-            var attendanceData = AttendanceDataGridView.DataSource as List<dynamic>;
-            var accessLogData = AccessLogDataGridView.DataSource as List<dynamic>;
-
-            if (attendanceData != null && accessLogData != null)
-            {
-                if (attendanceData.Count > 0 && accessLogData.Count > 0)
-                {
-                    using (var package = new ExcelPackage())
-                    {
-                        // Create Attendance sheet
-                        var attendanceSheet = package.Workbook.Worksheets.Add("Attendance");
-                        attendanceSheet.Cells[1, 1].Value = "Date";
-
-                        for (int i = 0; i < attendanceData.Count; i++)
-                        {
-                            attendanceSheet.Cells[i + 2, 1].Value = attendanceData[i].date;
-                        }
-
-                        // Create Access Log sheet
-                        var accessLogSheet = package.Workbook.Worksheets.Add("Access Log");
-                        accessLogSheet.Cells[1, 1].Value = "Entry Time";
-                        accessLogSheet.Cells[1, 2].Value = "Exit Time";
-
-                        for (int i = 0; i < accessLogData.Count; i++)
-                        {
-                            accessLogSheet.Cells[i + 2, 1].Value = accessLogData[i].entry_time;
-                            accessLogSheet.Cells[i + 2, 2].Value = accessLogData[i].exit_time;
-                        }
-
-                        // Save the file
-                        var saveFileDialog = new SaveFileDialog
-                        {
-                            Filter = "Excel files (*.xlsx)|*.xlsx",
-                            FileName = "Export.xlsx"
-                        };
-
-                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                        {
-                            FileInfo fileInfo = new FileInfo(saveFileDialog.FileName);
-                            package.SaveAs(fileInfo);
-                            MessageBox.Show("Data has been successfully exported to Excel.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No data to export.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("No data to export.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            #endregion
-
         }
         #endregion
 
