@@ -60,6 +60,7 @@ namespace StudentInfo_App
             AddProductLoadCategories();
             UpdateProductLoadCategories();
 
+
             buttonPanelMap.Add("HomeButton", HomePanel);
             buttonPanelMap.Add("StudentsButton", StudentPanel);
             buttonPanelMap.Add("CanteenButton", CanteenPanel);
@@ -86,6 +87,7 @@ namespace StudentInfo_App
             buttonPanelMap.Add("AddProductBtn", AddProductPnl);
             buttonPanelMap.Add("UpdateProductBtn", UpdateProductPnl);
             buttonPanelMap.Add("DeleteProductBtn", DeleteProductPnl);
+            buttonPanelMap.Add("UpdateStudentAttandanceBtn", UpdateStudentAttandancePnl);
 
 
             //buttonPanelMap.Add("TeacherDeleteBtn", TeacherDeletePnl);
@@ -1920,5 +1922,119 @@ namespace StudentInfo_App
             }
         }
         #endregion
+
+        #region öğrenci yoklama düzenleme
+
+        private void UpdateLoadAttendanceDates(int studentNumber)
+        {
+            using (var DB = new NewSchoolDBEntities())
+            {
+                var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == studentNumber);
+                if (student != null)
+                {
+                    // Öğrenciye ait devamsızlık kayıtlarını bul
+                    var attendances = DB.ATTENDANCEs.Where(a => a.student_id == student.student_id).ToList();
+
+                    // ComboBox temizle
+                    SelectDateCB.Items.Clear();
+
+                    // Her bir devamsızlık kaydı için ComboBox'a tarih ekle
+                    foreach (var attendance in attendances)
+                    {
+                        SelectDateCB.Items.Add(attendance.date);
+                    }
+
+                    if (attendances.Count == 0)
+                    {
+                        MessageBox.Show("Bu öğrenci için devamsızlık kaydı bulunamadı.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Öğrenci bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void StudentGetInfoBtn_Click(object sender, EventArgs e)
+        {
+            int studentNumber;
+            if (int.TryParse(UpdateAbscenceEnterStudentNumberTB.Text, out studentNumber)) // Kullanıcı girişi öğrenci numarasını kontrol et
+            {
+                using (var DB = new NewSchoolDBEntities())
+                {
+                    var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == studentNumber); // Öğrenci numarasına göre öğrenciyi bul
+
+                    if (student != null)
+                    {
+                        // Öğrenci bilgilerini göstermek için label'i güncelle
+                        GetStudentInfoLbl.Text = $"Öğrenci Adı: {student.student_firstname}\nÖğrenci Soyadı: {student.student_lastname}\nÖğrenci Numarası: {student.student_schoolNo}\nSınıfı: {student.CLASS.class_name}";
+
+                        // Öğrenci devamsızlık tarihlerini ComboBox'a yükle
+                        UpdateLoadAttendanceDates(studentNumber);
+                    }
+                    else
+                    {
+                        // Öğrenci bulunamadıysa hata mesajı göster
+                        GetStudentInfoLbl.Text = "";
+                        MessageBox.Show("Öğrenci bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                // Giriş değeri geçersizse hata mesajı göster
+                MessageBox.Show("Geçersiz öğrenci numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UpdateDateBtn_Click(object sender, EventArgs e)
+        {
+            int studentNumber;
+            if (int.TryParse(UpdateAbscenceEnterStudentNumberTB.Text, out studentNumber))
+            {
+                using (var DB = new NewSchoolDBEntities())
+                {
+                    var student = DB.STUDENTs.FirstOrDefault(s => s.student_schoolNo == studentNumber);
+                    if (student != null)
+                    {
+                        // DateTimePicker'dan tarih alımı
+                        DateTime originalDate = (SelectDateCB.SelectedItem as DateTime?).Value; // ComboBox'tan tarih alımı varsayımı
+                        DateTime updatedDate = SelectUpdatedDateDTP.Value.Date; // DateTimePicker'dan yeni tarih
+
+                        var attendanceToUpdate = DB.ATTENDANCEs.FirstOrDefault(a => a.student_id == student.student_id && a.date == originalDate);
+                        if (attendanceToUpdate != null)
+                        {
+                            var existingAttendanceOnNewDate = DB.ATTENDANCEs.Any(a => a.student_id == student.student_id && a.date == updatedDate);
+                            if (!existingAttendanceOnNewDate)
+                            {
+                                attendanceToUpdate.date = updatedDate;
+                                DB.SaveChanges();
+                                MessageBox.Show("Devamsızlık kaydı başarıyla güncellendi.", "Güncelleme Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Yeni tarihte zaten bir devamsızlık kaydı bulunmakta.", "Güncelleme Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Belirtilen tarihte devamsızlık kaydı bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Öğrenci bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Geçersiz öğrenci numarası. Lütfen sadece sayı giriniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+        #endregion
+
+
     }
 }
