@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentInfo_App.SplashScreen1), true, true);
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.MenuBar = new System.Windows.Forms.Panel();
             this.StudentsButton = new System.Windows.Forms.Button();
             this.ClassButon = new System.Windows.Forms.Button();
@@ -47,6 +47,7 @@
             this.DasboardText3 = new System.Windows.Forms.Label();
             this.DashboardText4 = new System.Windows.Forms.Label();
             this.HomePanel = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.StudentPanelRegistrationPanel = new System.Windows.Forms.Panel();
             this.StudentSchoolNumberTB = new System.Windows.Forms.TextBox();
             this.StudentSchoolNumberLbl = new System.Windows.Forms.Label();
@@ -318,7 +319,7 @@
             this.DeleteAbscenceStudentLbl = new System.Windows.Forms.Label();
             this.DeleteAbscenceStudentNumberLbl = new System.Windows.Forms.Label();
             this.DeleteAbscenceHeader = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.UpdateTeacherSearchBtn = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -356,6 +357,14 @@
             this.UpdateStudentAttandancePnl.SuspendLayout();
             this.DeleteAbscencePnl.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // splashScreenManager1
+            // 
+            splashScreenManager1.ClosingDelay = 1000;
+            // 
+            // splashScreenManager2
+            // 
+            splashScreenManager2.ClosingDelay = 500;
             // 
             // MenuBar
             // 
@@ -561,6 +570,17 @@
             this.HomePanel.Size = new System.Drawing.Size(901, 505);
             this.HomePanel.TabIndex = 2;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label8.Location = new System.Drawing.Point(66, 359);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(183, 27);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Manage canteen";
+            // 
             // StudentPanelRegistrationPanel
             // 
             this.StudentPanelRegistrationPanel.BackColor = System.Drawing.Color.Snow;
@@ -600,7 +620,7 @@
             // StudentSchoolNumberTB
             // 
             this.StudentSchoolNumberTB.Location = new System.Drawing.Point(532, 284);
-            this.StudentSchoolNumberTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentSchoolNumberTB.Margin = new System.Windows.Forms.Padding(4);
             this.StudentSchoolNumberTB.Name = "StudentSchoolNumberTB";
             this.StudentSchoolNumberTB.Size = new System.Drawing.Size(132, 27);
             this.StudentSchoolNumberTB.TabIndex = 9;
@@ -619,7 +639,7 @@
             // 
             this.StudentClassCB.FormattingEnabled = true;
             this.StudentClassCB.Location = new System.Drawing.Point(187, 284);
-            this.StudentClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentClassCB.Margin = new System.Windows.Forms.Padding(4);
             this.StudentClassCB.Name = "StudentClassCB";
             this.StudentClassCB.Size = new System.Drawing.Size(160, 30);
             this.StudentClassCB.TabIndex = 8;
@@ -648,7 +668,7 @@
             // SaveStudentBtn
             // 
             this.SaveStudentBtn.Location = new System.Drawing.Point(780, 421);
-            this.SaveStudentBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveStudentBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SaveStudentBtn.Name = "SaveStudentBtn";
             this.SaveStudentBtn.Size = new System.Drawing.Size(100, 28);
             this.SaveStudentBtn.TabIndex = 13;
@@ -659,7 +679,7 @@
             // StudentAdressTB
             // 
             this.StudentAdressTB.Location = new System.Drawing.Point(187, 249);
-            this.StudentAdressTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentAdressTB.Margin = new System.Windows.Forms.Padding(4);
             this.StudentAdressTB.Name = "StudentAdressTB";
             this.StudentAdressTB.Size = new System.Drawing.Size(435, 27);
             this.StudentAdressTB.TabIndex = 7;
@@ -667,7 +687,7 @@
             // ParentPhoneTB
             // 
             this.ParentPhoneTB.Location = new System.Drawing.Point(216, 395);
-            this.ParentPhoneTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ParentPhoneTB.Margin = new System.Windows.Forms.Padding(4);
             this.ParentPhoneTB.Name = "ParentPhoneTB";
             this.ParentPhoneTB.Size = new System.Drawing.Size(160, 27);
             this.ParentPhoneTB.TabIndex = 12;
@@ -675,7 +695,7 @@
             // ParentEmailTB
             // 
             this.ParentEmailTB.Location = new System.Drawing.Point(216, 359);
-            this.ParentEmailTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ParentEmailTB.Margin = new System.Windows.Forms.Padding(4);
             this.ParentEmailTB.Name = "ParentEmailTB";
             this.ParentEmailTB.Size = new System.Drawing.Size(160, 27);
             this.ParentEmailTB.TabIndex = 11;
@@ -683,7 +703,7 @@
             // ParentNameTB
             // 
             this.ParentNameTB.Location = new System.Drawing.Point(216, 324);
-            this.ParentNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ParentNameTB.Margin = new System.Windows.Forms.Padding(4);
             this.ParentNameTB.Name = "ParentNameTB";
             this.ParentNameTB.Size = new System.Drawing.Size(160, 27);
             this.ParentNameTB.TabIndex = 10;
@@ -692,7 +712,7 @@
             // 
             this.StudentDistrictCB.FormattingEnabled = true;
             this.StudentDistrictCB.Location = new System.Drawing.Point(480, 210);
-            this.StudentDistrictCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentDistrictCB.Margin = new System.Windows.Forms.Padding(4);
             this.StudentDistrictCB.Name = "StudentDistrictCB";
             this.StudentDistrictCB.Size = new System.Drawing.Size(160, 30);
             this.StudentDistrictCB.TabIndex = 6;
@@ -701,7 +721,7 @@
             // 
             this.StudentCityCB.FormattingEnabled = true;
             this.StudentCityCB.Location = new System.Drawing.Point(187, 210);
-            this.StudentCityCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentCityCB.Margin = new System.Windows.Forms.Padding(4);
             this.StudentCityCB.Name = "StudentCityCB";
             this.StudentCityCB.Size = new System.Drawing.Size(160, 30);
             this.StudentCityCB.TabIndex = 5;
@@ -713,7 +733,7 @@
             "Female"});
             this.StudentGenderCB.FormattingEnabled = true;
             this.StudentGenderCB.Location = new System.Drawing.Point(187, 167);
-            this.StudentGenderCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentGenderCB.Margin = new System.Windows.Forms.Padding(4);
             this.StudentGenderCB.Name = "StudentGenderCB";
             this.StudentGenderCB.Size = new System.Drawing.Size(160, 30);
             this.StudentGenderCB.TabIndex = 4;
@@ -721,7 +741,7 @@
             // StudentBirthdayDTP
             // 
             this.StudentBirthdayDTP.Location = new System.Drawing.Point(187, 127);
-            this.StudentBirthdayDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentBirthdayDTP.Margin = new System.Windows.Forms.Padding(4);
             this.StudentBirthdayDTP.Name = "StudentBirthdayDTP";
             this.StudentBirthdayDTP.Size = new System.Drawing.Size(265, 27);
             this.StudentBirthdayDTP.TabIndex = 3;
@@ -839,7 +859,7 @@
             // StudentLastNameTB
             // 
             this.StudentLastNameTB.Location = new System.Drawing.Point(187, 87);
-            this.StudentLastNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentLastNameTB.Margin = new System.Windows.Forms.Padding(4);
             this.StudentLastNameTB.Name = "StudentLastNameTB";
             this.StudentLastNameTB.Size = new System.Drawing.Size(165, 27);
             this.StudentLastNameTB.TabIndex = 2;
@@ -847,7 +867,7 @@
             // StudentFirstNameTB
             // 
             this.StudentFirstNameTB.Location = new System.Drawing.Point(187, 50);
-            this.StudentFirstNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentFirstNameTB.Margin = new System.Windows.Forms.Padding(4);
             this.StudentFirstNameTB.Name = "StudentFirstNameTB";
             this.StudentFirstNameTB.Size = new System.Drawing.Size(165, 27);
             this.StudentFirstNameTB.TabIndex = 1;
@@ -882,7 +902,7 @@
             // DeleteProductBtn
             // 
             this.DeleteProductBtn.Location = new System.Drawing.Point(323, 359);
-            this.DeleteProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteProductBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteProductBtn.Name = "DeleteProductBtn";
             this.DeleteProductBtn.Size = new System.Drawing.Size(257, 52);
             this.DeleteProductBtn.TabIndex = 0;
@@ -893,7 +913,7 @@
             // UpdateProductBtn
             // 
             this.UpdateProductBtn.Location = new System.Drawing.Point(323, 299);
-            this.UpdateProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateProductBtn.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateProductBtn.Name = "UpdateProductBtn";
             this.UpdateProductBtn.Size = new System.Drawing.Size(257, 52);
             this.UpdateProductBtn.TabIndex = 0;
@@ -904,7 +924,7 @@
             // AddProductBtn
             // 
             this.AddProductBtn.Location = new System.Drawing.Point(323, 241);
-            this.AddProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddProductBtn.Margin = new System.Windows.Forms.Padding(4);
             this.AddProductBtn.Name = "AddProductBtn";
             this.AddProductBtn.Size = new System.Drawing.Size(257, 52);
             this.AddProductBtn.TabIndex = 0;
@@ -915,7 +935,7 @@
             // ListProductBtn
             // 
             this.ListProductBtn.Location = new System.Drawing.Point(323, 180);
-            this.ListProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListProductBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ListProductBtn.Name = "ListProductBtn";
             this.ListProductBtn.Size = new System.Drawing.Size(257, 52);
             this.ListProductBtn.TabIndex = 0;
@@ -926,7 +946,7 @@
             // StudentCanteenButton
             // 
             this.StudentCanteenButton.Location = new System.Drawing.Point(323, 118);
-            this.StudentCanteenButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentCanteenButton.Margin = new System.Windows.Forms.Padding(4);
             this.StudentCanteenButton.Name = "StudentCanteenButton";
             this.StudentCanteenButton.Size = new System.Drawing.Size(257, 52);
             this.StudentCanteenButton.TabIndex = 0;
@@ -961,7 +981,7 @@
             // 
             this.FilterButton.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FilterButton.Location = new System.Drawing.Point(844, 92);
-            this.FilterButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FilterButton.Margin = new System.Windows.Forms.Padding(4);
             this.FilterButton.Name = "FilterButton";
             this.FilterButton.Size = new System.Drawing.Size(88, 28);
             this.FilterButton.TabIndex = 11;
@@ -972,7 +992,7 @@
             // EndDatePicker
             // 
             this.EndDatePicker.Location = new System.Drawing.Point(548, 96);
-            this.EndDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EndDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.EndDatePicker.Name = "EndDatePicker";
             this.EndDatePicker.Size = new System.Drawing.Size(265, 22);
             this.EndDatePicker.TabIndex = 10;
@@ -980,7 +1000,7 @@
             // StartDatePicker
             // 
             this.StartDatePicker.Location = new System.Drawing.Point(155, 95);
-            this.StartDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StartDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.StartDatePicker.Name = "StartDatePicker";
             this.StartDatePicker.Size = new System.Drawing.Size(265, 22);
             this.StartDatePicker.TabIndex = 10;
@@ -1033,7 +1053,7 @@
             // 
             this.AccessLogDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AccessLogDataGridView.Location = new System.Drawing.Point(452, 190);
-            this.AccessLogDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AccessLogDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.AccessLogDataGridView.Name = "AccessLogDataGridView";
             this.AccessLogDataGridView.RowHeadersWidth = 51;
             this.AccessLogDataGridView.Size = new System.Drawing.Size(476, 185);
@@ -1043,7 +1063,7 @@
             // 
             this.AttendanceDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AttendanceDataGridView.Location = new System.Drawing.Point(48, 190);
-            this.AttendanceDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AttendanceDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.AttendanceDataGridView.Name = "AttendanceDataGridView";
             this.AttendanceDataGridView.RowHeadersWidth = 51;
             this.AttendanceDataGridView.Size = new System.Drawing.Size(320, 185);
@@ -1064,7 +1084,7 @@
             // 
             this.FetchStudentButton.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FetchStudentButton.Location = new System.Drawing.Point(356, 47);
-            this.FetchStudentButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FetchStudentButton.Margin = new System.Windows.Forms.Padding(4);
             this.FetchStudentButton.Name = "FetchStudentButton";
             this.FetchStudentButton.Size = new System.Drawing.Size(100, 28);
             this.FetchStudentButton.TabIndex = 3;
@@ -1075,7 +1095,7 @@
             // StudentNumber2TextBox
             // 
             this.StudentNumber2TextBox.Location = new System.Drawing.Point(205, 49);
-            this.StudentNumber2TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentNumber2TextBox.Margin = new System.Windows.Forms.Padding(4);
             this.StudentNumber2TextBox.Name = "StudentNumber2TextBox";
             this.StudentNumber2TextBox.Size = new System.Drawing.Size(132, 22);
             this.StudentNumber2TextBox.TabIndex = 2;
@@ -1146,7 +1166,7 @@
             this.StudentListPanel.Controls.Add(this.StudentListClassCB);
             this.StudentListPanel.Controls.Add(this.StudentListTitleLbl);
             this.StudentListPanel.Location = new System.Drawing.Point(251, 68);
-            this.StudentListPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentListPanel.Margin = new System.Windows.Forms.Padding(4);
             this.StudentListPanel.Name = "StudentListPanel";
             this.StudentListPanel.Size = new System.Drawing.Size(936, 505);
             this.StudentListPanel.TabIndex = 1;
@@ -1155,7 +1175,7 @@
             // 
             this.StudentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StudentDataGridView.Location = new System.Drawing.Point(21, 103);
-            this.StudentDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.StudentDataGridView.Name = "StudentDataGridView";
             this.StudentDataGridView.RowHeadersWidth = 51;
             this.StudentDataGridView.Size = new System.Drawing.Size(876, 370);
@@ -1176,7 +1196,7 @@
             // 
             this.StudentListClassCB.FormattingEnabled = true;
             this.StudentListClassCB.Location = new System.Drawing.Point(197, 60);
-            this.StudentListClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentListClassCB.Margin = new System.Windows.Forms.Padding(4);
             this.StudentListClassCB.Name = "StudentListClassCB";
             this.StudentListClassCB.Size = new System.Drawing.Size(160, 24);
             this.StudentListClassCB.TabIndex = 1;
@@ -1202,7 +1222,7 @@
             this.StudentPanel.Controls.Add(this.StudentRegistrationBtn);
             this.StudentPanel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentPanel.Location = new System.Drawing.Point(251, 68);
-            this.StudentPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentPanel.Margin = new System.Windows.Forms.Padding(4);
             this.StudentPanel.Name = "StudentPanel";
             this.StudentPanel.Size = new System.Drawing.Size(936, 505);
             this.StudentPanel.TabIndex = 17;
@@ -1221,7 +1241,7 @@
             // StudentUpdatebtn
             // 
             this.StudentUpdatebtn.Location = new System.Drawing.Point(337, 290);
-            this.StudentUpdatebtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentUpdatebtn.Margin = new System.Windows.Forms.Padding(4);
             this.StudentUpdatebtn.Name = "StudentUpdatebtn";
             this.StudentUpdatebtn.Size = new System.Drawing.Size(264, 47);
             this.StudentUpdatebtn.TabIndex = 0;
@@ -1232,7 +1252,7 @@
             // StudentDeleteBtn
             // 
             this.StudentDeleteBtn.Location = new System.Drawing.Point(337, 236);
-            this.StudentDeleteBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentDeleteBtn.Margin = new System.Windows.Forms.Padding(4);
             this.StudentDeleteBtn.Name = "StudentDeleteBtn";
             this.StudentDeleteBtn.Size = new System.Drawing.Size(264, 47);
             this.StudentDeleteBtn.TabIndex = 0;
@@ -1243,7 +1263,7 @@
             // StudentListBtn
             // 
             this.StudentListBtn.Location = new System.Drawing.Point(337, 182);
-            this.StudentListBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentListBtn.Margin = new System.Windows.Forms.Padding(4);
             this.StudentListBtn.Name = "StudentListBtn";
             this.StudentListBtn.Size = new System.Drawing.Size(264, 47);
             this.StudentListBtn.TabIndex = 0;
@@ -1254,7 +1274,7 @@
             // StudentRegistrationBtn
             // 
             this.StudentRegistrationBtn.Location = new System.Drawing.Point(337, 128);
-            this.StudentRegistrationBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentRegistrationBtn.Margin = new System.Windows.Forms.Padding(4);
             this.StudentRegistrationBtn.Name = "StudentRegistrationBtn";
             this.StudentRegistrationBtn.Size = new System.Drawing.Size(264, 47);
             this.StudentRegistrationBtn.TabIndex = 0;
@@ -1275,7 +1295,7 @@
             this.StudentDeletePanel.Controls.Add(this.StudentDeleteHeaderLbl);
             this.StudentDeletePanel.Controls.Add(this.StudentNumberTextBox);
             this.StudentDeletePanel.Location = new System.Drawing.Point(251, 68);
-            this.StudentDeletePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentDeletePanel.Margin = new System.Windows.Forms.Padding(4);
             this.StudentDeletePanel.Name = "StudentDeletePanel";
             this.StudentDeletePanel.Size = new System.Drawing.Size(936, 505);
             this.StudentDeletePanel.TabIndex = 18;
@@ -1317,7 +1337,7 @@
             // 
             this.DeleteStudentButton.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DeleteStudentButton.Location = new System.Drawing.Point(463, 252);
-            this.DeleteStudentButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteStudentButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteStudentButton.Name = "DeleteStudentButton";
             this.DeleteStudentButton.Size = new System.Drawing.Size(143, 28);
             this.DeleteStudentButton.TabIndex = 6;
@@ -1340,7 +1360,7 @@
             // 
             this.SearchStudentButton.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.SearchStudentButton.Location = new System.Drawing.Point(464, 128);
-            this.SearchStudentButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchStudentButton.Margin = new System.Windows.Forms.Padding(4);
             this.SearchStudentButton.Name = "SearchStudentButton";
             this.SearchStudentButton.Size = new System.Drawing.Size(100, 28);
             this.SearchStudentButton.TabIndex = 3;
@@ -1373,7 +1393,7 @@
             // StudentNumberTextBox
             // 
             this.StudentNumberTextBox.Location = new System.Drawing.Point(323, 130);
-            this.StudentNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentNumberTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.StudentNumberTextBox.Name = "StudentNumberTextBox";
             this.StudentNumberTextBox.Size = new System.Drawing.Size(132, 22);
             this.StudentNumberTextBox.TabIndex = 0;
@@ -1397,7 +1417,7 @@
             this.AbscencePanel.Controls.Add(this.StudentAbsenceAttandanceBtn);
             this.AbscencePanel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AbscencePanel.Location = new System.Drawing.Point(251, 68);
-            this.AbscencePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AbscencePanel.Margin = new System.Windows.Forms.Padding(4);
             this.AbscencePanel.Name = "AbscencePanel";
             this.AbscencePanel.Size = new System.Drawing.Size(936, 505);
             this.AbscencePanel.TabIndex = 19;
@@ -1416,7 +1436,7 @@
             // DeleteAbscenceBtn
             // 
             this.DeleteAbscenceBtn.Location = new System.Drawing.Point(316, 295);
-            this.DeleteAbscenceBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteAbscenceBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteAbscenceBtn.Name = "DeleteAbscenceBtn";
             this.DeleteAbscenceBtn.Size = new System.Drawing.Size(264, 62);
             this.DeleteAbscenceBtn.TabIndex = 1;
@@ -1427,7 +1447,7 @@
             // UpdateStudentAttandanceBtn
             // 
             this.UpdateStudentAttandanceBtn.Location = new System.Drawing.Point(316, 226);
-            this.UpdateStudentAttandanceBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateStudentAttandanceBtn.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentAttandanceBtn.Name = "UpdateStudentAttandanceBtn";
             this.UpdateStudentAttandanceBtn.Size = new System.Drawing.Size(264, 62);
             this.UpdateStudentAttandanceBtn.TabIndex = 1;
@@ -1438,7 +1458,7 @@
             // StudentEntryAttandanceBtn
             // 
             this.StudentEntryAttandanceBtn.Location = new System.Drawing.Point(316, 158);
-            this.StudentEntryAttandanceBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentEntryAttandanceBtn.Margin = new System.Windows.Forms.Padding(4);
             this.StudentEntryAttandanceBtn.Name = "StudentEntryAttandanceBtn";
             this.StudentEntryAttandanceBtn.Size = new System.Drawing.Size(264, 62);
             this.StudentEntryAttandanceBtn.TabIndex = 1;
@@ -1449,7 +1469,7 @@
             // StudentAbsenceAttandanceBtn
             // 
             this.StudentAbsenceAttandanceBtn.Location = new System.Drawing.Point(316, 94);
-            this.StudentAbsenceAttandanceBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentAbsenceAttandanceBtn.Margin = new System.Windows.Forms.Padding(4);
             this.StudentAbsenceAttandanceBtn.Name = "StudentAbsenceAttandanceBtn";
             this.StudentAbsenceAttandanceBtn.Size = new System.Drawing.Size(264, 58);
             this.StudentAbsenceAttandanceBtn.TabIndex = 1;
@@ -1469,7 +1489,7 @@
             this.StudentAttandanceEntryPanel.Controls.Add(this.StudentNumberAbscenceLbl);
             this.StudentAttandanceEntryPanel.Controls.Add(this.StudentAbsenceEntryHeaderLbl);
             this.StudentAttandanceEntryPanel.Location = new System.Drawing.Point(251, 68);
-            this.StudentAttandanceEntryPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentAttandanceEntryPanel.Margin = new System.Windows.Forms.Padding(4);
             this.StudentAttandanceEntryPanel.Name = "StudentAttandanceEntryPanel";
             this.StudentAttandanceEntryPanel.Size = new System.Drawing.Size(936, 505);
             this.StudentAttandanceEntryPanel.TabIndex = 20;
@@ -1478,7 +1498,7 @@
             // 
             this.AddAttendanceButton.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AddAttendanceButton.Location = new System.Drawing.Point(541, 153);
-            this.AddAttendanceButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddAttendanceButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddAttendanceButton.Name = "AddAttendanceButton";
             this.AddAttendanceButton.Size = new System.Drawing.Size(161, 28);
             this.AddAttendanceButton.TabIndex = 4;
@@ -1489,7 +1509,7 @@
             // AttendanceDatePicker
             // 
             this.AttendanceDatePicker.Location = new System.Drawing.Point(220, 154);
-            this.AttendanceDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AttendanceDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.AttendanceDatePicker.Name = "AttendanceDatePicker";
             this.AttendanceDatePicker.Size = new System.Drawing.Size(265, 22);
             this.AttendanceDatePicker.TabIndex = 3;
@@ -1520,7 +1540,7 @@
             // 
             this.StudentSearchBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentSearchBtn.Location = new System.Drawing.Point(388, 90);
-            this.StudentSearchBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentSearchBtn.Margin = new System.Windows.Forms.Padding(4);
             this.StudentSearchBtn.Name = "StudentSearchBtn";
             this.StudentSearchBtn.Size = new System.Drawing.Size(100, 28);
             this.StudentSearchBtn.TabIndex = 2;
@@ -1532,7 +1552,7 @@
             // 
             this.StudentNumber3TB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentNumber3TB.Location = new System.Drawing.Point(220, 91);
-            this.StudentNumber3TB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentNumber3TB.Margin = new System.Windows.Forms.Padding(4);
             this.StudentNumber3TB.Name = "StudentNumber3TB";
             this.StudentNumber3TB.Size = new System.Drawing.Size(132, 26);
             this.StudentNumber3TB.TabIndex = 1;
@@ -1569,7 +1589,7 @@
             this.TeacherPanel.Controls.Add(this.TeacherAddBtn);
             this.TeacherPanel.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TeacherPanel.Location = new System.Drawing.Point(240, 62);
-            this.TeacherPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TeacherPanel.Margin = new System.Windows.Forms.Padding(4);
             this.TeacherPanel.Name = "TeacherPanel";
             this.TeacherPanel.Size = new System.Drawing.Size(936, 505);
             this.TeacherPanel.TabIndex = 21;
@@ -1589,7 +1609,7 @@
             // 
             this.ListTeacherBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ListTeacherBtn.Location = new System.Drawing.Point(333, 318);
-            this.ListTeacherBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListTeacherBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ListTeacherBtn.Name = "ListTeacherBtn";
             this.ListTeacherBtn.Size = new System.Drawing.Size(224, 50);
             this.ListTeacherBtn.TabIndex = 0;
@@ -1601,7 +1621,7 @@
             // 
             this.UpdateTeacherBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateTeacherBtn.Location = new System.Drawing.Point(333, 257);
-            this.UpdateTeacherBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateTeacherBtn.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateTeacherBtn.Name = "UpdateTeacherBtn";
             this.UpdateTeacherBtn.Size = new System.Drawing.Size(224, 50);
             this.UpdateTeacherBtn.TabIndex = 0;
@@ -1613,7 +1633,7 @@
             // 
             this.TeacherDeleteBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TeacherDeleteBtn.Location = new System.Drawing.Point(333, 199);
-            this.TeacherDeleteBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TeacherDeleteBtn.Margin = new System.Windows.Forms.Padding(4);
             this.TeacherDeleteBtn.Name = "TeacherDeleteBtn";
             this.TeacherDeleteBtn.Size = new System.Drawing.Size(224, 50);
             this.TeacherDeleteBtn.TabIndex = 0;
@@ -1625,7 +1645,7 @@
             // 
             this.TeacherAddBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TeacherAddBtn.Location = new System.Drawing.Point(333, 145);
-            this.TeacherAddBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TeacherAddBtn.Margin = new System.Windows.Forms.Padding(4);
             this.TeacherAddBtn.Name = "TeacherAddBtn";
             this.TeacherAddBtn.Size = new System.Drawing.Size(224, 50);
             this.TeacherAddBtn.TabIndex = 0;
@@ -1645,7 +1665,7 @@
             this.TeacheAddPnl.Controls.Add(this.TeacherAddHeadher);
             this.TeacheAddPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TeacheAddPnl.Location = new System.Drawing.Point(251, 68);
-            this.TeacheAddPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TeacheAddPnl.Margin = new System.Windows.Forms.Padding(4);
             this.TeacheAddPnl.Name = "TeacheAddPnl";
             this.TeacheAddPnl.Size = new System.Drawing.Size(936, 505);
             this.TeacheAddPnl.TabIndex = 22;
@@ -1653,7 +1673,7 @@
             // DefineAClassTeacherBtn
             // 
             this.DefineAClassTeacherBtn.Location = new System.Drawing.Point(528, 202);
-            this.DefineAClassTeacherBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DefineAClassTeacherBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DefineAClassTeacherBtn.Name = "DefineAClassTeacherBtn";
             this.DefineAClassTeacherBtn.Size = new System.Drawing.Size(224, 28);
             this.DefineAClassTeacherBtn.TabIndex = 4;
@@ -1665,7 +1685,7 @@
             // 
             this.TeacherAddBranchCB.FormattingEnabled = true;
             this.TeacherAddBranchCB.Location = new System.Drawing.Point(244, 124);
-            this.TeacherAddBranchCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TeacherAddBranchCB.Margin = new System.Windows.Forms.Padding(4);
             this.TeacherAddBranchCB.Name = "TeacherAddBranchCB";
             this.TeacherAddBranchCB.Size = new System.Drawing.Size(160, 29);
             this.TeacherAddBranchCB.TabIndex = 2;
@@ -1673,7 +1693,7 @@
             // TeacherAdd2Btn
             // 
             this.TeacherAdd2Btn.Location = new System.Drawing.Point(528, 159);
-            this.TeacherAdd2Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TeacherAdd2Btn.Margin = new System.Windows.Forms.Padding(4);
             this.TeacherAdd2Btn.Name = "TeacherAdd2Btn";
             this.TeacherAdd2Btn.Size = new System.Drawing.Size(135, 28);
             this.TeacherAdd2Btn.TabIndex = 3;
@@ -1684,7 +1704,7 @@
             // TeacherAddNameTB
             // 
             this.TeacherAddNameTB.Location = new System.Drawing.Point(244, 89);
-            this.TeacherAddNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TeacherAddNameTB.Margin = new System.Windows.Forms.Padding(4);
             this.TeacherAddNameTB.Name = "TeacherAddNameTB";
             this.TeacherAddNameTB.Size = new System.Drawing.Size(132, 26);
             this.TeacherAddNameTB.TabIndex = 1;
@@ -1756,7 +1776,7 @@
             this.StudentUpdatePanel.Controls.Add(this.UpdateStudentSchoolNumberTB);
             this.StudentUpdatePanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.StudentUpdatePanel.Location = new System.Drawing.Point(251, 68);
-            this.StudentUpdatePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentUpdatePanel.Margin = new System.Windows.Forms.Padding(4);
             this.StudentUpdatePanel.Name = "StudentUpdatePanel";
             this.StudentUpdatePanel.Size = new System.Drawing.Size(936, 505);
             this.StudentUpdatePanel.TabIndex = 23;
@@ -1765,7 +1785,7 @@
             // 
             this.UpdateStudentDistrictCB.FormattingEnabled = true;
             this.UpdateStudentDistrictCB.Location = new System.Drawing.Point(480, 215);
-            this.UpdateStudentDistrictCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateStudentDistrictCB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentDistrictCB.Name = "UpdateStudentDistrictCB";
             this.UpdateStudentDistrictCB.Size = new System.Drawing.Size(160, 24);
             this.UpdateStudentDistrictCB.TabIndex = 7;
@@ -1774,7 +1794,7 @@
             // 
             this.UpdateStudentClassCB.FormattingEnabled = true;
             this.UpdateStudentClassCB.Location = new System.Drawing.Point(215, 274);
-            this.UpdateStudentClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateStudentClassCB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentClassCB.Name = "UpdateStudentClassCB";
             this.UpdateStudentClassCB.Size = new System.Drawing.Size(160, 24);
             this.UpdateStudentClassCB.TabIndex = 9;
@@ -1783,7 +1803,7 @@
             // 
             this.UpdateStudentCityCB.FormattingEnabled = true;
             this.UpdateStudentCityCB.Location = new System.Drawing.Point(216, 214);
-            this.UpdateStudentCityCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateStudentCityCB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentCityCB.Name = "UpdateStudentCityCB";
             this.UpdateStudentCityCB.Size = new System.Drawing.Size(160, 24);
             this.UpdateStudentCityCB.TabIndex = 6;
@@ -1792,7 +1812,7 @@
             // 
             this.UpdateStudentGenderCB.FormattingEnabled = true;
             this.UpdateStudentGenderCB.Location = new System.Drawing.Point(216, 186);
-            this.UpdateStudentGenderCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateStudentGenderCB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentGenderCB.Name = "UpdateStudentGenderCB";
             this.UpdateStudentGenderCB.Size = new System.Drawing.Size(160, 24);
             this.UpdateStudentGenderCB.TabIndex = 5;
@@ -1801,7 +1821,7 @@
             // 
             this.UpdateStudentBirthdayDTP.CalendarFont = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateStudentBirthdayDTP.Location = new System.Drawing.Point(216, 156);
-            this.UpdateStudentBirthdayDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateStudentBirthdayDTP.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentBirthdayDTP.Name = "UpdateStudentBirthdayDTP";
             this.UpdateStudentBirthdayDTP.Size = new System.Drawing.Size(265, 22);
             this.UpdateStudentBirthdayDTP.TabIndex = 4;
@@ -1810,7 +1830,7 @@
             // 
             this.UpdateStudentBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateStudentBtn.Location = new System.Drawing.Point(633, 426);
-            this.UpdateStudentBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateStudentBtn.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentBtn.Name = "UpdateStudentBtn";
             this.UpdateStudentBtn.Size = new System.Drawing.Size(185, 28);
             this.UpdateStudentBtn.TabIndex = 14;
@@ -1822,7 +1842,7 @@
             // 
             this.GetStudentInfoBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.GetStudentInfoBtn.Location = new System.Drawing.Point(464, 52);
-            this.GetStudentInfoBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GetStudentInfoBtn.Margin = new System.Windows.Forms.Padding(4);
             this.GetStudentInfoBtn.Name = "GetStudentInfoBtn";
             this.GetStudentInfoBtn.Size = new System.Drawing.Size(185, 28);
             this.GetStudentInfoBtn.TabIndex = 1;
@@ -1988,7 +2008,7 @@
             // 
             this.UpdateStudentAddressTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateStudentAddressTB.Location = new System.Drawing.Point(216, 244);
-            this.UpdateStudentAddressTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateStudentAddressTB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentAddressTB.Name = "UpdateStudentAddressTB";
             this.UpdateStudentAddressTB.Size = new System.Drawing.Size(424, 26);
             this.UpdateStudentAddressTB.TabIndex = 8;
@@ -1997,7 +2017,7 @@
             // 
             this.UpdateParentPhoneTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateParentPhoneTB.Location = new System.Drawing.Point(235, 368);
-            this.UpdateParentPhoneTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateParentPhoneTB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateParentPhoneTB.Name = "UpdateParentPhoneTB";
             this.UpdateParentPhoneTB.Size = new System.Drawing.Size(132, 26);
             this.UpdateParentPhoneTB.TabIndex = 13;
@@ -2006,7 +2026,7 @@
             // 
             this.UpdateParentEmailTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateParentEmailTB.Location = new System.Drawing.Point(235, 337);
-            this.UpdateParentEmailTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateParentEmailTB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateParentEmailTB.Name = "UpdateParentEmailTB";
             this.UpdateParentEmailTB.Size = new System.Drawing.Size(132, 26);
             this.UpdateParentEmailTB.TabIndex = 12;
@@ -2015,7 +2035,7 @@
             // 
             this.UpdateParentNameTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateParentNameTB.Location = new System.Drawing.Point(235, 308);
-            this.UpdateParentNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateParentNameTB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateParentNameTB.Name = "UpdateParentNameTB";
             this.UpdateParentNameTB.Size = new System.Drawing.Size(132, 26);
             this.UpdateParentNameTB.TabIndex = 11;
@@ -2024,7 +2044,7 @@
             // 
             this.UpdateStudentNumberTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateStudentNumberTB.Location = new System.Drawing.Point(452, 272);
-            this.UpdateStudentNumberTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateStudentNumberTB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentNumberTB.Name = "UpdateStudentNumberTB";
             this.UpdateStudentNumberTB.Size = new System.Drawing.Size(132, 26);
             this.UpdateStudentNumberTB.TabIndex = 10;
@@ -2033,7 +2053,7 @@
             // 
             this.UpdateStudentLastNameTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateStudentLastNameTB.Location = new System.Drawing.Point(216, 122);
-            this.UpdateStudentLastNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateStudentLastNameTB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentLastNameTB.Name = "UpdateStudentLastNameTB";
             this.UpdateStudentLastNameTB.Size = new System.Drawing.Size(132, 26);
             this.UpdateStudentLastNameTB.TabIndex = 3;
@@ -2042,7 +2062,7 @@
             // 
             this.UpdateStudentFirstNameTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateStudentFirstNameTB.Location = new System.Drawing.Point(216, 92);
-            this.UpdateStudentFirstNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateStudentFirstNameTB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentFirstNameTB.Name = "UpdateStudentFirstNameTB";
             this.UpdateStudentFirstNameTB.Size = new System.Drawing.Size(132, 26);
             this.UpdateStudentFirstNameTB.TabIndex = 2;
@@ -2051,7 +2071,7 @@
             // 
             this.UpdateStudentSchoolNumberTB.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateStudentSchoolNumberTB.Location = new System.Drawing.Point(307, 54);
-            this.UpdateStudentSchoolNumberTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateStudentSchoolNumberTB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentSchoolNumberTB.Name = "UpdateStudentSchoolNumberTB";
             this.UpdateStudentSchoolNumberTB.Size = new System.Drawing.Size(132, 26);
             this.UpdateStudentSchoolNumberTB.TabIndex = 0;
@@ -2066,7 +2086,7 @@
             this.ClassPanel.Controls.Add(this.AddClassBtn);
             this.ClassPanel.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ClassPanel.Location = new System.Drawing.Point(251, 68);
-            this.ClassPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClassPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ClassPanel.Name = "ClassPanel";
             this.ClassPanel.Size = new System.Drawing.Size(936, 505);
             this.ClassPanel.TabIndex = 24;
@@ -2086,7 +2106,7 @@
             // 
             this.DeleteClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DeleteClassBtn.Location = new System.Drawing.Point(323, 318);
-            this.DeleteClassBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteClassBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteClassBtn.Name = "DeleteClassBtn";
             this.DeleteClassBtn.Size = new System.Drawing.Size(239, 46);
             this.DeleteClassBtn.TabIndex = 0;
@@ -2098,7 +2118,7 @@
             // 
             this.ListClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ListClassBtn.Location = new System.Drawing.Point(323, 265);
-            this.ListClassBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListClassBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ListClassBtn.Name = "ListClassBtn";
             this.ListClassBtn.Size = new System.Drawing.Size(239, 46);
             this.ListClassBtn.TabIndex = 0;
@@ -2110,7 +2130,7 @@
             // 
             this.UpdateClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateClassBtn.Location = new System.Drawing.Point(323, 212);
-            this.UpdateClassBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateClassBtn.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateClassBtn.Name = "UpdateClassBtn";
             this.UpdateClassBtn.Size = new System.Drawing.Size(239, 46);
             this.UpdateClassBtn.TabIndex = 0;
@@ -2122,7 +2142,7 @@
             // 
             this.AddClassBtn.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AddClassBtn.Location = new System.Drawing.Point(323, 159);
-            this.AddClassBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddClassBtn.Margin = new System.Windows.Forms.Padding(4);
             this.AddClassBtn.Name = "AddClassBtn";
             this.AddClassBtn.Size = new System.Drawing.Size(239, 46);
             this.AddClassBtn.TabIndex = 0;
@@ -2139,7 +2159,7 @@
             this.AddClassPnl.Controls.Add(this.ClassNameLbl);
             this.AddClassPnl.Controls.Add(this.AddClassHeader);
             this.AddClassPnl.Location = new System.Drawing.Point(251, 68);
-            this.AddClassPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddClassPnl.Margin = new System.Windows.Forms.Padding(4);
             this.AddClassPnl.Name = "AddClassPnl";
             this.AddClassPnl.Size = new System.Drawing.Size(936, 505);
             this.AddClassPnl.TabIndex = 25;
@@ -2148,7 +2168,7 @@
             // 
             this.AddClassBtn2.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AddClassBtn2.Location = new System.Drawing.Point(576, 164);
-            this.AddClassBtn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddClassBtn2.Margin = new System.Windows.Forms.Padding(4);
             this.AddClassBtn2.Name = "AddClassBtn2";
             this.AddClassBtn2.Size = new System.Drawing.Size(119, 28);
             this.AddClassBtn2.TabIndex = 2;
@@ -2159,7 +2179,7 @@
             // AddClassTB
             // 
             this.AddClassTB.Location = new System.Drawing.Point(253, 89);
-            this.AddClassTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddClassTB.Margin = new System.Windows.Forms.Padding(4);
             this.AddClassTB.Name = "AddClassTB";
             this.AddClassTB.Size = new System.Drawing.Size(132, 22);
             this.AddClassTB.TabIndex = 1;
@@ -2208,7 +2228,7 @@
             this.UpdateClassPnl.Controls.Add(this.classComboBox);
             this.UpdateClassPnl.Controls.Add(this.UpdateClassLbl);
             this.UpdateClassPnl.Location = new System.Drawing.Point(251, 68);
-            this.UpdateClassPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateClassPnl.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateClassPnl.Name = "UpdateClassPnl";
             this.UpdateClassPnl.Size = new System.Drawing.Size(936, 505);
             this.UpdateClassPnl.TabIndex = 26;
@@ -2217,7 +2237,7 @@
             // 
             this.updateClassButton.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.updateClassButton.Location = new System.Drawing.Point(611, 182);
-            this.updateClassButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.updateClassButton.Margin = new System.Windows.Forms.Padding(4);
             this.updateClassButton.Name = "updateClassButton";
             this.updateClassButton.Size = new System.Drawing.Size(141, 28);
             this.updateClassButton.TabIndex = 3;
@@ -2229,7 +2249,7 @@
             // 
             this.newClassNameTextBox.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.newClassNameTextBox.Location = new System.Drawing.Point(244, 101);
-            this.newClassNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.newClassNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.newClassNameTextBox.Name = "newClassNameTextBox";
             this.newClassNameTextBox.Size = new System.Drawing.Size(160, 26);
             this.newClassNameTextBox.TabIndex = 2;
@@ -2271,7 +2291,7 @@
             // 
             this.classComboBox.FormattingEnabled = true;
             this.classComboBox.Location = new System.Drawing.Point(244, 70);
-            this.classComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.classComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.classComboBox.Name = "classComboBox";
             this.classComboBox.Size = new System.Drawing.Size(160, 24);
             this.classComboBox.TabIndex = 1;
@@ -2297,7 +2317,7 @@
             this.ListClassPnl.Controls.Add(this.ListClassHeaderLbl);
             this.ListClassPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ListClassPnl.Location = new System.Drawing.Point(251, 68);
-            this.ListClassPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListClassPnl.Margin = new System.Windows.Forms.Padding(4);
             this.ListClassPnl.Name = "ListClassPnl";
             this.ListClassPnl.Size = new System.Drawing.Size(936, 505);
             this.ListClassPnl.TabIndex = 27;
@@ -2305,7 +2325,7 @@
             // ListStudentButton
             // 
             this.ListStudentButton.Location = new System.Drawing.Point(480, 79);
-            this.ListStudentButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListStudentButton.Margin = new System.Windows.Forms.Padding(4);
             this.ListStudentButton.Name = "ListStudentButton";
             this.ListStudentButton.Size = new System.Drawing.Size(145, 28);
             this.ListStudentButton.TabIndex = 2;
@@ -2327,7 +2347,7 @@
             // 
             this.ListClassCB.FormattingEnabled = true;
             this.ListClassCB.Location = new System.Drawing.Point(263, 79);
-            this.ListClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListClassCB.Margin = new System.Windows.Forms.Padding(4);
             this.ListClassCB.Name = "ListClassCB";
             this.ListClassCB.Size = new System.Drawing.Size(160, 29);
             this.ListClassCB.TabIndex = 1;
@@ -2363,7 +2383,7 @@
             this.DeleteClassPnl.Controls.Add(this.ClassDeleteHeader);
             this.DeleteClassPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DeleteClassPnl.Location = new System.Drawing.Point(251, 68);
-            this.DeleteClassPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteClassPnl.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteClassPnl.Name = "DeleteClassPnl";
             this.DeleteClassPnl.Size = new System.Drawing.Size(936, 505);
             this.DeleteClassPnl.TabIndex = 28;
@@ -2371,7 +2391,7 @@
             // DeleteClassButton
             // 
             this.DeleteClassButton.Location = new System.Drawing.Point(495, 79);
-            this.DeleteClassButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteClassButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteClassButton.Name = "DeleteClassButton";
             this.DeleteClassButton.Size = new System.Drawing.Size(155, 28);
             this.DeleteClassButton.TabIndex = 2;
@@ -2383,7 +2403,7 @@
             // 
             this.DeleteClassCB.FormattingEnabled = true;
             this.DeleteClassCB.Location = new System.Drawing.Point(284, 79);
-            this.DeleteClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteClassCB.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteClassCB.Name = "DeleteClassCB";
             this.DeleteClassCB.Size = new System.Drawing.Size(160, 29);
             this.DeleteClassCB.TabIndex = 1;
@@ -2431,7 +2451,7 @@
             this.AssignTeacherToClassPnl.Controls.Add(this.AssignTeacherToClassHeader);
             this.AssignTeacherToClassPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AssignTeacherToClassPnl.Location = new System.Drawing.Point(251, 68);
-            this.AssignTeacherToClassPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AssignTeacherToClassPnl.Margin = new System.Windows.Forms.Padding(4);
             this.AssignTeacherToClassPnl.Name = "AssignTeacherToClassPnl";
             this.AssignTeacherToClassPnl.Size = new System.Drawing.Size(936, 505);
             this.AssignTeacherToClassPnl.TabIndex = 29;
@@ -2449,7 +2469,7 @@
             // AssignClassBtn
             // 
             this.AssignClassBtn.Location = new System.Drawing.Point(564, 143);
-            this.AssignClassBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AssignClassBtn.Margin = new System.Windows.Forms.Padding(4);
             this.AssignClassBtn.Name = "AssignClassBtn";
             this.AssignClassBtn.Size = new System.Drawing.Size(147, 31);
             this.AssignClassBtn.TabIndex = 3;
@@ -2461,7 +2481,7 @@
             // 
             this.SelectClassCB.FormattingEnabled = true;
             this.SelectClassCB.Location = new System.Drawing.Point(265, 108);
-            this.SelectClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SelectClassCB.Margin = new System.Windows.Forms.Padding(4);
             this.SelectClassCB.Name = "SelectClassCB";
             this.SelectClassCB.Size = new System.Drawing.Size(160, 29);
             this.SelectClassCB.TabIndex = 2;
@@ -2470,7 +2490,7 @@
             // 
             this.SelectTeacherCB.FormattingEnabled = true;
             this.SelectTeacherCB.Location = new System.Drawing.Point(265, 71);
-            this.SelectTeacherCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SelectTeacherCB.Margin = new System.Windows.Forms.Padding(4);
             this.SelectTeacherCB.Name = "SelectTeacherCB";
             this.SelectTeacherCB.Size = new System.Drawing.Size(160, 29);
             this.SelectTeacherCB.TabIndex = 1;
@@ -2509,6 +2529,7 @@
             // UpdateTeacherPnl
             // 
             this.UpdateTeacherPnl.BackColor = System.Drawing.SystemColors.Control;
+            this.UpdateTeacherPnl.Controls.Add(this.UpdateTeacherSearchBtn);
             this.UpdateTeacherPnl.Controls.Add(this.UpdateTeacherBtn2);
             this.UpdateTeacherPnl.Controls.Add(this.UpdateTeacherNameTB);
             this.UpdateTeacherPnl.Controls.Add(this.SelectTeacherClassCB);
@@ -2523,7 +2544,7 @@
             this.UpdateTeacherPnl.Controls.Add(this.UpdateTeacherHeader);
             this.UpdateTeacherPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateTeacherPnl.Location = new System.Drawing.Point(251, 68);
-            this.UpdateTeacherPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateTeacherPnl.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateTeacherPnl.Name = "UpdateTeacherPnl";
             this.UpdateTeacherPnl.Size = new System.Drawing.Size(936, 505);
             this.UpdateTeacherPnl.TabIndex = 30;
@@ -2531,7 +2552,7 @@
             // UpdateTeacherBtn2
             // 
             this.UpdateTeacherBtn2.Location = new System.Drawing.Point(564, 274);
-            this.UpdateTeacherBtn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateTeacherBtn2.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateTeacherBtn2.Name = "UpdateTeacherBtn2";
             this.UpdateTeacherBtn2.Size = new System.Drawing.Size(157, 28);
             this.UpdateTeacherBtn2.TabIndex = 6;
@@ -2542,7 +2563,7 @@
             // UpdateTeacherNameTB
             // 
             this.UpdateTeacherNameTB.Location = new System.Drawing.Point(263, 126);
-            this.UpdateTeacherNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateTeacherNameTB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateTeacherNameTB.Name = "UpdateTeacherNameTB";
             this.UpdateTeacherNameTB.Size = new System.Drawing.Size(160, 26);
             this.UpdateTeacherNameTB.TabIndex = 2;
@@ -2551,7 +2572,7 @@
             // 
             this.SelectTeacherClassCB.FormattingEnabled = true;
             this.SelectTeacherClassCB.Location = new System.Drawing.Point(560, 198);
-            this.SelectTeacherClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SelectTeacherClassCB.Margin = new System.Windows.Forms.Padding(4);
             this.SelectTeacherClassCB.Name = "SelectTeacherClassCB";
             this.SelectTeacherClassCB.Size = new System.Drawing.Size(160, 29);
             this.SelectTeacherClassCB.TabIndex = 5;
@@ -2560,7 +2581,7 @@
             // 
             this.UpdateTeacherBranchCB.FormattingEnabled = true;
             this.UpdateTeacherBranchCB.Location = new System.Drawing.Point(263, 160);
-            this.UpdateTeacherBranchCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateTeacherBranchCB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateTeacherBranchCB.Name = "UpdateTeacherBranchCB";
             this.UpdateTeacherBranchCB.Size = new System.Drawing.Size(160, 29);
             this.UpdateTeacherBranchCB.TabIndex = 3;
@@ -2569,7 +2590,7 @@
             // 
             this.WhichClassUpdatedCB.FormattingEnabled = true;
             this.WhichClassUpdatedCB.Location = new System.Drawing.Point(263, 194);
-            this.WhichClassUpdatedCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.WhichClassUpdatedCB.Margin = new System.Windows.Forms.Padding(4);
             this.WhichClassUpdatedCB.Name = "WhichClassUpdatedCB";
             this.WhichClassUpdatedCB.Size = new System.Drawing.Size(160, 29);
             this.WhichClassUpdatedCB.TabIndex = 4;
@@ -2578,7 +2599,7 @@
             // 
             this.SelectUpdateTeacherCB.FormattingEnabled = true;
             this.SelectUpdateTeacherCB.Location = new System.Drawing.Point(263, 85);
-            this.SelectUpdateTeacherCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SelectUpdateTeacherCB.Margin = new System.Windows.Forms.Padding(4);
             this.SelectUpdateTeacherCB.Name = "SelectUpdateTeacherCB";
             this.SelectUpdateTeacherCB.Size = new System.Drawing.Size(160, 29);
             this.SelectUpdateTeacherCB.TabIndex = 1;
@@ -2655,7 +2676,7 @@
             this.ListTeacherPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ListTeacherPnl.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ListTeacherPnl.Location = new System.Drawing.Point(251, 68);
-            this.ListTeacherPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListTeacherPnl.Margin = new System.Windows.Forms.Padding(4);
             this.ListTeacherPnl.Name = "ListTeacherPnl";
             this.ListTeacherPnl.Size = new System.Drawing.Size(936, 505);
             this.ListTeacherPnl.TabIndex = 31;
@@ -2663,7 +2684,7 @@
             // FilterTeacherBtn
             // 
             this.FilterTeacherBtn.Location = new System.Drawing.Point(409, 79);
-            this.FilterTeacherBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FilterTeacherBtn.Margin = new System.Windows.Forms.Padding(4);
             this.FilterTeacherBtn.Name = "FilterTeacherBtn";
             this.FilterTeacherBtn.Size = new System.Drawing.Size(100, 28);
             this.FilterTeacherBtn.TabIndex = 4;
@@ -2675,7 +2696,7 @@
             // 
             this.ListedTeacherDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListedTeacherDGV.Location = new System.Drawing.Point(145, 127);
-            this.ListedTeacherDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListedTeacherDGV.Margin = new System.Windows.Forms.Padding(4);
             this.ListedTeacherDGV.Name = "ListedTeacherDGV";
             this.ListedTeacherDGV.RowHeadersWidth = 51;
             this.ListedTeacherDGV.Size = new System.Drawing.Size(603, 287);
@@ -2695,7 +2716,7 @@
             // 
             this.FilterClassCB.FormattingEnabled = true;
             this.FilterClassCB.Location = new System.Drawing.Point(215, 80);
-            this.FilterClassCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FilterClassCB.Margin = new System.Windows.Forms.Padding(4);
             this.FilterClassCB.Name = "FilterClassCB";
             this.FilterClassCB.Size = new System.Drawing.Size(160, 29);
             this.FilterClassCB.TabIndex = 1;
@@ -2722,7 +2743,7 @@
             this.DeleteTeacherPnl.Controls.Add(this.DeleteTeacherHeader);
             this.DeleteTeacherPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DeleteTeacherPnl.Location = new System.Drawing.Point(251, 68);
-            this.DeleteTeacherPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteTeacherPnl.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteTeacherPnl.Name = "DeleteTeacherPnl";
             this.DeleteTeacherPnl.Size = new System.Drawing.Size(936, 505);
             this.DeleteTeacherPnl.TabIndex = 32;
@@ -2730,7 +2751,7 @@
             // SearchTeacherBtn
             // 
             this.SearchTeacherBtn.Location = new System.Drawing.Point(505, 100);
-            this.SearchTeacherBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchTeacherBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SearchTeacherBtn.Name = "SearchTeacherBtn";
             this.SearchTeacherBtn.Size = new System.Drawing.Size(151, 28);
             this.SearchTeacherBtn.TabIndex = 5;
@@ -2751,7 +2772,7 @@
             // DeleteTeacherBtn
             // 
             this.DeleteTeacherBtn.Location = new System.Drawing.Point(664, 214);
-            this.DeleteTeacherBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteTeacherBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteTeacherBtn.Name = "DeleteTeacherBtn";
             this.DeleteTeacherBtn.Size = new System.Drawing.Size(100, 28);
             this.DeleteTeacherBtn.TabIndex = 3;
@@ -2763,7 +2784,7 @@
             // 
             this.SelectDeleteTeacherCB.FormattingEnabled = true;
             this.SelectDeleteTeacherCB.Location = new System.Drawing.Point(311, 100);
-            this.SelectDeleteTeacherCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SelectDeleteTeacherCB.Margin = new System.Windows.Forms.Padding(4);
             this.SelectDeleteTeacherCB.Name = "SelectDeleteTeacherCB";
             this.SelectDeleteTeacherCB.Size = new System.Drawing.Size(160, 29);
             this.SelectDeleteTeacherCB.TabIndex = 2;
@@ -2800,7 +2821,7 @@
             this.StudentCanteenPnl.Controls.Add(this.StudentCanteenHeader);
             this.StudentCanteenPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentCanteenPnl.Location = new System.Drawing.Point(251, 68);
-            this.StudentCanteenPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentCanteenPnl.Margin = new System.Windows.Forms.Padding(4);
             this.StudentCanteenPnl.Name = "StudentCanteenPnl";
             this.StudentCanteenPnl.Size = new System.Drawing.Size(936, 505);
             this.StudentCanteenPnl.TabIndex = 33;
@@ -2809,7 +2830,7 @@
             // 
             this.CanteenStudentDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CanteenStudentDGV.Location = new System.Drawing.Point(169, 156);
-            this.CanteenStudentDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CanteenStudentDGV.Margin = new System.Windows.Forms.Padding(4);
             this.CanteenStudentDGV.Name = "CanteenStudentDGV";
             this.CanteenStudentDGV.RowHeadersWidth = 51;
             this.CanteenStudentDGV.Size = new System.Drawing.Size(489, 222);
@@ -2818,7 +2839,7 @@
             // CanteenSeachStudentBtn
             // 
             this.CanteenSeachStudentBtn.Location = new System.Drawing.Point(427, 57);
-            this.CanteenSeachStudentBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CanteenSeachStudentBtn.Margin = new System.Windows.Forms.Padding(4);
             this.CanteenSeachStudentBtn.Name = "CanteenSeachStudentBtn";
             this.CanteenSeachStudentBtn.Size = new System.Drawing.Size(100, 28);
             this.CanteenSeachStudentBtn.TabIndex = 4;
@@ -2849,7 +2870,7 @@
             // CanteenStudentNumberTB
             // 
             this.CanteenStudentNumberTB.Location = new System.Drawing.Point(261, 59);
-            this.CanteenStudentNumberTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CanteenStudentNumberTB.Margin = new System.Windows.Forms.Padding(4);
             this.CanteenStudentNumberTB.Name = "CanteenStudentNumberTB";
             this.CanteenStudentNumberTB.Size = new System.Drawing.Size(132, 26);
             this.CanteenStudentNumberTB.TabIndex = 1;
@@ -2875,7 +2896,7 @@
             this.ListProductPnl.Controls.Add(this.ListProductHeader);
             this.ListProductPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ListProductPnl.Location = new System.Drawing.Point(251, 68);
-            this.ListProductPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListProductPnl.Margin = new System.Windows.Forms.Padding(4);
             this.ListProductPnl.Name = "ListProductPnl";
             this.ListProductPnl.Size = new System.Drawing.Size(936, 505);
             this.ListProductPnl.TabIndex = 34;
@@ -2883,7 +2904,7 @@
             // FilterListByCategorysBtn
             // 
             this.FilterListByCategorysBtn.Location = new System.Drawing.Point(485, 57);
-            this.FilterListByCategorysBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FilterListByCategorysBtn.Margin = new System.Windows.Forms.Padding(4);
             this.FilterListByCategorysBtn.Name = "FilterListByCategorysBtn";
             this.FilterListByCategorysBtn.Size = new System.Drawing.Size(100, 28);
             this.FilterListByCategorysBtn.TabIndex = 4;
@@ -2895,7 +2916,7 @@
             // 
             this.ListProductDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListProductDGV.Location = new System.Drawing.Point(53, 111);
-            this.ListProductDGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ListProductDGV.Margin = new System.Windows.Forms.Padding(4);
             this.ListProductDGV.Name = "ListProductDGV";
             this.ListProductDGV.RowHeadersWidth = 51;
             this.ListProductDGV.Size = new System.Drawing.Size(747, 316);
@@ -2905,7 +2926,7 @@
             // 
             this.SelectCategoryCB.FormattingEnabled = true;
             this.SelectCategoryCB.Location = new System.Drawing.Point(299, 57);
-            this.SelectCategoryCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SelectCategoryCB.Margin = new System.Windows.Forms.Padding(4);
             this.SelectCategoryCB.Name = "SelectCategoryCB";
             this.SelectCategoryCB.Size = new System.Drawing.Size(160, 29);
             this.SelectCategoryCB.TabIndex = 2;
@@ -2949,7 +2970,7 @@
             this.AddProductPnl.Controls.Add(this.AddProductHeader);
             this.AddProductPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AddProductPnl.Location = new System.Drawing.Point(251, 68);
-            this.AddProductPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddProductPnl.Margin = new System.Windows.Forms.Padding(4);
             this.AddProductPnl.Name = "AddProductPnl";
             this.AddProductPnl.Size = new System.Drawing.Size(936, 505);
             this.AddProductPnl.TabIndex = 35;
@@ -2957,7 +2978,7 @@
             // AddProductButton
             // 
             this.AddProductButton.Location = new System.Drawing.Point(736, 340);
-            this.AddProductButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddProductButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddProductButton.Name = "AddProductButton";
             this.AddProductButton.Size = new System.Drawing.Size(133, 28);
             this.AddProductButton.TabIndex = 6;
@@ -2968,7 +2989,7 @@
             // AddProductExprationDateDTP
             // 
             this.AddProductExprationDateDTP.Location = new System.Drawing.Point(323, 224);
-            this.AddProductExprationDateDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddProductExprationDateDTP.Margin = new System.Windows.Forms.Padding(4);
             this.AddProductExprationDateDTP.Name = "AddProductExprationDateDTP";
             this.AddProductExprationDateDTP.Size = new System.Drawing.Size(317, 26);
             this.AddProductExprationDateDTP.TabIndex = 5;
@@ -2977,7 +2998,7 @@
             // 
             this.AddProductCategoryCB.FormattingEnabled = true;
             this.AddProductCategoryCB.Location = new System.Drawing.Point(281, 159);
-            this.AddProductCategoryCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddProductCategoryCB.Margin = new System.Windows.Forms.Padding(4);
             this.AddProductCategoryCB.Name = "AddProductCategoryCB";
             this.AddProductCategoryCB.Size = new System.Drawing.Size(160, 29);
             this.AddProductCategoryCB.TabIndex = 3;
@@ -2985,7 +3006,7 @@
             // AddProductStockTB
             // 
             this.AddProductStockTB.Location = new System.Drawing.Point(281, 193);
-            this.AddProductStockTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddProductStockTB.Margin = new System.Windows.Forms.Padding(4);
             this.AddProductStockTB.Name = "AddProductStockTB";
             this.AddProductStockTB.Size = new System.Drawing.Size(132, 26);
             this.AddProductStockTB.TabIndex = 4;
@@ -2993,7 +3014,7 @@
             // AddProductPriceTB
             // 
             this.AddProductPriceTB.Location = new System.Drawing.Point(281, 127);
-            this.AddProductPriceTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddProductPriceTB.Margin = new System.Windows.Forms.Padding(4);
             this.AddProductPriceTB.Name = "AddProductPriceTB";
             this.AddProductPriceTB.Size = new System.Drawing.Size(132, 26);
             this.AddProductPriceTB.TabIndex = 2;
@@ -3001,7 +3022,7 @@
             // AddProductNameTB
             // 
             this.AddProductNameTB.Location = new System.Drawing.Point(281, 95);
-            this.AddProductNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddProductNameTB.Margin = new System.Windows.Forms.Padding(4);
             this.AddProductNameTB.Name = "AddProductNameTB";
             this.AddProductNameTB.Size = new System.Drawing.Size(132, 26);
             this.AddProductNameTB.TabIndex = 1;
@@ -3098,7 +3119,7 @@
             this.UpdateProductPnl.Controls.Add(this.UpdateProductHeader);
             this.UpdateProductPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateProductPnl.Location = new System.Drawing.Point(251, 68);
-            this.UpdateProductPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateProductPnl.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateProductPnl.Name = "UpdateProductPnl";
             this.UpdateProductPnl.Size = new System.Drawing.Size(936, 505);
             this.UpdateProductPnl.TabIndex = 36;
@@ -3106,7 +3127,7 @@
             // UpdateProductExprationDateDTP
             // 
             this.UpdateProductExprationDateDTP.Location = new System.Drawing.Point(357, 273);
-            this.UpdateProductExprationDateDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateProductExprationDateDTP.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateProductExprationDateDTP.Name = "UpdateProductExprationDateDTP";
             this.UpdateProductExprationDateDTP.Size = new System.Drawing.Size(320, 26);
             this.UpdateProductExprationDateDTP.TabIndex = 6;
@@ -3115,7 +3136,7 @@
             // 
             this.UpdateProductCategoryCB.FormattingEnabled = true;
             this.UpdateProductCategoryCB.Location = new System.Drawing.Point(304, 203);
-            this.UpdateProductCategoryCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateProductCategoryCB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateProductCategoryCB.Name = "UpdateProductCategoryCB";
             this.UpdateProductCategoryCB.Size = new System.Drawing.Size(160, 29);
             this.UpdateProductCategoryCB.TabIndex = 4;
@@ -3123,7 +3144,7 @@
             // UpdateProductButton
             // 
             this.UpdateProductButton.Location = new System.Drawing.Point(716, 340);
-            this.UpdateProductButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateProductButton.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateProductButton.Name = "UpdateProductButton";
             this.UpdateProductButton.Size = new System.Drawing.Size(153, 28);
             this.UpdateProductButton.TabIndex = 7;
@@ -3134,7 +3155,7 @@
             // UpdateProductGetInfoBtn
             // 
             this.UpdateProductGetInfoBtn.Location = new System.Drawing.Point(496, 80);
-            this.UpdateProductGetInfoBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateProductGetInfoBtn.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateProductGetInfoBtn.Name = "UpdateProductGetInfoBtn";
             this.UpdateProductGetInfoBtn.Size = new System.Drawing.Size(100, 28);
             this.UpdateProductGetInfoBtn.TabIndex = 4;
@@ -3155,7 +3176,7 @@
             // UpdateProductStockAmountTB
             // 
             this.UpdateProductStockAmountTB.Location = new System.Drawing.Point(352, 239);
-            this.UpdateProductStockAmountTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateProductStockAmountTB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateProductStockAmountTB.Name = "UpdateProductStockAmountTB";
             this.UpdateProductStockAmountTB.Size = new System.Drawing.Size(132, 26);
             this.UpdateProductStockAmountTB.TabIndex = 5;
@@ -3163,7 +3184,7 @@
             // UpdateProductPriceTB
             // 
             this.UpdateProductPriceTB.Location = new System.Drawing.Point(279, 167);
-            this.UpdateProductPriceTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateProductPriceTB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateProductPriceTB.Name = "UpdateProductPriceTB";
             this.UpdateProductPriceTB.Size = new System.Drawing.Size(132, 26);
             this.UpdateProductPriceTB.TabIndex = 3;
@@ -3171,7 +3192,7 @@
             // UpdateProductNameTB
             // 
             this.UpdateProductNameTB.Location = new System.Drawing.Point(279, 133);
-            this.UpdateProductNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateProductNameTB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateProductNameTB.Name = "UpdateProductNameTB";
             this.UpdateProductNameTB.Size = new System.Drawing.Size(132, 26);
             this.UpdateProductNameTB.TabIndex = 2;
@@ -3179,7 +3200,7 @@
             // EnterProductNameTB
             // 
             this.EnterProductNameTB.Location = new System.Drawing.Point(332, 81);
-            this.EnterProductNameTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EnterProductNameTB.Margin = new System.Windows.Forms.Padding(4);
             this.EnterProductNameTB.Name = "EnterProductNameTB";
             this.EnterProductNameTB.Size = new System.Drawing.Size(132, 26);
             this.EnterProductNameTB.TabIndex = 1;
@@ -3266,7 +3287,7 @@
             this.DeleteProductPnl.Controls.Add(this.DeleteProductHeader);
             this.DeleteProductPnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DeleteProductPnl.Location = new System.Drawing.Point(251, 68);
-            this.DeleteProductPnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteProductPnl.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteProductPnl.Name = "DeleteProductPnl";
             this.DeleteProductPnl.Size = new System.Drawing.Size(936, 505);
             this.DeleteProductPnl.TabIndex = 37;
@@ -3274,7 +3295,7 @@
             // DeleteProductButton
             // 
             this.DeleteProductButton.Location = new System.Drawing.Point(517, 233);
-            this.DeleteProductButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteProductButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteProductButton.Name = "DeleteProductButton";
             this.DeleteProductButton.Size = new System.Drawing.Size(161, 28);
             this.DeleteProductButton.TabIndex = 5;
@@ -3295,7 +3316,7 @@
             // SearchDeleteProductBtn
             // 
             this.SearchDeleteProductBtn.Location = new System.Drawing.Point(537, 92);
-            this.SearchDeleteProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchDeleteProductBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SearchDeleteProductBtn.Name = "SearchDeleteProductBtn";
             this.SearchDeleteProductBtn.Size = new System.Drawing.Size(100, 28);
             this.SearchDeleteProductBtn.TabIndex = 3;
@@ -3306,7 +3327,7 @@
             // DeleteProductSearchTB
             // 
             this.DeleteProductSearchTB.Location = new System.Drawing.Point(369, 92);
-            this.DeleteProductSearchTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteProductSearchTB.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteProductSearchTB.Name = "DeleteProductSearchTB";
             this.DeleteProductSearchTB.Size = new System.Drawing.Size(132, 26);
             this.DeleteProductSearchTB.TabIndex = 2;
@@ -3346,7 +3367,7 @@
             this.UpdateStudentAttandancePnl.Controls.Add(this.UpdateAbscenceLbl);
             this.UpdateStudentAttandancePnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.UpdateStudentAttandancePnl.Location = new System.Drawing.Point(251, 68);
-            this.UpdateStudentAttandancePnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateStudentAttandancePnl.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentAttandancePnl.Name = "UpdateStudentAttandancePnl";
             this.UpdateStudentAttandancePnl.Size = new System.Drawing.Size(936, 505);
             this.UpdateStudentAttandancePnl.TabIndex = 38;
@@ -3354,7 +3375,7 @@
             // SelectUpdatedDateDTP
             // 
             this.SelectUpdatedDateDTP.Location = new System.Drawing.Point(275, 159);
-            this.SelectUpdatedDateDTP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SelectUpdatedDateDTP.Margin = new System.Windows.Forms.Padding(4);
             this.SelectUpdatedDateDTP.Name = "SelectUpdatedDateDTP";
             this.SelectUpdatedDateDTP.Size = new System.Drawing.Size(309, 26);
             this.SelectUpdatedDateDTP.TabIndex = 3;
@@ -3363,7 +3384,7 @@
             // 
             this.SelectDateCB.FormattingEnabled = true;
             this.SelectDateCB.Location = new System.Drawing.Point(275, 122);
-            this.SelectDateCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SelectDateCB.Margin = new System.Windows.Forms.Padding(4);
             this.SelectDateCB.Name = "SelectDateCB";
             this.SelectDateCB.Size = new System.Drawing.Size(160, 29);
             this.SelectDateCB.TabIndex = 2;
@@ -3371,7 +3392,7 @@
             // UpdateDateBtn
             // 
             this.UpdateDateBtn.Location = new System.Drawing.Point(700, 251);
-            this.UpdateDateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateDateBtn.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateDateBtn.Name = "UpdateDateBtn";
             this.UpdateDateBtn.Size = new System.Drawing.Size(100, 28);
             this.UpdateDateBtn.TabIndex = 4;
@@ -3382,7 +3403,7 @@
             // StudentGetInfoBtn
             // 
             this.StudentGetInfoBtn.Location = new System.Drawing.Point(537, 76);
-            this.StudentGetInfoBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StudentGetInfoBtn.Margin = new System.Windows.Forms.Padding(4);
             this.StudentGetInfoBtn.Name = "StudentGetInfoBtn";
             this.StudentGetInfoBtn.Size = new System.Drawing.Size(100, 28);
             this.StudentGetInfoBtn.TabIndex = 4;
@@ -3403,7 +3424,7 @@
             // UpdateAbscenceEnterStudentNumberTB
             // 
             this.UpdateAbscenceEnterStudentNumberTB.Location = new System.Drawing.Point(355, 78);
-            this.UpdateAbscenceEnterStudentNumberTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UpdateAbscenceEnterStudentNumberTB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateAbscenceEnterStudentNumberTB.Name = "UpdateAbscenceEnterStudentNumberTB";
             this.UpdateAbscenceEnterStudentNumberTB.Size = new System.Drawing.Size(132, 26);
             this.UpdateAbscenceEnterStudentNumberTB.TabIndex = 1;
@@ -3461,7 +3482,7 @@
             this.DeleteAbscencePnl.Controls.Add(this.DeleteAbscenceHeader);
             this.DeleteAbscencePnl.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DeleteAbscencePnl.Location = new System.Drawing.Point(251, 68);
-            this.DeleteAbscencePnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteAbscencePnl.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteAbscencePnl.Name = "DeleteAbscencePnl";
             this.DeleteAbscencePnl.Size = new System.Drawing.Size(936, 505);
             this.DeleteAbscencePnl.TabIndex = 39;
@@ -3470,7 +3491,7 @@
             // 
             this.DeleteAbscenceStudentCB.FormattingEnabled = true;
             this.DeleteAbscenceStudentCB.Location = new System.Drawing.Point(279, 122);
-            this.DeleteAbscenceStudentCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteAbscenceStudentCB.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteAbscenceStudentCB.Name = "DeleteAbscenceStudentCB";
             this.DeleteAbscenceStudentCB.Size = new System.Drawing.Size(160, 29);
             this.DeleteAbscenceStudentCB.TabIndex = 2;
@@ -3488,7 +3509,7 @@
             // DeleteAbscenceButton
             // 
             this.DeleteAbscenceButton.Location = new System.Drawing.Point(661, 233);
-            this.DeleteAbscenceButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteAbscenceButton.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteAbscenceButton.Name = "DeleteAbscenceButton";
             this.DeleteAbscenceButton.Size = new System.Drawing.Size(100, 28);
             this.DeleteAbscenceButton.TabIndex = 3;
@@ -3499,7 +3520,7 @@
             // DeleteGetStudentInfoBtn
             // 
             this.DeleteGetStudentInfoBtn.Location = new System.Drawing.Point(496, 80);
-            this.DeleteGetStudentInfoBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteGetStudentInfoBtn.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteGetStudentInfoBtn.Name = "DeleteGetStudentInfoBtn";
             this.DeleteGetStudentInfoBtn.Size = new System.Drawing.Size(100, 28);
             this.DeleteGetStudentInfoBtn.TabIndex = 3;
@@ -3510,7 +3531,7 @@
             // DeleteAbscenceStudentNumberTB
             // 
             this.DeleteAbscenceStudentNumberTB.Location = new System.Drawing.Point(320, 81);
-            this.DeleteAbscenceStudentNumberTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteAbscenceStudentNumberTB.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteAbscenceStudentNumberTB.Name = "DeleteAbscenceStudentNumberTB";
             this.DeleteAbscenceStudentNumberTB.Size = new System.Drawing.Size(132, 26);
             this.DeleteAbscenceStudentNumberTB.TabIndex = 1;
@@ -3546,24 +3567,15 @@
             this.DeleteAbscenceHeader.TabIndex = 0;
             this.DeleteAbscenceHeader.Text = "Delete Abscence";
             // 
-            // splashScreenManager1
+            // UpdateTeacherSearchBtn
             // 
-            splashScreenManager1.ClosingDelay = 1000;
-            // 
-            // splashScreenManager2
-            // 
-            splashScreenManager2.ClosingDelay = 500;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(66, 359);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(183, 27);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Manage canteen";
+            this.UpdateTeacherSearchBtn.Location = new System.Drawing.Point(451, 86);
+            this.UpdateTeacherSearchBtn.Name = "UpdateTeacherSearchBtn";
+            this.UpdateTeacherSearchBtn.Size = new System.Drawing.Size(75, 30);
+            this.UpdateTeacherSearchBtn.TabIndex = 7;
+            this.UpdateTeacherSearchBtn.Text = "Search";
+            this.UpdateTeacherSearchBtn.UseVisualStyleBackColor = true;
+            this.UpdateTeacherSearchBtn.Click += new System.EventHandler(this.UpdateTeacherSearchBtn_Click);
             // 
             // Dashboard
             // 
@@ -3574,17 +3586,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.MenuBar);
-            this.Controls.Add(this.HomePanel);
-            this.Controls.Add(this.StudentPanelRegistrationPanel);
-            this.Controls.Add(this.StudentCanteenPnl);
-            this.Controls.Add(this.ListProductPnl);
-            this.Controls.Add(this.AddProductPnl);
-            this.Controls.Add(this.UpdateProductPnl);
-            this.Controls.Add(this.DeleteProductPnl);
-            this.Controls.Add(this.CanteenPanel);
-            this.Controls.Add(this.StudentDeletePanel);
-            this.Controls.Add(this.ListTeacherPnl);
-            this.Controls.Add(this.DeleteTeacherPnl);
             this.Controls.Add(this.UpdateTeacherPnl);
             this.Controls.Add(this.UpdateStudentAttandancePnl);
             this.Controls.Add(this.TeacherPanel);
@@ -3602,6 +3603,17 @@
             this.Controls.Add(this.StudentPanel);
             this.Controls.Add(this.StudentAttandanceEntryPanel);
             this.Controls.Add(this.AbscenceInfoPanel);
+            this.Controls.Add(this.HomePanel);
+            this.Controls.Add(this.StudentPanelRegistrationPanel);
+            this.Controls.Add(this.StudentCanteenPnl);
+            this.Controls.Add(this.ListProductPnl);
+            this.Controls.Add(this.AddProductPnl);
+            this.Controls.Add(this.UpdateProductPnl);
+            this.Controls.Add(this.DeleteProductPnl);
+            this.Controls.Add(this.CanteenPanel);
+            this.Controls.Add(this.StudentDeletePanel);
+            this.Controls.Add(this.ListTeacherPnl);
+            this.Controls.Add(this.DeleteTeacherPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Dashboard";
@@ -3965,5 +3977,6 @@
         private System.Windows.Forms.Button DeleteAbscenceButton;
         private System.Windows.Forms.Label DeleteAbscenceStudentLbl;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button UpdateTeacherSearchBtn;
     }
 }

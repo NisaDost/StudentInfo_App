@@ -53,7 +53,7 @@ namespace StudentInfo_App
             TeacherAddLoadClasses();
             SelectTeacherCB.SelectedIndexChanged += SelectTeacherCB_SelectedIndexChanged;
             UpdateTeacherLoadBranchesAndClasses();
-            SelectUpdateTeacherCB.SelectedIndexChanged += new System.EventHandler(this.UpdateSelectTeacherCB_SelectedIndexChanged);
+            //SelectUpdateTeacherCB.SelectedIndexChanged += new System.EventHandler(this.UpdateSelectTeacherCB_SelectedIndexChanged);
             TeacherListLoadAllClasses();
             TeacherDeleteLoadTeachers();
             LoadCategories();
@@ -288,7 +288,7 @@ namespace StudentInfo_App
             TeacherAddLoadClasses();
             SelectTeacherCB.SelectedIndexChanged += SelectTeacherCB_SelectedIndexChanged;
             UpdateTeacherLoadBranchesAndClasses();
-            SelectUpdateTeacherCB.SelectedIndexChanged += new System.EventHandler(this.UpdateSelectTeacherCB_SelectedIndexChanged);
+            //SelectUpdateTeacherCB.SelectedIndexChanged += new System.EventHandler(this.UpdateSelectTeacherCB_SelectedIndexChanged);
             TeacherListLoadAllClasses();
             TeacherDeleteLoadTeachers();
             LoadCategories();
@@ -1374,12 +1374,42 @@ namespace StudentInfo_App
             SelectTeacherClassCB.DisplayMember = "class_name";
             SelectTeacherClassCB.ValueMember = "class_id";
         }
-        private void UpdateSelectTeacherCB_SelectedIndexChanged(object sender, EventArgs e)
+        //private void UpdateSelectTeacherCB_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    var DB = new NewSchoolDBEntities();
+
+        //    // Seçili öğretmenin ID'sini al
+        //    int selectedTeacherId = (int)SelectTeacherCB.SelectedValue;
+
+        //    // Öğretmen bilgilerini veritabanından al
+        //    var selectedTeacher = DB.TEACHERs.FirstOrDefault(t => t.teacher_id == selectedTeacherId);
+        //    var teacherClasses = DB.TEACHER_CLASS.Where(tc => tc.teacher_id == selectedTeacherId)
+        //                                         .Select(tc => tc.CLASS)
+        //                                         .ToList();
+
+        //    if (selectedTeacher != null)
+        //    {
+        //        // Öğretmenin adını ve branşını TextBox'a yükle
+        //        UpdateTeacherNameTB.Text = selectedTeacher.teacher_fullname;
+        //        UpdateTeacherBranchCB.Text = DB.BRANCHes.FirstOrDefault(b => b.branch_id == selectedTeacher.branch_id)?.branch_name;
+
+        //        // Öğretmenin sınıflarını ComboBox'a yükle
+        //        WhichClassUpdatedCB.DataSource = teacherClasses;
+        //        WhichClassUpdatedCB.DisplayMember = "class_name";
+        //        WhichClassUpdatedCB.ValueMember = "class_id";
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Öğretmen bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
+
+        private void UpdateTeacherSearchBtn_Click(object sender, EventArgs e)
         {
             var DB = new NewSchoolDBEntities();
 
             // Seçili öğretmenin ID'sini al
-            int selectedTeacherId = (int)SelectTeacherCB.SelectedValue;
+            int selectedTeacherId = (int)SelectUpdateTeacherCB.SelectedValue;
 
             // Öğretmen bilgilerini veritabanından al
             var selectedTeacher = DB.TEACHERs.FirstOrDefault(t => t.teacher_id == selectedTeacherId);
@@ -2108,5 +2138,6 @@ namespace StudentInfo_App
         }
 
         #endregion
+
     }
 }
