@@ -223,6 +223,7 @@
             this.SelectTeacherNameLbl = new System.Windows.Forms.Label();
             this.AssignTeacherToClassHeader = new System.Windows.Forms.Label();
             this.UpdateTeacherPnl = new System.Windows.Forms.Panel();
+            this.UpdateTeacherSearchBtn = new System.Windows.Forms.Button();
             this.UpdateTeacherBtn2 = new System.Windows.Forms.Button();
             this.UpdateTeacherNameTB = new System.Windows.Forms.TextBox();
             this.SelectTeacherClassCB = new System.Windows.Forms.ComboBox();
@@ -319,7 +320,6 @@
             this.DeleteAbscenceStudentLbl = new System.Windows.Forms.Label();
             this.DeleteAbscenceStudentNumberLbl = new System.Windows.Forms.Label();
             this.DeleteAbscenceHeader = new System.Windows.Forms.Label();
-            this.UpdateTeacherSearchBtn = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.HomePanel.SuspendLayout();
@@ -499,6 +499,7 @@
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Logo.TabIndex = 0;
             this.Logo.TabStop = false;
+            this.Logo.Click += new System.EventHandler(this.Logo_Click);
             // 
             // WelcomeText
             // 
@@ -1165,6 +1166,7 @@
             this.StudentListPanel.Controls.Add(this.label5);
             this.StudentListPanel.Controls.Add(this.StudentListClassCB);
             this.StudentListPanel.Controls.Add(this.StudentListTitleLbl);
+            this.StudentListPanel.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentListPanel.Location = new System.Drawing.Point(251, 68);
             this.StudentListPanel.Margin = new System.Windows.Forms.Padding(4);
             this.StudentListPanel.Name = "StudentListPanel";
@@ -1198,7 +1200,7 @@
             this.StudentListClassCB.Location = new System.Drawing.Point(197, 60);
             this.StudentListClassCB.Margin = new System.Windows.Forms.Padding(4);
             this.StudentListClassCB.Name = "StudentListClassCB";
-            this.StudentListClassCB.Size = new System.Drawing.Size(160, 24);
+            this.StudentListClassCB.Size = new System.Drawing.Size(160, 29);
             this.StudentListClassCB.TabIndex = 1;
             // 
             // StudentListTitleLbl
@@ -1774,6 +1776,7 @@
             this.StudentUpdatePanel.Controls.Add(this.UpdateStudentLastNameTB);
             this.StudentUpdatePanel.Controls.Add(this.UpdateStudentFirstNameTB);
             this.StudentUpdatePanel.Controls.Add(this.UpdateStudentSchoolNumberTB);
+            this.StudentUpdatePanel.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.StudentUpdatePanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.StudentUpdatePanel.Location = new System.Drawing.Point(251, 68);
             this.StudentUpdatePanel.Margin = new System.Windows.Forms.Padding(4);
@@ -1787,7 +1790,7 @@
             this.UpdateStudentDistrictCB.Location = new System.Drawing.Point(480, 215);
             this.UpdateStudentDistrictCB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentDistrictCB.Name = "UpdateStudentDistrictCB";
-            this.UpdateStudentDistrictCB.Size = new System.Drawing.Size(160, 24);
+            this.UpdateStudentDistrictCB.Size = new System.Drawing.Size(160, 29);
             this.UpdateStudentDistrictCB.TabIndex = 7;
             // 
             // UpdateStudentClassCB
@@ -1796,7 +1799,7 @@
             this.UpdateStudentClassCB.Location = new System.Drawing.Point(215, 274);
             this.UpdateStudentClassCB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentClassCB.Name = "UpdateStudentClassCB";
-            this.UpdateStudentClassCB.Size = new System.Drawing.Size(160, 24);
+            this.UpdateStudentClassCB.Size = new System.Drawing.Size(160, 29);
             this.UpdateStudentClassCB.TabIndex = 9;
             // 
             // UpdateStudentCityCB
@@ -1805,7 +1808,7 @@
             this.UpdateStudentCityCB.Location = new System.Drawing.Point(216, 214);
             this.UpdateStudentCityCB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentCityCB.Name = "UpdateStudentCityCB";
-            this.UpdateStudentCityCB.Size = new System.Drawing.Size(160, 24);
+            this.UpdateStudentCityCB.Size = new System.Drawing.Size(160, 29);
             this.UpdateStudentCityCB.TabIndex = 6;
             // 
             // UpdateStudentGenderCB
@@ -1814,7 +1817,7 @@
             this.UpdateStudentGenderCB.Location = new System.Drawing.Point(216, 186);
             this.UpdateStudentGenderCB.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentGenderCB.Name = "UpdateStudentGenderCB";
-            this.UpdateStudentGenderCB.Size = new System.Drawing.Size(160, 24);
+            this.UpdateStudentGenderCB.Size = new System.Drawing.Size(160, 29);
             this.UpdateStudentGenderCB.TabIndex = 5;
             // 
             // UpdateStudentBirthdayDTP
@@ -1823,7 +1826,7 @@
             this.UpdateStudentBirthdayDTP.Location = new System.Drawing.Point(216, 156);
             this.UpdateStudentBirthdayDTP.Margin = new System.Windows.Forms.Padding(4);
             this.UpdateStudentBirthdayDTP.Name = "UpdateStudentBirthdayDTP";
-            this.UpdateStudentBirthdayDTP.Size = new System.Drawing.Size(265, 22);
+            this.UpdateStudentBirthdayDTP.Size = new System.Drawing.Size(265, 26);
             this.UpdateStudentBirthdayDTP.TabIndex = 4;
             // 
             // UpdateStudentBtn
@@ -2548,6 +2551,16 @@
             this.UpdateTeacherPnl.Name = "UpdateTeacherPnl";
             this.UpdateTeacherPnl.Size = new System.Drawing.Size(936, 505);
             this.UpdateTeacherPnl.TabIndex = 30;
+            // 
+            // UpdateTeacherSearchBtn
+            // 
+            this.UpdateTeacherSearchBtn.Location = new System.Drawing.Point(451, 86);
+            this.UpdateTeacherSearchBtn.Name = "UpdateTeacherSearchBtn";
+            this.UpdateTeacherSearchBtn.Size = new System.Drawing.Size(75, 30);
+            this.UpdateTeacherSearchBtn.TabIndex = 7;
+            this.UpdateTeacherSearchBtn.Text = "Search";
+            this.UpdateTeacherSearchBtn.UseVisualStyleBackColor = true;
+            this.UpdateTeacherSearchBtn.Click += new System.EventHandler(this.UpdateTeacherSearchBtn_Click);
             // 
             // UpdateTeacherBtn2
             // 
@@ -3567,16 +3580,6 @@
             this.DeleteAbscenceHeader.TabIndex = 0;
             this.DeleteAbscenceHeader.Text = "Delete Abscence";
             // 
-            // UpdateTeacherSearchBtn
-            // 
-            this.UpdateTeacherSearchBtn.Location = new System.Drawing.Point(451, 86);
-            this.UpdateTeacherSearchBtn.Name = "UpdateTeacherSearchBtn";
-            this.UpdateTeacherSearchBtn.Size = new System.Drawing.Size(75, 30);
-            this.UpdateTeacherSearchBtn.TabIndex = 7;
-            this.UpdateTeacherSearchBtn.Text = "Search";
-            this.UpdateTeacherSearchBtn.UseVisualStyleBackColor = true;
-            this.UpdateTeacherSearchBtn.Click += new System.EventHandler(this.UpdateTeacherSearchBtn_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -3586,19 +3589,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.MenuBar);
-            this.Controls.Add(this.UpdateTeacherPnl);
-            this.Controls.Add(this.UpdateStudentAttandancePnl);
-            this.Controls.Add(this.TeacherPanel);
-            this.Controls.Add(this.AbscencePanel);
-            this.Controls.Add(this.DeleteAbscencePnl);
-            this.Controls.Add(this.StudentListPanel);
-            this.Controls.Add(this.ClassPanel);
-            this.Controls.Add(this.AddClassPnl);
-            this.Controls.Add(this.AssignTeacherToClassPnl);
-            this.Controls.Add(this.TeacheAddPnl);
-            this.Controls.Add(this.DeleteClassPnl);
-            this.Controls.Add(this.ListClassPnl);
-            this.Controls.Add(this.UpdateClassPnl);
             this.Controls.Add(this.StudentUpdatePanel);
             this.Controls.Add(this.StudentPanel);
             this.Controls.Add(this.StudentAttandanceEntryPanel);
@@ -3614,6 +3604,19 @@
             this.Controls.Add(this.StudentDeletePanel);
             this.Controls.Add(this.ListTeacherPnl);
             this.Controls.Add(this.DeleteTeacherPnl);
+            this.Controls.Add(this.UpdateTeacherPnl);
+            this.Controls.Add(this.UpdateStudentAttandancePnl);
+            this.Controls.Add(this.TeacherPanel);
+            this.Controls.Add(this.AbscencePanel);
+            this.Controls.Add(this.DeleteAbscencePnl);
+            this.Controls.Add(this.StudentListPanel);
+            this.Controls.Add(this.ClassPanel);
+            this.Controls.Add(this.AddClassPnl);
+            this.Controls.Add(this.AssignTeacherToClassPnl);
+            this.Controls.Add(this.TeacheAddPnl);
+            this.Controls.Add(this.DeleteClassPnl);
+            this.Controls.Add(this.ListClassPnl);
+            this.Controls.Add(this.UpdateClassPnl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Dashboard";

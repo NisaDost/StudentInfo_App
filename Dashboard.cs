@@ -1575,6 +1575,13 @@ namespace StudentInfo_App
 
                 try
                 {
+                    // İlgili TEACHER_CLASS kayıtlarını bul ve sil
+                    var teacherClasses = DB.TEACHER_CLASS.Where(tc => tc.teacher_id == selectedTeacherId).ToList();
+                    foreach (var teacherClass in teacherClasses)
+                    {
+                        DB.TEACHER_CLASS.Remove(teacherClass);
+                    }
+
                     // Nesneyi izlenmeyen duruma getir
                     DB.Entry(selectedTeacher).State = EntityState.Detached;
 
@@ -1603,6 +1610,8 @@ namespace StudentInfo_App
                 MessageBox.Show("Lütfen silmek istediğiniz öğretmeni seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+
 
         #endregion
 
@@ -2139,5 +2148,10 @@ namespace StudentInfo_App
 
         #endregion
 
+        private void Logo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hocam bizi AA ile geçirmek ister misiniz? ", "Bilgi",MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            
+        }
     }
 }
